@@ -4,9 +4,7 @@ description: >
   Eticas audit methodologies, assessment frameworks, and
   reporting outputs.
 baseurl: "/ai-risk-taxonomy"
-url: "https://taxonomy.eticas.ai"
-
-theme: minima
+url: "https://eticas-foundation.github.io"
 
 exclude:
   - build/
@@ -15,3 +13,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - TAXONOMY.md
+  - CHANGELOG.md
+  - LICENSE

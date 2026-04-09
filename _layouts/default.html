@@ -11,9 +11,8 @@
     table { border-collapse: collapse; width: 100%; margin: 1em 0; }
     th, td { border: 1px solid #ddd; padding: 0.5em 0.75em; text-align: left; }
     th { background: #f8f8f8; }
-    blockquote { border-left: 3px solid #ddd; margin: 1em 0; padding: 0.5em 1em; color: #555; }
-    .nav { font-size: 0.9em; margin-bottom: 2em; }
-    .nav a { margin-right: 1em; }
+    h2 { margin-top: 2em; }
+    h3 { margin-top: 1.5em; }
     .badge { display: inline-block; padding: 0.2em 0.6em; border-radius: 3px; font-size: 0.8em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; vertical-align: middle; margin-right: 0.3em; }
     .badge-required { background: #e8f5e9; color: #2e7d32; }
     .badge-audit-dependent { background: #e3f2fd; color: #1565c0; }
@@ -24,16 +23,10 @@
   </style>
 </head>
 <body>
-  <div class="nav">
-    <a href="{{ site.baseurl }}/risk/">← All categories</a>
-    {% if page.broader %}<a href="{{ site.baseurl }}/risk/{{ page.broader }}.html">↑ {{ page.broader }}</a>{% endif %}
-  </div>
-
   {{ content }}
 
   <div class="footer">
-    Part of the <a href="{{ site.baseurl }}/risk/">Eticas AI Risk Taxonomy</a>.
-    URI: <code>{{ page.uri }}</code>
+    <a href="https://eticas.ai">Eticas</a> · <a href="https://github.com/Eticas-Foundation/ai-risk-taxonomy">GitHub</a> · CC BY 4.0
   </div>
 </body>
 </html>
