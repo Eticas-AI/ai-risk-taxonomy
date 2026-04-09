@@ -220,12 +220,6 @@ def generate_index(concepts, by_id, children, config):
             first_sentence = defn.split(". ")[0] + "."
             lines.append(first_sentence)
             lines.append("")
-        child_ids = children.get(cat["id"], [])
-        if child_ids:
-            for child_id in child_ids:
-                child = by_id[child_id]
-                lines.append(f'- [{child["label"]}]({child_id}.md)')
-            lines.append("")
 
     return "\n".join(lines)
 
