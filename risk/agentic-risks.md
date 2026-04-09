@@ -6,6 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/agentic-risks
 type: category
 inclusion: audit-dependent
 maturity: provisional
+perspective: "technical soundness"
 scope: LLM
 ---
 
@@ -13,7 +14,7 @@ scope: LLM
 
 `https://taxonomy.eticas.ai/risk/agentic-risks`
 
-<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-provisional">provisional</span>
+<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-provisional">provisional</span> <span class="badge badge-perspective">technical soundness</span>
 
 The risk that AI systems operating with a degree of autonomy — planning, executing multi-step actions, using tools, or coordinating with other AI agents — introduce failure modes not present in single-inference systems. This includes cascading errors across agent chains, unintended emergent behaviour, and loss of meaningful human control over compound actions.
 

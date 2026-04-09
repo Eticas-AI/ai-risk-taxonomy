@@ -6,6 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/transparency-explainability
 type: category
 inclusion: required
 maturity: established
+perspective: "governance & compliance"
 scope: ALL
 ---
 
@@ -13,7 +14,7 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/transparency-explainability`
 
-<span class="badge badge-required">required</span> <span class="badge badge-established">established</span>
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">governance & compliance</span>
 
 The risk that stakeholders cannot understand how an AI system works, what it does, or why it produces specific outputs. Lack of transparency undermines informed consent, impedes oversight, and erodes trust.
 

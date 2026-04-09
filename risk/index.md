@@ -9,11 +9,11 @@ Version 0.1.0
 
 A unified AI risk taxonomy for use across Eticas audit methodologies, assessment frameworks, and reporting outputs.
 
-## Required categories
+## Categories
 
-Assessed in every Eticas audit.
+### [Bias & Fairness](bias-fairness.md)
 
-### [Bias & Fairness](bias-fairness.md) <span class="badge badge-established">established</span>
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">rights & ethics</span>
 
 The risk that an AI system produces outcomes that systematically advantage or disadvantage individuals or groups based on protected or sensitive attributes, leading to unequal treatment, reduced accuracy, or unjust impacts.
 
@@ -30,7 +30,9 @@ The risk that an AI system produces outcomes that systematically advantage or di
 - [Sentiment fairness across groups](sentiment-fairness.md)
 - [Performance equity across populations](performance-equity.md)
 
-### [Privacy & Confidentiality](privacy-confidentiality.md) <span class="badge badge-established">established</span>
+### [Privacy & Confidentiality](privacy-confidentiality.md)
+
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">rights & ethics</span>
 
 The risk that an AI system collects, processes, or infers personal information in ways that infringe on individuals' rights to control their data (privacy), or that sensitive information is exposed, accessed, or shared without authorization (confidentiality).
 
@@ -43,7 +45,9 @@ The risk that an AI system collects, processes, or infers personal information i
 - [PII leakage through model outputs](pii-leakage.md)
 - [Membership inference risk](membership-inference.md)
 
-### [Reliability](reliability.md) <span class="badge badge-established">established</span>
+### [Reliability](reliability.md)
+
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">technical soundness</span>
 
 The risk that an AI system produces false, fabricated, or misleading outputs (hallucinations), spreads inaccurate or deceptive information (misinformation), or delivers inconsistent results across similar inputs and contexts.
 
@@ -54,7 +58,9 @@ The risk that an AI system produces false, fabricated, or misleading outputs (ha
 - [Failure and remediation gaps](failure-remediation-gaps.md)
 - [Monitoring and evaluation gaps](monitoring-evaluation-gaps.md)
 
-### [Governance](governance.md) <span class="badge badge-established">established</span>
+### [Governance](governance.md)
+
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">governance & compliance</span>
 
 The risk that an AI system lacks adequate structures, policies, or accountability mechanisms to oversee its design, deployment, and use.
 
@@ -72,7 +78,9 @@ The risk that an AI system lacks adequate structures, policies, or accountabilit
 - [Responsible actor attribution](responsible-actor-attribution.md)
 - [Task success](task-success.md)
 
-### [Security & Misuse](security-misuse.md) <span class="badge badge-established">established</span>
+### [Security & Misuse](security-misuse.md)
+
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">technical soundness</span>
 
 The risk that an AI system is exposed to vulnerabilities, attacks, or misuse that compromise its integrity, availability, or confidentiality.
 
@@ -84,7 +92,19 @@ The risk that an AI system is exposed to vulnerabilities, attacks, or misuse tha
 - [Incident response gaps](incident-response-gaps.md)
 - [Misuse beyond intended purpose](misuse-beyond-intended-purpose.md)
 
-### [Transparency & Explainability](transparency-explainability.md) <span class="badge badge-established">established</span>
+### [Environmental Impact](environmental-impact.md)
+
+<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">technical soundness</span>
+
+The risk that an AI system's development, deployment, or use causes negative environmental effects, such as excessive energy or water consumption, carbon emissions, or unsustainable use of hardware and resources.
+
+- [Inference-time energy consumption](inference-energy-consumption.md)
+- [Training resource consumption](training-resource-consumption.md)
+- [Hardware efficiency](hardware-efficiency.md)
+
+### [Transparency & Explainability](transparency-explainability.md)
+
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">governance & compliance</span>
 
 The risk that stakeholders cannot understand how an AI system works, what it does, or why it produces specific outputs.
 
@@ -94,19 +114,9 @@ The risk that stakeholders cannot understand how an AI system works, what it doe
 - [Model card completeness](model-card-completeness.md)
 - [Prompt transparency](prompt-transparency.md)
 
-## Audit-dependent categories
+### [Responsibility & Redress](responsibility-redress.md)
 
-Assessed based on engagement scope and system type.
-
-### [Environmental Impact](environmental-impact.md) <span class="badge badge-established">established</span>
-
-The risk that an AI system's development, deployment, or use causes negative environmental effects, such as excessive energy or water consumption, carbon emissions, or unsustainable use of hardware and resources.
-
-- [Inference-time energy consumption](inference-energy-consumption.md)
-- [Training resource consumption](training-resource-consumption.md)
-- [Hardware efficiency](hardware-efficiency.md)
-
-### [Responsibility & Redress](responsibility-redress.md) <span class="badge badge-developing">developing</span>
+<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-developing">developing</span> <span class="badge badge-perspective">rights & ethics</span>
 
 The risk that individuals affected by AI-driven decisions have no effective means to understand, challenge, or seek remedy for those decisions.
 
@@ -114,14 +124,20 @@ The risk that individuals affected by AI-driven decisions have no effective mean
 - [Unclear remediation procedures](unclear-remediation.md)
 - [Ineffective communication with affected parties](ineffective-communication.md)
 
-### [Autonomy & Human Agency](autonomy.md) <span class="badge badge-provisional">provisional</span>
+### [Autonomy & Human Agency](autonomy.md)
+
+<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-provisional">provisional</span> <span class="badge badge-perspective">rights & ethics</span>
 
 The risk that an AI system undermines individuals' ability to make free, informed decisions, whether through over-reliance, automation bias, manipulative design, or erosion of human agency..
 
-### [Agentic Risks](agentic-risks.md) <span class="badge badge-provisional">provisional</span>
+### [Agentic Risks](agentic-risks.md)
+
+<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-provisional">provisional</span> <span class="badge badge-perspective">technical soundness</span>
 
 The risk that AI systems operating with a degree of autonomy — planning, executing multi-step actions, using tools, or coordinating with other AI agents — introduce failure modes not present in single-inference systems.
 
-### [Manipulation & Misinformation](manipulation-misinformation.md) <span class="badge badge-provisional">provisional</span>
+### [Manipulation & Misinformation](manipulation-misinformation.md)
+
+<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-provisional">provisional</span> <span class="badge badge-perspective">rights & ethics</span>
 
 The risk that AI systems are used — intentionally or through design flaws — to deceive, manipulate, or mislead individuals or populations.

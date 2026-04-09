@@ -6,6 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/governance
 type: category
 inclusion: required
 maturity: established
+perspective: "governance & compliance"
 scope: ALL
 ---
 
@@ -13,7 +14,7 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/governance`
 
-<span class="badge badge-required">required</span> <span class="badge badge-established">established</span>
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">governance & compliance</span>
 
 The risk that an AI system lacks adequate structures, policies, or accountability mechanisms to oversee its design, deployment, and use. Weak governance can lead to unclear responsibilities, poor documentation, limited auditability, and failure to align with legal, ethical, or organizational standards.
 

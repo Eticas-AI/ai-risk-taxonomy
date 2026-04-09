@@ -6,6 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/responsibility-redress
 type: category
 inclusion: audit-dependent
 maturity: developing
+perspective: "rights & ethics"
 scope: ALL
 ---
 
@@ -13,7 +14,7 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/responsibility-redress`
 
-<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-developing">developing</span>
+<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-developing">developing</span> <span class="badge badge-perspective">rights & ethics</span>
 
 The risk that individuals affected by AI-driven decisions have no effective means to understand, challenge, or seek remedy for those decisions. This includes absence of appeal mechanisms, unclear remediation procedures, and failure to communicate with affected parties.
 

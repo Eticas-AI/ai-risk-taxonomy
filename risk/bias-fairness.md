@@ -6,6 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/bias-fairness
 type: category
 inclusion: required
 maturity: established
+perspective: "rights & ethics"
 scope: ALL
 ---
 
@@ -13,7 +14,7 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/bias-fairness`
 
-<span class="badge badge-required">required</span> <span class="badge badge-established">established</span>
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">rights & ethics</span>
 
 The risk that an AI system produces outcomes that systematically advantage or disadvantage individuals or groups based on protected or sensitive attributes, leading to unequal treatment, reduced accuracy, or unjust impacts. This includes biases introduced through data, model design, or deployment context, and covers both measurable disparities and perceived unfairness in decision-making.
 

@@ -6,6 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/security-misuse
 type: category
 inclusion: required
 maturity: established
+perspective: "technical soundness"
 scope: ALL
 ---
 
@@ -13,7 +14,7 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/security-misuse`
 
-<span class="badge badge-required">required</span> <span class="badge badge-established">established</span>
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">technical soundness</span>
 
 The risk that an AI system is exposed to vulnerabilities, attacks, or misuse that compromise its integrity, availability, or confidentiality. This includes adversarial inputs, model inversion, data poisoning, prompt injection, and unauthorized access, which can lead to manipulation of outputs, data breaches, or system failure.
 

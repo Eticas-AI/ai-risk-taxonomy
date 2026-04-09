@@ -6,6 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/privacy-confidentiality
 type: category
 inclusion: required
 maturity: established
+perspective: "rights & ethics"
 scope: ALL
 ---
 
@@ -13,7 +14,7 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/privacy-confidentiality`
 
-<span class="badge badge-required">required</span> <span class="badge badge-established">established</span>
+<span class="badge badge-required">required</span> <span class="badge badge-established">established</span> <span class="badge badge-perspective">rights & ethics</span>
 
 The risk that an AI system collects, processes, or infers personal information in ways that infringe on individuals' rights to control their data (privacy), or that sensitive information is exposed, accessed, or shared without authorization (confidentiality). This includes risks from data leakage, re-identification, unauthorized use, or insufficient safeguards.
 

@@ -6,6 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/manipulation-misinformation
 type: category
 inclusion: audit-dependent
 maturity: provisional
+perspective: "rights & ethics"
 scope: ALL
 ---
 
@@ -13,7 +14,7 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/manipulation-misinformation`
 
-<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-provisional">provisional</span>
+<span class="badge badge-audit-dependent">audit-dependent</span> <span class="badge badge-provisional">provisional</span> <span class="badge badge-perspective">rights & ethics</span>
 
 The risk that AI systems are used — intentionally or through design flaws — to deceive, manipulate, or mislead individuals or populations. This includes generation of disinformation at scale, deepfakes, subliminal manipulation, and pollution of the information ecosystem.
 
