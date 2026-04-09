@@ -46,10 +46,13 @@ def generate_concept_page(concept, by_id, children, frameworks, config):
     lines.append(f'type: {c["type"]}')
     inclusion = c.get("inclusion", "")
     maturity = c.get("maturity", "")
+    perspective = c.get("perspective", "")
     if inclusion:
         lines.append(f'inclusion: {inclusion}')
     if maturity:
         lines.append(f'maturity: {maturity}')
+    if perspective:
+        lines.append(f'perspective: "{perspective}"')
     lines.append(f'scope: {c.get("scope", "ALL")}')
     if "broader" in c:
         lines.append(f'broader: {c["broader"]}')
@@ -70,6 +73,8 @@ def generate_concept_page(concept, by_id, children, frameworks, config):
         badges.append(f'<span class="badge badge-{inclusion}">{inclusion}</span>')
     if maturity:
         badges.append(f'<span class="badge badge-{maturity}">{maturity}</span>')
+    if c["type"] == "category" and perspective:
+        badges.append(f'<span class="badge badge-perspective">{perspective}</span>')
     if badges:
         lines.append(" ".join(badges))
         lines.append("")
@@ -180,35 +185,41 @@ def generate_index(concepts, by_id, children, config):
     lines.append(config["description"].strip())
     lines.append("")
 
-    # Group by inclusion
-    for inclusion, label, description in [
-        ("required", "Required categories", "Assessed in every Eticas audit."),
-        ("audit-dependent", "Audit-dependent categories", "Assessed based on engagement scope and system type.")
-    ]:
-        cats = [c for c in concepts if c["type"] == "category" and c.get("inclusion") == inclusion]
-        if not cats:
-            continue
-        lines.append(f"## {label}")
+    # Flat list of all categories with badges
+    lines.append("## Categories")
+    lines.append("")
+    cats = [c for c in concepts if c["type"] == "category"]
+    for cat in cats:
+        # Build badges
+        badges = []
+        inclusion = cat.get("inclusion", "")
+        maturity = cat.get("maturity", "")
+        perspective = cat.get("perspective", "")
+        if inclusion:
+            badges.append(f'<span class="badge badge-{inclusion}">{inclusion}</span>')
+        if maturity:
+            badges.append(f'<span class="badge badge-{maturity}">{maturity}</span>')
+        if perspective:
+            slug = perspective.replace(" & ", "-").replace(" ", "-")
+            badges.append(f'<span class="badge badge-perspective">{perspective}</span>')
+        badge_str = " ".join(badges)
+
+        lines.append(f'### [{cat["label"]}]({cat["id"]}.md)')
         lines.append("")
-        lines.append(description)
-        lines.append("")
-        for cat in cats:
-            maturity = cat.get("maturity", "")
-            maturity_badge = f' <span class="badge badge-{maturity}">{maturity}</span>' if maturity else ""
-            lines.append(f'### [{cat["label"]}]({cat["id"]}.md){maturity_badge}')
+        if badge_str:
+            lines.append(badge_str)
             lines.append("")
-            if "definition" in cat:
-                # First sentence only
-                defn = cat["definition"].strip()
-                first_sentence = defn.split(". ")[0] + "."
-                lines.append(first_sentence)
-                lines.append("")
-            child_ids = children.get(cat["id"], [])
-            if child_ids:
-                for child_id in child_ids:
-                    child = by_id[child_id]
-                    lines.append(f'- [{child["label"]}]({child_id}.md)')
-                lines.append("")
+        if "definition" in cat:
+            defn = cat["definition"].strip()
+            first_sentence = defn.split(". ")[0] + "."
+            lines.append(first_sentence)
+            lines.append("")
+        child_ids = children.get(cat["id"], [])
+        if child_ids:
+            for child_id in child_ids:
+                child = by_id[child_id]
+                lines.append(f'- [{child["label"]}]({child_id}.md)')
+            lines.append("")
 
     return "\n".join(lines)
 

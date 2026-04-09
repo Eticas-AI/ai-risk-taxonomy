@@ -19,6 +19,7 @@ VALID_INCLUSIONS = {"required", "audit-dependent"}
 VALID_MATURITIES = {"established", "developing", "provisional"}
 VALID_STAGES = {"pre-processing", "in-processing", "post-processing"}
 VALID_RELATIONS = {"exactMatch", "closeMatch", "broadMatch", "narrowMatch", "relatedMatch"}
+VALID_PERSPECTIVES = {"rights & ethics", "technical soundness", "governance & compliance", "operational viability"}
 
 REQUIRED_FIELDS = {"id", "type", "label", "definition"}
 REQUIRED_CATEGORY_FIELDS = {"inclusion", "maturity"}
@@ -114,6 +115,13 @@ def validate_taxonomy(path):
                 errors.append(
                     f'{prefix}: Invalid maturity "{maturity}". '
                     f'Must be "established", "developing", or "provisional".'
+                )
+
+            perspective = concept.get("perspective", "")
+            if perspective and perspective not in VALID_PERSPECTIVES:
+                errors.append(
+                    f'{prefix}: Invalid perspective "{perspective}". '
+                    f'Must be one of: {", ".join(sorted(VALID_PERSPECTIVES))}.'
                 )
 
         # Subcategory must have broader

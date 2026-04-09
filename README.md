@@ -16,25 +16,23 @@ Each concept has a stable URI (e.g., `https://taxonomy.eticas.ai/risk/bias-fairn
 
 - **[Taxonomy description](TAXONOMY.md)** — full list of categories, subcategories, definitions, and external mappings
 - **[How to edit the taxonomy](docs/editing-guide.md)** — step-by-step guides for adding and modifying entries
+- **[External framework alignment](docs/external-framework-alignment.md)** — how Eticas categories map to NIST, MIT, EU AI Act, OECD, ISO, and W3C DPV
 - **[Implementation details](docs/implementation.md)** — architecture, build pipeline, and technical decisions
 - **[Introduction for the team](docs/intro-for-team.md)** — what we're building and why it matters
 
 ## Risk categories
 
-### Required (assessed in every audit)
-- [Bias & Fairness](risk/bias-fairness.md)
-- [Privacy & Confidentiality](risk/privacy-confidentiality.md)
-- [Reliability](risk/reliability.md)
-- [Governance](risk/governance.md)
-- [Security & Misuse](risk/security-misuse.md)
-- [Transparency & Explainability](risk/transparency-explainability.md)
-
-### Audit-dependent
-- [Environmental Impact](risk/environmental-impact.md) — established
-- [Responsibility & Redress](risk/responsibility-redress.md) — developing
-- [Autonomy & Human Agency](risk/autonomy.md) — provisional
-- [Agentic Risks](risk/agentic-risks.md) — provisional
-- [Manipulation & Misinformation](risk/manipulation-misinformation.md) — provisional
+- [Bias & Fairness](risk/bias-fairness.md) — required · established · rights & ethics
+- [Privacy & Confidentiality](risk/privacy-confidentiality.md) — required · established · rights & ethics
+- [Reliability](risk/reliability.md) — required · established · technical soundness
+- [Governance](risk/governance.md) — required · established · governance & compliance
+- [Security & Misuse](risk/security-misuse.md) — required · established · technical soundness
+- [Transparency & Explainability](risk/transparency-explainability.md) — required · established · governance & compliance
+- [Environmental Impact](risk/environmental-impact.md) — audit-dependent · established · technical soundness
+- [Responsibility & Redress](risk/responsibility-redress.md) — audit-dependent · developing · rights & ethics
+- [Autonomy & Human Agency](risk/autonomy.md) — audit-dependent · provisional · rights & ethics
+- [Agentic Risks](risk/agentic-risks.md) — audit-dependent · provisional · technical soundness
+- [Manipulation & Misinformation](risk/manipulation-misinformation.md) — audit-dependent · provisional · rights & ethics
 
 ## Outputs
 

@@ -32,6 +32,7 @@ New categories go at the end, after the last existing category block.
     lifecycle_stages: [pre-processing, in-processing, post-processing]
     inclusion: audit-dependent
     maturity: provisional
+    perspective: "rights & ethics"
 ```
 
 ### Notes on filling in the fields
@@ -41,6 +42,8 @@ All the same rules as [adding a subcategory](add-subcategory.md#how-to-fill-in-e
 **`inclusion`** — Use `audit-dependent` for new categories. Promotion to `required` is a team decision made later.
 
 **`maturity`** — Use `provisional` for new categories. It moves to `developing` and then `established` as the category is used in audits and methods are refined.
+
+**`perspective`** — Which client concern this category addresses. Must be one of: `"rights & ethics"`, `"technical soundness"`, `"governance & compliance"`, or `"operational viability"`. Wrap in quotes.
 
 **No `broader` field** — Categories are top-level concepts. They don't have a parent.
 

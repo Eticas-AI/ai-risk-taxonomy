@@ -78,6 +78,8 @@ def build_graph(config, taxonomy, mappings_def):
             g.add((uri, eticas.inclusion, Literal(concept["inclusion"])))
         if "maturity" in concept:
             g.add((uri, eticas.maturity, Literal(concept["maturity"])))
+        if "perspective" in concept:
+            g.add((uri, eticas.perspective, Literal(concept["perspective"])))
         if "source" in concept:
             g.add((uri, DCTERMS.source, Literal(concept["source"])))
 

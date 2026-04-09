@@ -20,6 +20,7 @@ The key safety feature: **you never edit the live version directly.** You make c
 | `scope` | `ALL`, `ADM`, `LLM` |
 | `inclusion` | `required`, `audit-dependent` |
 | `maturity` | `established`, `developing`, `provisional` |
+| `perspective` | `rights & ethics`, `technical soundness`, `governance & compliance`, `operational viability` |
 | `lifecycle_stages` | `pre-processing`, `in-processing`, `post-processing` |
 
 ### Parent category ids

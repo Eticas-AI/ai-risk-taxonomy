@@ -223,82 +223,9 @@ The risk that AI systems are used — intentionally or through design flaws — 
 
 ## Alignment with external frameworks
 
-The taxonomy is formally linked to the following external frameworks using SKOS mapping properties (`skos:exactMatch`, `skos:closeMatch`, `skos:broadMatch`).
+The taxonomy is formally linked to major international frameworks using SKOS mapping properties (`skos:exactMatch`, `skos:closeMatch`, `skos:broadMatch`). Each category page lists its specific mappings to the MIT AI Risk Repository, NIST AI RMF, NIST AI 600-1, OECD AI Principles, W3C DPV, ISO 42001, and the EU AI Act.
 
-### Primary alignment targets
-
-These frameworks provide concept-level URIs or structured identifiers suitable for formal linking.
-
-#### W3C Data Privacy Vocabulary (DPV) — AI Extension
-- **URL:** https://w3c.github.io/dpv/2.3/ai/
-- **Repository:** https://github.com/w3c/dpv
-- **Format:** RDF (Turtle, JSON-LD, RDF/XML)
-- **Why:** The most comprehensive standards-based vocabulary for AI risks. Provides SKOS concepts for bias types, security attacks, AI lifecycle stages, and risk assessment processes. Includes extensions encoding the EU AI Act and GDPR in RDF. Maintained by a W3C community group with overlapping membership from the AIRO/VAIR ontology teams.
-- **Coverage:** Strong across all Eticas categories except Agentic Risks and Environmental Impact.
-
-#### MIT AI Risk Repository
-- **URL:** https://airisk.mit.edu
-- **Paper:** Slattery et al., *Patterns* (Cell Press), March 2026
-- **Format:** Google Sheets / CSV (CC BY 4.0)
-- **Why:** The largest systematic database of AI risks (1,725 entries from 74 source frameworks), organised into 7 domains and 24 subdomains. Provides the richest catalogue for mapping individual risk types.
-- **Coverage:** Strong across all Eticas categories. Added multi-agent risks (Subdomain 7.6) in April 2025.
-
-#### NIST AI 600-1 — Generative AI Risk Profile
-- **URL:** https://doi.org/10.6028/NIST.AI.600-1
-- **Format:** PDF
-- **Why:** Defines 12 risk categories specific to generative AI, each mapped to NIST AI RMF trustworthiness characteristics. The most widely referenced US government framework for GenAI risk.
-- **Coverage:** Strong for LLM-specific risks. Gaps: Agentic Risks, Transparency (addressed only through trustworthiness characteristics, not as a standalone risk).
-
-### Secondary alignment targets
-
-These provide authoritative definitions and regulatory context but lack concept-level URIs.
-
-#### NIST AI RMF (AI 100-1)
-- **URL:** https://www.nist.gov/itl/ai-risk-management-framework
-- **Why:** Defines 7 Trustworthy AI characteristics and 4 core functions (Govern, Map, Measure, Manage) with 66 subcategories. Extensive crosswalk ecosystem to ISO 42001, EU AI Act, OECD, and others.
-
-#### OECD AI Principles and Classification Framework
-- **URL:** https://oecd.ai
-- **Why:** Normative foundation adopted by 47 countries. The EU AI Act adopts OECD definitions verbatim. Five principles map to Eticas categories. The incident taxonomy provides structured harm classification.
-
-#### ISO/IEC 42001 and ISO/IEC 23894
-- **Why:** Certification-grade AI management system and risk management standards. The AIRO ontology provides a semantic bridge to ISO concepts. Paid standards — Eticas links to concepts by reference rather than reproducing content.
-
-#### EU AI Act (via W3C DPV EU AI Act Extension)
-- **URL:** https://w3c.github.io/dpv/legal/eu/aiact/
-- **Why:** The DPV extension encodes the Act's risk tiers, roles, assessment types, and sector classifications in RDF, providing the machine-readable layer the EU has not published directly.
-
-### Specialist references
-
-#### AIRO — AI Risk Ontology
-- **URL:** https://w3id.org/airo | https://github.com/DelaramGlp/airo
-- **Why:** OWL 2 ontology modelling AI systems, domains, purposes, capabilities, and associated risks. Grounded in ISO 31000/23894. Designed to answer EU AI Act Annex III classification questions.
-
-#### VAIR — Vocabulary of AI Risks
-- **URL:** https://w3id.org/vair | https://github.com/DelaramGlp/vair
-- **Why:** SKOS instantiation of AIRO with populated hierarchies across 21 facets.
-
-#### AIR 2024 Taxonomy (Zeng et al.)
-- **Paper:** arXiv:2406.17864
-- **Why:** Most granular academic classification: 4 levels, 314 specific risk types. Powers the AIR-Bench safety benchmark (ICLR 2025).
-
----
-
-## Category-level mapping table
-
-| Eticas Category | MIT Domain | NIST AI 600-1 | NIST Trustworthy Characteristic | OECD Principle | W3C DPV |
-|---|---|---|---|---|---|
-| Bias & Fairness | 1. Discrimination & Toxicity | #6 Harmful Bias & Homogenization | Fair with Harmful Bias Managed | Fairness | `ai:AIBias` hierarchy |
-| Privacy & Confidentiality | 2.1 Compromise of Privacy | #4 Data Privacy | Privacy-Enhanced | Privacy | `dpv:PersonalDataHandling` |
-| Reliability | 7.3 Lack of Capability/Robustness | #2 Confabulation | Valid & Reliable | Robustness | `ai:Reliability` |
-| Governance | 6.5 Governance Failure | #12 Value Chain Integration | Accountable & Transparent | Accountability | `dpv:GovernanceProcedures` |
-| Security & Misuse | 2.2 + Domain 4 | #9 Information Security | Secure & Resilient | Security & Safety | `ai:SecurityAttack` hierarchy |
-| Environmental Impact | 6.6 Environmental Harm | #5 Environmental Impacts | Safe | Sustainable Development | — |
-| Transparency & Explainability | 7.4 Lack of Transparency | — | Explainable & Interpretable | Transparency | `ai:Transparency` |
-| Responsibility & Redress | — | — | Accountable & Transparent | Accountability | `dpv:RightToRemedy` |
-| Autonomy | 5.2 Loss of Agency | #7 Human-AI Configuration | — | — | `ai:HumanOversight` |
-| Agentic Risks | 7.6 Multi-agent Risks | — | — | — | — |
-| Manipulation & Misinformation | Domain 3 | #8 Information Integrity | — | Information Integrity (2024) | `ai:Misinformation` |
+For a detailed analysis of how each Eticas category aligns with, diverges from, and extends these frameworks — including coverage gaps and areas where Eticas addresses risks that existing frameworks miss — see **[External framework alignment](docs/external-framework-alignment.md)**.
 
 ---
 

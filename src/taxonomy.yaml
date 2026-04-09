@@ -29,6 +29,7 @@ concepts:
     lifecycle_stages: [pre-processing, in-processing, post-processing]
     inclusion: required
     maturity: established
+    perspective: "rights & ethics"
     mappings:
       - framework: mit
         target_id: "domain-1"
@@ -258,6 +259,7 @@ concepts:
     lifecycle_stages: [pre-processing, in-processing, post-processing]
     inclusion: required
     maturity: established
+    perspective: "rights & ethics"
     mappings:
       - framework: mit
         target_id: "subdomain-2.1"
@@ -401,6 +403,7 @@ concepts:
     lifecycle_stages: [pre-processing, in-processing, post-processing]
     inclusion: required
     maturity: established
+    perspective: "technical soundness"
     mappings:
       - framework: mit
         target_id: "subdomain-7.3"
@@ -524,6 +527,7 @@ concepts:
     lifecycle_stages: [pre-processing, in-processing, post-processing]
     inclusion: required
     maturity: established
+    perspective: "governance & compliance"
     mappings:
       - framework: mit
         target_id: "subdomain-6.5"
@@ -730,6 +734,7 @@ concepts:
     lifecycle_stages: [pre-processing, in-processing, post-processing]
     inclusion: required
     maturity: established
+    perspective: "technical soundness"
     mappings:
       - framework: mit
         target_id: "subdomain-2.2"
@@ -868,6 +873,7 @@ concepts:
     lifecycle_stages: [pre-processing, in-processing, post-processing]
     inclusion: audit-dependent
     maturity: established
+    perspective: "technical soundness"
     mappings:
       - framework: mit
         target_id: "subdomain-6.6"
@@ -939,6 +945,7 @@ concepts:
     lifecycle_stages: [post-processing]
     inclusion: required
     maturity: established
+    perspective: "governance & compliance"
     note: >
       In the RAIA Guide, this category is assessed only at the
       Post-Processing stage.
@@ -1043,6 +1050,7 @@ concepts:
     lifecycle_stages: [post-processing]
     inclusion: audit-dependent
     maturity: developing
+    perspective: "rights & ethics"
     note: >
       In the RAIA Guide, this category is assessed only at the
       Post-Processing stage.
@@ -1107,6 +1115,7 @@ concepts:
     lifecycle_stages: [post-processing]
     inclusion: audit-dependent
     maturity: provisional
+    perspective: "rights & ethics"
     mappings:
       - framework: mit
         target_id: "subdomain-5.2"
@@ -1135,6 +1144,7 @@ concepts:
     lifecycle_stages: [post-processing]
     inclusion: audit-dependent
     maturity: provisional
+    perspective: "technical soundness"
     mappings:
       - framework: mit
         target_id: "subdomain-7.6"
@@ -1158,6 +1168,7 @@ concepts:
     lifecycle_stages: [post-processing]
     inclusion: audit-dependent
     maturity: provisional
+    perspective: "rights & ethics"
     mappings:
       - framework: mit
         target_id: "domain-3"
