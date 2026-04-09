@@ -67,16 +67,16 @@ def generate_concept_page(concept, by_id, children, frameworks, config):
     lines.append(f'`{ns}{c["id"]}`')
     lines.append("")
 
-    # Badges (HTML spans — styled by Jekyll, plain text fallback on GitHub)
-    badges = []
+    # Classification metadata (labelled badges)
+    meta_badges = []
     if c["type"] == "category" and inclusion:
-        badges.append(f'<span class="badge badge-{inclusion}">{inclusion}</span>')
+        meta_badges.append(f'**Inclusion:** <span class="badge badge-{inclusion}">{inclusion}</span>')
     if maturity:
-        badges.append(f'<span class="badge badge-{maturity}">{maturity}</span>')
+        meta_badges.append(f'**Maturity:** <span class="badge badge-{maturity}">{maturity}</span>')
     if c["type"] == "category" and perspective:
-        badges.append(f'<span class="badge badge-perspective">{perspective}</span>')
-    if badges:
-        lines.append(" ".join(badges))
+        meta_badges.append(f'**Perspective:** <span class="badge badge-perspective">{perspective}</span>')
+    if meta_badges:
+        lines.append(" · ".join(meta_badges))
         lines.append("")
 
     # Definition
@@ -196,19 +196,19 @@ def generate_index(concepts, by_id, children, config):
     lines.append("")
     cats = [c for c in concepts if c["type"] == "category"]
     for cat in cats:
-        # Build badges
-        badges = []
         inclusion = cat.get("inclusion", "")
         maturity = cat.get("maturity", "")
         perspective = cat.get("perspective", "")
+
+        # Build labelled badge line
+        meta_badges = []
         if inclusion:
-            badges.append(f'<span class="badge badge-{inclusion}">{inclusion}</span>')
+            meta_badges.append(f'<span class="badge badge-{inclusion}">{inclusion}</span>')
         if maturity:
-            badges.append(f'<span class="badge badge-{maturity}">{maturity}</span>')
+            meta_badges.append(f'<span class="badge badge-{maturity}">{maturity}</span>')
         if perspective:
-            slug = perspective.replace(" & ", "-").replace(" ", "-")
-            badges.append(f'<span class="badge badge-perspective">{perspective}</span>')
-        badge_str = " ".join(badges)
+            meta_badges.append(f'<span class="badge badge-perspective">{perspective}</span>')
+        badge_str = " · ".join(meta_badges)
 
         lines.append(f'### [{cat["label"]}]({cat["id"]}.md)')
         lines.append("")
