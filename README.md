@@ -6,11 +6,18 @@ A unified, machine-readable AI risk taxonomy for use across [Eticas](https://eti
 **Version:** 0.1.0  
 **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-## What this is
+## About
 
 This repository contains Eticas' canonical definitions of AI risk categories and subcategories, formally linked to major international frameworks including the NIST AI RMF, EU AI Act, MIT AI Risk Repository, OECD AI Principles, ISO/IEC 42001, and the W3C Data Privacy Vocabulary.
 
 Each concept has a stable URI (e.g., `https://taxonomy.eticas.ai/risk/bias-fairness`), a definition, alternative labels, lifecycle stage applicability, and cross-references to equivalent concepts in external frameworks.
+
+## Documentation
+
+- **[Taxonomy description](TAXONOMY.md)** — full list of categories, subcategories, definitions, and external mappings
+- **[How to edit the taxonomy](docs/editing-guide.md)** — step-by-step guides for adding and modifying entries
+- **[Implementation details](docs/implementation.md)** — architecture, build pipeline, and technical decisions
+- **[Introduction for the team](docs/intro-for-team.md)** — what we're building and why it matters
 
 ## Risk categories
 
@@ -36,15 +43,13 @@ Each concept has a stable URI (e.g., `https://taxonomy.eticas.ai/risk/bias-fairn
 | YAML source | [`src/taxonomy.yaml`](src/taxonomy.yaml) | Human-editable source of truth |
 | SKOS Turtle | [`dist/taxonomy.ttl`](dist/taxonomy.ttl) | Machine-readable RDF |
 | SKOS JSON-LD | [`dist/taxonomy.jsonld`](dist/taxonomy.jsonld) | Machine-readable linked data |
-| Browsable site | [`risk/`](risk/) | Markdown pages (served as HTML via GitHub Pages) |
+| Browsable pages | [`risk/`](risk/) | One page per concept |
 
-## How to contribute
+## Contributing
 
-1. Edit `src/taxonomy.yaml`
-2. Run the build: `pip install -r build/requirements.txt && python build/convert.py && python build/validate.py && python build/generate_pages.py`
-3. Open a pull request
+Edit [`src/taxonomy.yaml`](src/taxonomy.yaml) and open a pull request. The CI validates your changes automatically and regenerates all outputs on merge.
 
-CI validates all changes automatically. See [`docs/implementation.md`](docs/implementation.md) for architecture details.
+See the **[editing guide](docs/editing-guide.md)** for step-by-step instructions, including copy-paste templates for common tasks.
 
 ## How to cite
 
