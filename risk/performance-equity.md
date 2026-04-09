@@ -4,6 +4,7 @@ title: "Performance equity across populations"
 id: performance-equity
 uri: https://taxonomy.eticas.ai/risk/performance-equity
 type: subcategory
+maturity: developing
 scope: ALL
 broader: bias-fairness
 ---
@@ -11,6 +12,8 @@ broader: bias-fairness
 # Performance equity across populations
 
 `https://taxonomy.eticas.ai/risk/performance-equity`
+
+<span class="badge badge-developing">developing</span>
 
 Higher error rates or lower accuracy for specific demographic groups, resulting in unfair or unequal service delivery.
 

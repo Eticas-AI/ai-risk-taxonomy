@@ -4,6 +4,7 @@ title: "Poor documentation"
 id: poor-documentation
 uri: https://taxonomy.eticas.ai/risk/poor-documentation
 type: subcategory
+maturity: established
 scope: ALL
 broader: governance
 ---
@@ -11,6 +12,8 @@ broader: governance
 # Poor documentation
 
 `https://taxonomy.eticas.ai/risk/poor-documentation`
+
+<span class="badge badge-established">established</span>
 
 Incomplete, outdated, or absent documentation of system purpose, architecture, data sources, known limitations, and operational procedures.
 

@@ -4,6 +4,7 @@ title: "Limited auditability"
 id: limited-auditability
 uri: https://taxonomy.eticas.ai/risk/limited-auditability
 type: subcategory
+maturity: established
 scope: ALL
 broader: governance
 ---
@@ -11,6 +12,8 @@ broader: governance
 # Limited auditability
 
 `https://taxonomy.eticas.ai/risk/limited-auditability`
+
+<span class="badge badge-established">established</span>
 
 Insufficient logging, versioning, or traceability for meaningful external review or internal audit.
 

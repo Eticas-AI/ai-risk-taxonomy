@@ -75,6 +75,7 @@ eticas:absence-of-appeal a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Absence of appeal mechanisms"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "developing" ;
     eticas-ont:scope "ALL" .
 
 eticas:accessibility-barriers a skos:Concept ;
@@ -84,6 +85,7 @@ eticas:accessibility-barriers a skos:Concept ;
     skos:prefLabel "Accessibility barriers"@en ;
     eticas-ont:lifecycleStage "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:adversarial-attacks a skos:Concept ;
@@ -93,6 +95,7 @@ eticas:adversarial-attacks a skos:Concept ;
     skos:prefLabel "Adversarial attacks"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:agentic-risks a skos:Concept ;
@@ -113,6 +116,7 @@ eticas:ai-interaction-disclosure a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Disclosure of AI interaction"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "LLM" .
 
 eticas:allocation-of-opportunity a skos:Concept ;
@@ -123,6 +127,7 @@ eticas:allocation-of-opportunity a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Unequal allocation of opportunity"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ADM" .
 
 eticas:autonomy a skos:Concept ;
@@ -144,6 +149,7 @@ eticas:biometric-surveillance a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Biometric surveillance"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ADM" .
 
 eticas:data-governance a skos:Concept ;
@@ -153,6 +159,7 @@ eticas:data-governance a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Data governance"@en ;
     eticas-ont:lifecycleStage "pre-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:dataset-bias a skos:Concept ;
@@ -162,6 +169,7 @@ eticas:dataset-bias a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Dataset bias and under/over-representation"@en ;
     eticas-ont:lifecycleStage "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:decision-traceability a skos:Concept ;
@@ -172,6 +180,7 @@ eticas:decision-traceability a skos:Concept ;
     skos:prefLabel "Decision traceability"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:emotion-inference-profiling a skos:Concept ;
@@ -181,6 +190,7 @@ eticas:emotion-inference-profiling a skos:Concept ;
     skos:prefLabel "Emotion inference or sensitive attribute profiling"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:failure-remediation-gaps a skos:Concept ;
@@ -191,6 +201,7 @@ eticas:failure-remediation-gaps a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Failure and remediation gaps"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:feedback-loops a skos:Concept ;
@@ -199,6 +210,7 @@ eticas:feedback-loops a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Feedback loops reinforcing inequality"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:fitness-for-purpose a skos:Concept ;
@@ -209,6 +221,7 @@ eticas:fitness-for-purpose a skos:Concept ;
     skos:prefLabel "Fitness for purpose"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "pre-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:function-creep a skos:Concept ;
@@ -217,6 +230,7 @@ eticas:function-creep a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Function creep"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:geographic-cultural-language-skew a skos:Concept ;
@@ -227,6 +241,7 @@ eticas:geographic-cultural-language-skew a skos:Concept ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:hallucination a skos:Concept ;
@@ -239,6 +254,7 @@ eticas:hallucination a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Hallucination and fabricated outputs"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "LLM" .
 
 eticas:hardware-efficiency a skos:Concept ;
@@ -249,6 +265,7 @@ eticas:hardware-efficiency a skos:Concept ;
     skos:prefLabel "Hardware efficiency"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:harmful-content-toxicity a skos:Concept ;
@@ -262,6 +279,7 @@ eticas:harmful-content-toxicity a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Harmful content and toxicity"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "developing" ;
     eticas-ont:scope "LLM" .
 
 eticas:human-oversight-control a skos:Concept ;
@@ -271,6 +289,7 @@ eticas:human-oversight-control a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Human oversight and control"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:incident-response-gaps a skos:Concept ;
@@ -279,6 +298,7 @@ eticas:incident-response-gaps a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Incident response gaps"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:ineffective-communication a skos:Concept ;
@@ -287,6 +307,7 @@ eticas:ineffective-communication a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Ineffective communication with affected parties"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "developing" ;
     eticas-ont:scope "ALL" .
 
 eticas:inference-energy-consumption a skos:Concept ;
@@ -296,6 +317,7 @@ eticas:inference-energy-consumption a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Inference-time energy consumption"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:input-output-logging a skos:Concept ;
@@ -305,6 +327,7 @@ eticas:input-output-logging a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Critical input/output logging"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:intersectional-unfairness a skos:Concept ;
@@ -314,6 +337,7 @@ eticas:intersectional-unfairness a skos:Concept ;
     skos:prefLabel "Intersectional unfairness"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:jailbreaking a skos:Concept ;
@@ -324,6 +348,7 @@ eticas:jailbreaking a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Jailbreaking"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "LLM" .
 
 eticas:lack-of-change-management a skos:Concept ;
@@ -332,6 +357,7 @@ eticas:lack-of-change-management a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Lack of change management"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:limited-auditability a skos:Concept ;
@@ -341,6 +367,7 @@ eticas:limited-auditability a skos:Concept ;
     skos:prefLabel "Limited auditability"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:manipulation-misinformation a skos:Concept ;
@@ -363,6 +390,7 @@ eticas:membership-inference a skos:Concept ;
     skos:prefLabel "Membership inference risk"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "LLM" .
 
 eticas:misuse-beyond-intended-purpose a skos:Concept ;
@@ -371,6 +399,7 @@ eticas:misuse-beyond-intended-purpose a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Misuse beyond intended purpose"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "developing" ;
     eticas-ont:scope "ALL" .
 
 eticas:model-card-completeness a skos:Concept ;
@@ -381,6 +410,7 @@ eticas:model-card-completeness a skos:Concept ;
     skos:prefLabel "Model card completeness"@en ;
     eticas-ont:lifecycleStage "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:monitoring-evaluation-gaps a skos:Concept ;
@@ -391,6 +421,7 @@ eticas:monitoring-evaluation-gaps a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Monitoring and evaluation gaps"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:out-of-distribution-robustness a skos:Concept ;
@@ -401,6 +432,7 @@ eticas:out-of-distribution-robustness a skos:Concept ;
     skos:prefLabel "Out-of-distribution robustness"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:output-drift a skos:Concept ;
@@ -409,6 +441,7 @@ eticas:output-drift a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Output drift over time"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:output-inconsistency a skos:Concept ;
@@ -418,6 +451,7 @@ eticas:output-inconsistency a skos:Concept ;
     skos:prefLabel "Output inconsistency"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:oversight-of-adverse-impacts a skos:Concept ;
@@ -428,6 +462,7 @@ eticas:oversight-of-adverse-impacts a skos:Concept ;
     skos:prefLabel "Oversight of significant adverse impacts"@en ;
     eticas-ont:lifecycleStage "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:performance-equity a skos:Concept ;
@@ -440,6 +475,7 @@ eticas:performance-equity a skos:Concept ;
     skos:prefLabel "Performance equity across populations"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "developing" ;
     eticas-ont:scope "ALL" .
 
 eticas:pii-leakage a skos:Concept ;
@@ -452,6 +488,7 @@ eticas:pii-leakage a skos:Concept ;
     skos:prefLabel "PII leakage through model outputs"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "LLM" .
 
 eticas:poor-documentation a skos:Concept ;
@@ -462,6 +499,7 @@ eticas:poor-documentation a skos:Concept ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:prompt-injection a skos:Concept ;
@@ -473,6 +511,7 @@ eticas:prompt-injection a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Prompt injection"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "LLM" .
 
 eticas:prompt-transparency a skos:Concept ;
@@ -482,6 +521,7 @@ eticas:prompt-transparency a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Prompt transparency"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "LLM" .
 
 eticas:proxy-discrimination a skos:Concept ;
@@ -491,6 +531,7 @@ eticas:proxy-discrimination a skos:Concept ;
     skos:prefLabel "Proxy discrimination through correlated features"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:quality-of-service-disparity a skos:Concept ;
@@ -501,6 +542,7 @@ eticas:quality-of-service-disparity a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Quality of service disparity across groups"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:re-identification a skos:Concept ;
@@ -510,6 +552,7 @@ eticas:re-identification a skos:Concept ;
     skos:prefLabel "Re-identification of anonymised data"@en ;
     eticas-ont:lifecycleStage "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:regulatory-non-compliance a skos:Concept ;
@@ -519,6 +562,7 @@ eticas:regulatory-non-compliance a skos:Concept ;
     skos:prefLabel "Regulatory non-compliance"@en ;
     eticas-ont:lifecycleStage "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:responsible-actor-attribution a skos:Concept ;
@@ -529,6 +573,7 @@ eticas:responsible-actor-attribution a skos:Concept ;
     skos:prefLabel "Responsible actor attribution"@en ;
     eticas-ont:lifecycleStage "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:sentiment-fairness a skos:Concept ;
@@ -538,6 +583,7 @@ eticas:sentiment-fairness a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Sentiment fairness across groups"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "developing" ;
     eticas-ont:scope "LLM" .
 
 eticas:stakeholder-communication a skos:Concept ;
@@ -548,6 +594,7 @@ eticas:stakeholder-communication a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Communication to stakeholders"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:stereotyping-demeaning-content a skos:Concept ;
@@ -560,6 +607,7 @@ eticas:stereotyping-demeaning-content a skos:Concept ;
     skos:prefLabel "Stereotyping and demeaning content"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:supply-chain-vulnerabilities a skos:Concept ;
@@ -569,6 +617,7 @@ eticas:supply-chain-vulnerabilities a skos:Concept ;
     skos:prefLabel "Supply-chain vulnerabilities"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:system-explainability a skos:Concept ;
@@ -578,6 +627,7 @@ eticas:system-explainability a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "AI system explainability"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:task-success a skos:Concept ;
@@ -587,6 +637,7 @@ eticas:task-success a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Task success"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:training-resource-consumption a skos:Concept ;
@@ -596,6 +647,7 @@ eticas:training-resource-consumption a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Training resource consumption"@en ;
     eticas-ont:lifecycleStage "in-processing" ;
+    eticas-ont:maturity "provisional" ;
     eticas-ont:scope "ALL" .
 
 eticas:unauthorized-access a skos:Concept ;
@@ -604,6 +656,7 @@ eticas:unauthorized-access a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Unauthorized access"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:unclear-remediation a skos:Concept ;
@@ -612,6 +665,7 @@ eticas:unclear-remediation a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Unclear remediation procedures"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
+    eticas-ont:maturity "developing" ;
     eticas-ont:scope "ALL" .
 
 eticas:unclear-responsibilities a skos:Concept ;
@@ -621,6 +675,7 @@ eticas:unclear-responsibilities a skos:Concept ;
     skos:prefLabel "Unclear responsibilities and accountability gaps"@en ;
     eticas-ont:lifecycleStage "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:unlawful-data-processing a skos:Concept ;
@@ -629,6 +684,7 @@ eticas:unlawful-data-processing a skos:Concept ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Unlawful collection or processing of personal data"@en ;
     eticas-ont:lifecycleStage "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 eticas:weak-data-controls a skos:Concept ;
@@ -638,6 +694,7 @@ eticas:weak-data-controls a skos:Concept ;
     skos:prefLabel "Weak data retention, erasure, and access controls"@en ;
     eticas-ont:lifecycleStage "post-processing",
         "pre-processing" ;
+    eticas-ont:maturity "established" ;
     eticas-ont:scope "ALL" .
 
 dpv-ai:AIBias skos:prefLabel "AI Bias"@en .

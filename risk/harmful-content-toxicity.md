@@ -4,6 +4,7 @@ title: "Harmful content and toxicity"
 id: harmful-content-toxicity
 uri: https://taxonomy.eticas.ai/risk/harmful-content-toxicity
 type: subcategory
+maturity: developing
 scope: LLM
 broader: bias-fairness
 ---
@@ -11,6 +12,8 @@ broader: bias-fairness
 # Harmful content and toxicity
 
 `https://taxonomy.eticas.ai/risk/harmful-content-toxicity`
+
+<span class="badge badge-developing">developing</span>
 
 Offensive, hateful, or otherwise harmful outputs that damage user well-being and erode trust.
 

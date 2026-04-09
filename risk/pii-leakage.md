@@ -4,6 +4,7 @@ title: "PII leakage through model outputs"
 id: pii-leakage
 uri: https://taxonomy.eticas.ai/risk/pii-leakage
 type: subcategory
+maturity: established
 scope: LLM
 broader: privacy-confidentiality
 ---
@@ -11,6 +12,8 @@ broader: privacy-confidentiality
 # PII leakage through model outputs
 
 `https://taxonomy.eticas.ai/risk/pii-leakage`
+
+<span class="badge badge-established">established</span>
 
 Personal data present in training data surfacing in model outputs, either through memorisation or through responses that reveal sensitive information about individuals.
 

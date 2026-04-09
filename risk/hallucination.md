@@ -4,6 +4,7 @@ title: "Hallucination and fabricated outputs"
 id: hallucination
 uri: https://taxonomy.eticas.ai/risk/hallucination
 type: subcategory
+maturity: established
 scope: LLM
 broader: reliability
 ---
@@ -11,6 +12,8 @@ broader: reliability
 # Hallucination and fabricated outputs
 
 `https://taxonomy.eticas.ai/risk/hallucination`
+
+<span class="badge badge-established">established</span>
 
 Generation of false, fabricated, or misleading information that appears credible, including invented facts, statistics, citations, or events.
 

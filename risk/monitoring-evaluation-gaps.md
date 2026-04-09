@@ -4,6 +4,7 @@ title: "Monitoring and evaluation gaps"
 id: monitoring-evaluation-gaps
 uri: https://taxonomy.eticas.ai/risk/monitoring-evaluation-gaps
 type: subcategory
+maturity: provisional
 scope: ALL
 broader: reliability
 ---
@@ -12,7 +13,11 @@ broader: reliability
 
 `https://taxonomy.eticas.ai/risk/monitoring-evaluation-gaps`
 
+<span class="badge badge-provisional">provisional</span>
+
 Lack of ongoing monitoring that renders datasets obsolete and system outputs unreliable, including absence of feedback mechanisms and periodic evaluation.
+
+> **This subcategory is provisional.** It has not yet been validated in a completed audit.
 
 **Also known as:** Monitoring, feedback, evaluation
 

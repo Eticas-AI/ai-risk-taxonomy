@@ -4,6 +4,7 @@ title: "Unclear responsibilities and accountability gaps"
 id: unclear-responsibilities
 uri: https://taxonomy.eticas.ai/risk/unclear-responsibilities
 type: subcategory
+maturity: established
 scope: ALL
 broader: governance
 ---
@@ -11,6 +12,8 @@ broader: governance
 # Unclear responsibilities and accountability gaps
 
 `https://taxonomy.eticas.ai/risk/unclear-responsibilities`
+
+<span class="badge badge-established">established</span>
 
 Missing or ambiguous assignment of roles and responsibilities for AI system design, deployment, monitoring, and incident response.
 

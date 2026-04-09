@@ -4,6 +4,7 @@ title: "Dataset bias and under/over-representation"
 id: dataset-bias
 uri: https://taxonomy.eticas.ai/risk/dataset-bias
 type: subcategory
+maturity: established
 scope: ALL
 broader: bias-fairness
 ---
@@ -11,6 +12,8 @@ broader: bias-fairness
 # Dataset bias and under/over-representation
 
 `https://taxonomy.eticas.ai/risk/dataset-bias`
+
+<span class="badge badge-established">established</span>
 
 Training or evaluation data that does not adequately represent all relevant population groups, leading to systematic performance differences or exclusion of certain groups.
 

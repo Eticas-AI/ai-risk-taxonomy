@@ -4,6 +4,7 @@ title: "Prompt injection"
 id: prompt-injection
 uri: https://taxonomy.eticas.ai/risk/prompt-injection
 type: subcategory
+maturity: established
 scope: LLM
 broader: security-misuse
 ---
@@ -11,6 +12,8 @@ broader: security-misuse
 # Prompt injection
 
 `https://taxonomy.eticas.ai/risk/prompt-injection`
+
+<span class="badge badge-established">established</span>
 
 Malicious inputs designed to subvert system intent by injecting instructions that override the system prompt, leading to harmful, deceptive, or unauthorized outputs.
 
