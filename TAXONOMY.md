@@ -33,7 +33,8 @@ Each concept carries the following metadata:
 | `definition` | Prose definition |
 | `scope` | Applicability: `ADM`, `LLM`, or `ALL` |
 | `inclusion` | Whether this category is part of every audit: `required` or `audit-dependent` |
-| `maturity` | How developed the category is: `established`, `developing`, or `provisional` |
+| `maturity` | How developed the category is: `established`, `developing`, `provisional`, or `proposed` |
+| `perspective` | Which client concern the category addresses: `rights & ethics`, `technical soundness`, `governance & compliance`, or `operational viability` |
 | `lifecycle_stages` | Where in the AI lifecycle this risk manifests: `pre-processing`, `in-processing`, `post-processing` |
 | `mappings` | External equivalences (see Alignment section below) |
 
@@ -41,7 +42,7 @@ Each concept carries the following metadata:
 
 ## Category classification
 
-Each risk category is classified along two independent dimensions: **inclusion** (whether it is part of every audit) and **maturity** (how developed the category's definitions and methods are).
+Each risk category is classified along three independent dimensions: **inclusion** (whether it is part of every audit), **maturity** (how developed the category is), and **perspective** (which client concern it addresses).
 
 ### Inclusion: required vs. audit-dependent
 
@@ -57,23 +58,37 @@ Each risk category is classified along two independent dimensions: **inclusion**
 
 **Provisional** — Recognised as important, but definitions may change, subcategories are incomplete, and assessment methods are not yet proven. Findings referencing provisional categories should note the provisional status.
 
+**Proposed** — Suggested but not yet validated by the team. Included in the taxonomy to show how the category would integrate. Definitions, subcategories, and scope are subject to discussion.
+
+### Perspective: which client concern the category addresses
+
+**Rights & ethics** — Does the system respect people's rights and treat them fairly?
+
+**Technical soundness** — Does the system work correctly and safely?
+
+**Governance & compliance** — Is the system properly managed and legally compliant?
+
+**Operational viability** — Will the system actually deliver value in context?
+
 ### Current classification
 
-| Category | Inclusion | Maturity |
-|----------|-----------|----------|
-| Bias & Fairness | required | established |
-| Privacy & Confidentiality | required | established |
-| Reliability | required | established |
-| Governance | required | established |
-| Security & Misuse | required | established |
-| Transparency & Explainability | required | established |
-| Environmental Impact | audit-dependent | established |
-| Responsibility & Redress | audit-dependent | developing |
-| Autonomy & Human Agency | audit-dependent | provisional |
-| Agentic Risks | audit-dependent | provisional |
-| Manipulation & Misinformation | audit-dependent | provisional |
+| Category | Inclusion | Maturity | Perspective |
+|----------|-----------|----------|-------------|
+| Bias & Fairness | required | established | rights & ethics |
+| Privacy & Confidentiality | required | established | rights & ethics |
+| Reliability | required | established | technical soundness |
+| Governance | required | established | governance & compliance |
+| Security & Misuse | required | established | technical soundness |
+| Transparency & Explainability | required | established | governance & compliance |
+| Environmental Impact | audit-dependent | established | technical soundness |
+| Responsibility & Redress | audit-dependent | developing | rights & ethics |
+| Autonomy & Human Agency | audit-dependent | provisional | rights & ethics |
+| Agentic Risks | audit-dependent | provisional | technical soundness |
+| Manipulation & Misinformation | audit-dependent | provisional | rights & ethics |
+| Resilience | audit-dependent | proposed | operational viability |
+| Integration Readiness | audit-dependent | proposed | operational viability |
 
-Both dimensions can change independently. An audit-dependent category can be promoted to required as practice evolves. A provisional category becomes developing and then established as definitions stabilise and assessment methods are tested. These are team decisions documented in the changelog.
+All three dimensions can change independently. An audit-dependent category can be promoted to required as practice evolves. A proposed category becomes provisional once validated by the team, then developing and established as methods mature. These are team decisions documented in the changelog.
 
 ---
 
@@ -163,21 +178,7 @@ The risk that an AI system is exposed to vulnerabilities, attacks, or misuse tha
 - **Incident response gaps** — Insufficient detection, logging, or response capabilities
 - **Misuse beyond intended purpose** — Use of the system for purposes it was not designed for
 
-### Audit-dependent categories (established)
-
-These categories are assessed where relevant to the audit scope.
-
-#### 6. Environmental Impact
-`https://taxonomy.eticas.ai/risk/environmental-impact`
-
-The risk that an AI system's development, deployment, or use causes negative environmental effects, such as excessive energy or water consumption, carbon emissions, or unsustainable use of hardware and resources. This includes hidden impacts across the system's lifecycle, from model training to long-term operation.
-
-**Subcategories:**
-- **Inference-time energy consumption** — High energy use during deployment
-- **Training resource consumption** — Significant carbon emissions from model training
-- **Hardware efficiency** — Poor hardware utilisation increasing costs and environmental impact
-
-#### 7. Transparency & Explainability
+#### 6. Transparency & Explainability
 `https://taxonomy.eticas.ai/risk/transparency-explainability`
 
 The risk that stakeholders cannot understand how an AI system works, what it does, or why it produces specific outputs. Lack of transparency undermines informed consent, impedes oversight, and erodes trust.
@@ -188,7 +189,20 @@ The risk that stakeholders cannot understand how an AI system works, what it doe
 - **Disclosure of AI interaction** — Users interacting with AI under the assumption it is human
 - **Model card completeness** — Incomplete documentation of model purpose, performance, or limitations
 - **Prompt transparency** (LLM) — Inconsistent outputs to semantically similar inputs reducing trust
-- **Self-consistency and stability** — Service degradation for specific user groups or contexts
+
+### Audit-dependent categories
+
+These categories are assessed based on engagement scope and system type.
+
+#### 7. Environmental Impact
+`https://taxonomy.eticas.ai/risk/environmental-impact`
+
+The risk that an AI system's development, deployment, or use causes negative environmental effects, such as excessive energy or water consumption, carbon emissions, or unsustainable use of hardware and resources. This includes hidden impacts across the system's lifecycle, from model training to long-term operation.
+
+**Subcategories:**
+- **Inference-time energy consumption** — High energy use during deployment
+- **Training resource consumption** — Significant carbon emissions from model training
+- **Hardware efficiency** — Poor hardware utilisation increasing costs and environmental impact
 
 #### 8. Responsibility & Redress
 `https://taxonomy.eticas.ai/risk/responsibility-redress`
@@ -199,10 +213,6 @@ The risk that individuals affected by AI-driven decisions have no effective mean
 - **Absence of appeal mechanisms**
 - **Unclear remediation procedures**
 - **Ineffective communication with affected parties**
-
-### Audit-dependent categories (provisional)
-
-These categories are recognised as important but definitions and assessment methods are still under development.
 
 #### 9. Autonomy & Human Agency
 `https://taxonomy.eticas.ai/risk/autonomy`
@@ -218,6 +228,34 @@ The risk that AI systems operating with a degree of autonomy — planning, execu
 `https://taxonomy.eticas.ai/risk/manipulation-misinformation`
 
 The risk that AI systems are used — intentionally or through design flaws — to deceive, manipulate, or mislead individuals or populations. This includes generation of disinformation at scale, deepfakes, subliminal manipulation, and pollution of the information ecosystem.
+
+### Proposed categories
+
+These categories have been suggested but not yet validated by the team. They are included to show how they would integrate into the taxonomy.
+
+#### 12. Resilience
+`https://taxonomy.eticas.ai/risk/resilience`
+
+The risk that an AI system cannot absorb disruption, degrade gracefully, or recover when faced with adverse events, attacks, infrastructure failures, or environmental changes. This goes beyond reliability (consistent performance under normal conditions) and robustness (performance under varied conditions) to address what happens when the system is genuinely disrupted and must recover or continue operating in degraded mode. Particularly critical for AI deployed in conflict zones, humanitarian operations, or critical infrastructure.
+
+**Subcategories:**
+- **Graceful degradation** — Absence of defined degradation pathways for partial function under component failure
+- **Edge and offline operability** — System inability to function without continuous cloud access or connectivity
+- **Recovery capability** — Lack of tested recovery procedures or rollback mechanisms
+- **Infrastructure dependency** — Unmapped dependencies on external infrastructure whose failure would disable the system
+- **Contextual and ethical resilience** — Absence of safeguards against function creep, weaponisation, or repurposing against served populations
+
+#### 13. Integration Readiness
+`https://taxonomy.eticas.ai/risk/integration-readiness`
+
+The risk that an AI system fails to deliver value not because of model performance issues but because it does not fit the organisational, technical, or human context into which it is deployed. This includes interoperability failures with existing systems, insufficient organisational capacity to absorb the technology, workflow incompatibility, and lack of sustainable maintenance capability.
+
+**Subcategories:**
+- **Organisational readiness** — Insufficient governance maturity, leadership engagement, change management, or staff competency
+- **Technical interoperability** — Inability to integrate with existing infrastructure, legacy systems, or data standards
+- **Workflow compatibility** — System outputs or interfaces that don't fit existing human workflows, causing alert fatigue or abandonment
+- **Deployment sustainability** — Lack of capacity for ongoing operation, maintenance, and monitoring after deployment
+- **Institutional absorptive capacity** — Broader context lacking foundational capabilities (infrastructure, literacy, regulatory frameworks) for viable AI deployment
 
 ---
 
