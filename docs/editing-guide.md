@@ -19,13 +19,13 @@ The key safety feature: **you never edit the live version directly.** You make c
 | `type` | `category`, `subcategory` |
 | `scope` | `ALL`, `ADM`, `LLM` |
 | `inclusion` | `required`, `audit-dependent` |
-| `maturity` | `established`, `developing`, `provisional` |
+| `maturity` | `established`, `developing`, `provisional`, `proposed` |
 | `perspective` | `rights & ethics`, `technical soundness`, `governance & compliance`, `operational viability` |
 | `lifecycle_stages` | `pre-processing`, `in-processing`, `post-processing` |
 
 ### Parent category ids
 
-`bias-fairness`, `privacy-confidentiality`, `reliability`, `governance`, `security-misuse`, `environmental-impact`, `transparency-explainability`, `responsibility-redress`, `autonomy`, `agentic-risks`, `manipulation-misinformation`
+`bias-fairness`, `privacy-confidentiality`, `reliability`, `governance`, `security-misuse`, `environmental-impact`, `transparency-explainability`, `responsibility-redress`, `autonomy`, `agentic-risks`, `manipulation-misinformation`, `resilience`, `integration-readiness`
 
 ### The golden rules
 

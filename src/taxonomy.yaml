@@ -1178,3 +1178,204 @@ concepts:
         target_id: "information-integrity"
         target_label: "Information Integrity"
         relation: closeMatch
+
+  # ============================================================
+  # 12. RESILIENCE (proposed)
+  # ============================================================
+
+  - id: resilience
+    type: category
+    label: "Resilience"
+    alt_labels:
+      - "Operational resilience"
+      - "System resilience"
+    definition: >
+      The risk that an AI system cannot absorb disruption, degrade
+      gracefully, or recover when faced with adverse events, attacks,
+      infrastructure failures, or environmental changes. This goes
+      beyond reliability (consistent performance under normal
+      conditions) and robustness (performance under varied conditions)
+      to address what happens when the system is genuinely disrupted
+      and must recover or continue operating in degraded mode.
+      Particularly critical for AI deployed in conflict zones,
+      humanitarian operations, or critical infrastructure.
+    scope: ALL
+    lifecycle_stages: [post-processing]
+    inclusion: audit-dependent
+    maturity: proposed
+    perspective: "operational viability"
+    mappings:
+      - framework: nist_rmf
+        target_id: "secure-resilient"
+        target_label: "Secure & Resilient"
+        relation: broadMatch
+      - framework: eu_ai_act
+        target_id: "article-15-4"
+        target_label: "Article 15(4) — Resilience regarding errors, faults or inconsistencies"
+        relation: broadMatch
+
+  - id: graceful-degradation
+    type: subcategory
+    broader: resilience
+    maturity: proposed
+    label: "Graceful degradation"
+    definition: >
+      Absence of defined degradation pathways that allow the system
+      to maintain partial function when components fail, connectivity
+      is lost, or resources are constrained.
+    scope: ALL
+    lifecycle_stages: [post-processing]
+
+  - id: edge-offline-operability
+    type: subcategory
+    broader: resilience
+    maturity: proposed
+    label: "Edge and offline operability"
+    definition: >
+      System inability to function without continuous cloud access
+      or network connectivity, creating single points of failure in
+      environments with unreliable infrastructure.
+    scope: ALL
+    lifecycle_stages: [post-processing]
+
+  - id: recovery-capability
+    type: subcategory
+    broader: resilience
+    maturity: proposed
+    label: "Recovery capability"
+    definition: >
+      Lack of tested recovery procedures, rollback mechanisms, or
+      recovery time objectives for restoring system function after
+      disruption.
+    scope: ALL
+    lifecycle_stages: [post-processing]
+
+  - id: infrastructure-dependency
+    type: subcategory
+    broader: resilience
+    maturity: proposed
+    label: "Infrastructure dependency"
+    definition: >
+      Unmapped or unmitigated dependencies on external
+      infrastructure (power, connectivity, cloud services, third-party
+      APIs) whose failure would disable the system.
+    scope: ALL
+    lifecycle_stages: [pre-processing, post-processing]
+
+  - id: contextual-resilience
+    type: subcategory
+    broader: resilience
+    maturity: proposed
+    label: "Contextual and ethical resilience"
+    definition: >
+      Absence of safeguards against function creep, weaponisation,
+      or repurposing of the system against the populations it was
+      designed to serve. Includes adequacy of consent mechanisms
+      under power asymmetries and protection of beneficiary data
+      in humanitarian or conflict contexts.
+    scope: ALL
+    lifecycle_stages: [post-processing]
+
+  # ============================================================
+  # 13. INTEGRATION READINESS (proposed)
+  # ============================================================
+
+  - id: integration-readiness
+    type: category
+    label: "Integration Readiness"
+    alt_labels:
+      - "Operational risk"
+      - "Deployment readiness"
+      - "Sociotechnical fit"
+    definition: >
+      The risk that an AI system fails to deliver value not because
+      of model performance issues but because it does not fit the
+      organisational, technical, or human context into which it is
+      deployed. This includes interoperability failures with existing
+      systems, insufficient organisational capacity to absorb the
+      technology, workflow incompatibility, and lack of sustainable
+      maintenance capability. Between 70 and 85% of AI initiatives
+      fail to meet their objectives, primarily due to these
+      integration factors rather than model quality.
+    scope: ALL
+    lifecycle_stages: [pre-processing, post-processing]
+    inclusion: audit-dependent
+    maturity: proposed
+    perspective: "operational viability"
+    mappings:
+      - framework: nist_rmf
+        target_id: "map"
+        target_label: "MAP function — context and deployment environment"
+        relation: relatedMatch
+      - framework: iso_42001
+        target_id: "A.10"
+        target_label: "Third-party and customer relationships"
+        relation: relatedMatch
+
+  - id: organisational-readiness
+    type: subcategory
+    broader: integration-readiness
+    maturity: proposed
+    label: "Organisational readiness"
+    definition: >
+      The deploying organisation lacks the governance maturity,
+      leadership engagement, change management capacity, staff
+      competency, or cultural receptivity needed to absorb an
+      AI system into its operations.
+    scope: ALL
+    lifecycle_stages: [pre-processing]
+
+  - id: technical-interoperability
+    type: subcategory
+    broader: integration-readiness
+    maturity: proposed
+    label: "Technical interoperability"
+    definition: >
+      The AI system cannot integrate with existing infrastructure,
+      legacy systems, data pipelines, or standards (e.g., HL7 FHIR
+      in healthcare) required for it to function in the deployment
+      environment.
+    scope: ALL
+    lifecycle_stages: [pre-processing, post-processing]
+
+  - id: workflow-compatibility
+    type: subcategory
+    broader: integration-readiness
+    maturity: proposed
+    label: "Workflow compatibility"
+    definition: >
+      The system's outputs, alerts, or interfaces do not fit existing
+      human workflows, leading to alert fatigue, workarounds, or
+      abandonment. Includes inadequate end-user involvement in design
+      and testing, and poor context transferability from development
+      to deployment environment.
+    scope: ALL
+    lifecycle_stages: [post-processing]
+
+  - id: deployment-sustainability
+    type: subcategory
+    broader: integration-readiness
+    maturity: proposed
+    label: "Deployment sustainability"
+    definition: >
+      The organisation lacks the capacity for ongoing operation,
+      maintenance, monitoring, and improvement of the AI system after
+      initial deployment. Includes vendor lock-in risk, dependency on
+      external expertise, and unclear cost-effectiveness or value
+      proposition.
+    scope: ALL
+    lifecycle_stages: [post-processing]
+
+  - id: institutional-capacity
+    type: subcategory
+    broader: integration-readiness
+    maturity: proposed
+    label: "Institutional absorptive capacity"
+    definition: >
+      The broader institutional or societal context lacks foundational
+      capabilities (digital infrastructure, data literacy, regulatory
+      frameworks) needed before AI deployment is viable. Premature
+      deployment may reallocate scarce resources, exacerbate
+      inequality, or create technological dependency.
+    scope: ALL
+    lifecycle_stages: [pre-processing]

@@ -15,13 +15,11 @@ Each concept has a stable URI (e.g., `https://taxonomy.eticas.ai/risk/bias-fairn
 ## Documentation
 
 ### For Eticas team and contributors
-
 - **[Introduction for the team](docs/intro-for-team.md)** — what we're building and why it matters
 - **[Implementation details](docs/implementation.md)** — architecture, build pipeline, and technical decisions
 - **[How to edit the taxonomy](docs/editing-guide.md)** — step-by-step guides for adding and modifying entries
 
 ### External
-
 - **[Taxonomy description](TAXONOMY.md)** — full list of categories, subcategories, definitions, and external mappings
 - **[External framework alignment](docs/external-framework-alignment.md)** — how Eticas categories map to NIST, MIT, EU AI Act, OECD, ISO, and W3C DPV
 
@@ -38,6 +36,8 @@ Each concept has a stable URI (e.g., `https://taxonomy.eticas.ai/risk/bias-fairn
 - [Autonomy & Human Agency](risk/autonomy.md) — audit-dependent · provisional · rights & ethics
 - [Agentic Risks](risk/agentic-risks.md) — audit-dependent · provisional · technical soundness
 - [Manipulation & Misinformation](risk/manipulation-misinformation.md) — audit-dependent · provisional · rights & ethics
+- [Resilience](risk/resilience.md) — audit-dependent · proposed · operational viability
+- [Integration Readiness](risk/integration-readiness.md) — audit-dependent · proposed · operational viability
 
 ## Outputs
 

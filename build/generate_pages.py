@@ -84,12 +84,18 @@ def generate_concept_page(concept, by_id, children, frameworks, config):
         lines.append(c["definition"].strip())
         lines.append("")
 
-    # Provisional notice
+    # Provisional/proposed notice
     if maturity == "provisional" and c["type"] == "category":
         lines.append("> **This category is provisional.** Definitions may change, subcategories are incomplete, and assessment methods are under development. Findings referencing this category should note its provisional status.")
         lines.append("")
     elif maturity == "provisional" and c["type"] == "subcategory":
         lines.append("> **This subcategory is provisional.** It has not yet been validated in a completed audit.")
+        lines.append("")
+    elif maturity == "proposed" and c["type"] == "category":
+        lines.append("> **This category has been proposed but not yet validated by the team.** It is included to show how it would integrate into the taxonomy. Definitions, subcategories, and scope are subject to discussion.")
+        lines.append("")
+    elif maturity == "proposed" and c["type"] == "subcategory":
+        lines.append("> **This subcategory has been proposed but not yet validated by the team.**")
         lines.append("")
 
     # Alt labels
