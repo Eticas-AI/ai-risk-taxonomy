@@ -132,6 +132,13 @@ def validate_taxonomy(path):
                         f'in the file. Check for typos.'
                     )
 
+            maturity = concept.get("maturity", "")
+            if maturity and maturity not in VALID_MATURITIES:
+                errors.append(
+                    f'{prefix}: Invalid maturity "{maturity}". '
+                    f'Must be "established", "developing", or "provisional".'
+                )
+
         # Lifecycle stages validation
         stages = concept.get("lifecycle_stages", [])
         if stages:

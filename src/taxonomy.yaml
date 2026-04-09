@@ -58,6 +58,7 @@ concepts:
   - id: dataset-bias
     type: subcategory
     broader: bias-fairness
+    maturity: established
     label: "Dataset bias and under/over-representation"
     definition: >
       Training or evaluation data that does not adequately represent
@@ -74,6 +75,7 @@ concepts:
   - id: proxy-discrimination
     type: subcategory
     broader: bias-fairness
+    maturity: established
     label: "Proxy discrimination through correlated features"
     definition: >
       Discrimination through features that correlate with protected
@@ -85,6 +87,7 @@ concepts:
   - id: intersectional-unfairness
     type: subcategory
     broader: bias-fairness
+    maturity: established
     label: "Intersectional unfairness"
     definition: >
       Compounded disadvantage affecting individuals at the intersection
@@ -96,6 +99,7 @@ concepts:
   - id: accessibility-barriers
     type: subcategory
     broader: bias-fairness
+    maturity: established
     label: "Accessibility barriers"
     definition: >
       System design that excludes or disadvantages people with
@@ -107,6 +111,7 @@ concepts:
   - id: geographic-cultural-language-skew
     type: subcategory
     broader: bias-fairness
+    maturity: established
     label: "Geographic, cultural, or language skew"
     definition: >
       Systematic performance differences across geographies, cultures,
@@ -118,6 +123,7 @@ concepts:
   - id: feedback-loops
     type: subcategory
     broader: bias-fairness
+    maturity: established
     label: "Feedback loops reinforcing inequality"
     definition: >
       System outputs that, when fed back into the system or its
@@ -128,6 +134,7 @@ concepts:
   - id: quality-of-service-disparity
     type: subcategory
     broader: bias-fairness
+    maturity: provisional
     label: "Quality of service disparity across groups"
     alt_labels:
       - "Quality of service"
@@ -141,6 +148,7 @@ concepts:
   - id: allocation-of-opportunity
     type: subcategory
     broader: bias-fairness
+    maturity: provisional
     label: "Unequal allocation of opportunity"
     alt_labels:
       - "Allocation of opportunity"
@@ -155,6 +163,7 @@ concepts:
   - id: stereotyping-demeaning-content
     type: subcategory
     broader: bias-fairness
+    maturity: provisional
     label: "Stereotyping and demeaning content"
     alt_labels:
       - "Minimization of stereotyping"
@@ -174,6 +183,7 @@ concepts:
   - id: harmful-content-toxicity
     type: subcategory
     broader: bias-fairness
+    maturity: developing
     label: "Harmful content and toxicity"
     alt_labels:
       - "Toxicity"
@@ -197,6 +207,7 @@ concepts:
   - id: sentiment-fairness
     type: subcategory
     broader: bias-fairness
+    maturity: developing
     label: "Sentiment fairness across groups"
     definition: >
       Unequal emotional tone in system outputs across demographic
@@ -209,6 +220,7 @@ concepts:
   - id: performance-equity
     type: subcategory
     broader: bias-fairness
+    maturity: developing
     label: "Performance equity across populations"
     alt_labels:
       - "Group-wise error rate"
@@ -271,6 +283,7 @@ concepts:
   - id: unlawful-data-processing
     type: subcategory
     broader: privacy-confidentiality
+    maturity: established
     label: "Unlawful collection or processing of personal data"
     definition: >
       Collection, storage, or processing of personal data without
@@ -282,6 +295,7 @@ concepts:
   - id: re-identification
     type: subcategory
     broader: privacy-confidentiality
+    maturity: established
     label: "Re-identification of anonymised data"
     definition: >
       The possibility that anonymised or pseudonymised data can be
@@ -293,6 +307,7 @@ concepts:
   - id: function-creep
     type: subcategory
     broader: privacy-confidentiality
+    maturity: established
     label: "Function creep"
     definition: >
       Repurposing of personal data beyond the original intent or
@@ -304,6 +319,7 @@ concepts:
   - id: biometric-surveillance
     type: subcategory
     broader: privacy-confidentiality
+    maturity: established
     label: "Biometric surveillance"
     definition: >
       Mass collection and processing of biometric data (face, voice,
@@ -314,6 +330,7 @@ concepts:
   - id: emotion-inference-profiling
     type: subcategory
     broader: privacy-confidentiality
+    maturity: established
     label: "Emotion inference or sensitive attribute profiling"
     definition: >
       Inference of emotional states, political opinions, sexual
@@ -325,6 +342,7 @@ concepts:
   - id: weak-data-controls
     type: subcategory
     broader: privacy-confidentiality
+    maturity: established
     label: "Weak data retention, erasure, and access controls"
     definition: >
       Insufficient policies or technical measures for data retention
@@ -336,6 +354,7 @@ concepts:
   - id: pii-leakage
     type: subcategory
     broader: privacy-confidentiality
+    maturity: established
     label: "PII leakage through model outputs"
     alt_labels:
       - "PII leakage rate"
@@ -351,6 +370,7 @@ concepts:
   - id: membership-inference
     type: subcategory
     broader: privacy-confidentiality
+    maturity: provisional
     label: "Membership inference risk"
     definition: >
       The ability to determine whether specific individuals' data was
@@ -402,6 +422,7 @@ concepts:
   - id: hallucination
     type: subcategory
     broader: reliability
+    maturity: established
     label: "Hallucination and fabricated outputs"
     alt_labels:
       - "Confabulation"
@@ -422,6 +443,7 @@ concepts:
   - id: output-inconsistency
     type: subcategory
     broader: reliability
+    maturity: established
     label: "Output inconsistency"
     definition: >
       Inconsistent results across similar inputs and contexts,
@@ -432,6 +454,7 @@ concepts:
   - id: output-drift
     type: subcategory
     broader: reliability
+    maturity: established
     label: "Output drift over time"
     definition: >
       Degradation of output quality or accuracy as data distributions,
@@ -442,6 +465,7 @@ concepts:
   - id: out-of-distribution-robustness
     type: subcategory
     broader: reliability
+    maturity: provisional
     label: "Out-of-distribution robustness"
     definition: >
       Unpredictable behaviour or failure when the system is exposed to
@@ -453,6 +477,7 @@ concepts:
   - id: failure-remediation-gaps
     type: subcategory
     broader: reliability
+    maturity: provisional
     label: "Failure and remediation gaps"
     alt_labels:
       - "Failures and remediations"
@@ -467,6 +492,7 @@ concepts:
   - id: monitoring-evaluation-gaps
     type: subcategory
     broader: reliability
+    maturity: provisional
     label: "Monitoring and evaluation gaps"
     alt_labels:
       - "Monitoring, feedback, evaluation"
@@ -523,6 +549,7 @@ concepts:
   - id: unclear-responsibilities
     type: subcategory
     broader: governance
+    maturity: established
     label: "Unclear responsibilities and accountability gaps"
     definition: >
       Missing or ambiguous assignment of roles and responsibilities
@@ -534,6 +561,7 @@ concepts:
   - id: poor-documentation
     type: subcategory
     broader: governance
+    maturity: established
     label: "Poor documentation"
     definition: >
       Incomplete, outdated, or absent documentation of system
@@ -545,6 +573,7 @@ concepts:
   - id: limited-auditability
     type: subcategory
     broader: governance
+    maturity: established
     label: "Limited auditability"
     definition: >
       Insufficient logging, versioning, or traceability for
@@ -555,6 +584,7 @@ concepts:
   - id: regulatory-non-compliance
     type: subcategory
     broader: governance
+    maturity: established
     label: "Regulatory non-compliance"
     definition: >
       Failure to align with applicable legal, ethical, or
@@ -565,6 +595,7 @@ concepts:
   - id: lack-of-change-management
     type: subcategory
     broader: governance
+    maturity: established
     label: "Lack of change management"
     definition: >
       Absence of controlled processes for system modifications,
@@ -575,6 +606,7 @@ concepts:
   - id: oversight-of-adverse-impacts
     type: subcategory
     broader: governance
+    maturity: provisional
     label: "Oversight of significant adverse impacts"
     definition: >
       Missing processes for identifying, escalating, and responding
@@ -587,6 +619,7 @@ concepts:
   - id: fitness-for-purpose
     type: subcategory
     broader: governance
+    maturity: provisional
     label: "Fitness for purpose"
     definition: >
       System not validated against the problem it is intended to
@@ -599,6 +632,7 @@ concepts:
   - id: data-governance
     type: subcategory
     broader: governance
+    maturity: provisional
     label: "Data governance"
     definition: >
       Inadequate labelling, tagging, approval, or appropriateness
@@ -611,6 +645,7 @@ concepts:
   - id: human-oversight-control
     type: subcategory
     broader: governance
+    maturity: provisional
     label: "Human oversight and control"
     definition: >
       Lack of defined intervention points, override capabilities, or
@@ -623,6 +658,7 @@ concepts:
   - id: decision-traceability
     type: subcategory
     broader: governance
+    maturity: provisional
     label: "Decision traceability"
     definition: >
       Inability to trace decisions made or influenced by the AI
@@ -635,6 +671,7 @@ concepts:
   - id: input-output-logging
     type: subcategory
     broader: governance
+    maturity: provisional
     label: "Critical input/output logging"
     definition: >
       Failure to log inputs and outputs systematically, hindering
@@ -648,6 +685,7 @@ concepts:
   - id: responsible-actor-attribution
     type: subcategory
     broader: governance
+    maturity: provisional
     label: "Responsible actor attribution"
     definition: >
       Unclear or undocumented roles of developers, deployers, or
@@ -660,6 +698,7 @@ concepts:
   - id: task-success
     type: subcategory
     broader: governance
+    maturity: provisional
     label: "Task success"
     definition: >
       Low or uneven task success rates, particularly across
@@ -720,6 +759,7 @@ concepts:
   - id: adversarial-attacks
     type: subcategory
     broader: security-misuse
+    maturity: established
     label: "Adversarial attacks"
     definition: >
       Evasion, poisoning, and extraction attacks designed to
@@ -731,6 +771,7 @@ concepts:
   - id: prompt-injection
     type: subcategory
     broader: security-misuse
+    maturity: established
     label: "Prompt injection"
     alt_labels:
       - "Prompt injection protection"
@@ -750,6 +791,7 @@ concepts:
   - id: jailbreaking
     type: subcategory
     broader: security-misuse
+    maturity: established
     label: "Jailbreaking"
     alt_labels:
       - "Jailbreakability"
@@ -763,6 +805,7 @@ concepts:
   - id: unauthorized-access
     type: subcategory
     broader: security-misuse
+    maturity: established
     label: "Unauthorized access"
     definition: >
       Exploitation of access control weaknesses to gain unauthorized
@@ -773,6 +816,7 @@ concepts:
   - id: supply-chain-vulnerabilities
     type: subcategory
     broader: security-misuse
+    maturity: established
     label: "Supply-chain vulnerabilities"
     definition: >
       Risks introduced through third-party components, pre-trained
@@ -784,6 +828,7 @@ concepts:
   - id: incident-response-gaps
     type: subcategory
     broader: security-misuse
+    maturity: established
     label: "Incident response gaps"
     definition: >
       Insufficient detection, logging, escalation, or response
@@ -794,6 +839,7 @@ concepts:
   - id: misuse-beyond-intended-purpose
     type: subcategory
     broader: security-misuse
+    maturity: developing
     label: "Misuse beyond intended purpose"
     definition: >
       Use of the system for purposes it was not designed for,
@@ -839,6 +885,7 @@ concepts:
   - id: inference-energy-consumption
     type: subcategory
     broader: environmental-impact
+    maturity: provisional
     label: "Inference-time energy consumption"
     definition: >
       High energy use during deployment and inference, increasing
@@ -850,6 +897,7 @@ concepts:
   - id: training-resource-consumption
     type: subcategory
     broader: environmental-impact
+    maturity: provisional
     label: "Training resource consumption"
     definition: >
       Significant carbon emissions, energy use, and water consumption
@@ -862,6 +910,7 @@ concepts:
   - id: hardware-efficiency
     type: subcategory
     broader: environmental-impact
+    maturity: provisional
     label: "Hardware efficiency"
     definition: >
       Poor hardware utilisation increasing costs, environmental
@@ -914,6 +963,7 @@ concepts:
   - id: system-explainability
     type: subcategory
     broader: transparency-explainability
+    maturity: provisional
     label: "AI system explainability"
     definition: >
       Stakeholders misinterpret or misunderstand the intended purpose
@@ -926,6 +976,7 @@ concepts:
   - id: stakeholder-communication
     type: subcategory
     broader: transparency-explainability
+    maturity: provisional
     label: "Communication to stakeholders"
     alt_labels:
       - "Communication to relevant interested parties"
@@ -939,6 +990,7 @@ concepts:
   - id: ai-interaction-disclosure
     type: subcategory
     broader: transparency-explainability
+    maturity: provisional
     label: "Disclosure of AI interaction"
     definition: >
       Users interacting with an AI system under the assumption that
@@ -950,6 +1002,7 @@ concepts:
   - id: model-card-completeness
     type: subcategory
     broader: transparency-explainability
+    maturity: provisional
     label: "Model card completeness"
     definition: >
       Incomplete or outdated documentation of model purpose,
@@ -962,6 +1015,7 @@ concepts:
   - id: prompt-transparency
     type: subcategory
     broader: transparency-explainability
+    maturity: provisional
     label: "Prompt transparency"
     definition: >
       Inconsistent outputs to semantically similar inputs that
@@ -1005,6 +1059,7 @@ concepts:
   - id: absence-of-appeal
     type: subcategory
     broader: responsibility-redress
+    maturity: developing
     label: "Absence of appeal mechanisms"
     definition: >
       No accessible process for individuals to challenge or appeal
@@ -1015,6 +1070,7 @@ concepts:
   - id: unclear-remediation
     type: subcategory
     broader: responsibility-redress
+    maturity: developing
     label: "Unclear remediation procedures"
     definition: >
       Absence of defined processes for correcting harms caused by AI
@@ -1025,6 +1081,7 @@ concepts:
   - id: ineffective-communication
     type: subcategory
     broader: responsibility-redress
+    maturity: developing
     label: "Ineffective communication with affected parties"
     definition: >
       Failure to inform individuals about how they have been affected

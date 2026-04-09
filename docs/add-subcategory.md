@@ -30,6 +30,7 @@ Copy the block below and paste it after the last subcategory. Then replace every
   - id: YOUR-ID-HERE
     type: subcategory
     broader: PARENT-CATEGORY-ID
+    maturity: provisional
     label: "YOUR LABEL HERE"
     definition: >
       YOUR DEFINITION HERE. This can be multiple sentences.
@@ -45,6 +46,8 @@ Copy the block below and paste it after the last subcategory. Then replace every
 - Bad: `Automation Bias`, `data_drift`, `model card gaps`
 
 **`broader`** — The `id` of the parent category. Copy it exactly from [the list of valid category ids](editing-guide.md#parent-category-ids).
+
+**`maturity`** — How validated this subcategory is. New subcategories should always be `provisional`. It gets changed to `developing` after being used in a real audit, and to `established` once it's part of standard practice. Leave it as `provisional` — the team will promote it later.
 
 **`label`** — The human-readable name. Always wrap in double quotes.
 - Example: `"Automation bias"`

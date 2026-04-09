@@ -65,15 +65,14 @@ def generate_concept_page(concept, by_id, children, frameworks, config):
     lines.append("")
 
     # Badges (HTML spans — styled by Jekyll, plain text fallback on GitHub)
-    if c["type"] == "category":
-        badges = []
-        if inclusion:
-            badges.append(f'<span class="badge badge-{inclusion}">{inclusion}</span>')
-        if maturity:
-            badges.append(f'<span class="badge badge-{maturity}">{maturity}</span>')
-        if badges:
-            lines.append(" ".join(badges))
-            lines.append("")
+    badges = []
+    if c["type"] == "category" and inclusion:
+        badges.append(f'<span class="badge badge-{inclusion}">{inclusion}</span>')
+    if maturity:
+        badges.append(f'<span class="badge badge-{maturity}">{maturity}</span>')
+    if badges:
+        lines.append(" ".join(badges))
+        lines.append("")
 
     # Definition
     if "definition" in c:
@@ -83,6 +82,9 @@ def generate_concept_page(concept, by_id, children, frameworks, config):
     # Provisional notice
     if maturity == "provisional" and c["type"] == "category":
         lines.append("> **This category is provisional.** Definitions may change, subcategories are incomplete, and assessment methods are under development. Findings referencing this category should note its provisional status.")
+        lines.append("")
+    elif maturity == "provisional" and c["type"] == "subcategory":
+        lines.append("> **This subcategory is provisional.** It has not yet been validated in a completed audit.")
         lines.append("")
 
     # Alt labels
