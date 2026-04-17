@@ -64,6 +64,7 @@ The v0.1.0 Manipulation & Misinformation category had no subcategories. Now that
 
 ### Open items
 
+- **Public/private layer for SKOS files**: if the repo is made private, filtered SKOS files (categories + sub-groups only) should be generated and served alongside the public pages on GitHub Pages (`risk/taxonomy.ttl`, `risk/taxonomy.jsonld`). The `dist/` folder in the private repo keeps the full internal version with all subcategories. Same build pipeline, two outputs: `generate_pages.py` already filters what pages are generated; the SKOS generation in `convert.py` needs a similar filter that produces a `taxonomy-public.ttl` with only category and subgroup concepts. The public SKOS files are the ones that would eventually be served via content negotiation on `taxonomy.eticas.ai`.
 - **References field**: agreed to add a `references` field for key papers, benchmarks, and regulatory sources per concept. YAML structure designed but not yet populated. Will be filled as part of the coordination with the methodology team.
 - **Automated literature scanning**: agreed in principle to implement a monthly GitHub Action that surfaces candidate references as Issues for team review. To be implemented once the references field is populated.
 - **External framework alignment document**: needs updating to reflect the 10-category structure and the new sub-groups. The W3C DPV Risk Extension's organisational and societal risk sections should be explored for mapping to Organisational Readiness and Resilience subcategories.
