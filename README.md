@@ -3,7 +3,7 @@
 A unified, machine-readable AI risk taxonomy for use across [Eticas](https://eticas.ai) audit methodologies, assessment frameworks, and reporting outputs.
 
 **Namespace:** `https://taxonomy.eticas.ai/risk/`  
-**Version:** 0.1.0  
+**Version:** 0.2.0  
 **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## About
@@ -18,6 +18,7 @@ Each concept has a stable URI (e.g., `https://taxonomy.eticas.ai/risk/bias-fairn
 - **[Introduction for the team](docs/intro-for-team.md)** — what we're building and why it matters
 - **[Implementation details](docs/implementation.md)** — architecture, build pipeline, and technical decisions
 - **[How to edit the taxonomy](docs/editing-guide.md)** — step-by-step guides for adding and modifying entries
+- **[Decision tracker](TRACKER.md)** — structural decisions, rationale, and open items
 
 ### External
 - **[Taxonomy description](TAXONOMY.md)** — full list of categories, subcategories, definitions, and external mappings
@@ -25,19 +26,16 @@ Each concept has a stable URI (e.g., `https://taxonomy.eticas.ai/risk/bias-fairn
 
 ## Risk categories
 
-- [Bias & Fairness](risk/bias-fairness.md) — required · established · rights & ethics
-- [Privacy & Confidentiality](risk/privacy-confidentiality.md) — required · established · rights & ethics
-- [Reliability](risk/reliability.md) — required · established · technical soundness
-- [Governance](risk/governance.md) — required · established · governance & compliance
-- [Security & Misuse](risk/security-misuse.md) — required · established · technical soundness
-- [Transparency & Explainability](risk/transparency-explainability.md) — required · established · governance & compliance
-- [Environmental Impact](risk/environmental-impact.md) — audit-dependent · established · technical soundness
-- [Responsibility & Redress](risk/responsibility-redress.md) — audit-dependent · developing · rights & ethics
-- [Autonomy & Human Agency](risk/autonomy.md) — audit-dependent · provisional · rights & ethics
-- [Agentic Risks](risk/agentic-risks.md) — audit-dependent · provisional · technical soundness
-- [Manipulation & Misinformation](risk/manipulation-misinformation.md) — audit-dependent · provisional · rights & ethics
-- [Resilience](risk/resilience.md) — audit-dependent · proposed · operational viability
-- [Integration Readiness](risk/integration-readiness.md) — audit-dependent · proposed · operational viability
+- [Bias & Fairness](risk/bias-fairness.md) — established
+- [Privacy & Confidentiality](risk/privacy-confidentiality.md) — established
+- [Reliability](risk/reliability.md) — established
+- [Governance](risk/governance.md) — established
+- [Security & Misuse](risk/security-misuse.md) — established
+- [Environmental Impact](risk/environmental-impact.md) — established
+- [Transparency & Explainability](risk/transparency-explainability.md) — established
+- [Incident Reporting & Redress](risk/incident-reporting-redress.md) — emerging
+- [Autonomy & Agency](risk/autonomy-agency.md) — emerging
+- [Organisational Readiness](risk/organisational-readiness.md) — emerging
 
 ## Outputs
 
@@ -57,6 +55,6 @@ See the **[editing guide](docs/editing-guide.md)** for step-by-step instructions
 ## How to cite
 
 ```
-Eticas. (2026). Eticas AI Risk Taxonomy (Version 0.1.0).
+Eticas. (2026). Eticas AI Risk Taxonomy (Version 0.2.0).
 https://taxonomy.eticas.ai/risk/
 ```

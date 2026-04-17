@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/output-inconsistency
 type: subcategory
 maturity: established
 scope: ALL
-broader: reliability
+broader: reliability-output-quality
 ---
 
 # Output inconsistency
@@ -19,5 +19,3 @@ Inconsistent results across similar inputs and contexts, undermining reproducibi
 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
-
-**Parent category:** [Reliability](reliability.md)

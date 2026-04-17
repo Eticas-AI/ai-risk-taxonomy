@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/adversarial-attacks
 type: subcategory
 maturity: established
 scope: ALL
-broader: security-misuse
+broader: security-ai-attacks
 ---
 
 # Adversarial attacks
@@ -19,5 +19,3 @@ Evasion, poisoning, and extraction attacks designed to manipulate system behavio
 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
-
-**Parent category:** [Security & Misuse](security-misuse.md)

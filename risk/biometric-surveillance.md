@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/biometric-surveillance
 type: subcategory
 maturity: established
 scope: ADM
-broader: privacy-confidentiality
+broader: privacy-collection-use
 ---
 
 # Biometric surveillance
@@ -19,5 +19,3 @@ Mass collection and processing of biometric data (face, voice, gait, fingerprint
 
 **Applies to:** ADM  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Privacy & Confidentiality](privacy-confidentiality.md)

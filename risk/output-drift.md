@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/output-drift
 type: subcategory
 maturity: established
 scope: ALL
-broader: reliability
+broader: reliability-output-quality
 ---
 
 # Output drift over time
@@ -19,5 +19,3 @@ Degradation of output quality or accuracy as data distributions, user behaviour,
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Reliability](reliability.md)

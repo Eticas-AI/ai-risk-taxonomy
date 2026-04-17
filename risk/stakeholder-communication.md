@@ -4,26 +4,24 @@ title: "Communication to stakeholders"
 id: stakeholder-communication
 uri: https://taxonomy.eticas.ai/risk/stakeholder-communication
 type: subcategory
-maturity: provisional
+maturity: emerging
 scope: ALL
-broader: transparency-explainability
+broader: transparency-communication
 ---
 
 # Communication to stakeholders
 
 `https://taxonomy.eticas.ai/risk/stakeholder-communication`
 
-**Maturity:** <span class="badge badge-provisional">provisional</span>
+**Maturity:** <span class="badge badge-emerging">emerging</span>
 
 Stakeholders not being made aware of AI system limitations, parameters, and settings that affect responsible use.
 
-> **This subcategory is provisional.** It has not yet been validated in a completed audit.
+> **This subcategory is emerging.** It has not yet been validated through established assessment methods.
 
 **Also known as:** Communication to relevant interested parties
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Transparency & Explainability](transparency-explainability.md)
 
 *Source: HRA project taxonomy*

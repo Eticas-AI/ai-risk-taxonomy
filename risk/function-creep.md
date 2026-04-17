@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/function-creep
 type: subcategory
 maturity: established
 scope: ALL
-broader: privacy-confidentiality
+broader: privacy-collection-use
 ---
 
 # Function creep
@@ -19,5 +19,3 @@ Repurposing of personal data beyond the original intent or consent scope, includ
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Privacy & Confidentiality](privacy-confidentiality.md)

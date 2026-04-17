@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/intersectional-unfairness
 type: subcategory
 maturity: established
 scope: ALL
-broader: bias-fairness
+broader: bias-performance-disparities
 ---
 
 # Intersectional unfairness
@@ -19,5 +19,3 @@ Compounded disadvantage affecting individuals at the intersection of multiple pr
 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
-
-**Parent category:** [Bias & Fairness](bias-fairness.md)

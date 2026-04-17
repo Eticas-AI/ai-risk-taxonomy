@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/supply-chain-vulnerabilities
 type: subcategory
 maturity: established
 scope: ALL
-broader: security-misuse
+broader: security-system
 ---
 
 # Supply-chain vulnerabilities
@@ -19,5 +19,3 @@ Risks introduced through third-party components, pre-trained models, data source
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing
-
-**Parent category:** [Security & Misuse](security-misuse.md)

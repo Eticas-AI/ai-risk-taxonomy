@@ -4,9 +4,7 @@ title: "Governance"
 id: governance
 uri: https://taxonomy.eticas.ai/risk/governance
 type: category
-inclusion: required
 maturity: established
-perspective: "governance & compliance"
 scope: ALL
 ---
 
@@ -14,7 +12,7 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/governance`
 
-**Inclusion:** <span class="badge badge-required">required</span> · **Maturity:** <span class="badge badge-established">established</span> · **Perspective:** <span class="badge badge-perspective">governance & compliance</span>
+**Maturity:** <span class="badge badge-established">established</span>
 
 The risk that an AI system lacks adequate structures, policies, or accountability mechanisms to oversee its design, deployment, and use. Weak governance can lead to unclear responsibilities, poor documentation, limited auditability, and failure to align with legal, ethical, or organizational standards.
 
@@ -23,28 +21,44 @@ The risk that an AI system lacks adequate structures, policies, or accountabilit
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing, Post Processing
 
-## Subcategories
+### Accountability
+
+Risks from unclear responsibility, attribution, and oversight of AI system impacts.
 
 - [Unclear responsibilities and accountability gaps](unclear-responsibilities.md)
+- [Responsible actor attribution](responsible-actor-attribution.md)
+- [Oversight of significant adverse impacts](oversight-of-adverse-impacts.md)
+
+### Documentation & auditability
+
+Risks from incomplete, inaccessible, or absent documentation and audit trails.
+
 - [Poor documentation](poor-documentation.md)
 - [Limited auditability](limited-auditability.md)
-- [Regulatory non-compliance](regulatory-non-compliance.md)
-- [Lack of change management](lack-of-change-management.md)
-- [Oversight of significant adverse impacts](oversight-of-adverse-impacts.md)
-- [Fitness for purpose](fitness-for-purpose.md)
-- [Data governance](data-governance.md)
-- [Human oversight and control](human-oversight-control.md)
 - [Decision traceability](decision-traceability.md)
 - [Critical input/output logging](input-output-logging.md)
-- [Responsible actor attribution](responsible-actor-attribution.md)
-- [Task success](task-success.md)
+
+### Compliance & process
+
+Risks from non-compliance with regulations, absence of change management, and lack of fitness validation.
+
+- [Regulatory non-compliance](regulatory-non-compliance.md)
+- [Lack of change management](lack-of-change-management.md)
+- [Fitness for purpose and task effectiveness](fitness-for-purpose.md)
+
+### Data & oversight
+
+Risks from inadequate data governance, insufficient human oversight, and unvalidated task performance.
+
+- [Data governance](data-governance.md)
+- [Human oversight and control](human-oversight-control.md)
 
 ## Mappings to external frameworks
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Governance failure | close match |
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Value Chain & Component Integration | related |
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Value Chain & Component Integration | related match |
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Accountable & Transparent | close match |
 | [OECD AI Principles](https://oecd.ai) | Accountability | close match |
 | [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/81230.html) | AI Policy, Internal Organisation, Resources | broad match |

@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/unauthorized-access
 type: subcategory
 maturity: established
 scope: ALL
-broader: security-misuse
+broader: security-system
 ---
 
 # Unauthorized access
@@ -19,5 +19,3 @@ Exploitation of access control weaknesses to gain unauthorized access to the sys
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Security & Misuse](security-misuse.md)

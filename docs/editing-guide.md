@@ -1,12 +1,12 @@
 # Editing the taxonomy
 
-This guide is for anyone who needs to add or change risk categories and subcategories. You don't need to install anything — everything is done through the GitHub website.
+This guide is for anyone who needs to add or change risk categories, sub-groups, and subcategories. You don't need to install anything — everything is done through the GitHub website.
 
 The key safety feature: **you never edit the live version directly.** You make changes on a copy (a "branch"), the system checks your changes automatically, and someone reviews before they go live. If you make a mistake, nothing breaks.
 
 ## How-to guides
 
-- **[Add a new subcategory](add-subcategory.md)** — the most common task. Add a new type of risk under an existing category.
+- **[Add a new subcategory](add-subcategory.md)** — the most common task. Add a new type of risk under an existing category or sub-group.
 - **[Add a new category](add-category.md)** — add a new top-level risk area.
 - **[Edit an existing entry](edit-existing.md)** — change a definition, add an alternative name, change the scope.
 
@@ -16,16 +16,18 @@ The key safety feature: **you never edit the live version directly.** You make c
 
 | Field | Valid values |
 |-------|------------|
-| `type` | `category`, `subcategory` |
+| `type` | `category`, `subgroup`, `subcategory` |
 | `scope` | `ALL`, `ADM`, `LLM` |
-| `inclusion` | `required`, `audit-dependent` |
-| `maturity` | `established`, `developing`, `provisional`, `proposed` |
+| `maturity` | `established`, `emerging` |
 | `perspective` | `rights & ethics`, `technical soundness`, `governance & compliance`, `operational viability` |
 | `lifecycle_stages` | `pre-processing`, `in-processing`, `post-processing` |
 
-### Parent category ids
+### Parent concept ids
 
-`bias-fairness`, `privacy-confidentiality`, `reliability`, `governance`, `security-misuse`, `environmental-impact`, `transparency-explainability`, `responsibility-redress`, `autonomy`, `agentic-risks`, `manipulation-misinformation`, `resilience`, `integration-readiness`
+**Categories:** `bias-fairness`, `privacy-confidentiality`, `reliability`, `governance`, `security-misuse`, `environmental-impact`, `transparency-explainability`, `incident-reporting-redress`, `autonomy-agency`, `organisational-readiness`
+
+**Sub-groups** (point your subcategory's `broader` to one of these if adding under a sub-group):
+See the relevant category page for the full list of sub-group ids.
 
 ### The golden rules
 

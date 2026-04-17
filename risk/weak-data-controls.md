@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/weak-data-controls
 type: subcategory
 maturity: established
 scope: ALL
-broader: privacy-confidentiality
+broader: privacy-data-protection
 ---
 
 # Weak data retention, erasure, and access controls
@@ -19,5 +19,3 @@ Insufficient policies or technical measures for data retention limits, secure de
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, Post Processing
-
-**Parent category:** [Privacy & Confidentiality](privacy-confidentiality.md)

@@ -1,1381 +1,1527 @@
-# Eticas AI Risk Taxonomy — Source of Truth
-# ==================================================
-# Edit this file to modify the taxonomy.
-# Run the build pipeline to regenerate outputs.
-# See docs/implementation.md for details.
-
 concepts:
-
-  # ============================================================
-  # 1. BIAS & FAIRNESS
-  # ============================================================
-
-  - id: bias-fairness
-    type: category
-    label: "Bias & Fairness"
-    alt_labels:
-      - "Fairness"
-      - "Bias & Discrimination"
-      - "Algorithmic fairness"
-    definition: >
-      The risk that an AI system produces outcomes that systematically
-      advantage or disadvantage individuals or groups based on protected
-      or sensitive attributes, leading to unequal treatment, reduced
-      accuracy, or unjust impacts. This includes biases introduced
-      through data, model design, or deployment context, and covers
-      both measurable disparities and perceived unfairness in
-      decision-making.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing, post-processing]
-    inclusion: required
-    maturity: established
-    perspective: "rights & ethics"
-    mappings:
-      - framework: mit
-        target_id: "domain-1"
-        target_label: "Discrimination & Toxicity"
-        relation: closeMatch
-      - framework: nist_600
-        target_id: "harmful-bias"
-        target_label: "Harmful Bias & Homogenization"
-        relation: closeMatch
-      - framework: nist_rmf
-        target_id: "fair"
-        target_label: "Fair with Harmful Bias Managed"
-        relation: closeMatch
-      - framework: oecd
-        target_id: "principle-1.2"
-        target_label: "Human rights, rule of law, fairness & privacy"
-        relation: broadMatch
-      - framework: dpv_ai
-        target_id: "AIBias"
-        target_label: "AI Bias"
-        relation: broadMatch
-      - framework: iso_42001
-        target_id: "A.8"
-        target_label: "Assessing impacts of AI systems"
-        relation: relatedMatch
-
-  - id: dataset-bias
-    type: subcategory
-    broader: bias-fairness
-    maturity: established
-    label: "Dataset bias and under/over-representation"
-    definition: >
-      Training or evaluation data that does not adequately represent
-      all relevant population groups, leading to systematic performance
-      differences or exclusion of certain groups.
-    scope: ALL
-    lifecycle_stages: [pre-processing]
-    mappings:
-      - framework: mit
-        target_id: "subdomain-1.1"
-        target_label: "Unfair discrimination & misrepresentation"
-        relation: closeMatch
-
-  - id: proxy-discrimination
-    type: subcategory
-    broader: bias-fairness
-    maturity: established
-    label: "Proxy discrimination through correlated features"
-    definition: >
-      Discrimination through features that correlate with protected
-      attributes (e.g., postcode as proxy for ethnicity), even when
-      protected attributes are not directly used.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-
-  - id: intersectional-unfairness
-    type: subcategory
-    broader: bias-fairness
-    maturity: established
-    label: "Intersectional unfairness"
-    definition: >
-      Compounded disadvantage affecting individuals at the intersection
-      of multiple protected characteristics (e.g., gender and ethnicity
-      together producing worse outcomes than either alone).
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-
-  - id: accessibility-barriers
-    type: subcategory
-    broader: bias-fairness
-    maturity: established
-    label: "Accessibility barriers"
-    definition: >
-      System design that excludes or disadvantages people with
-      disabilities, including inaccessible interfaces, outputs, or
-      interaction modes.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-
-  - id: geographic-cultural-language-skew
-    type: subcategory
-    broader: bias-fairness
-    maturity: established
-    label: "Geographic, cultural, or language skew"
-    definition: >
-      Systematic performance differences across geographies, cultures,
-      or languages, often resulting from training data that
-      overrepresents certain regions or linguistic traditions.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing, post-processing]
-
-  - id: feedback-loops
-    type: subcategory
-    broader: bias-fairness
-    maturity: established
-    label: "Feedback loops reinforcing inequality"
-    definition: >
-      System outputs that, when fed back into the system or its
-      operational context, amplify existing biases over time.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: quality-of-service-disparity
-    type: subcategory
-    broader: bias-fairness
-    maturity: provisional
-    label: "Quality of service disparity across groups"
-    alt_labels:
-      - "Quality of service"
-    definition: >
-      Inconsistent service quality across demographic groups, leading
-      to systematically better performance for some groups over others.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: allocation-of-opportunity
-    type: subcategory
-    broader: bias-fairness
-    maturity: provisional
-    label: "Unequal allocation of opportunity"
-    alt_labels:
-      - "Allocation of opportunity"
-    definition: >
-      AI system outputs that lead to the uneven allocation of
-      opportunities (e.g., jobs, credit, services) across demographic
-      groups.
-    scope: ADM
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: stereotyping-demeaning-content
-    type: subcategory
-    broader: bias-fairness
-    maturity: provisional
-    label: "Stereotyping and demeaning content"
-    alt_labels:
-      - "Minimization of stereotyping"
-    definition: >
-      AI system outputs that reinforce, perpetuate, erase, or demean
-      demographic groups through stereotypical representations or
-      language.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-    source: HRA
-    mappings:
-      - framework: mit
-        target_id: "subdomain-1.1"
-        target_label: "Unfair discrimination & misrepresentation"
-        relation: closeMatch
-
-  - id: harmful-content-toxicity
-    type: subcategory
-    broader: bias-fairness
-    maturity: developing
-    label: "Harmful content and toxicity"
-    alt_labels:
-      - "Toxicity"
-      - "Harmful content prevention"
-    definition: >
-      Offensive, hateful, or otherwise harmful outputs that damage
-      user well-being and erode trust.
-    scope: LLM
-    lifecycle_stages: [post-processing]
-    source: HRA
-    mappings:
-      - framework: nist_600
-        target_id: "dangerous-content"
-        target_label: "Dangerous, Violent, or Hateful Content"
-        relation: closeMatch
-      - framework: mit
-        target_id: "subdomain-1.2"
-        target_label: "Exposure to toxic content"
-        relation: closeMatch
-
-  - id: sentiment-fairness
-    type: subcategory
-    broader: bias-fairness
-    maturity: developing
-    label: "Sentiment fairness across groups"
-    definition: >
-      Unequal emotional tone in system outputs across demographic
-      groups, leading to perceived or actual bias in how people are
-      treated or described.
-    scope: LLM
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: performance-equity
-    type: subcategory
-    broader: bias-fairness
-    maturity: developing
-    label: "Performance equity across populations"
-    alt_labels:
-      - "Group-wise error rate"
-    definition: >
-      Higher error rates or lower accuracy for specific demographic
-      groups, resulting in unfair or unequal service delivery.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-    source: HRA
-    mappings:
-      - framework: mit
-        target_id: "subdomain-1.3"
-        target_label: "Unequal performance across groups"
-        relation: closeMatch
-
-  # ============================================================
-  # 2. PRIVACY & CONFIDENTIALITY
-  # ============================================================
-
-  - id: privacy-confidentiality
-    type: category
-    label: "Privacy & Confidentiality"
-    alt_labels:
-      - "Privacy"
-      - "Data Privacy"
-    definition: >
-      The risk that an AI system collects, processes, or infers
-      personal information in ways that infringe on individuals'
-      rights to control their data (privacy), or that sensitive
-      information is exposed, accessed, or shared without
-      authorization (confidentiality). This includes risks from data
-      leakage, re-identification, unauthorized use, or insufficient
-      safeguards.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing, post-processing]
-    inclusion: required
-    maturity: established
-    perspective: "rights & ethics"
-    mappings:
-      - framework: mit
-        target_id: "subdomain-2.1"
-        target_label: "Compromise of privacy"
-        relation: closeMatch
-      - framework: nist_600
-        target_id: "data-privacy"
-        target_label: "Data Privacy"
-        relation: closeMatch
-      - framework: nist_rmf
-        target_id: "privacy-enhanced"
-        target_label: "Privacy-Enhanced"
-        relation: closeMatch
-      - framework: oecd
-        target_id: "principle-1.2"
-        target_label: "Human rights, rule of law, fairness & privacy"
-        relation: broadMatch
-      - framework: dpv_ai
-        target_id: "PersonalDataHandling"
-        target_label: "Personal Data Handling"
-        relation: broadMatch
-
-  - id: unlawful-data-processing
-    type: subcategory
-    broader: privacy-confidentiality
-    maturity: established
-    label: "Unlawful collection or processing of personal data"
-    definition: >
-      Collection, storage, or processing of personal data without
-      adequate legal basis, consent, or compliance with applicable
-      data protection regulations.
-    scope: ALL
-    lifecycle_stages: [pre-processing]
-
-  - id: re-identification
-    type: subcategory
-    broader: privacy-confidentiality
-    maturity: established
-    label: "Re-identification of anonymised data"
-    definition: >
-      The possibility that anonymised or pseudonymised data can be
-      linked back to specific individuals through inference,
-      combination with other datasets, or model outputs.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-
-  - id: function-creep
-    type: subcategory
-    broader: privacy-confidentiality
-    maturity: established
-    label: "Function creep"
-    definition: >
-      Repurposing of personal data beyond the original intent or
-      consent scope, including secondary uses not anticipated at
-      collection time.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: biometric-surveillance
-    type: subcategory
-    broader: privacy-confidentiality
-    maturity: established
-    label: "Biometric surveillance"
-    definition: >
-      Mass collection and processing of biometric data (face, voice,
-      gait, fingerprints) for identification or tracking purposes.
-    scope: ADM
-    lifecycle_stages: [post-processing]
-
-  - id: emotion-inference-profiling
-    type: subcategory
-    broader: privacy-confidentiality
-    maturity: established
-    label: "Emotion inference or sensitive attribute profiling"
-    definition: >
-      Inference of emotional states, political opinions, sexual
-      orientation, health status, or other sensitive attributes from
-      behavioural or interaction data.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-
-  - id: weak-data-controls
-    type: subcategory
-    broader: privacy-confidentiality
-    maturity: established
-    label: "Weak data retention, erasure, and access controls"
-    definition: >
-      Insufficient policies or technical measures for data retention
-      limits, secure deletion, and access restrictions, increasing
-      the risk of unauthorized access or indefinite data persistence.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-
-  - id: pii-leakage
-    type: subcategory
-    broader: privacy-confidentiality
-    maturity: established
-    label: "PII leakage through model outputs"
-    alt_labels:
-      - "PII leakage rate"
-      - "Privacy leakage"
-    definition: >
-      Personal data present in training data surfacing in model
-      outputs, either through memorisation or through responses that
-      reveal sensitive information about individuals.
-    scope: LLM
-    lifecycle_stages: [in-processing, post-processing]
-    source: HRA
-
-  - id: membership-inference
-    type: subcategory
-    broader: privacy-confidentiality
-    maturity: provisional
-    label: "Membership inference risk"
-    definition: >
-      The ability to determine whether specific individuals' data was
-      included in the training set, compromising privacy and
-      potentially violating data protection requirements.
-    scope: LLM
-    lifecycle_stages: [in-processing, post-processing]
-    source: HRA
-
-  # ============================================================
-  # 3. RELIABILITY
-  # ============================================================
-
-  - id: reliability
-    type: category
-    label: "Reliability"
-    alt_labels:
-      - "Reliability & Manipulation"
-      - "Validity and Reliability"
-    definition: >
-      The risk that an AI system produces false, fabricated, or
-      misleading outputs (hallucinations), spreads inaccurate or
-      deceptive information (misinformation), or delivers inconsistent
-      results across similar inputs and contexts. Such failures
-      undermine trust, reduce system dependability, and can lead to
-      harmful or misguided decisions.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing, post-processing]
-    inclusion: required
-    maturity: established
-    perspective: "technical soundness"
-    mappings:
-      - framework: mit
-        target_id: "subdomain-7.3"
-        target_label: "Lack of capability or robustness"
-        relation: closeMatch
-      - framework: nist_600
-        target_id: "confabulation"
-        target_label: "Confabulation"
-        relation: closeMatch
-      - framework: nist_rmf
-        target_id: "valid-reliable"
-        target_label: "Valid & Reliable"
-        relation: closeMatch
-      - framework: oecd
-        target_id: "principle-1.4"
-        target_label: "Robustness, security & safety"
-        relation: broadMatch
-
-  - id: hallucination
-    type: subcategory
-    broader: reliability
-    maturity: established
-    label: "Hallucination and fabricated outputs"
-    alt_labels:
-      - "Confabulation"
-      - "Hallucination prevention"
-    definition: >
-      Generation of false, fabricated, or misleading information that
-      appears credible, including invented facts, statistics,
-      citations, or events.
-    scope: LLM
-    lifecycle_stages: [post-processing]
-    source: HRA
-    mappings:
-      - framework: nist_600
-        target_id: "confabulation"
-        target_label: "Confabulation"
-        relation: exactMatch
-
-  - id: output-inconsistency
-    type: subcategory
-    broader: reliability
-    maturity: established
-    label: "Output inconsistency"
-    definition: >
-      Inconsistent results across similar inputs and contexts,
-      undermining reproducibility and user trust.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-
-  - id: output-drift
-    type: subcategory
-    broader: reliability
-    maturity: established
-    label: "Output drift over time"
-    definition: >
-      Degradation of output quality or accuracy as data distributions,
-      user behaviour, or operating conditions change after deployment.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: out-of-distribution-robustness
-    type: subcategory
-    broader: reliability
-    maturity: provisional
-    label: "Out-of-distribution robustness"
-    definition: >
-      Unpredictable behaviour or failure when the system is exposed to
-      inputs outside the distribution of its training data.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-    source: HRA
-
-  - id: failure-remediation-gaps
-    type: subcategory
-    broader: reliability
-    maturity: provisional
-    label: "Failure and remediation gaps"
-    alt_labels:
-      - "Failures and remediations"
-    definition: >
-      Absence of remediation plans for predictable or unknown failure
-      modes, leaving critical services unable to recover or degrade
-      gracefully.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: monitoring-evaluation-gaps
-    type: subcategory
-    broader: reliability
-    maturity: provisional
-    label: "Monitoring and evaluation gaps"
-    alt_labels:
-      - "Monitoring, feedback, evaluation"
-    definition: >
-      Lack of ongoing monitoring that renders datasets obsolete and
-      system outputs unreliable, including absence of feedback
-      mechanisms and periodic evaluation.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  # ============================================================
-  # 4. GOVERNANCE
-  # ============================================================
-
-  - id: governance
-    type: category
-    label: "Governance"
-    alt_labels:
-      - "Accountability"
-      - "Governance & Accountability"
-    definition: >
-      The risk that an AI system lacks adequate structures, policies,
-      or accountability mechanisms to oversee its design, deployment,
-      and use. Weak governance can lead to unclear responsibilities,
-      poor documentation, limited auditability, and failure to align
-      with legal, ethical, or organizational standards.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing, post-processing]
-    inclusion: required
-    maturity: established
-    perspective: "governance & compliance"
-    mappings:
-      - framework: mit
-        target_id: "subdomain-6.5"
-        target_label: "Governance failure"
-        relation: closeMatch
-      - framework: nist_600
-        target_id: "value-chain"
-        target_label: "Value Chain & Component Integration"
-        relation: relatedMatch
-      - framework: nist_rmf
-        target_id: "accountable-transparent"
-        target_label: "Accountable & Transparent"
-        relation: closeMatch
-      - framework: oecd
-        target_id: "principle-1.5"
-        target_label: "Accountability"
-        relation: closeMatch
-      - framework: iso_42001
-        target_id: "A.2-A.4"
-        target_label: "AI Policy, Internal Organisation, Resources"
-        relation: broadMatch
-
-  - id: unclear-responsibilities
-    type: subcategory
-    broader: governance
-    maturity: established
-    label: "Unclear responsibilities and accountability gaps"
-    definition: >
-      Missing or ambiguous assignment of roles and responsibilities
-      for AI system design, deployment, monitoring, and incident
-      response.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-
-  - id: poor-documentation
-    type: subcategory
-    broader: governance
-    maturity: established
-    label: "Poor documentation"
-    definition: >
-      Incomplete, outdated, or absent documentation of system
-      purpose, architecture, data sources, known limitations, and
-      operational procedures.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing, post-processing]
-
-  - id: limited-auditability
-    type: subcategory
-    broader: governance
-    maturity: established
-    label: "Limited auditability"
-    definition: >
-      Insufficient logging, versioning, or traceability for
-      meaningful external review or internal audit.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-
-  - id: regulatory-non-compliance
-    type: subcategory
-    broader: governance
-    maturity: established
-    label: "Regulatory non-compliance"
-    definition: >
-      Failure to align with applicable legal, ethical, or
-      organisational standards, including sector-specific regulations.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-
-  - id: lack-of-change-management
-    type: subcategory
-    broader: governance
-    maturity: established
-    label: "Lack of change management"
-    definition: >
-      Absence of controlled processes for system modifications,
-      including uncontrolled changes to production systems.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: oversight-of-adverse-impacts
-    type: subcategory
-    broader: governance
-    maturity: provisional
-    label: "Oversight of significant adverse impacts"
-    definition: >
-      Missing processes for identifying, escalating, and responding
-      to harmful outcomes, including psychological or physical harm
-      and threats to human life.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-    source: HRA
-
-  - id: fitness-for-purpose
-    type: subcategory
-    broader: governance
-    maturity: provisional
-    label: "Fitness for purpose"
-    definition: >
-      System not validated against the problem it is intended to
-      solve, leading to incorrect outputs or failure to deliver
-      expected results.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing]
-    source: HRA
-
-  - id: data-governance
-    type: subcategory
-    broader: governance
-    maturity: provisional
-    label: "Data governance"
-    definition: >
-      Inadequate labelling, tagging, approval, or appropriateness
-      assessment of data, leading to downstream issues with fitness
-      for purpose, bias, and compliance.
-    scope: ALL
-    lifecycle_stages: [pre-processing]
-    source: HRA
-
-  - id: human-oversight-control
-    type: subcategory
-    broader: governance
-    maturity: provisional
-    label: "Human oversight and control"
-    definition: >
-      Lack of defined intervention points, override capabilities, or
-      human review mechanisms, allowing issues and threats to persist
-      unchecked.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: decision-traceability
-    type: subcategory
-    broader: governance
-    maturity: provisional
-    label: "Decision traceability"
-    definition: >
-      Inability to trace decisions made or influenced by the AI
-      system back to specific inputs, processes, or actors, making
-      it impossible to investigate harms or assign responsibility.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-    source: HRA
-
-  - id: input-output-logging
-    type: subcategory
-    broader: governance
-    maturity: provisional
-    label: "Critical input/output logging"
-    definition: >
-      Failure to log inputs and outputs systematically, hindering
-      detection of failures, bias, or misuse. For LLMs, unlogged
-      prompts may prevent tracking of harmful or sensitive
-      interactions.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: responsible-actor-attribution
-    type: subcategory
-    broader: governance
-    maturity: provisional
-    label: "Responsible actor attribution"
-    definition: >
-      Unclear or undocumented roles of developers, deployers, or
-      reviewers, creating accountability gaps that can delay
-      incident response or allow harmful practices to persist.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-    source: HRA
-
-  - id: task-success
-    type: subcategory
-    broader: governance
-    maturity: provisional
-    label: "Task success"
-    definition: >
-      Low or uneven task success rates, particularly across
-      subpopulations or input types, leading to systematic exclusion,
-      service denial, or misinformation.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  # ============================================================
-  # 5. SECURITY & MISUSE
-  # ============================================================
-
-  - id: security-misuse
-    type: category
-    label: "Security & Misuse"
-    alt_labels:
-      - "Safety, Security & Misuse"
-      - "Security"
-      - "Safety"
-    definition: >
-      The risk that an AI system is exposed to vulnerabilities,
-      attacks, or misuse that compromise its integrity, availability,
-      or confidentiality. This includes adversarial inputs, model
-      inversion, data poisoning, prompt injection, and unauthorized
-      access, which can lead to manipulation of outputs, data
-      breaches, or system failure.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing, post-processing]
-    inclusion: required
-    maturity: established
-    perspective: "technical soundness"
-    mappings:
-      - framework: mit
-        target_id: "subdomain-2.2"
-        target_label: "AI system security vulnerabilities & attacks"
-        relation: closeMatch
-      - framework: mit
-        target_id: "domain-4"
-        target_label: "Malicious Actors & Misuse"
-        relation: closeMatch
-      - framework: nist_600
-        target_id: "information-security"
-        target_label: "Information Security"
-        relation: closeMatch
-      - framework: nist_rmf
-        target_id: "secure-resilient"
-        target_label: "Secure & Resilient"
-        relation: closeMatch
-      - framework: oecd
-        target_id: "principle-1.4"
-        target_label: "Robustness, security & safety"
-        relation: broadMatch
-      - framework: dpv_ai
-        target_id: "SecurityAttack"
-        target_label: "Security Attack"
-        relation: broadMatch
-
-  - id: adversarial-attacks
-    type: subcategory
-    broader: security-misuse
-    maturity: established
-    label: "Adversarial attacks"
-    definition: >
-      Evasion, poisoning, and extraction attacks designed to
-      manipulate system behaviour, corrupt training data, or steal
-      model information.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-
-  - id: prompt-injection
-    type: subcategory
-    broader: security-misuse
-    maturity: established
-    label: "Prompt injection"
-    alt_labels:
-      - "Prompt injection protection"
-    definition: >
-      Malicious inputs designed to subvert system intent by injecting
-      instructions that override the system prompt, leading to
-      harmful, deceptive, or unauthorized outputs.
-    scope: LLM
-    lifecycle_stages: [post-processing]
-    source: HRA
-    mappings:
-      - framework: dpv_ai
-        target_id: "PromptInjection"
-        target_label: "Prompt Injection"
-        relation: exactMatch
-
-  - id: jailbreaking
-    type: subcategory
-    broader: security-misuse
-    maturity: established
-    label: "Jailbreaking"
-    alt_labels:
-      - "Jailbreakability"
-    definition: >
-      Techniques used to bypass safety controls, content filters, or
-      usage restrictions to trigger prohibited behaviours or outputs.
-    scope: LLM
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: unauthorized-access
-    type: subcategory
-    broader: security-misuse
-    maturity: established
-    label: "Unauthorized access"
-    definition: >
-      Exploitation of access control weaknesses to gain unauthorized
-      access to the system, its data, or its administrative functions.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: supply-chain-vulnerabilities
-    type: subcategory
-    broader: security-misuse
-    maturity: established
-    label: "Supply-chain vulnerabilities"
-    definition: >
-      Risks introduced through third-party components, pre-trained
-      models, data sources, or other dependencies not fully under
-      the deployer's control.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing]
-
-  - id: incident-response-gaps
-    type: subcategory
-    broader: security-misuse
-    maturity: established
-    label: "Incident response gaps"
-    definition: >
-      Insufficient detection, logging, escalation, or response
-      capabilities for security incidents and misuse events.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: misuse-beyond-intended-purpose
-    type: subcategory
-    broader: security-misuse
-    maturity: developing
-    label: "Misuse beyond intended purpose"
-    definition: >
-      Use of the system for purposes it was not designed for,
-      including repurposing for surveillance, manipulation, or other
-      harmful applications.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  # ============================================================
-  # 6. ENVIRONMENTAL IMPACT
-  # ============================================================
-
-  - id: environmental-impact
-    type: category
-    label: "Environmental Impact"
-    alt_labels:
-      - "Sustainability"
-      - "Environmental sustainability"
-    definition: >
-      The risk that an AI system's development, deployment, or use
-      causes negative environmental effects, such as excessive energy
-      or water consumption, carbon emissions, or unsustainable use of
-      hardware and resources. This includes hidden impacts across the
-      system's lifecycle, from model training to long-term operation.
-    scope: ALL
-    lifecycle_stages: [pre-processing, in-processing, post-processing]
-    inclusion: audit-dependent
-    maturity: established
-    perspective: "technical soundness"
-    mappings:
-      - framework: mit
-        target_id: "subdomain-6.6"
-        target_label: "Environmental harm"
-        relation: closeMatch
-      - framework: nist_600
-        target_id: "environmental"
-        target_label: "Environmental Impacts"
-        relation: closeMatch
-      - framework: oecd
-        target_id: "principle-1.1"
-        target_label: "Inclusive growth, sustainable development & well-being"
-        relation: broadMatch
-
-  - id: inference-energy-consumption
-    type: subcategory
-    broader: environmental-impact
-    maturity: provisional
-    label: "Inference-time energy consumption"
-    definition: >
-      High energy use during deployment and inference, increasing
-      environmental impact and infrastructure costs.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: training-resource-consumption
-    type: subcategory
-    broader: environmental-impact
-    maturity: provisional
-    label: "Training resource consumption"
-    definition: >
-      Significant carbon emissions, energy use, and water consumption
-      associated with model training, particularly for large-scale
-      foundation models.
-    scope: ALL
-    lifecycle_stages: [in-processing]
-    source: HRA
-
-  - id: hardware-efficiency
-    type: subcategory
-    broader: environmental-impact
-    maturity: provisional
-    label: "Hardware efficiency"
-    definition: >
-      Poor hardware utilisation increasing costs, environmental
-      footprint, and limiting the feasibility of equitable access
-      to AI capabilities.
-    scope: ALL
-    lifecycle_stages: [in-processing, post-processing]
-    source: HRA
-
-  # ============================================================
-  # 7. TRANSPARENCY & EXPLAINABILITY
-  # ============================================================
-
-  - id: transparency-explainability
-    type: category
-    label: "Transparency & Explainability"
-    alt_labels:
-      - "Explainability & Transparency"
-      - "Transparency and Explainability"
-    definition: >
-      The risk that stakeholders cannot understand how an AI system
-      works, what it does, or why it produces specific outputs. Lack
-      of transparency undermines informed consent, impedes oversight,
-      and erodes trust.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    inclusion: required
-    maturity: established
-    perspective: "governance & compliance"
-    note: >
-      In the RAIA Guide, this category is assessed only at the
-      Post-Processing stage.
-    mappings:
-      - framework: mit
-        target_id: "subdomain-7.4"
-        target_label: "Lack of transparency or interpretability"
-        relation: closeMatch
-      - framework: nist_rmf
-        target_id: "explainable-interpretable"
-        target_label: "Explainable & Interpretable"
-        relation: closeMatch
-      - framework: oecd
-        target_id: "principle-1.3"
-        target_label: "Transparency & explainability"
-        relation: closeMatch
-      - framework: dpv_ai
-        target_id: "Transparency"
-        target_label: "Transparency"
-        relation: broadMatch
-
-  - id: system-explainability
-    type: subcategory
-    broader: transparency-explainability
-    maturity: provisional
-    label: "AI system explainability"
-    definition: >
-      Stakeholders misinterpret or misunderstand the intended purpose
-      or use of an AI system based on its outputs, due to insufficient
-      explanation of how outputs are produced.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: stakeholder-communication
-    type: subcategory
-    broader: transparency-explainability
-    maturity: provisional
-    label: "Communication to stakeholders"
-    alt_labels:
-      - "Communication to relevant interested parties"
-    definition: >
-      Stakeholders not being made aware of AI system limitations,
-      parameters, and settings that affect responsible use.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: ai-interaction-disclosure
-    type: subcategory
-    broader: transparency-explainability
-    maturity: provisional
-    label: "Disclosure of AI interaction"
-    definition: >
-      Users interacting with an AI system under the assumption that
-      they are communicating with a human, without clear disclosure.
-    scope: LLM
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  - id: model-card-completeness
-    type: subcategory
-    broader: transparency-explainability
-    maturity: provisional
-    label: "Model card completeness"
-    definition: >
-      Incomplete or outdated documentation of model purpose,
-      performance, limitations, or data sources, leading to
-      inappropriate deployment or overestimation of capabilities.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-    source: HRA
-
-  - id: prompt-transparency
-    type: subcategory
-    broader: transparency-explainability
-    maturity: provisional
-    label: "Prompt transparency"
-    definition: >
-      Inconsistent outputs to semantically similar inputs that
-      confuse users and erode trust. For LLMs, variation across
-      generations may lead to contradictory advice or conflicting
-      factual claims.
-    scope: LLM
-    lifecycle_stages: [post-processing]
-    source: HRA
-
-  # ============================================================
-  # 8. RESPONSIBILITY & REDRESS
-  # ============================================================
-
-  - id: responsibility-redress
-    type: category
-    label: "Responsibility & Redress"
-    definition: >
-      The risk that individuals affected by AI-driven decisions have
-      no effective means to understand, challenge, or seek remedy for
-      those decisions. This includes absence of appeal mechanisms,
-      unclear remediation procedures, and failure to communicate with
-      affected parties.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    inclusion: audit-dependent
-    maturity: developing
-    perspective: "rights & ethics"
-    note: >
-      In the RAIA Guide, this category is assessed only at the
-      Post-Processing stage.
-    mappings:
-      - framework: nist_rmf
-        target_id: "accountable-transparent"
-        target_label: "Accountable & Transparent"
-        relation: broadMatch
-      - framework: oecd
-        target_id: "principle-1.5"
-        target_label: "Accountability"
-        relation: broadMatch
-
-  - id: absence-of-appeal
-    type: subcategory
-    broader: responsibility-redress
-    maturity: developing
-    label: "Absence of appeal mechanisms"
-    definition: >
-      No accessible process for individuals to challenge or appeal
-      AI-driven decisions that affect them.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: unclear-remediation
-    type: subcategory
-    broader: responsibility-redress
-    maturity: developing
-    label: "Unclear remediation procedures"
-    definition: >
-      Absence of defined processes for correcting harms caused by AI
-      system errors or failures.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: ineffective-communication
-    type: subcategory
-    broader: responsibility-redress
-    maturity: developing
-    label: "Ineffective communication with affected parties"
-    definition: >
-      Failure to inform individuals about how they have been affected
-      by AI-driven decisions and what options are available to them.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  # ============================================================
-  # 9. AUTONOMY & HUMAN AGENCY (emerging)
-  # ============================================================
-
-  - id: autonomy
-    type: category
-    label: "Autonomy & Human Agency"
-    alt_labels:
-      - "Human Autonomy"
-    definition: >
-      The risk that an AI system undermines individuals' ability to
-      make free, informed decisions, whether through over-reliance,
-      automation bias, manipulative design, or erosion of human
-      agency.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    inclusion: audit-dependent
-    maturity: provisional
-    perspective: "rights & ethics"
-    mappings:
-      - framework: mit
-        target_id: "subdomain-5.2"
-        target_label: "Loss of human agency & autonomy"
-        relation: closeMatch
-      - framework: nist_600
-        target_id: "human-ai-configuration"
-        target_label: "Human-AI Configuration"
-        relation: closeMatch
-
-  # ============================================================
-  # 10. AGENTIC RISKS (emerging)
-  # ============================================================
-
-  - id: agentic-risks
-    type: category
-    label: "Agentic Risks"
-    definition: >
-      The risk that AI systems operating with a degree of autonomy —
-      planning, executing multi-step actions, using tools, or
-      coordinating with other AI agents — introduce failure modes not
-      present in single-inference systems. This includes cascading
-      errors across agent chains, unintended emergent behaviour, and
-      loss of meaningful human control over compound actions.
-    scope: LLM
-    lifecycle_stages: [post-processing]
-    inclusion: audit-dependent
-    maturity: provisional
-    perspective: "technical soundness"
-    mappings:
-      - framework: mit
-        target_id: "subdomain-7.6"
-        target_label: "Multi-agent risks"
-        relation: closeMatch
-
-  # ============================================================
-  # 11. MANIPULATION & MISINFORMATION (emerging)
-  # ============================================================
-
-  - id: manipulation-misinformation
-    type: category
-    label: "Manipulation & Misinformation"
-    definition: >
-      The risk that AI systems are used — intentionally or through
-      design flaws — to deceive, manipulate, or mislead individuals
-      or populations. This includes generation of disinformation at
-      scale, deepfakes, subliminal manipulation, and pollution of
-      the information ecosystem.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    inclusion: audit-dependent
-    maturity: provisional
-    perspective: "rights & ethics"
-    mappings:
-      - framework: mit
-        target_id: "domain-3"
-        target_label: "Misinformation"
-        relation: closeMatch
-      - framework: nist_600
-        target_id: "information-integrity"
-        target_label: "Information Integrity"
-        relation: closeMatch
-
-  # ============================================================
-  # 12. RESILIENCE (proposed)
-  # ============================================================
-
-  - id: resilience
-    type: category
-    label: "Resilience"
-    alt_labels:
-      - "Operational resilience"
-      - "System resilience"
-    definition: >
-      The risk that an AI system cannot absorb disruption, degrade
-      gracefully, or recover when faced with adverse events, attacks,
-      infrastructure failures, or environmental changes. This goes
-      beyond reliability (consistent performance under normal
-      conditions) and robustness (performance under varied conditions)
-      to address what happens when the system is genuinely disrupted
-      and must recover or continue operating in degraded mode.
-      Particularly critical for AI deployed in conflict zones,
-      humanitarian operations, or critical infrastructure.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-    inclusion: audit-dependent
-    maturity: proposed
-    perspective: "operational viability"
-    mappings:
-      - framework: nist_rmf
-        target_id: "secure-resilient"
-        target_label: "Secure & Resilient"
-        relation: broadMatch
-      - framework: eu_ai_act
-        target_id: "article-15-4"
-        target_label: "Article 15(4) — Resilience regarding errors, faults or inconsistencies"
-        relation: broadMatch
-
-  - id: graceful-degradation
-    type: subcategory
-    broader: resilience
-    maturity: proposed
-    label: "Graceful degradation"
-    definition: >
-      Absence of defined degradation pathways that allow the system
-      to maintain partial function when components fail, connectivity
-      is lost, or resources are constrained.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: edge-offline-operability
-    type: subcategory
-    broader: resilience
-    maturity: proposed
-    label: "Edge and offline operability"
-    definition: >
-      System inability to function without continuous cloud access
-      or network connectivity, creating single points of failure in
-      environments with unreliable infrastructure.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: recovery-capability
-    type: subcategory
-    broader: resilience
-    maturity: proposed
-    label: "Recovery capability"
-    definition: >
-      Lack of tested recovery procedures, rollback mechanisms, or
-      recovery time objectives for restoring system function after
-      disruption.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: infrastructure-dependency
-    type: subcategory
-    broader: resilience
-    maturity: proposed
-    label: "Infrastructure dependency"
-    definition: >
-      Unmapped or unmitigated dependencies on external
-      infrastructure (power, connectivity, cloud services, third-party
-      APIs) whose failure would disable the system.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-
-  - id: contextual-resilience
-    type: subcategory
-    broader: resilience
-    maturity: proposed
-    label: "Contextual and ethical resilience"
-    definition: >
-      Absence of safeguards against function creep, weaponisation,
-      or repurposing of the system against the populations it was
-      designed to serve. Includes adequacy of consent mechanisms
-      under power asymmetries and protection of beneficiary data
-      in humanitarian or conflict contexts.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  # ============================================================
-  # 13. INTEGRATION READINESS (proposed)
-  # ============================================================
-
-  - id: integration-readiness
-    type: category
-    label: "Integration Readiness"
-    alt_labels:
-      - "Operational risk"
-      - "Deployment readiness"
-      - "Sociotechnical fit"
-    definition: >
-      The risk that an AI system fails to deliver value not because
-      of model performance issues but because it does not fit the
-      organisational, technical, or human context into which it is
-      deployed. This includes interoperability failures with existing
-      systems, insufficient organisational capacity to absorb the
-      technology, workflow incompatibility, and lack of sustainable
-      maintenance capability. Between 70 and 85% of AI initiatives
-      fail to meet their objectives, primarily due to these
-      integration factors rather than model quality.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-    inclusion: audit-dependent
-    maturity: proposed
-    perspective: "operational viability"
-    mappings:
-      - framework: nist_rmf
-        target_id: "map"
-        target_label: "MAP function — context and deployment environment"
-        relation: relatedMatch
-      - framework: iso_42001
-        target_id: "A.10"
-        target_label: "Third-party and customer relationships"
-        relation: relatedMatch
-
-  - id: organisational-readiness
-    type: subcategory
-    broader: integration-readiness
-    maturity: proposed
-    label: "Organisational readiness"
-    definition: >
-      The deploying organisation lacks the governance maturity,
-      leadership engagement, change management capacity, staff
-      competency, or cultural receptivity needed to absorb an
-      AI system into its operations.
-    scope: ALL
-    lifecycle_stages: [pre-processing]
-
-  - id: technical-interoperability
-    type: subcategory
-    broader: integration-readiness
-    maturity: proposed
-    label: "Technical interoperability"
-    definition: >
-      The AI system cannot integrate with existing infrastructure,
-      legacy systems, data pipelines, or standards (e.g., HL7 FHIR
-      in healthcare) required for it to function in the deployment
-      environment.
-    scope: ALL
-    lifecycle_stages: [pre-processing, post-processing]
-
-  - id: workflow-compatibility
-    type: subcategory
-    broader: integration-readiness
-    maturity: proposed
-    label: "Workflow compatibility"
-    definition: >
-      The system's outputs, alerts, or interfaces do not fit existing
-      human workflows, leading to alert fatigue, workarounds, or
-      abandonment. Includes inadequate end-user involvement in design
-      and testing, and poor context transferability from development
-      to deployment environment.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: deployment-sustainability
-    type: subcategory
-    broader: integration-readiness
-    maturity: proposed
-    label: "Deployment sustainability"
-    definition: >
-      The organisation lacks the capacity for ongoing operation,
-      maintenance, monitoring, and improvement of the AI system after
-      initial deployment. Includes vendor lock-in risk, dependency on
-      external expertise, and unclear cost-effectiveness or value
-      proposition.
-    scope: ALL
-    lifecycle_stages: [post-processing]
-
-  - id: institutional-capacity
-    type: subcategory
-    broader: integration-readiness
-    maturity: proposed
-    label: "Institutional absorptive capacity"
-    definition: >
-      The broader institutional or societal context lacks foundational
-      capabilities (digital infrastructure, data literacy, regulatory
-      frameworks) needed before AI deployment is viable. Premature
-      deployment may reallocate scarce resources, exacerbate
-      inequality, or create technological dependency.
-    scope: ALL
-    lifecycle_stages: [pre-processing]
+- id: bias-fairness
+  type: category
+  label: Bias & Fairness
+  alt_labels:
+  - Fairness
+  - Bias & Discrimination
+  - Algorithmic fairness
+  definition: 'The risk that an AI system produces outcomes that systematically advantage or disadvantage individuals or groups
+    based on protected or sensitive attributes, leading to unequal treatment, reduced accuracy, or unjust impacts. This includes
+    biases introduced through data, model design, or deployment context, and covers both measurable disparities and perceived
+    unfairness in decision-making.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  - post-processing
+  maturity: established
+  perspective: rights & ethics
+  mappings:
+  - framework: mit
+    target_id: domain-1
+    target_label: Discrimination & Toxicity
+    relation: closeMatch
+  - framework: nist_600
+    target_id: harmful-bias
+    target_label: Harmful Bias & Homogenization
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: fair
+    target_label: Fair with Harmful Bias Managed
+    relation: closeMatch
+  - framework: oecd
+    target_id: principle-1.2
+    target_label: Human rights, rule of law, fairness & privacy
+    relation: broadMatch
+  - framework: dpv_ai
+    target_id: AIBias
+    target_label: AI Bias
+    relation: broadMatch
+  - framework: iso_42001
+    target_id: A.8
+    target_label: Assessing impacts of AI systems
+    relation: relatedMatch
+- id: bias-data-representation
+  type: subgroup
+  broader: bias-fairness
+  label: Data & representation
+  definition: Risks arising from how data is collected, composed, and represented in training and evaluation datasets.
+- id: dataset-bias
+  type: subcategory
+  broader: bias-data-representation
+  maturity: established
+  label: Dataset bias and under/over-representation
+  definition: 'Training or evaluation data that does not adequately represent all relevant population groups, leading to systematic
+    performance differences or exclusion of certain groups.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  mappings:
+  - framework: mit
+    target_id: subdomain-1.1
+    target_label: Unfair discrimination & misrepresentation
+    relation: closeMatch
+- id: proxy-discrimination
+  type: subcategory
+  broader: bias-data-representation
+  maturity: established
+  label: Proxy discrimination through correlated features
+  definition: 'Discrimination through features that correlate with protected attributes (e.g., postcode as proxy for ethnicity),
+    even when protected attributes are not directly used.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+- id: geographic-cultural-language-skew
+  type: subcategory
+  broader: bias-data-representation
+  maturity: established
+  label: Geographic, cultural, or language skew
+  definition: 'Systematic performance differences across geographies, cultures, or languages, often resulting from training
+    data that overrepresents certain regions or linguistic traditions.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  - post-processing
+- id: feedback-loops
+  type: subcategory
+  broader: bias-data-representation
+  maturity: established
+  label: Feedback loops reinforcing inequality
+  definition: 'System outputs that, when fed back into the system or its operational context, amplify existing biases over
+    time.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: bias-output-quality
+  type: subgroup
+  broader: bias-fairness
+  label: Output quality across groups
+  definition: Risks related to harmful, demeaning, or unfair content in system outputs.
+- id: stereotyping-demeaning-content
+  type: subcategory
+  broader: bias-output-quality
+  maturity: emerging
+  label: Stereotyping and demeaning content
+  alt_labels:
+  - Minimization of stereotyping
+  definition: 'AI system outputs that reinforce, perpetuate, erase, or demean demographic groups through stereotypical representations
+    or language.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+  source: HRA
+  mappings:
+  - framework: mit
+    target_id: subdomain-1.1
+    target_label: Unfair discrimination & misrepresentation
+    relation: closeMatch
+- id: harmful-content-toxicity
+  type: subcategory
+  broader: bias-output-quality
+  maturity: emerging
+  label: Harmful content and toxicity
+  alt_labels:
+  - Toxicity
+  - Harmful content prevention
+  definition: 'Offensive, hateful, or otherwise harmful outputs that damage user well-being and erode trust.
+
+    '
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+  mappings:
+  - framework: nist_600
+    target_id: dangerous-content
+    target_label: Dangerous, Violent, or Hateful Content
+    relation: closeMatch
+  - framework: mit
+    target_id: subdomain-1.2
+    target_label: Exposure to toxic content
+    relation: closeMatch
+- id: sentiment-fairness
+  type: subcategory
+  broader: bias-output-quality
+  maturity: emerging
+  label: Sentiment fairness across groups
+  definition: 'Unequal emotional tone in system outputs across demographic groups, leading to perceived or actual bias in
+    how people are treated or described.
+
+    '
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: bias-performance-disparities
+  type: subgroup
+  broader: bias-fairness
+  label: Performance disparities
+  definition: Risks related to unequal system performance, access, or outcomes across population groups.
+- id: intersectional-unfairness
+  type: subcategory
+  broader: bias-performance-disparities
+  maturity: established
+  label: Intersectional unfairness
+  definition: 'Compounded disadvantage affecting individuals at the intersection of multiple protected characteristics (e.g.,
+    gender and ethnicity together producing worse outcomes than either alone).
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+- id: accessibility-barriers
+  type: subcategory
+  broader: bias-performance-disparities
+  maturity: established
+  label: Accessibility barriers
+  definition: 'System design that excludes or disadvantages people with disabilities, including inaccessible interfaces, outputs,
+    or interaction modes.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+- id: quality-of-service-disparity
+  type: subcategory
+  broader: bias-performance-disparities
+  maturity: emerging
+  label: Quality of service disparity across groups
+  alt_labels:
+  - Quality of service
+  definition: 'Inconsistent service quality across demographic groups, leading to systematically better performance for some
+    groups over others.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: allocation-of-opportunity
+  type: subcategory
+  broader: bias-performance-disparities
+  maturity: emerging
+  label: Unequal allocation of opportunity
+  alt_labels:
+  - Allocation of opportunity
+  definition: 'AI system outputs that lead to the uneven allocation of opportunities (e.g., jobs, credit, services) across
+    demographic groups.
+
+    '
+  scope: ADM
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: performance-equity
+  type: subcategory
+  broader: bias-performance-disparities
+  maturity: emerging
+  label: Performance equity across populations
+  alt_labels:
+  - Group-wise error rate
+  definition: 'Higher error rates or lower accuracy for specific demographic groups, resulting in unfair or unequal service
+    delivery.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+  source: HRA
+  mappings:
+  - framework: mit
+    target_id: subdomain-1.3
+    target_label: Unequal performance across groups
+    relation: closeMatch
+- id: privacy-confidentiality
+  type: category
+  label: Privacy & Confidentiality
+  alt_labels:
+  - Privacy
+  - Data Privacy
+  definition: 'The risk that an AI system collects, processes, or infers personal information in ways that infringe on individuals''
+    rights to control their data (privacy), or that sensitive information is exposed, accessed, or shared without authorization
+    (confidentiality). This includes risks from data leakage, re-identification, unauthorized use, or insufficient safeguards.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  - post-processing
+  maturity: established
+  perspective: rights & ethics
+  mappings:
+  - framework: mit
+    target_id: subdomain-2.1
+    target_label: Compromise of privacy
+    relation: closeMatch
+  - framework: nist_600
+    target_id: data-privacy
+    target_label: Data Privacy
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: privacy-enhanced
+    target_label: Privacy-Enhanced
+    relation: closeMatch
+  - framework: oecd
+    target_id: principle-1.2
+    target_label: Human rights, rule of law, fairness & privacy
+    relation: broadMatch
+  - framework: dpv_ai
+    target_id: PersonalDataHandling
+    target_label: Personal Data Handling
+    relation: broadMatch
+- id: privacy-collection-use
+  type: subgroup
+  broader: privacy-confidentiality
+  label: Data collection & use
+  definition: Risks from how personal data is collected, processed, and repurposed.
+- id: unlawful-data-processing
+  type: subcategory
+  broader: privacy-collection-use
+  maturity: established
+  label: Unlawful collection or processing of personal data
+  definition: 'Collection, storage, or processing of personal data without adequate legal basis, consent, or compliance with
+    applicable data protection regulations.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+- id: function-creep
+  type: subcategory
+  broader: privacy-collection-use
+  maturity: established
+  label: Function creep
+  definition: 'Repurposing of personal data beyond the original intent or consent scope, including secondary uses not anticipated
+    at collection time.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: biometric-surveillance
+  type: subcategory
+  broader: privacy-collection-use
+  maturity: established
+  label: Biometric surveillance
+  definition: 'Mass collection and processing of biometric data (face, voice, gait, fingerprints) for identification or tracking
+    purposes.
+
+    '
+  scope: ADM
+  lifecycle_stages:
+  - post-processing
+- id: emotion-inference-profiling
+  type: subcategory
+  broader: privacy-collection-use
+  maturity: established
+  label: Emotion inference or sensitive attribute profiling
+  definition: 'Inference of emotional states, political opinions, sexual orientation, health status, or other sensitive attributes
+    from behavioural or interaction data.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+- id: privacy-data-protection
+  type: subgroup
+  broader: privacy-confidentiality
+  label: Data protection
+  definition: Risks related to safeguards for stored and processed personal data.
+- id: weak-data-controls
+  type: subcategory
+  broader: privacy-data-protection
+  maturity: established
+  label: Weak data retention, erasure, and access controls
+  definition: 'Insufficient policies or technical measures for data retention limits, secure deletion, and access restrictions,
+    increasing the risk of unauthorized access or indefinite data persistence.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+- id: re-identification
+  type: subcategory
+  broader: privacy-data-protection
+  maturity: established
+  label: Re-identification of anonymised data
+  definition: 'The possibility that anonymised or pseudonymised data can be linked back to specific individuals through inference,
+    combination with other datasets, or model outputs.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+- id: privacy-model-level
+  type: subgroup
+  broader: privacy-confidentiality
+  label: Model-level privacy
+  definition: Risks from AI models leaking or exposing private information through their outputs or structure.
+- id: pii-leakage
+  type: subcategory
+  broader: privacy-model-level
+  maturity: established
+  label: PII leakage through model outputs
+  alt_labels:
+  - PII leakage rate
+  - Privacy leakage
+  definition: 'Personal data present in training data surfacing in model outputs, either through memorisation or through responses
+    that reveal sensitive information about individuals.
+
+    '
+  scope: LLM
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+  source: HRA
+- id: membership-inference
+  type: subcategory
+  broader: privacy-model-level
+  maturity: emerging
+  label: Membership inference risk
+  definition: 'The ability to determine whether specific individuals'' data was included in the training set, compromising
+    privacy and potentially violating data protection requirements.
+
+    '
+  scope: LLM
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+  source: HRA
+- id: reliability
+  type: category
+  label: Reliability
+  alt_labels:
+  - Reliability & Manipulation
+  - Validity and Reliability
+  definition: 'The risk that an AI system produces false, fabricated, or misleading outputs (hallucinations), spreads inaccurate
+    or deceptive information (misinformation), or delivers inconsistent results across similar inputs and contexts. Such failures
+    undermine trust, reduce system dependability, and can lead to harmful or misguided decisions.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  - post-processing
+  maturity: established
+  perspective: technical soundness
+  mappings:
+  - framework: mit
+    target_id: subdomain-7.3
+    target_label: Lack of capability or robustness
+    relation: closeMatch
+  - framework: mit
+    target_id: domain-3
+    target_label: Misinformation
+    relation: broadMatch
+  - framework: nist_600
+    target_id: '2'
+    target_label: Confabulation
+    relation: closeMatch
+  - framework: nist_600
+    target_id: '8'
+    target_label: Information Integrity
+    relation: broadMatch
+  - framework: nist_rmf
+    target_id: valid-reliable
+    target_label: Valid & Reliable
+    relation: closeMatch
+  - framework: oecd
+    target_id: robustness
+    target_label: Robustness, security & safety
+    relation: broadMatch
+- id: reliability-output-quality
+  type: subgroup
+  broader: reliability
+  label: Output quality
+  definition: Risks related to the correctness, consistency, and robustness of system outputs.
+- id: hallucination
+  type: subcategory
+  broader: reliability-output-quality
+  maturity: established
+  label: Hallucination and fabricated outputs
+  alt_labels:
+  - Confabulation
+  - Hallucination prevention
+  definition: 'Generation of false, fabricated, or misleading information that appears credible, including invented facts,
+    statistics, citations, or events.
+
+    '
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+  mappings:
+  - framework: nist_600
+    target_id: confabulation
+    target_label: Confabulation
+    relation: exactMatch
+- id: output-inconsistency
+  type: subcategory
+  broader: reliability-output-quality
+  maturity: established
+  label: Output inconsistency
+  definition: 'Inconsistent results across similar inputs and contexts, undermining reproducibility and user trust.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+- id: output-drift
+  type: subcategory
+  broader: reliability-output-quality
+  maturity: established
+  label: Output drift over time
+  definition: 'Degradation of output quality or accuracy as data distributions, user behaviour, or operating conditions change
+    after deployment.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: out-of-distribution-robustness
+  type: subcategory
+  broader: reliability-output-quality
+  maturity: emerging
+  label: Out-of-distribution robustness
+  definition: 'Unpredictable behaviour or failure when the system is exposed to inputs outside the distribution of its training
+    data.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+  source: HRA
+- id: reliability-monitoring
+  type: subgroup
+  broader: reliability
+  label: Monitoring & remediation
+  definition: Risks from inadequate monitoring, evaluation, and failure response.
+- id: failure-remediation-gaps
+  type: subcategory
+  broader: reliability-monitoring
+  maturity: emerging
+  label: Failure and remediation gaps
+  alt_labels:
+  - Failures and remediations
+  definition: 'Absence of remediation plans for predictable or unknown failure modes, leaving critical services unable to
+    recover or degrade gracefully.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: monitoring-evaluation-gaps
+  type: subcategory
+  broader: reliability-monitoring
+  maturity: emerging
+  label: Monitoring and evaluation gaps
+  alt_labels:
+  - Monitoring, feedback, evaluation
+  definition: 'Lack of ongoing monitoring that renders datasets obsolete and system outputs unreliable, including absence
+    of feedback mechanisms and periodic evaluation.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: reliability-manipulation
+  type: subgroup
+  broader: reliability
+  label: Manipulation & misinformation
+  definition: Risks that the system produces or facilitates deceptive, manipulative, or misleading content, whether through
+    design flaws or intentional misuse.
+  maturity: emerging
+  mappings:
+  - framework: mit
+    target_id: domain-3
+    target_label: Misinformation
+    relation: closeMatch
+  - framework: nist_600
+    target_id: '8'
+    target_label: Information Integrity
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: Misinformation
+    target_label: Misinformation
+    target_url: https://w3c.github.io/dpv/2.3/ai/#Misinformation
+    relation: closeMatch
+- id: disinformation-generation
+  type: subcategory
+  broader: reliability-manipulation
+  maturity: emerging
+  label: Disinformation generation
+  definition: Generation of false or misleading information at scale that can pollute the information ecosystem and erode
+    consensus reality.
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+- id: behavioural-manipulation
+  type: subcategory
+  broader: reliability-manipulation
+  maturity: emerging
+  label: Behavioural manipulation
+  definition: Subliminal influence, dark patterns, or exploitation of cognitive biases to steer user behaviour without informed
+    consent.
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: synthetic-media-abuse
+  type: subcategory
+  broader: reliability-manipulation
+  maturity: emerging
+  label: Synthetic media abuse
+  definition: Generation of deepfakes, fake voices, or undisclosed AI-generated content used to deceive or harm.
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+- id: reliability-resilience
+  type: subgroup
+  broader: reliability
+  label: Resilience
+  definition: Risks related to the system's ability to absorb disruption, degrade gracefully, and recover. Particularly critical
+    for AI deployed in conflict zones, humanitarian operations, or critical infrastructure.
+  maturity: emerging
+  mappings:
+  - framework: nist_rmf
+    target_id: secure-resilient
+    target_label: Secure & Resilient
+    relation: broadMatch
+  - framework: eu_ai_act
+    target_id: article-15-4
+    target_label: Article 15(4) — Resilience regarding errors, faults or inconsistencies
+    relation: broadMatch
+- id: graceful-degradation
+  type: subcategory
+  broader: reliability-resilience
+  maturity: emerging
+  label: Graceful degradation
+  definition: 'Absence of defined degradation pathways that allow the system to maintain partial function when components
+    fail, connectivity is lost, or resources are constrained.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: edge-offline-operability
+  type: subcategory
+  broader: reliability-resilience
+  maturity: emerging
+  label: Edge and offline operability
+  definition: 'System inability to function without continuous cloud access or network connectivity, creating single points
+    of failure in environments with unreliable infrastructure.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: recovery-capability
+  type: subcategory
+  broader: reliability-resilience
+  maturity: emerging
+  label: Recovery capability
+  definition: 'Lack of tested recovery procedures, rollback mechanisms, or recovery time objectives for restoring system function
+    after disruption.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: infrastructure-dependency
+  type: subcategory
+  broader: reliability-resilience
+  maturity: emerging
+  label: Infrastructure dependency
+  definition: 'Unmapped or unmitigated dependencies on external infrastructure (power, connectivity, cloud services, third-party
+    APIs) whose failure would disable the system.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+- id: contextual-resilience
+  type: subcategory
+  broader: reliability-resilience
+  maturity: emerging
+  label: Contextual and ethical resilience
+  definition: 'Absence of safeguards against function creep, weaponisation, or repurposing of the system against the populations
+    it was designed to serve. Includes adequacy of consent mechanisms under power asymmetries and protection of beneficiary
+    data in humanitarian or conflict contexts.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: governance
+  type: category
+  label: Governance
+  alt_labels:
+  - Accountability
+  - Governance & Accountability
+  definition: 'The risk that an AI system lacks adequate structures, policies, or accountability mechanisms to oversee its
+    design, deployment, and use. Weak governance can lead to unclear responsibilities, poor documentation, limited auditability,
+    and failure to align with legal, ethical, or organizational standards.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  - post-processing
+  maturity: established
+  perspective: governance & compliance
+  mappings:
+  - framework: mit
+    target_id: subdomain-6.5
+    target_label: Governance failure
+    relation: closeMatch
+  - framework: nist_600
+    target_id: value-chain
+    target_label: Value Chain & Component Integration
+    relation: relatedMatch
+  - framework: nist_rmf
+    target_id: accountable-transparent
+    target_label: Accountable & Transparent
+    relation: closeMatch
+  - framework: oecd
+    target_id: principle-1.5
+    target_label: Accountability
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.2-A.4
+    target_label: AI Policy, Internal Organisation, Resources
+    relation: broadMatch
+- id: governance-accountability
+  type: subgroup
+  broader: governance
+  label: Accountability
+  definition: Risks from unclear responsibility, attribution, and oversight of AI system impacts.
+- id: unclear-responsibilities
+  type: subcategory
+  broader: governance-accountability
+  maturity: established
+  label: Unclear responsibilities and accountability gaps
+  definition: 'Missing or ambiguous assignment of roles and responsibilities for AI system design, deployment, monitoring,
+    and incident response.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+- id: responsible-actor-attribution
+  type: subcategory
+  broader: governance-accountability
+  maturity: emerging
+  label: Responsible actor attribution
+  definition: 'Unclear or undocumented roles of developers, deployers, or reviewers, creating accountability gaps that can
+    delay incident response or allow harmful practices to persist.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+  source: HRA
+- id: oversight-of-adverse-impacts
+  type: subcategory
+  broader: governance-accountability
+  maturity: emerging
+  label: Oversight of significant adverse impacts
+  definition: 'Missing processes for identifying, escalating, and responding to harmful outcomes, including psychological
+    or physical harm and threats to human life.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+  source: HRA
+- id: governance-documentation
+  type: subgroup
+  broader: governance
+  label: Documentation & auditability
+  definition: Risks from incomplete, inaccessible, or absent documentation and audit trails.
+- id: poor-documentation
+  type: subcategory
+  broader: governance-documentation
+  maturity: established
+  label: Poor documentation
+  definition: 'Incomplete, outdated, or absent documentation of system purpose, architecture, data sources, known limitations,
+    and operational procedures.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  - post-processing
+- id: limited-auditability
+  type: subcategory
+  broader: governance-documentation
+  maturity: established
+  label: Limited auditability
+  definition: 'Insufficient logging, versioning, or traceability for meaningful external review or internal audit.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+- id: decision-traceability
+  type: subcategory
+  broader: governance-documentation
+  maturity: emerging
+  label: Decision traceability
+  definition: 'Inability to trace decisions made or influenced by the AI system back to specific inputs, processes, or actors,
+    making it impossible to investigate harms or assign responsibility.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+  source: HRA
+- id: input-output-logging
+  type: subcategory
+  broader: governance-documentation
+  maturity: emerging
+  label: Critical input/output logging
+  definition: 'Failure to log inputs and outputs systematically, hindering detection of failures, bias, or misuse. For LLMs,
+    unlogged prompts may prevent tracking of harmful or sensitive interactions.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: governance-compliance
+  type: subgroup
+  broader: governance
+  label: Compliance & process
+  definition: Risks from non-compliance with regulations, absence of change management, and lack of fitness validation.
+- id: regulatory-non-compliance
+  type: subcategory
+  broader: governance-compliance
+  maturity: established
+  label: Regulatory non-compliance
+  definition: 'Failure to align with applicable legal, ethical, or organisational standards, including sector-specific regulations.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+- id: lack-of-change-management
+  type: subcategory
+  broader: governance-compliance
+  maturity: established
+  label: Lack of change management
+  definition: 'Absence of controlled processes for system modifications, including uncontrolled changes to production systems.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: fitness-for-purpose
+  type: subcategory
+  broader: governance-compliance
+  maturity: emerging
+  label: Fitness for purpose and task effectiveness
+  definition: The system has not been validated against the problem it is intended to solve, or does not achieve adequate
+    or equitable task performance across subpopulations and input types. Covers both the ex ante question (was this designed
+    for this problem?) and the ex post question (does it actually work?).
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  source: HRA
+  alt_labels:
+  - Fitness for purpose
+  - Task success
+- id: governance-data-oversight
+  type: subgroup
+  broader: governance
+  label: Data & oversight
+  definition: Risks from inadequate data governance, insufficient human oversight, and unvalidated task performance.
+- id: data-governance
+  type: subcategory
+  broader: governance-data-oversight
+  maturity: emerging
+  label: Data governance
+  definition: 'Inadequate labelling, tagging, approval, or appropriateness assessment of data, leading to downstream issues
+    with fitness for purpose, bias, and compliance.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  source: HRA
+- id: human-oversight-control
+  type: subcategory
+  broader: governance-data-oversight
+  maturity: emerging
+  label: Human oversight and control
+  definition: 'Lack of defined intervention points, override capabilities, or human review mechanisms, allowing issues and
+    threats to persist unchecked.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: security-misuse
+  type: category
+  label: Security & Misuse
+  alt_labels:
+  - Safety, Security & Misuse
+  - Security
+  - Safety
+  definition: The risk that an AI system is exposed to AI-specific vulnerabilities, attacks, or misuse that compromise its
+    integrity, availability, or confidentiality. This covers risks beyond traditional IT security, including adversarial inputs,
+    prompt injection, model extraction, jailbreaking, and supply-chain risks specific to AI components. It is intended to
+    complement, not replace, standard IT security assessments.
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  - post-processing
+  maturity: established
+  perspective: technical soundness
+  mappings:
+  - framework: mit
+    target_id: subdomain-2.2
+    target_label: AI system security vulnerabilities & attacks
+    relation: closeMatch
+  - framework: mit
+    target_id: domain-4
+    target_label: Malicious Actors & Misuse
+    relation: closeMatch
+  - framework: nist_600
+    target_id: information-security
+    target_label: Information Security
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: secure-resilient
+    target_label: Secure & Resilient
+    relation: closeMatch
+  - framework: oecd
+    target_id: principle-1.4
+    target_label: Robustness, security & safety
+    relation: broadMatch
+  - framework: dpv_ai
+    target_id: SecurityAttack
+    target_label: Security Attack
+    relation: broadMatch
+- id: security-ai-attacks
+  type: subgroup
+  broader: security-misuse
+  label: AI-specific attacks
+  definition: Attack vectors specific to AI systems that exploit model behaviour or training processes.
+- id: adversarial-attacks
+  type: subcategory
+  broader: security-ai-attacks
+  maturity: established
+  label: Adversarial attacks
+  definition: 'Evasion, poisoning, and extraction attacks designed to manipulate system behaviour, corrupt training data,
+    or steal model information.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+- id: prompt-injection
+  type: subcategory
+  broader: security-ai-attacks
+  maturity: established
+  label: Prompt injection
+  alt_labels:
+  - Prompt injection protection
+  definition: 'Malicious inputs designed to subvert system intent by injecting instructions that override the system prompt,
+    leading to harmful, deceptive, or unauthorized outputs.
+
+    '
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+  mappings:
+  - framework: dpv_ai
+    target_id: PromptInjection
+    target_label: Prompt Injection
+    relation: exactMatch
+- id: jailbreaking
+  type: subcategory
+  broader: security-ai-attacks
+  maturity: established
+  label: Jailbreaking
+  alt_labels:
+  - Jailbreakability
+  definition: 'Techniques used to bypass safety controls, content filters, or usage restrictions to trigger prohibited behaviours
+    or outputs.
+
+    '
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: security-system
+  type: subgroup
+  broader: security-misuse
+  label: System security
+  definition: Risks related to access control and integrity of the AI system and its supply chain.
+- id: unauthorized-access
+  type: subcategory
+  broader: security-system
+  maturity: established
+  label: Unauthorized access
+  definition: 'Exploitation of access control weaknesses to gain unauthorized access to the system, its data, or its administrative
+    functions.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: supply-chain-vulnerabilities
+  type: subcategory
+  broader: security-system
+  maturity: established
+  label: Supply-chain vulnerabilities
+  definition: 'Risks introduced through third-party components, pre-trained models, data sources, or other dependencies not
+    fully under the deployer''s control.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+- id: security-operational
+  type: subgroup
+  broader: security-misuse
+  label: Operational security
+  definition: Risks from inadequate incident response and use of the system beyond its intended purpose.
+- id: incident-response-gaps
+  type: subcategory
+  broader: security-operational
+  maturity: established
+  label: Incident response gaps
+  definition: 'Insufficient detection, logging, escalation, or response capabilities for security incidents and misuse events.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: misuse-beyond-intended-purpose
+  type: subcategory
+  broader: security-operational
+  maturity: emerging
+  label: Misuse beyond intended purpose
+  definition: 'Use of the system for purposes it was not designed for, including repurposing for surveillance, manipulation,
+    or other harmful applications.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: environmental-impact
+  type: category
+  label: Environmental Impact
+  alt_labels:
+  - Sustainability
+  - Environmental sustainability
+  definition: 'The risk that an AI system''s development, deployment, or use causes negative environmental effects, such as
+    excessive energy or water consumption, carbon emissions, or unsustainable use of hardware and resources. This includes
+    hidden impacts across the system''s lifecycle, from model training to long-term operation.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  - post-processing
+  maturity: established
+  perspective: technical soundness
+  mappings:
+  - framework: mit
+    target_id: subdomain-6.6
+    target_label: Environmental harm
+    relation: closeMatch
+  - framework: nist_600
+    target_id: environmental
+    target_label: Environmental Impacts
+    relation: closeMatch
+  - framework: oecd
+    target_id: principle-1.1
+    target_label: Inclusive growth, sustainable development & well-being
+    relation: broadMatch
+- id: inference-energy-consumption
+  type: subcategory
+  broader: environmental-impact
+  maturity: emerging
+  label: Inference-time energy consumption
+  definition: 'High energy use during deployment and inference, increasing environmental impact and infrastructure costs.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: training-resource-consumption
+  type: subcategory
+  broader: environmental-impact
+  maturity: emerging
+  label: Training resource consumption
+  definition: 'Significant carbon emissions, energy use, and water consumption associated with model training, particularly
+    for large-scale foundation models.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  source: HRA
+- id: hardware-efficiency
+  type: subcategory
+  broader: environmental-impact
+  maturity: emerging
+  label: Hardware efficiency
+  definition: 'Poor hardware utilisation increasing costs, environmental footprint, and limiting the feasibility of equitable
+    access to AI capabilities.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - in-processing
+  - post-processing
+  source: HRA
+- id: transparency-explainability
+  type: category
+  label: Transparency & Explainability
+  alt_labels:
+  - Explainability & Transparency
+  - Transparency and Explainability
+  definition: 'The risk that stakeholders cannot understand how an AI system works, what it does, or why it produces specific
+    outputs. Lack of transparency undermines informed consent, impedes oversight, and erodes trust.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  maturity: established
+  perspective: governance & compliance
+  note: 'In the RAIA Guide, this category is assessed only at the Post-Processing stage.
+
+    '
+  mappings:
+  - framework: mit
+    target_id: subdomain-7.4
+    target_label: Lack of transparency or interpretability
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: explainable-interpretable
+    target_label: Explainable & Interpretable
+    relation: closeMatch
+  - framework: oecd
+    target_id: principle-1.3
+    target_label: Transparency & explainability
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: Transparency
+    target_label: Transparency
+    relation: broadMatch
+- id: transparency-explainability-group
+  type: subgroup
+  broader: transparency-explainability
+  label: Explainability
+  definition: Risks from stakeholders being unable to understand why the system produces specific outputs.
+- id: system-explainability
+  type: subcategory
+  broader: transparency-explainability-group
+  maturity: emerging
+  label: AI system explainability
+  definition: 'Stakeholders misinterpret or misunderstand the intended purpose or use of an AI system based on its outputs,
+    due to insufficient explanation of how outputs are produced.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: prompt-transparency
+  type: subcategory
+  broader: transparency-explainability-group
+  maturity: emerging
+  label: Prompt transparency
+  definition: 'Inconsistent outputs to semantically similar inputs that confuse users and erode trust. For LLMs, variation
+    across generations may lead to contradictory advice or conflicting factual claims.
+
+    '
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: transparency-communication
+  type: subgroup
+  broader: transparency-explainability
+  label: Communication & disclosure
+  definition: Risks from inadequate communication about system capabilities, limitations, and AI involvement.
+- id: stakeholder-communication
+  type: subcategory
+  broader: transparency-communication
+  maturity: emerging
+  label: Communication to stakeholders
+  alt_labels:
+  - Communication to relevant interested parties
+  definition: 'Stakeholders not being made aware of AI system limitations, parameters, and settings that affect responsible
+    use.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: ai-interaction-disclosure
+  type: subcategory
+  broader: transparency-communication
+  maturity: emerging
+  label: Disclosure of AI interaction
+  definition: 'Users interacting with an AI system under the assumption that they are communicating with a human, without
+    clear disclosure.
+
+    '
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+  source: HRA
+- id: model-card-completeness
+  type: subcategory
+  broader: transparency-communication
+  maturity: emerging
+  label: Model card completeness
+  definition: 'Incomplete or outdated documentation of model purpose, performance, limitations, or data sources, leading to
+    inappropriate deployment or overestimation of capabilities.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+  source: HRA
+- id: incident-reporting-redress
+  type: category
+  label: Incident Reporting & Redress
+  definition: The risk that when AI-driven decisions cause harm, there are no effective mechanisms to report incidents, escalate
+    concerns, challenge decisions, or seek remedy. This includes absence of appeal mechanisms, unclear remediation procedures,
+    and failure to communicate with affected parties.
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  maturity: emerging
+  perspective: rights & ethics
+  note: 'In the RAIA Guide, this category is assessed only at the Post-Processing stage.
+
+    '
+  mappings:
+  - framework: nist_rmf
+    target_id: accountable-transparent
+    target_label: Accountable & Transparent
+    relation: broadMatch
+  - framework: oecd
+    target_id: accountability
+    target_label: Accountability
+    relation: broadMatch
+  - framework: eu_ai_act
+    target_id: article-62
+    target_label: Article 62 — Reporting of serious incidents
+    relation: relatedMatch
+  - framework: dpv_ai
+    target_id: RightToRemedy
+    target_label: Right to Remedy
+    target_url: https://w3c.github.io/dpv/2.3/dpv/#RightToRemedy
+    relation: broadMatch
+  alt_labels:
+  - Responsibility & Redress
+- id: absence-of-appeal
+  type: subcategory
+  broader: incident-reporting-redress
+  maturity: emerging
+  label: Absence of appeal mechanisms
+  definition: 'No accessible process for individuals to challenge or appeal AI-driven decisions that affect them.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: unclear-remediation
+  type: subcategory
+  broader: incident-reporting-redress
+  maturity: emerging
+  label: Unclear remediation procedures
+  definition: 'Absence of defined processes for correcting harms caused by AI system errors or failures.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: ineffective-communication
+  type: subcategory
+  broader: incident-reporting-redress
+  maturity: emerging
+  label: Ineffective communication with affected parties
+  definition: 'Failure to inform individuals about how they have been affected by AI-driven decisions and what options are
+    available to them.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: autonomy-agency
+  type: category
+  label: Autonomy & Agency
+  alt_labels:
+  - Autonomy & Human Agency
+  - Agentic Risks
+  - Human-AI Interaction
+  definition: The risk that an AI system undermines human agency or operates with insufficient human control. This includes
+    over-reliance on AI outputs, automation bias, deskilling, and — for agentic AI systems — failure modes arising from multi-step
+    autonomous actions, tool use, or coordination with other AI agents.
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  maturity: emerging
+  perspective: rights & ethics
+  mappings:
+  - framework: mit
+    target_id: subdomain-5.1-5.2
+    target_label: Human-Computer Interaction
+    relation: closeMatch
+  - framework: nist_600
+    target_id: '7'
+    target_label: Human-AI Configuration
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: HumanOversight
+    target_label: Human Oversight
+    target_url: https://w3c.github.io/dpv/2.3/ai/#HumanOversight
+    relation: broadMatch
+  - framework: eu_ai_act
+    target_id: article-14
+    target_label: Article 14 — Human oversight
+    relation: broadMatch
+- id: autonomy-human-agency
+  type: subgroup
+  broader: autonomy-agency
+  label: Human agency
+  definition: Risks to human decision-making capacity arising from interaction with AI systems.
+  mappings:
+  - framework: mit
+    target_id: subdomain-5.1
+    target_label: Overreliance and unsafe use
+    relation: closeMatch
+- id: automation-bias
+  label: Automation bias
+  definition: Over-reliance on automated outputs, accepting AI recommendations without sufficient scrutiny, leading to missed
+    errors and reduced human judgment.
+  scope: ALL
+  type: subcategory
+  broader: autonomy-human-agency
+  maturity: emerging
+  lifecycle_stages:
+  - post-processing
+- id: trust-calibration
+  label: Trust calibration
+  definition: Inappropriate levels of trust in AI outputs — either excessive trust leading to uncritical acceptance, or insufficient
+    trust leading to underuse of valuable AI capabilities.
+  scope: ALL
+  type: subcategory
+  broader: autonomy-human-agency
+  maturity: emerging
+  lifecycle_stages:
+  - post-processing
+- id: deskilling
+  label: Deskilling
+  definition: Erosion of human skills, expertise, or professional judgment through prolonged delegation of tasks to AI systems.
+  scope: ALL
+  type: subcategory
+  broader: autonomy-human-agency
+  maturity: emerging
+  lifecycle_stages:
+  - post-processing
+- id: over-reliance
+  label: Over-reliance on AI
+  definition: Systemic dependence on AI systems that leaves individuals or organisations unable to function when the system
+    is unavailable or produces incorrect outputs.
+  scope: ALL
+  type: subcategory
+  broader: autonomy-human-agency
+  maturity: emerging
+  lifecycle_stages:
+  - post-processing
+- id: autonomy-system-autonomy
+  type: subgroup
+  broader: autonomy-agency
+  label: System autonomy
+  definition: Risks from AI systems operating with a degree of autonomy beyond single-inference interactions.
+  mappings:
+  - framework: mit
+    target_id: subdomain-7.6
+    target_label: Multi-agent risks
+    relation: closeMatch
+- id: multi-step-actions
+  label: Multi-step autonomous actions
+  definition: AI systems that plan and execute sequences of actions, where errors in early steps cascade unpredictably through
+    later steps.
+  scope: LLM
+  type: subcategory
+  broader: autonomy-system-autonomy
+  maturity: emerging
+  lifecycle_stages:
+  - post-processing
+- id: tool-use-risks
+  label: Tool use risks
+  definition: AI systems that interact with external tools, APIs, or services, creating unintended side effects or security
+    exposures.
+  scope: LLM
+  type: subcategory
+  broader: autonomy-system-autonomy
+  maturity: emerging
+  lifecycle_stages:
+  - post-processing
+- id: emergent-behaviour
+  label: Emergent behaviour
+  definition: Unexpected capabilities or behaviours arising from agent interactions, multi-model coordination, or complex
+    system dynamics that were not anticipated during design.
+  scope: LLM
+  type: subcategory
+  broader: autonomy-system-autonomy
+  maturity: emerging
+  lifecycle_stages:
+  - post-processing
+- id: loss-of-human-control
+  label: Loss of meaningful human control
+  definition: AI systems operating at speeds or complexity levels that make meaningful human oversight impractical, including
+    inability to understand, interrupt, or reverse autonomous decisions.
+  scope: ALL
+  type: subcategory
+  broader: autonomy-system-autonomy
+  maturity: emerging
+  lifecycle_stages:
+  - post-processing
+- id: organisational-readiness
+  type: category
+  label: Organisational Readiness
+  alt_labels:
+  - Integration Readiness
+  - Deployment Readiness
+  - Sociotechnical Fit
+  definition: The risk that an AI system fails to deliver value not because of model performance issues but because it does
+    not fit the organisational, technical, or human context into which it is deployed. This includes insufficient organisational
+    capacity to absorb the technology, workflow incompatibility, interoperability failures with existing systems, and lack
+    of sustainable maintenance capability.
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+  maturity: emerging
+  perspective: operational viability
+  mappings:
+  - framework: nist_rmf
+    target_id: map
+    target_label: MAP function — context and deployment environment
+    relation: relatedMatch
+  - framework: iso_42001
+    target_id: A.10
+    target_label: Third-party and customer relationships
+    relation: relatedMatch
+- id: org-preparedness
+  type: subcategory
+  broader: organisational-readiness
+  maturity: emerging
+  label: Organisational preparedness
+  definition: 'The deploying organisation lacks the governance maturity, leadership engagement, change management capacity,
+    staff competency, or cultural receptivity needed to absorb an AI system into its operations.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+- id: technical-interoperability
+  type: subcategory
+  broader: organisational-readiness
+  maturity: emerging
+  label: Technical interoperability
+  definition: 'The AI system cannot integrate with existing infrastructure, legacy systems, data pipelines, or standards (e.g.,
+    HL7 FHIR in healthcare) required for it to function in the deployment environment.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - post-processing
+- id: workflow-compatibility
+  type: subcategory
+  broader: organisational-readiness
+  maturity: emerging
+  label: Workflow compatibility
+  definition: 'The system''s outputs, alerts, or interfaces do not fit existing human workflows, leading to alert fatigue,
+    workarounds, or abandonment. Includes inadequate end-user involvement in design and testing, and poor context transferability
+    from development to deployment environment.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: deployment-sustainability
+  type: subcategory
+  broader: organisational-readiness
+  maturity: emerging
+  label: Deployment sustainability
+  definition: 'The organisation lacks the capacity for ongoing operation, maintenance, monitoring, and improvement of the
+    AI system after initial deployment. Includes vendor lock-in risk, dependency on external expertise, and unclear cost-effectiveness
+    or value proposition.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+- id: institutional-capacity
+  type: subcategory
+  broader: organisational-readiness
+  maturity: emerging
+  label: Institutional absorptive capacity
+  definition: 'The broader institutional or societal context lacks foundational capabilities (digital infrastructure, data
+    literacy, regulatory frameworks) needed before AI deployment is viable. Premature deployment may reallocate scarce resources,
+    exacerbate inequality, or create technological dependency.
+
+    '
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing

@@ -4,22 +4,20 @@ title: "Infrastructure dependency"
 id: infrastructure-dependency
 uri: https://taxonomy.eticas.ai/risk/infrastructure-dependency
 type: subcategory
-maturity: proposed
+maturity: emerging
 scope: ALL
-broader: resilience
+broader: reliability-resilience
 ---
 
 # Infrastructure dependency
 
 `https://taxonomy.eticas.ai/risk/infrastructure-dependency`
 
-**Maturity:** <span class="badge badge-proposed">proposed</span>
+**Maturity:** <span class="badge badge-emerging">emerging</span>
 
 Unmapped or unmitigated dependencies on external infrastructure (power, connectivity, cloud services, third-party APIs) whose failure would disable the system.
 
-> **This subcategory has been proposed but not yet validated by the team.**
+> **This subcategory is emerging.** It has not yet been validated through established assessment methods.
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, Post Processing
-
-**Parent category:** [Resilience](resilience.md)

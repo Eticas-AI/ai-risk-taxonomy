@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/feedback-loops
 type: subcategory
 maturity: established
 scope: ALL
-broader: bias-fairness
+broader: bias-data-representation
 ---
 
 # Feedback loops reinforcing inequality
@@ -19,5 +19,3 @@ System outputs that, when fed back into the system or its operational context, a
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Bias & Fairness](bias-fairness.md)

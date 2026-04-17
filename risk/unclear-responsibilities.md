@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/unclear-responsibilities
 type: subcategory
 maturity: established
 scope: ALL
-broader: governance
+broader: governance-accountability
 ---
 
 # Unclear responsibilities and accountability gaps
@@ -19,5 +19,3 @@ Missing or ambiguous assignment of roles and responsibilities for AI system desi
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, Post Processing
-
-**Parent category:** [Governance](governance.md)

@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/proxy-discrimination
 type: subcategory
 maturity: established
 scope: ALL
-broader: bias-fairness
+broader: bias-data-representation
 ---
 
 # Proxy discrimination through correlated features
@@ -19,5 +19,3 @@ Discrimination through features that correlate with protected attributes (e.g., 
 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
-
-**Parent category:** [Bias & Fairness](bias-fairness.md)

@@ -4,9 +4,7 @@ title: "Transparency & Explainability"
 id: transparency-explainability
 uri: https://taxonomy.eticas.ai/risk/transparency-explainability
 type: category
-inclusion: required
 maturity: established
-perspective: "governance & compliance"
 scope: ALL
 ---
 
@@ -14,7 +12,7 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/transparency-explainability`
 
-**Inclusion:** <span class="badge badge-required">required</span> · **Maturity:** <span class="badge badge-established">established</span> · **Perspective:** <span class="badge badge-perspective">governance & compliance</span>
+**Maturity:** <span class="badge badge-established">established</span>
 
 The risk that stakeholders cannot understand how an AI system works, what it does, or why it produces specific outputs. Lack of transparency undermines informed consent, impedes oversight, and erodes trust.
 
@@ -23,15 +21,20 @@ The risk that stakeholders cannot understand how an AI system works, what it doe
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
 
-## Subcategories
+### Explainability
+
+Risks from stakeholders being unable to understand why the system produces specific outputs.
 
 - [AI system explainability](system-explainability.md)
+- [Prompt transparency](prompt-transparency.md)
+
+### Communication & disclosure
+
+Risks from inadequate communication about system capabilities, limitations, and AI involvement.
+
 - [Communication to stakeholders](stakeholder-communication.md)
 - [Disclosure of AI interaction](ai-interaction-disclosure.md)
 - [Model card completeness](model-card-completeness.md)
-- [Prompt transparency](prompt-transparency.md)
-
-> In the RAIA Guide, this category is assessed only at the Post-Processing stage.
 
 ## Mappings to external frameworks
 
@@ -40,4 +43,4 @@ The risk that stakeholders cannot understand how an AI system works, what it doe
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of transparency or interpretability | close match |
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Explainable & Interpretable | close match |
 | [OECD AI Principles](https://oecd.ai) | Transparency & explainability | close match |
-| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Transparency](https://w3c.github.io/dpv/2.3/ai/#Transparency) | broad match |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | Transparency | broad match |

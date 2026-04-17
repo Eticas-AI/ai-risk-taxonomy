@@ -4,25 +4,25 @@ title: "Harmful content and toxicity"
 id: harmful-content-toxicity
 uri: https://taxonomy.eticas.ai/risk/harmful-content-toxicity
 type: subcategory
-maturity: developing
+maturity: emerging
 scope: LLM
-broader: bias-fairness
+broader: bias-output-quality
 ---
 
 # Harmful content and toxicity
 
 `https://taxonomy.eticas.ai/risk/harmful-content-toxicity`
 
-**Maturity:** <span class="badge badge-developing">developing</span>
+**Maturity:** <span class="badge badge-emerging">emerging</span>
 
 Offensive, hateful, or otherwise harmful outputs that damage user well-being and erode trust.
+
+> **This subcategory is emerging.** It has not yet been validated through established assessment methods.
 
 **Also known as:** Toxicity · Harmful content prevention
 
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Bias & Fairness](bias-fairness.md)
 
 ## Mappings to external frameworks
 

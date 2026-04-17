@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/emotion-inference-profiling
 type: subcategory
 maturity: established
 scope: ALL
-broader: privacy-confidentiality
+broader: privacy-collection-use
 ---
 
 # Emotion inference or sensitive attribute profiling
@@ -19,5 +19,3 @@ Inference of emotional states, political opinions, sexual orientation, health st
 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
-
-**Parent category:** [Privacy & Confidentiality](privacy-confidentiality.md)

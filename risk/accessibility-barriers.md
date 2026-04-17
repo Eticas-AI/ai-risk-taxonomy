@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/accessibility-barriers
 type: subcategory
 maturity: established
 scope: ALL
-broader: bias-fairness
+broader: bias-performance-disparities
 ---
 
 # Accessibility barriers
@@ -19,5 +19,3 @@ System design that excludes or disadvantages people with disabilities, including
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, Post Processing
-
-**Parent category:** [Bias & Fairness](bias-fairness.md)

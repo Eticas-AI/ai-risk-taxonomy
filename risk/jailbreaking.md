@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/jailbreaking
 type: subcategory
 maturity: established
 scope: LLM
-broader: security-misuse
+broader: security-ai-attacks
 ---
 
 # Jailbreaking
@@ -21,7 +21,5 @@ Techniques used to bypass safety controls, content filters, or usage restriction
 
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Security & Misuse](security-misuse.md)
 
 *Source: HRA project taxonomy*

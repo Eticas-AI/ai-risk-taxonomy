@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/hallucination
 type: subcategory
 maturity: established
 scope: LLM
-broader: reliability
+broader: reliability-output-quality
 ---
 
 # Hallucination and fabricated outputs
@@ -21,8 +21,6 @@ Generation of false, fabricated, or misleading information that appears credible
 
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Reliability](reliability.md)
 
 ## Mappings to external frameworks
 

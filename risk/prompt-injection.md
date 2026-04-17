@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/prompt-injection
 type: subcategory
 maturity: established
 scope: LLM
-broader: security-misuse
+broader: security-ai-attacks
 ---
 
 # Prompt injection
@@ -22,12 +22,10 @@ Malicious inputs designed to subvert system intent by injecting instructions tha
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
 
-**Parent category:** [Security & Misuse](security-misuse.md)
-
 ## Mappings to external frameworks
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
-| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Prompt Injection](https://w3c.github.io/dpv/2.3/ai/#PromptInjection) | exact match |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | Prompt Injection | exact match |
 
 *Source: HRA project taxonomy*

@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/incident-response-gaps
 type: subcategory
 maturity: established
 scope: ALL
-broader: security-misuse
+broader: security-operational
 ---
 
 # Incident response gaps
@@ -19,5 +19,3 @@ Insufficient detection, logging, escalation, or response capabilities for securi
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Security & Misuse](security-misuse.md)

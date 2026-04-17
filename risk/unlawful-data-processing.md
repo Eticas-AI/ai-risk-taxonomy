@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/unlawful-data-processing
 type: subcategory
 maturity: established
 scope: ALL
-broader: privacy-confidentiality
+broader: privacy-collection-use
 ---
 
 # Unlawful collection or processing of personal data
@@ -19,5 +19,3 @@ Collection, storage, or processing of personal data without adequate legal basis
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing
-
-**Parent category:** [Privacy & Confidentiality](privacy-confidentiality.md)

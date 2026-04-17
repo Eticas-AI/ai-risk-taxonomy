@@ -74,8 +74,6 @@ def build_graph(config, taxonomy, mappings_def):
         # Custom properties
         if "scope" in concept:
             g.add((uri, eticas.scope, Literal(concept["scope"])))
-        if "inclusion" in concept:
-            g.add((uri, eticas.inclusion, Literal(concept["inclusion"])))
         if "maturity" in concept:
             g.add((uri, eticas.maturity, Literal(concept["maturity"])))
         if "perspective" in concept:

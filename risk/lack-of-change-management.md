@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/lack-of-change-management
 type: subcategory
 maturity: established
 scope: ALL
-broader: governance
+broader: governance-compliance
 ---
 
 # Lack of change management
@@ -19,5 +19,3 @@ Absence of controlled processes for system modifications, including uncontrolled
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
-
-**Parent category:** [Governance](governance.md)

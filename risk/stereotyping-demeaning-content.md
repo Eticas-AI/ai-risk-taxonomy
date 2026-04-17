@@ -4,27 +4,25 @@ title: "Stereotyping and demeaning content"
 id: stereotyping-demeaning-content
 uri: https://taxonomy.eticas.ai/risk/stereotyping-demeaning-content
 type: subcategory
-maturity: provisional
+maturity: emerging
 scope: ALL
-broader: bias-fairness
+broader: bias-output-quality
 ---
 
 # Stereotyping and demeaning content
 
 `https://taxonomy.eticas.ai/risk/stereotyping-demeaning-content`
 
-**Maturity:** <span class="badge badge-provisional">provisional</span>
+**Maturity:** <span class="badge badge-emerging">emerging</span>
 
 AI system outputs that reinforce, perpetuate, erase, or demean demographic groups through stereotypical representations or language.
 
-> **This subcategory is provisional.** It has not yet been validated in a completed audit.
+> **This subcategory is emerging.** It has not yet been validated through established assessment methods.
 
 **Also known as:** Minimization of stereotyping
 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
-
-**Parent category:** [Bias & Fairness](bias-fairness.md)
 
 ## Mappings to external frameworks
 

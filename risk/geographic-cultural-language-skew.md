@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/geographic-cultural-language-skew
 type: subcategory
 maturity: established
 scope: ALL
-broader: bias-fairness
+broader: bias-data-representation
 ---
 
 # Geographic, cultural, or language skew
@@ -19,5 +19,3 @@ Systematic performance differences across geographies, cultures, or languages, o
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing, Post Processing
-
-**Parent category:** [Bias & Fairness](bias-fairness.md)

@@ -4,24 +4,22 @@ title: "Out-of-distribution robustness"
 id: out-of-distribution-robustness
 uri: https://taxonomy.eticas.ai/risk/out-of-distribution-robustness
 type: subcategory
-maturity: provisional
+maturity: emerging
 scope: ALL
-broader: reliability
+broader: reliability-output-quality
 ---
 
 # Out-of-distribution robustness
 
 `https://taxonomy.eticas.ai/risk/out-of-distribution-robustness`
 
-**Maturity:** <span class="badge badge-provisional">provisional</span>
+**Maturity:** <span class="badge badge-emerging">emerging</span>
 
 Unpredictable behaviour or failure when the system is exposed to inputs outside the distribution of its training data.
 
-> **This subcategory is provisional.** It has not yet been validated in a completed audit.
+> **This subcategory is emerging.** It has not yet been validated through established assessment methods.
 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
-
-**Parent category:** [Reliability](reliability.md)
 
 *Source: HRA project taxonomy*

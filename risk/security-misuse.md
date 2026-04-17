@@ -4,9 +4,7 @@ title: "Security & Misuse"
 id: security-misuse
 uri: https://taxonomy.eticas.ai/risk/security-misuse
 type: category
-inclusion: required
 maturity: established
-perspective: "technical soundness"
 scope: ALL
 ---
 
@@ -14,22 +12,34 @@ scope: ALL
 
 `https://taxonomy.eticas.ai/risk/security-misuse`
 
-**Inclusion:** <span class="badge badge-required">required</span> · **Maturity:** <span class="badge badge-established">established</span> · **Perspective:** <span class="badge badge-perspective">technical soundness</span>
+**Maturity:** <span class="badge badge-established">established</span>
 
-The risk that an AI system is exposed to vulnerabilities, attacks, or misuse that compromise its integrity, availability, or confidentiality. This includes adversarial inputs, model inversion, data poisoning, prompt injection, and unauthorized access, which can lead to manipulation of outputs, data breaches, or system failure.
+The risk that an AI system is exposed to AI-specific vulnerabilities, attacks, or misuse that compromise its integrity, availability, or confidentiality. This covers risks beyond traditional IT security, including adversarial inputs, prompt injection, model extraction, jailbreaking, and supply-chain risks specific to AI components. It is intended to complement, not replace, standard IT security assessments.
 
 **Also known as:** Safety, Security & Misuse · Security · Safety
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing, Post Processing
 
-## Subcategories
+### AI-specific attacks
+
+Attack vectors specific to AI systems that exploit model behaviour or training processes.
 
 - [Adversarial attacks](adversarial-attacks.md)
 - [Prompt injection](prompt-injection.md)
 - [Jailbreaking](jailbreaking.md)
+
+### System security
+
+Risks related to access control and integrity of the AI system and its supply chain.
+
 - [Unauthorized access](unauthorized-access.md)
 - [Supply-chain vulnerabilities](supply-chain-vulnerabilities.md)
+
+### Operational security
+
+Risks from inadequate incident response and use of the system beyond its intended purpose.
+
 - [Incident response gaps](incident-response-gaps.md)
 - [Misuse beyond intended purpose](misuse-beyond-intended-purpose.md)
 
@@ -42,4 +52,4 @@ The risk that an AI system is exposed to vulnerabilities, attacks, or misuse tha
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Information Security | close match |
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Secure & Resilient | close match |
 | [OECD AI Principles](https://oecd.ai) | Robustness, security & safety | broad match |
-| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Security Attack](https://w3c.github.io/dpv/2.3/ai/#SecurityAttack) | broad match |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | Security Attack | broad match |

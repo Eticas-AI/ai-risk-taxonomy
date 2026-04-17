@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/regulatory-non-compliance
 type: subcategory
 maturity: established
 scope: ALL
-broader: governance
+broader: governance-compliance
 ---
 
 # Regulatory non-compliance
@@ -19,5 +19,3 @@ Failure to align with applicable legal, ethical, or organisational standards, in
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, Post Processing
-
-**Parent category:** [Governance](governance.md)

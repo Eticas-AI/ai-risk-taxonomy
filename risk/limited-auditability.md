@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/limited-auditability
 type: subcategory
 maturity: established
 scope: ALL
-broader: governance
+broader: governance-documentation
 ---
 
 # Limited auditability
@@ -19,5 +19,3 @@ Insufficient logging, versioning, or traceability for meaningful external review
 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
-
-**Parent category:** [Governance](governance.md)

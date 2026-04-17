@@ -1,6 +1,6 @@
 # How to add a new category
 
-A category is a top-level risk area — like "Bias & Fairness" or "Reliability". This is less common than adding a subcategory; discuss with the team before adding a new one.
+A category is a top-level risk area — like "Bias & Fairness" or "Reliability". This is uncommon — discuss with the team before adding a new one.
 
 ## Step 1: Open the taxonomy file
 
@@ -15,10 +15,6 @@ New categories go at the end, after the last existing category block.
 ## Step 3: Copy and paste this template
 
 ```yaml
-  # ============================================================
-  # YOUR CATEGORY NAME (IN CAPS)
-  # ============================================================
-
   - id: your-category-id
     type: category
     label: "Your Category Name"
@@ -26,46 +22,39 @@ New categories go at the end, after the last existing category block.
       - "Alternative name if any"
     definition: >
       Your definition here. Describe the risk area clearly.
-      This can be multiple sentences. Keep the indentation
-      (6 spaces before the text).
+      This can be multiple sentences.
     scope: ALL
     lifecycle_stages: [pre-processing, in-processing, post-processing]
-    inclusion: audit-dependent
-    maturity: provisional
+    maturity: emerging
     perspective: "rights & ethics"
 ```
 
 ### Notes on filling in the fields
 
-All the same rules as [adding a subcategory](add-subcategory.md#how-to-fill-in-each-field) apply, plus:
+**`maturity`** — New categories should be `emerging`. Promotion to `established` is a team decision.
 
-**`inclusion`** — Use `audit-dependent` for new categories. Promotion to `required` is a team decision made later.
+**`perspective`** — Which client concern this addresses. Must be one of: `"rights & ethics"`, `"technical soundness"`, `"governance & compliance"`, or `"operational viability"`. Wrap in quotes.
 
-**`maturity`** — Use `provisional` for new categories. It moves to `developing` and then `established` as the category is used in audits and methods are refined.
+**No `broader` field** — Categories are top-level concepts.
 
-**`perspective`** — Which client concern this category addresses. Must be one of: `"rights & ethics"`, `"technical soundness"`, `"governance & compliance"`, or `"operational viability"`. Wrap in quotes.
+### Optional: add sub-groups
 
-**No `broader` field** — Categories are top-level concepts. They don't have a parent.
-
-### Optional: add mappings
-
-If you know the equivalent concept in an external framework, add a mappings section:
+If your category needs intermediate groupings, add sub-group entries after the category:
 
 ```yaml
-    mappings:
-      - framework: mit
-        target_id: "subdomain-X.X"
-        target_label: "MIT equivalent concept"
-        relation: closeMatch
+  - id: your-subgroup-id
+    type: subgroup
+    broader: your-category-id
+    label: "Your Sub-group Name"
+    definition: >
+      Brief description of what this group covers.
 ```
 
-Valid framework ids: `mit`, `nist_600`, `nist_rmf`, `oecd`, `dpv_ai`, `iso_42001`, `eu_ai_act`, `airo`, `vair`
-
-You can also skip mappings and add them later — they're not required for the validation to pass.
+Then point subcategories to the sub-group id rather than the category id.
 
 ## Steps 4–7: Commit, PR, check, merge
 
-Same as for subcategories — see [steps 4–7 in the subcategory guide](add-subcategory.md#step-4-commit-your-change).
+Same process — see [steps 4–7 in the subcategory guide](add-subcategory.md).
 
 ---
 
