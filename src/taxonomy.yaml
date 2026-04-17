@@ -1259,8 +1259,8 @@ concepts:
     target_label: Accountability
     relation: broadMatch
   - framework: eu_ai_act
-    target_id: article-62
-    target_label: Article 62 — Reporting of serious incidents
+    target_id: article-73
+    target_label: Article 73 — Reporting of serious incidents
     relation: relatedMatch
   - framework: dpv_ai
     target_id: RightToRemedy
@@ -1320,7 +1320,7 @@ concepts:
   perspective: rights & ethics
   mappings:
   - framework: mit
-    target_id: subdomain-5.1-5.2
+    target_id: domain-5
     target_label: Human-Computer Interaction
     relation: closeMatch
   - framework: nist_600
