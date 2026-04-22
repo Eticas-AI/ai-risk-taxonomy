@@ -61,7 +61,7 @@ This grouping is a presentation aid, not a formal classification. Categories may
 
 ## Risk categories
 
-Each category links to a detailed page with sub-groups, subcategories, definitions, and mappings to external frameworks. Browse all categories at the [taxonomy site](https://eticas-foundation.github.io/ai-risk-taxonomy/risk/).
+Each category links to a detailed page with sub-groups, subcategories, definitions, and mappings to external frameworks. Browse all categories at the [taxonomy site](https://eticas-ai.github.io/ai-risk-taxonomy/risk/).
 
 **[Bias & Fairness](risk/bias-fairness.md)** — The risk that an AI system produces outcomes that systematically advantage or disadvantage individuals or groups based on protected or sensitive attributes. *(3 sub-groups, 12 subcategories)*
 
@@ -69,7 +69,7 @@ Each category links to a detailed page with sub-groups, subcategories, definitio
 
 **[Reliability](risk/reliability.md)** — The risk that an AI system produces unreliable, fabricated, or manipulative outputs, or cannot recover from disruption. Includes output quality, monitoring gaps, manipulation & misinformation, and resilience. *(4 sub-groups, 14 subcategories)*
 
-**[Governance](risk/governance.md)** — The risk that an AI system lacks adequate structures, policies, or accountability mechanisms to oversee its design, deployment, and use. *(4 sub-groups, 12 subcategories)*
+**[Governance](risk/governance.md)** — The risk that an AI system lacks adequate structures, policies, or accountability mechanisms to oversee its design, deployment, and use. *(4 sub-groups, 13 subcategories)*
 
 **[Security & Misuse](risk/security-misuse.md)** — The risk that an AI system is exposed to AI-specific vulnerabilities, attacks, or misuse. Covers risks beyond traditional IT security, including adversarial inputs, prompt injection, and AI supply-chain risks. *(3 sub-groups, 7 subcategories)*
 

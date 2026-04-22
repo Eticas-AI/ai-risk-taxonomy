@@ -10,7 +10,7 @@ The core design principle is **simple source, generated complexity**. The team e
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    Source layer (human)                 │
+│                    Source layer (human)                  │
 │                                                         │
 │   src/taxonomy.yaml          ← team edits this          │
 │   src/mappings.yaml          ← external equivalences    │
@@ -26,12 +26,12 @@ The core design principle is **simple source, generated complexity**. The team e
 │   Markdown → HTML            (automatic, zero config)   │
 │                                                         │
 ├─────────────────────────────────────────────────────────┤
-│                    Output layer (machine + human)       │
+│                    Output layer (machine + human)        │
 │                                                         │
-│   dist/taxonomy.ttl         ← SKOS Turtle               │
-│   dist/taxonomy.jsonld      ← JSON-LD                   │
-│   risk/bias-fairness.md     → served as HTML by Jekyll  │
-│   risk/privacy.md           → served as HTML by Jekyll  │
+│   dist/taxonomy.ttl          ← SKOS Turtle              │
+│   dist/taxonomy.jsonld       ← JSON-LD                  │
+│   risk/bias-fairness.md      → served as HTML by Jekyll  │
+│   risk/privacy.md            → served as HTML by Jekyll  │
 │   ...                                                   │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
@@ -61,7 +61,7 @@ This is standard practice for published vocabularies. The W3C DPV uses `https://
 
 ### Why not use GitHub URLs
 
-The repository will be hosted at `github.com/eticas-foundation/ai-risk-taxonomy`, and GitHub Pages will initially serve the site at `eticas-foundation.github.io/ai-risk-taxonomy/`. It would be tempting to use these as concept URIs directly. This is a bad idea for one reason: **URIs are permanent, but hosting is not**.
+The repository will be hosted at `github.com/eticas-ai/ai-risk-taxonomy`, and GitHub Pages will initially serve the site at `eticas-ai.github.io/ai-risk-taxonomy/`. It would be tempting to use these as concept URIs directly. This is a bad idea for one reason: **URIs are permanent, but hosting is not**.
 
 If Eticas ever moves the repository to a different GitHub organisation, switches to GitLab, or hosts the documentation elsewhere, every URI breaks — and every external system or document that references those URIs now points to nothing. In linked data, broken URIs are the equivalent of broken contracts.
 
@@ -87,7 +87,7 @@ Concept URIs follow the pattern:
 
 Configuring the custom domain requires one DNS record and one GitHub Pages setting:
 
-1. **DNS:** Add a CNAME record pointing `taxonomy.eticas.ai` to `eticas-foundation.github.io`
+1. **DNS:** Add a CNAME record pointing `taxonomy.eticas.ai` to `eticas-ai.github.io`
 2. **GitHub Pages:** In the repository settings, set `taxonomy.eticas.ai` as the custom domain and enable HTTPS
 
 This is a one-time configuration. Once done, GitHub Pages serves the site under the custom domain, and all concept URIs resolve correctly.
@@ -95,7 +95,7 @@ This is a one-time configuration. Once done, GitHub Pages serves the site under 
 ## Repository structure
 
 ```
-eticas-foundation/ai-risk-taxonomy/        # github.com/eticas-foundation/ai-risk-taxonomy
+eticas-ai/ai-risk-taxonomy/        # github.com/eticas-ai/ai-risk-taxonomy
 │
 ├── README.md                          # Overview and quick start
 ├── TAXONOMY.md                        # Full taxonomy description (document 2)
@@ -287,7 +287,7 @@ accuracy, or unjust impacts.
 
 This approach has three advantages over generating HTML directly (e.g., via pyLODE):
 
-**Readable in the repo.** Anyone browsing `github.com/eticas-foundation/ai-risk-taxonomy/blob/main/risk/bias-fairness.md` sees a rendered page with the definition, hierarchy, and mappings — without needing to visit the published site.
+**Readable in the repo.** Anyone browsing `github.com/eticas-ai/ai-risk-taxonomy/blob/main/risk/bias-fairness.md` sees a rendered page with the definition, hierarchy, and mappings — without needing to visit the published site.
 
 **Reviewable in PRs.** When the build regenerates concept pages after a YAML change, the diff shows meaningful Markdown rather than opaque HTML. Reviewers can see exactly what changed in the published content.
 

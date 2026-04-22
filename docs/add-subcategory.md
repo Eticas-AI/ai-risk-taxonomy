@@ -4,7 +4,7 @@ A subcategory is a specific type of risk under an existing category or sub-group
 
 ## Step 1: Open the taxonomy file
 
-Go to: [src/taxonomy.yaml](https://github.com/Eticas-Foundation/ai-risk-taxonomy/blob/main/src/taxonomy.yaml)
+Go to: [src/taxonomy.yaml](https://github.com/Eticas-AI/ai-risk-taxonomy/blob/main/src/taxonomy.yaml)
 
 Click the **pencil icon** (top right of the file view) to edit.
 

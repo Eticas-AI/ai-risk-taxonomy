@@ -4,7 +4,7 @@ Use this guide when you need to change a definition, add an alternative name, ch
 
 ## Step 1: Open the taxonomy file
 
-Go to: [src/taxonomy.yaml](https://github.com/Eticas-Foundation/ai-risk-taxonomy/blob/main/src/taxonomy.yaml)
+Go to: [src/taxonomy.yaml](https://github.com/Eticas-AI/ai-risk-taxonomy/blob/main/src/taxonomy.yaml)
 
 Click the **pencil icon** to edit.
 
