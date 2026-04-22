@@ -57,4 +57,4 @@ Risks related to unequal system performance, access, or outcomes across populati
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Fair with Harmful Bias Managed | close match |
 | [OECD AI Principles](https://oecd.ai) | Human rights, rule of law, fairness & privacy | broad match |
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | AI Bias | broad match |
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/81230.html) | Assessing impacts of AI systems | related match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Assessing impacts of AI systems | related match |

@@ -36,4 +36,4 @@ The risk that an AI system fails to deliver value not because of model performan
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | MAP function — context and deployment environment | related match |
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/81230.html) | Third-party and customer relationships | related match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Third-party and customer relationships | related match |

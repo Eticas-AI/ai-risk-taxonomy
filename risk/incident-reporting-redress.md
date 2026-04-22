@@ -35,5 +35,5 @@ The risk that when AI-driven decisions cause harm, there are no effective mechan
 |-----------|---------|-------------|
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Accountable & Transparent | broad match |
 | [OECD AI Principles](https://oecd.ai) | Accountability | broad match |
-| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 62 — Reporting of serious incidents | related match |
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 73 — Reporting of serious incidents | related match |
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Right to Remedy](https://w3c.github.io/dpv/2.3/dpv/#RightToRemedy) | broad match |

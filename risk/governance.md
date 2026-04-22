@@ -61,4 +61,4 @@ Risks from inadequate data governance, insufficient human oversight, and unvalid
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Value Chain & Component Integration | related match |
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Accountable & Transparent | close match |
 | [OECD AI Principles](https://oecd.ai) | Accountability | close match |
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/81230.html) | AI Policy, Internal Organisation, Resources | broad match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI Policy, Internal Organisation, Resources | broad match |

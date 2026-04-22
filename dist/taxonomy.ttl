@@ -14,6 +14,8 @@ mit:domain-1 skos:prefLabel "Discrimination & Toxicity"@en .
 
 mit:domain-4 skos:prefLabel "Malicious Actors & Misuse"@en .
 
+mit:domain-5 skos:prefLabel "Human-Computer Interaction"@en .
+
 mit:subdomain-1.2 skos:prefLabel "Exposure to toxic content"@en .
 
 mit:subdomain-1.3 skos:prefLabel "Unequal performance across groups"@en .
@@ -23,8 +25,6 @@ mit:subdomain-2.1 skos:prefLabel "Compromise of privacy"@en .
 mit:subdomain-2.2 skos:prefLabel "AI system security vulnerabilities & attacks"@en .
 
 mit:subdomain-5.1 skos:prefLabel "Overreliance and unsafe use"@en .
-
-mit:subdomain-5.1-5.2 skos:prefLabel "Human-Computer Interaction"@en .
 
 mit:subdomain-6.5 skos:prefLabel "Governance failure"@en .
 
@@ -877,7 +877,7 @@ eu-ai-act:article-14 skos:prefLabel "Article 14 — Human oversight"@en .
 
 eu-ai-act:article-15-4 skos:prefLabel "Article 15(4) — Resilience regarding errors, faults or inconsistencies"@en .
 
-eu-ai-act:article-62 skos:prefLabel "Article 62 — Reporting of serious incidents"@en .
+eu-ai-act:article-73 skos:prefLabel "Article 73 — Reporting of serious incidents"@en .
 
 mit:domain-3 skos:prefLabel "Misinformation"@en .
 
@@ -897,7 +897,7 @@ eticas:autonomy-agency a skos:Concept ;
         "Human-AI Interaction"@en ;
     skos:broadMatch dpv-ai:HumanOversight,
         eu-ai-act:article-14 ;
-    skos:closeMatch mit:subdomain-5.1-5.2,
+    skos:closeMatch mit:domain-5,
         nist-600:7 ;
     skos:definition "The risk that an AI system undermines human agency or operates with insufficient human control. This includes over-reliance on AI outputs, automation bias, deskilling, and — for agentic AI systems — failure modes arising from multi-step autonomous actions, tool use, or coordination with other AI agents."@en ;
     skos:inScheme eticas:scheme ;
@@ -1068,7 +1068,7 @@ eticas:incident-reporting-redress a skos:Concept ;
         eticas:unclear-remediation ;
     skos:note "In the RAIA Guide, this category is assessed only at the Post-Processing stage."@en ;
     skos:prefLabel "Incident Reporting & Redress"@en ;
-    skos:relatedMatch eu-ai-act:article-62 ;
+    skos:relatedMatch eu-ai-act:article-73 ;
     skos:topConceptOf eticas:scheme ;
     eticas-ont:lifecycleStage "post-processing" ;
     eticas-ont:maturity "emerging" ;
