@@ -21,7 +21,7 @@ The risk that an AI system produces outcomes that systematically advantage or di
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing, Post Processing
 
-### Data & representation
+### [Data & representation](bias-data-representation.md)
 
 Risks arising from how data is collected, composed, and represented in training and evaluation datasets.
 
@@ -30,7 +30,7 @@ Risks arising from how data is collected, composed, and represented in training 
 - [Geographic, cultural, or language skew](geographic-cultural-language-skew.md)
 - [Feedback loops reinforcing inequality](feedback-loops.md)
 
-### Output quality across groups
+### [Output quality across groups](bias-output-quality.md)
 
 Risks related to harmful, demeaning, or unfair content in system outputs.
 
@@ -38,7 +38,7 @@ Risks related to harmful, demeaning, or unfair content in system outputs.
 - [Harmful content and toxicity](harmful-content-toxicity.md)
 - [Sentiment fairness across groups](sentiment-fairness.md)
 
-### Performance disparities
+### [Performance disparities](bias-performance-disparities.md)
 
 Risks related to unequal system performance, access, or outcomes across population groups.
 

@@ -21,7 +21,7 @@ The risk that an AI system is exposed to AI-specific vulnerabilities, attacks, o
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing, Post Processing
 
-### AI-specific attacks
+### [AI-specific attacks](security-ai-attacks.md)
 
 Attack vectors specific to AI systems that exploit model behaviour or training processes.
 
@@ -29,14 +29,14 @@ Attack vectors specific to AI systems that exploit model behaviour or training p
 - [Prompt injection](prompt-injection.md)
 - [Jailbreaking](jailbreaking.md)
 
-### System security
+### [System security](security-system.md)
 
 Risks related to access control and integrity of the AI system and its supply chain.
 
 - [Unauthorized access](unauthorized-access.md)
 - [Supply-chain vulnerabilities](supply-chain-vulnerabilities.md)
 
-### Operational security
+### [Operational security](security-operational.md)
 
 Risks from inadequate incident response and use of the system beyond its intended purpose.
 

@@ -16,10 +16,6 @@ mit:domain-4 skos:prefLabel "Malicious Actors & Misuse"@en .
 
 mit:domain-5 skos:prefLabel "Human-Computer Interaction"@en .
 
-mit:subdomain-1.2 skos:prefLabel "Exposure to toxic content"@en .
-
-mit:subdomain-1.3 skos:prefLabel "Unequal performance across groups"@en .
-
 mit:subdomain-2.1 skos:prefLabel "Compromise of privacy"@en .
 
 mit:subdomain-2.2 skos:prefLabel "AI system security vulnerabilities & attacks"@en .
@@ -44,6 +40,8 @@ iso-42001:A.8 skos:prefLabel "Assessing impacts of AI systems"@en .
 
 nist-600:2 skos:prefLabel "Confabulation"@en .
 
+nist-600:5 skos:prefLabel "Dangerous, Violent, or Hateful Content"@en .
+
 nist-600:7 skos:prefLabel "Human-AI Configuration"@en .
 
 nist-600:confabulation skos:prefLabel "Confabulation"@en .
@@ -61,8 +59,6 @@ nist-600:information-security skos:prefLabel "Information Security"@en .
 nist-600:value-chain skos:prefLabel "Value Chain & Component Integration"@en .
 
 nist-rmf:explainable-interpretable skos:prefLabel "Explainable & Interpretable"@en .
-
-nist-rmf:fair skos:prefLabel "Fair with Harmful Bias Managed"@en .
 
 nist-rmf:map skos:prefLabel "MAP function — context and deployment environment"@en .
 
@@ -859,6 +855,8 @@ eticas:workflow-compatibility a skos:Concept ;
 
 dpv-ai:AIBias skos:prefLabel "AI Bias"@en .
 
+dpv-ai:DataBias skos:prefLabel "Data Bias"@en .
+
 dpv-ai:HumanOversight skos:prefLabel "Human Oversight"@en .
 
 dpv-ai:Misinformation skos:prefLabel "Misinformation"@en .
@@ -881,15 +879,22 @@ eu-ai-act:article-73 skos:prefLabel "Article 73 — Reporting of serious inciden
 
 mit:domain-3 skos:prefLabel "Misinformation"@en .
 
-mit:subdomain-1.1 skos:prefLabel "Unfair discrimination & misrepresentation"@en .
+mit:subdomain-1.2 skos:prefLabel "Exposure to toxic content"@en .
+
+mit:subdomain-1.3 skos:prefLabel "Unequal performance across groups"@en .
 
 nist-600:8 skos:prefLabel "Information Integrity"@en .
 
 nist-rmf:accountable-transparent skos:prefLabel "Accountable & Transparent"@en .
 
+nist-rmf:fair skos:prefLabel "Fair with Harmful Bias Managed"@en .
+
 nist-rmf:secure-resilient skos:prefLabel "Secure & Resilient"@en .
 
 oecd:principle-1.2 skos:prefLabel "Human rights, rule of law, fairness & privacy"@en .
+
+mit:subdomain-1.1 skos:prefLabel "Unfair discrimination & misrepresentation"@en,
+        "Unfair discrimination and misrepresentation"@en .
 
 eticas:autonomy-agency a skos:Concept ;
     skos:altLabel "Agentic Risks"@en,
@@ -1011,12 +1016,14 @@ eticas:bias-fairness a skos:Concept ;
 
 eticas:bias-output-quality a skos:Concept ;
     skos:broader eticas:bias-fairness ;
+    skos:closeMatch mit:subdomain-1.2 ;
     skos:definition "Risks related to harmful, demeaning, or unfair content in system outputs."@en ;
     skos:inScheme eticas:scheme ;
     skos:narrower eticas:harmful-content-toxicity,
         eticas:sentiment-fairness,
         eticas:stereotyping-demeaning-content ;
-    skos:prefLabel "Output quality across groups"@en .
+    skos:prefLabel "Output quality across groups"@en ;
+    skos:relatedMatch nist-600:5 .
 
 eticas:environmental-impact a skos:Concept ;
     skos:altLabel "Environmental sustainability"@en,
@@ -1176,6 +1183,8 @@ eticas:autonomy-system-autonomy a skos:Concept ;
 
 eticas:bias-data-representation a skos:Concept ;
     skos:broader eticas:bias-fairness ;
+    skos:closeMatch mit:subdomain-1.1,
+        dpv-ai:DataBias ;
     skos:definition "Risks arising from how data is collected, composed, and represented in training and evaluation datasets."@en ;
     skos:inScheme eticas:scheme ;
     skos:narrower eticas:dataset-bias,
@@ -1263,6 +1272,8 @@ eticas:reliability-output-quality a skos:Concept ;
 
 eticas:bias-performance-disparities a skos:Concept ;
     skos:broader eticas:bias-fairness ;
+    skos:closeMatch mit:subdomain-1.3,
+        nist-rmf:fair ;
     skos:definition "Risks related to unequal system performance, access, or outcomes across population groups."@en ;
     skos:inScheme eticas:scheme ;
     skos:narrower eticas:accessibility-barriers,

@@ -23,7 +23,7 @@ The risk that an AI system undermines human agency or operates with insufficient
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
 
-### Human agency
+### [Human agency](autonomy-human-agency.md)
 
 Risks to human decision-making capacity arising from interaction with AI systems.
 
@@ -32,7 +32,7 @@ Risks to human decision-making capacity arising from interaction with AI systems
 - [Deskilling](deskilling.md)
 - [Over-reliance on AI](over-reliance.md)
 
-### System autonomy
+### [System autonomy](autonomy-system-autonomy.md)
 
 Risks from AI systems operating with a degree of autonomy beyond single-inference interactions.
 

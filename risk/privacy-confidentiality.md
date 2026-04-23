@@ -21,7 +21,7 @@ The risk that an AI system collects, processes, or infers personal information i
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing, Post Processing
 
-### Data collection & use
+### [Data collection & use](privacy-collection-use.md)
 
 Risks from how personal data is collected, processed, and repurposed.
 
@@ -30,14 +30,14 @@ Risks from how personal data is collected, processed, and repurposed.
 - [Biometric surveillance](biometric-surveillance.md)
 - [Emotion inference or sensitive attribute profiling](emotion-inference-profiling.md)
 
-### Data protection
+### [Data protection](privacy-data-protection.md)
 
 Risks related to safeguards for stored and processed personal data.
 
 - [Weak data retention, erasure, and access controls](weak-data-controls.md)
 - [Re-identification of anonymised data](re-identification.md)
 
-### Model-level privacy
+### [Model-level privacy](privacy-model-level.md)
 
 Risks from AI models leaking or exposing private information through their outputs or structure.
 
