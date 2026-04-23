@@ -322,6 +322,16 @@ concepts:
   broader: privacy-confidentiality
   label: Data collection & use
   definition: Risks from how personal data is collected, processed, and repurposed.
+  mappings:
+  - framework: dpv_ai
+    target_id: PersonalDataCollection
+    target_label: Personal Data Handling
+    target_url: https://w3c.github.io/dpv/2.3/ai/#PersonalDataHandling
+    relation: closeMatch
+  - framework: eu_ai_act
+    target_id: article-5
+    target_label: Article 5 — Prohibited AI practices (emotion recognition, biometric categorization)
+    relation: relatedMatch
 - id: unlawful-data-processing
   type: subcategory
   broader: privacy-collection-use
@@ -376,6 +386,15 @@ concepts:
   broader: privacy-confidentiality
   label: Data protection
   definition: Risks related to safeguards for stored and processed personal data.
+  mappings:
+  - framework: nist_600
+    target_id: '4'
+    target_label: Data Privacy
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.7
+    target_label: Data management
+    relation: relatedMatch
 - id: weak-data-controls
   type: subcategory
   broader: privacy-data-protection
@@ -407,6 +426,16 @@ concepts:
   broader: privacy-confidentiality
   label: Model-level privacy
   definition: Risks from AI models leaking or exposing private information through their outputs or structure.
+  mappings:
+  - framework: mit
+    target_id: subdomain-2.1
+    target_label: Compromise of privacy by obtaining, leaking or inferring sensitive information
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: MembershipInferenceAttack
+    target_label: Membership Inference Attack
+    target_url: https://w3c.github.io/dpv/2.3/ai/#MembershipInferenceAttack
+    relation: closeMatch
 - id: pii-leakage
   type: subcategory
   broader: privacy-model-level
@@ -486,6 +515,15 @@ concepts:
   broader: reliability
   label: Output quality
   definition: Risks related to the correctness, consistency, and robustness of system outputs.
+  mappings:
+  - framework: nist_600
+    target_id: '2'
+    target_label: Confabulation
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: valid-reliable
+    target_label: Valid & Reliable
+    relation: closeMatch
 - id: hallucination
   type: subcategory
   broader: reliability-output-quality
@@ -550,6 +588,15 @@ concepts:
   broader: reliability
   label: Monitoring & remediation
   definition: Risks from inadequate monitoring, evaluation, and failure response.
+  mappings:
+  - framework: nist_rmf
+    target_id: measure-function
+    target_label: MEASURE function
+    relation: broadMatch
+  - framework: iso_42001
+    target_id: A.6.2.4
+    target_label: AI system verification and validation
+    relation: relatedMatch
 - id: failure-remediation-gaps
   type: subcategory
   broader: reliability-monitoring
@@ -752,6 +799,15 @@ concepts:
   broader: governance
   label: Accountability
   definition: Risks from unclear responsibility, attribution, and oversight of AI system impacts.
+  mappings:
+  - framework: nist_rmf
+    target_id: govern-function
+    target_label: GOVERN function
+    relation: broadMatch
+  - framework: oecd
+    target_id: principle-1.5
+    target_label: Accountability
+    relation: closeMatch
 - id: unclear-responsibilities
   type: subcategory
   broader: governance-accountability
@@ -798,6 +854,15 @@ concepts:
   broader: governance
   label: Documentation & auditability
   definition: Risks from incomplete, inaccessible, or absent documentation and audit trails.
+  mappings:
+  - framework: iso_42001
+    target_id: A.4
+    target_label: Documentation and records
+    relation: closeMatch
+  - framework: eu_ai_act
+    target_id: article-11
+    target_label: Article 11 — Technical documentation
+    relation: closeMatch
 - id: poor-documentation
   type: subcategory
   broader: governance-documentation
@@ -856,6 +921,15 @@ concepts:
   broader: governance
   label: Compliance & process
   definition: Risks from non-compliance with regulations, absence of change management, and lack of fitness validation.
+  mappings:
+  - framework: iso_42001
+    target_id: A.9.3
+    target_label: Processes for responsible development and use
+    relation: broadMatch
+  - framework: eu_ai_act
+    target_id: article-17
+    target_label: Article 17 — Quality management system
+    relation: relatedMatch
 - id: regulatory-non-compliance
   type: subcategory
   broader: governance-compliance
@@ -900,6 +974,15 @@ concepts:
   broader: governance
   label: Data & oversight
   definition: Risks from inadequate data governance, insufficient human oversight, and unvalidated task performance.
+  mappings:
+  - framework: iso_42001
+    target_id: A.7
+    target_label: Data management
+    relation: relatedMatch
+  - framework: eu_ai_act
+    target_id: article-14
+    target_label: Article 14 — Human oversight
+    relation: relatedMatch
 - id: data-governance
   type: subcategory
   broader: governance-data-oversight
@@ -974,6 +1057,16 @@ concepts:
   broader: security-misuse
   label: AI-specific attacks
   definition: Attack vectors specific to AI systems that exploit model behaviour or training processes.
+  mappings:
+  - framework: dpv_ai
+    target_id: SecurityAttack
+    target_label: Security Attack
+    target_url: https://w3c.github.io/dpv/2.3/ai/#SecurityAttack
+    relation: closeMatch
+  - framework: mit
+    target_id: subdomain-2.2
+    target_label: AI system security vulnerabilities and attacks
+    relation: closeMatch
 - id: adversarial-attacks
   type: subcategory
   broader: security-ai-attacks
@@ -1027,6 +1120,15 @@ concepts:
   broader: security-misuse
   label: System security
   definition: Risks related to access control and integrity of the AI system and its supply chain.
+  mappings:
+  - framework: nist_600
+    target_id: '9'
+    target_label: Information Security
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.6.2.3
+    target_label: AI system technical documentation and information security
+    relation: relatedMatch
 - id: unauthorized-access
   type: subcategory
   broader: security-system
@@ -1057,6 +1159,15 @@ concepts:
   broader: security-misuse
   label: Operational security
   definition: Risks from inadequate incident response and use of the system beyond its intended purpose.
+  mappings:
+  - framework: mit
+    target_id: domain-4
+    target_label: Malicious Actors and Misuse
+    relation: closeMatch
+  - framework: eu_ai_act
+    target_id: article-15-5
+    target_label: Article 15(5) — Cybersecurity
+    relation: relatedMatch
 - id: incident-response-gaps
   type: subcategory
   broader: security-operational
@@ -1190,6 +1301,15 @@ concepts:
   broader: transparency-explainability
   label: Explainability
   definition: Risks from stakeholders being unable to understand why the system produces specific outputs.
+  mappings:
+  - framework: nist_rmf
+    target_id: explainable
+    target_label: Explainable & Interpretable
+    relation: closeMatch
+  - framework: mit
+    target_id: subdomain-7.4
+    target_label: Lack of transparency or interpretability
+    relation: closeMatch
 - id: system-explainability
   type: subcategory
   broader: transparency-explainability-group
@@ -1221,6 +1341,15 @@ concepts:
   broader: transparency-explainability
   label: Communication & disclosure
   definition: Risks from inadequate communication about system capabilities, limitations, and AI involvement.
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-13
+    target_label: Article 13 — Transparency and provision of information to deployers
+    relation: closeMatch
+  - framework: oecd
+    target_id: principle-1.3
+    target_label: Transparency and explainability
+    relation: closeMatch
 - id: stakeholder-communication
   type: subcategory
   broader: transparency-communication
