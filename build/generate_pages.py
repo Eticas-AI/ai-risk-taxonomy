@@ -86,17 +86,15 @@ def generate_concept_page(c, by_id, children, config):
         direct_subs = [by_id[cid] for cid in child_ids if by_id[cid]["type"] == "subcategory"]
 
         if subgroups:
+            lines.append("## Risk groups")
+            lines.append("")
             for sg in subgroups:
-                lines.append(f'### [{sg["label"]}]({sg["id"]}.md)')
-                lines.append("")
-                if "definition" in sg:
-                    lines.append(sg["definition"].strip())
-                    lines.append("")
-                sg_children = children.get(sg["id"], [])
-                for sc_id in sg_children:
-                    sc = by_id[sc_id]
-                    lines.append(f'- [{sc["label"]}]({sc_id}.md)')
-                lines.append("")
+                defn = sg.get("definition", "").strip()
+                if defn:
+                    lines.append(f'- [{sg["label"]}]({sg["id"]}.md) — {defn}')
+                else:
+                    lines.append(f'- [{sg["label"]}]({sg["id"]}.md)')
+            lines.append("")
 
         if direct_subs:
             lines.append("## Subcategories")
