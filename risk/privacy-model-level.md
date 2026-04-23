@@ -25,3 +25,8 @@ Risks from AI models leaking or exposing private information through their outpu
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Compromise of privacy by obtaining, leaking or inferring sensitive information | close match |
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Membership Inference Attack](https://w3c.github.io/dpv/2.3/ai/#MembershipInferenceAttack) | close match |
+
+## References
+
+- **[OpenAI Privacy Filter](https://github.com/openai/privacy-filter)** <sub>[tool]</sub>
+  Open-source tool for detecting and filtering personally identifiable information in LLM inputs and outputs.

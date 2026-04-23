@@ -38,3 +38,8 @@ The risk that an AI system produces false, fabricated, or misleading outputs (ha
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Information Integrity | broad match |
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Valid & Reliable | close match |
 | [OECD AI Principles](https://oecd.ai) | Robustness, security & safety | broad match |
+
+## References
+
+- **[HealthBench Professional (OpenAI, 2025)](https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf)** <sub>[benchmark, domain: healthcare]</sub>
+  Benchmark for evaluating LLM reliability and accuracy in professional healthcare contexts. Useful when auditing AI systems deployed in health domains.
