@@ -436,6 +436,11 @@ concepts:
     target_label: Membership Inference Attack
     target_url: https://w3c.github.io/dpv/2.3/ai/#MembershipInferenceAttack
     relation: closeMatch
+  references:
+  - label: OpenAI Privacy Filter
+    url: https://github.com/openai/privacy-filter
+    type: tool
+    note: Open-source tool for detecting and filtering personally identifiable information in LLM inputs and outputs.
 - id: pii-leakage
   type: subcategory
   broader: privacy-model-level
@@ -510,6 +515,13 @@ concepts:
     target_id: robustness
     target_label: Robustness, security & safety
     relation: broadMatch
+  references:
+  - label: HealthBench Professional (OpenAI, 2025)
+    url: https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf
+    type: benchmark
+    domain: healthcare
+    note: Benchmark for evaluating LLM reliability and accuracy in professional healthcare contexts. Useful when auditing
+      AI systems deployed in health domains.
 - id: reliability-output-quality
   type: subgroup
   broader: reliability

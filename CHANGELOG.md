@@ -16,6 +16,26 @@ Change types use the following categories, inspired by the [AIUC-1 changelog mod
 
 ---
 
+## [Unreleased]
+
+### Structure
+
+| Change | Type | Affected concepts | Notes |
+|--------|------|-------------------|-------|
+| Introduced `references` field | Addition | All concepts | New YAML field for attaching papers, benchmarks, tools, and regulatory sources to any concept. Supports `label`, `url`, `type` (tool, benchmark, paper, regulation, etc.), `domain` (e.g., healthcare, finance), and free-text `note`. |
+| Added sub-group external framework mappings | Addition | 21 sub-groups | Mappings at the sub-group level (not just category-level) to NIST, EU AI Act, MIT, DPV, ISO, OECD where applicable. |
+| Simplified category pages | Revision | All categories with sub-groups | Category pages now list sub-groups only (not subcategories). Subcategories appear on their respective sub-group pages, reducing visual clutter and clarifying the three-level hierarchy. |
+| Made sub-group headings clickable | Revision | All categories with sub-groups | Sub-group names on the category page link to their own dedicated page (with definition, subcategories, and mappings). |
+
+### References added
+
+| Concept | Reference | Type |
+|---------|-----------|------|
+| `privacy-model-level` | [OpenAI Privacy Filter](https://github.com/openai/privacy-filter) | Tool |
+| `reliability` | [HealthBench Professional (OpenAI, 2025)](https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf) | Benchmark (healthcare domain) |
+
+---
+
 ## [0.2.0] — 2026-04-23
 
 Major restructuring following team review. Reduced the number of top-level categories, introduced an intermediate grouping level, simplified the classification dimensions, and enriched external framework mappings. The full rationale is documented in [TRACKER.md](TRACKER.md).

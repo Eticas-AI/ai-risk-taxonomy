@@ -127,6 +127,37 @@ def generate_concept_page(c, by_id, children, config):
             lines.append(f"| {fw_cell} | {concept_cell} | {rel} |")
         lines.append("")
 
+    # References (papers, benchmarks, tools, regulatory sources)
+    references = c.get("references", [])
+    if references:
+        lines.append("## References")
+        lines.append("")
+        for ref in references:
+            label = ref.get("label", "")
+            url = ref.get("url", "")
+            ref_type = ref.get("type", "")
+            domain = ref.get("domain", "")
+            note = ref.get("note", "")
+
+            # Build the main line: link + optional type/domain tags
+            if url:
+                line = f'- **[{label}]({url})**'
+            else:
+                line = f'- **{label}**'
+
+            tags = []
+            if ref_type:
+                tags.append(ref_type)
+            if domain:
+                tags.append(f'domain: {domain}')
+            if tags:
+                line += f' <sub>[{", ".join(tags)}]</sub>'
+
+            lines.append(line)
+            if note:
+                lines.append(f'  {note}')
+        lines.append("")
+
     # Source
     if "source" in c:
         lines.append(f'*Source: {c["source"]} project taxonomy*')
