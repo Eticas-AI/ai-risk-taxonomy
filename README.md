@@ -3,7 +3,7 @@
 A unified, machine-readable AI risk taxonomy for use across [Eticas](https://eticas.ai) audit methodologies, assessment frameworks, and reporting outputs.
 
 **Namespace:** `https://taxonomy.eticas.ai/risk/`  
-**Version:** 0.2.0  
+**Version:** 0.2.0 · [What's new →](CHANGELOG.md)  
 **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 ## About
@@ -19,6 +19,7 @@ Each concept has a stable URI (e.g., `https://taxonomy.eticas.ai/risk/bias-fairn
 - **[Implementation details](docs/implementation.md)** — architecture, build pipeline, and technical decisions
 - **[How to edit the taxonomy](docs/editing-guide.md)** — step-by-step guides for adding and modifying entries
 - **[Decision tracker](TRACKER.md)** — structural decisions, rationale, and open items
+- **[Changelog](CHANGELOG.md)** — version history of taxonomy changes
 
 ### External
 - **[Taxonomy description](TAXONOMY.md)** — full list of categories, subcategories, definitions, and external mappings
