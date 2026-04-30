@@ -718,6 +718,7 @@ concepts:
   label: Failure and remediation gaps
   alt_labels:
   - Failures and remediations
+  - Unclear remediation procedures
   definition: 'Absence of remediation plans for predictable or unknown failure modes, leaving critical services unable to
     recover or degrade gracefully.
 
@@ -726,6 +727,10 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  operationalisation:
+  - id: unclear-remediation
+    label: Unclear remediation procedures
+    description: Absence of defined processes for correcting harms caused by AI system errors or failures.
 - id: monitoring-evaluation-gaps
   type: subcategory
   broader: governance-compliance
@@ -1511,6 +1516,14 @@ concepts:
   - Right to contest
   - Absence of appeal mechanisms
   - Ineffective communication with affected parties
+  operationalisation:
+  - id: absence-of-appeal
+    label: Absence of appeal mechanisms
+    description: No accessible process for individuals to challenge or appeal AI-driven decisions that affect them.
+  - id: ineffective-communication
+    label: Ineffective communication with affected parties
+    description: Failure to inform individuals about how they have been affected by AI-driven decisions and what options are
+      available to them.
 - id: prompt-transparency
   type: subcategory
   broader: transparency-explainability-group
@@ -1620,6 +1633,11 @@ concepts:
     relation: broadMatch
   alt_labels:
   - Responsibility & Redress
+  status: retired
+  retirement_note: 'Dissolved in v0.3. Subcategories redistributed: absence-of-appeal and ineffective-communication absorbed
+    into right-to-explanation-contestation (Transparency); unclear-remediation absorbed into failure-remediation-gaps (Governance
+    / Compliance & process). EU AI Act Art. 73 obligations on serious incident reporting are covered by incident-response-gaps
+    in Governance.'
 - id: absence-of-appeal
   type: subcategory
   broader: incident-reporting-redress
@@ -1631,6 +1649,8 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+  status: retired
+  retirement_note: Absorbed into right-to-explanation-contestation in v0.3 (Transparency & Explainability category).
 - id: unclear-remediation
   type: subcategory
   broader: incident-reporting-redress
@@ -1642,6 +1662,9 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+  status: retired
+  retirement_note: Absorbed into failure-remediation-gaps in v0.3 (Governance / Compliance & process). Both concepts described
+    gaps in the remediation process.
 - id: ineffective-communication
   type: subcategory
   broader: incident-reporting-redress
@@ -1654,6 +1677,8 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+  status: retired
+  retirement_note: Absorbed into right-to-explanation-contestation in v0.3 (Transparency & Explainability category).
 - id: autonomy-agency
   type: category
   label: Autonomy & Agency
