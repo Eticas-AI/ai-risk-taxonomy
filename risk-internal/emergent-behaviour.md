@@ -21,3 +21,12 @@ Unexpected capabilities or behaviours arising from agent interactions, multi-mod
 
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
+
+## Mappings to external frameworks
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Multi-agent risks (emergent dynamics) | close match |
+| [MIT AI Risk Repository](https://airisk.mit.edu) | AI pursuing its own goals | close match |

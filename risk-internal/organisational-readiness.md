@@ -37,10 +37,20 @@ The risk that an AI system fails to deliver value not because of model performan
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Third-party and customer relationships | related match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | A.4.2 Resources (human/competence) + A.4.3 Tooling + A.3 Internal organization | exact match |
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 4 — AI literacy + Article 26 deployer obligations | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Assign accountability + E.10 Regulatory compliance + E.12 QMS | close match |
 
 ### Reference frameworks
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | MAP function — context and deployment environment | related match |
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | GOVERN 2 — accountability structures + GOVERN 4 workforce | broad match |
+| [OECD AI Principles](https://oecd.ai) | Building human capacity & preparing for labour-market transition | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Non-technical → Governance + Skill gaps + Vendor risk | close match |

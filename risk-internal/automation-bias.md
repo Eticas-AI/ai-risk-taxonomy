@@ -21,3 +21,18 @@ Over-reliance on automated outputs, accepting AI recommendations without suffici
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
+
+## Mappings to external frameworks
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Human-AI Configuration (automation bias) | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Automation Bias](https://w3c.github.io/dpv/2.3/ai/#AutomationBias) | exact match |
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Overreliance and unsafe use | close match |

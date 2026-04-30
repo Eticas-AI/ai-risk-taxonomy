@@ -21,3 +21,18 @@ AI systems operating at speeds or complexity levels that make meaningful human o
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
+
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 14 — Human oversight (effective oversight) | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Flag high-risk outputs for human review | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Loss of human agency and autonomy | exact match |

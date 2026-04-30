@@ -21,3 +21,11 @@ AI systems that interact with external tools, APIs, or services, creating uninte
 
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
+
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Prevent unauthorized AI agent actions (tool-call safety) | close match |

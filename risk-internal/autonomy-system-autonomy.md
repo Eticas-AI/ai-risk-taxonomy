@@ -23,8 +23,16 @@ Risks from AI systems operating with a degree of autonomy beyond single-inferenc
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Prevent unauthorized AI agent actions | close match |
+
 ### Taxonomies & vocabularies
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Multi-agent risks | close match |
+| [MIT AI Risk Repository](https://airisk.mit.edu) | AI pursuing its own goals | close match |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | Operational Misuses → Autonomous Unsafe Operation of Systems | close match |

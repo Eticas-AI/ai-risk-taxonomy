@@ -35,12 +35,16 @@ The risk that an AI system undermines human agency or operates with insufficient
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 14 — Human oversight | broad match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Prevent unauthorized AI agent actions + C.7 Human review | close match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Human oversight (lifecycle controls) | close match |
 
 ### Reference frameworks
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Human-AI Configuration | close match |
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | GOVERN 3 — Human-AI configurations + MANAGE 1 risk-prioritised oversight | related match |
+| [OECD AI Principles](https://oecd.ai) | Human agency and oversight (added in 2024 update) | close match |
 
 ### Taxonomies & vocabularies
 
@@ -48,3 +52,4 @@ The risk that an AI system undermines human agency or operates with insufficient
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Human-Computer Interaction | close match |
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Human Oversight](https://w3c.github.io/dpv/2.3/ai/#HumanOversight) | broad match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Non-technical → Value alignment + Output → Anthropomorphisation | close match |

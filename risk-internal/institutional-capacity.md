@@ -21,3 +21,17 @@ The broader institutional or societal context lacks foundational capabilities (d
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing
+
+## Mappings to external frameworks
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [OECD AI Principles](https://oecd.ai) | Building human capacity & preparing for labour-market transition | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Increased inequality and decline in employment quality | related match |

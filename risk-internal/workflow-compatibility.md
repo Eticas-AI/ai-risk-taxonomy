@@ -21,3 +21,17 @@ The system's outputs, alerts, or interfaces do not fit existing human workflows,
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
+
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | A.6.2.5 AI system deployment | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | MAP 3 — AI capabilities and use cases (context fit) | close match |

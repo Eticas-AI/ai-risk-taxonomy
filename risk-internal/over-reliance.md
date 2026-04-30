@@ -21,3 +21,18 @@ Systemic dependence on AI systems that leaves individuals or organisations unabl
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
+
+## Mappings to external frameworks
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Human-AI Configuration (over-reliance) | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Overreliance and unsafe use | exact match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Anthropomorphisation (over-reliance) | close match |

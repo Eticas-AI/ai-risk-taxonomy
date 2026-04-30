@@ -21,3 +21,17 @@ AI systems that plan and execute sequences of actions, where errors in early ste
 
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
+
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Prevent unauthorized AI agent actions | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Multi-agent risks | related match |
