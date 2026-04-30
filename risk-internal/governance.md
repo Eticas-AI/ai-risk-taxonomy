@@ -30,10 +30,10 @@ The risk that an AI system lacks adequate structures, policies, or accountabilit
 
 ## Mappings to external frameworks
 
-| Framework | Concept |
-|-----------|---------|
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Governance failure |
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Value Chain & Component Integration |
-| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Accountable & Transparent |
-| [OECD AI Principles](https://oecd.ai) | Accountability |
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI Policy, Internal Organisation, Resources |
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Governance failure | close match |
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Value Chain & Component Integration | related match |
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Accountable & Transparent | close match |
+| [OECD AI Principles](https://oecd.ai) | Accountability | close match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI Policy, Internal Organisation, Resources | broad match |

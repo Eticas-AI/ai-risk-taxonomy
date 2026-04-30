@@ -14,15 +14,9 @@ broader: bias-fairness
 
 Risks related to harmful, demeaning, or unfair content in system outputs.
 
-## Subcategories
-
-- [Stereotyping and demeaning content](stereotyping-demeaning-content.md)
-- [Harmful content and toxicity](harmful-content-toxicity.md)
-- [Sentiment fairness across groups](sentiment-fairness.md)
-
 ## Mappings to external frameworks
 
-| Framework | Concept | Relationship |
-|-----------|---------|-------------|
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Exposure to toxic content | close match |
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Dangerous, Violent, or Hateful Content | related match |
+| Framework | Concept |
+|-----------|---------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Exposure to toxic content |
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Dangerous, Violent, or Hateful Content |

@@ -29,11 +29,11 @@ The risk that an AI system produces outcomes that systematically advantage or di
 
 ## Mappings to external frameworks
 
-| Framework | Concept |
-|-----------|---------|
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Discrimination & Toxicity |
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Harmful Bias & Homogenization |
-| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Fair with Harmful Bias Managed |
-| [OECD AI Principles](https://oecd.ai) | Human rights, rule of law, fairness & privacy |
-| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | AI Bias |
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Assessing impacts of AI systems |
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Discrimination & Toxicity | close match |
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Harmful Bias & Homogenization | close match |
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Fair with Harmful Bias Managed | close match |
+| [OECD AI Principles](https://oecd.ai) | Human rights, rule of law, fairness & privacy | broad match |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | AI Bias | broad match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Assessing impacts of AI systems | related match |

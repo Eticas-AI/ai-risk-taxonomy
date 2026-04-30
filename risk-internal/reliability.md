@@ -25,17 +25,19 @@ The risk that an AI system produces false, fabricated, or misleading outputs (ha
 
 - [Output quality](reliability-output-quality.md) — Risks related to the correctness, consistency, and robustness of system outputs.
 - [Monitoring & remediation](reliability-monitoring.md) — Risks from inadequate monitoring, evaluation, and failure response.
+- [Manipulation & misinformation](reliability-manipulation.md) — Risks that the system produces or facilitates deceptive, manipulative, or misleading content, whether through design flaws or intentional misuse.
+- [Resilience](reliability-resilience.md) — Risks related to the system's ability to absorb disruption, degrade gracefully, and recover. Particularly critical for AI deployed in conflict zones, humanitarian operations, or critical infrastructure.
 
 ## Mappings to external frameworks
 
-| Framework | Concept |
-|-----------|---------|
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of capability or robustness |
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Misinformation |
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Confabulation |
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Information Integrity |
-| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Valid & Reliable |
-| [OECD AI Principles](https://oecd.ai) | Robustness, security & safety |
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of capability or robustness | close match |
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Misinformation | broad match |
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Confabulation | close match |
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Information Integrity | broad match |
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Valid & Reliable | close match |
+| [OECD AI Principles](https://oecd.ai) | Robustness, security & safety | broad match |
 
 ## References
 

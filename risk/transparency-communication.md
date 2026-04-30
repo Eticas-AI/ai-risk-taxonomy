@@ -14,15 +14,9 @@ broader: transparency-explainability
 
 Risks from inadequate communication about system capabilities, limitations, and AI involvement.
 
-## Subcategories
-
-- [Communication to stakeholders](stakeholder-communication.md)
-- [Disclosure of AI interaction](ai-interaction-disclosure.md)
-- [Model card completeness](model-card-completeness.md)
-
 ## Mappings to external frameworks
 
-| Framework | Concept | Relationship |
-|-----------|---------|-------------|
-| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 13 — Transparency and provision of information to deployers | close match |
-| [OECD AI Principles](https://oecd.ai) | Transparency and explainability | close match |
+| Framework | Concept |
+|-----------|---------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 13 — Transparency and provision of information to deployers |
+| [OECD AI Principles](https://oecd.ai) | Transparency and explainability |

@@ -14,14 +14,9 @@ broader: transparency-explainability
 
 Risks from stakeholders being unable to understand why the system produces specific outputs.
 
-## Subcategories
-
-- [AI system explainability](system-explainability.md)
-- [Prompt transparency](prompt-transparency.md)
-
 ## Mappings to external frameworks
 
-| Framework | Concept | Relationship |
-|-----------|---------|-------------|
-| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Explainable & Interpretable | close match |
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of transparency or interpretability | close match |
+| Framework | Concept |
+|-----------|---------|
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Explainable & Interpretable |
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of transparency or interpretability |

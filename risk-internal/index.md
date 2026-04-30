@@ -9,6 +9,8 @@ Version 0.1.0
 
 A unified AI risk taxonomy for use across Eticas audit methodologies, assessment frameworks, and reporting outputs.
 
+> **Internal view** — full taxonomy including subcategories and emerging concepts. The [public version](../risk/) shows only categories and sub-groups, established only.
+
 ## Categories
 
 ### [Bias & Fairness](bias-fairness.md)
@@ -52,3 +54,21 @@ The risk that an AI system's development, deployment, or use causes negative env
 <span class="badge badge-established">established</span>
 
 The risk that stakeholders cannot understand how an AI system works, what it does, or why it produces specific outputs.
+
+### [Incident Reporting & Redress](incident-reporting-redress.md)
+
+<span class="badge badge-emerging">emerging</span>
+
+The risk that when AI-driven decisions cause harm, there are no effective mechanisms to report incidents, escalate concerns, challenge decisions, or seek remedy.
+
+### [Autonomy & Agency](autonomy-agency.md)
+
+<span class="badge badge-emerging">emerging</span>
+
+The risk that an AI system undermines human agency or operates with insufficient human control.
+
+### [Organisational Readiness](organisational-readiness.md)
+
+<span class="badge badge-emerging">emerging</span>
+
+The risk that an AI system fails to deliver value not because of model performance issues but because it does not fit the organisational, technical, or human context into which it is deployed.

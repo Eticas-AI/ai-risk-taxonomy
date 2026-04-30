@@ -21,10 +21,16 @@ The risk that an AI system's development, deployment, or use causes negative env
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing, Post Processing
 
+## Subcategories
+
+- [Inference-time energy consumption](inference-energy-consumption.md)
+- [Training resource consumption](training-resource-consumption.md)
+- [Hardware efficiency](hardware-efficiency.md)
+
 ## Mappings to external frameworks
 
-| Framework | Concept |
-|-----------|---------|
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Environmental harm |
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Environmental Impacts |
-| [OECD AI Principles](https://oecd.ai) | Inclusive growth, sustainable development & well-being |
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Environmental harm | close match |
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Environmental Impacts | close match |
+| [OECD AI Principles](https://oecd.ai) | Inclusive growth, sustainable development & well-being | broad match |

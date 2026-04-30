@@ -14,14 +14,9 @@ broader: privacy-confidentiality
 
 Risks related to safeguards for stored and processed personal data.
 
-## Subcategories
-
-- [Weak data retention, erasure, and access controls](weak-data-controls.md)
-- [Re-identification of anonymised data](re-identification.md)
-
 ## Mappings to external frameworks
 
-| Framework | Concept | Relationship |
-|-----------|---------|-------------|
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Data Privacy | close match |
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Data management | related match |
+| Framework | Concept |
+|-----------|---------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Data Privacy |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Data management |

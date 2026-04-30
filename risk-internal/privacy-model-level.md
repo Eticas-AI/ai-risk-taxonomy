@@ -14,12 +14,17 @@ broader: privacy-confidentiality
 
 Risks from AI models leaking or exposing private information through their outputs or structure.
 
+## Subcategories
+
+- [PII leakage through model outputs](pii-leakage.md)
+- [Membership inference risk](membership-inference.md)
+
 ## Mappings to external frameworks
 
-| Framework | Concept |
-|-----------|---------|
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Compromise of privacy by obtaining, leaking or inferring sensitive information |
-| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Membership Inference Attack](https://w3c.github.io/dpv/2.3/ai/#MembershipInferenceAttack) |
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Compromise of privacy by obtaining, leaking or inferring sensitive information | close match |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Membership Inference Attack](https://w3c.github.io/dpv/2.3/ai/#MembershipInferenceAttack) | close match |
 
 ## References
 
