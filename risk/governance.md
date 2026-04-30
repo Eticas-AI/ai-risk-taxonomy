@@ -33,7 +33,9 @@ The risk that an AI system lacks adequate structures, policies, or accountabilit
 
 | Framework | Concept |
 |-----------|---------|
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI Policy, Internal Organisation, Resources |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | A.2 Policies + A.3 Internal organization |
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 17 — Quality management system + Article 9 — Risk management |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Accountability domain |
 
 ### Reference frameworks
 
@@ -42,9 +44,12 @@ The risk that an AI system lacks adequate structures, policies, or accountabilit
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Value Chain & Component Integration |
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Accountable & Transparent |
 | [OECD AI Principles](https://oecd.ai) | Accountability |
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | GOVERN function (entire) |
 
 ### Taxonomies & vocabularies
 
 | Framework | Concept |
 |-----------|---------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Governance failure |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | Governance / Organisational Measure |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Non-technical → Governance dimension |

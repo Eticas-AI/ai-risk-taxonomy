@@ -32,3 +32,5 @@ Risks from stakeholders being unable to understand why the system produces speci
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of transparency or interpretability | close match |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | Explainability Risk | close match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Explainability | close match |

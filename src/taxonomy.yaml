@@ -1175,6 +1175,19 @@ concepts:
   - id: unclear-remediation
     label: Unclear remediation procedures
     description: Absence of defined processes for correcting harms caused by AI system errors or failures.
+  mappings:
+  - framework: nist_rmf
+    target_id: manage-4
+    target_label: MANAGE 4 — risk treatments and remediation
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.3
+    target_label: AI failure plan for hallucinations
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: clause-10
+    target_label: Clause 10 — Improvement / nonconformity & corrective action
+    relation: closeMatch
 - id: monitoring-evaluation-gaps
   type: subcategory
   broader: governance-compliance
@@ -1190,6 +1203,27 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-72
+    target_label: Article 72 — Post-market monitoring
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: manage-4
+    target_label: MANAGE 4 — post-deployment monitoring
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.6.2.6
+    target_label: AI system operation and monitoring
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: C.8
+    target_label: Monitor AI risk categories
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: MonitoringControl
+    target_label: Monitoring Control
+    relation: closeMatch
 - id: reliability-manipulation
   type: subgroup
   broader: reliability
@@ -1414,9 +1448,29 @@ concepts:
     target_label: Accountability
     relation: closeMatch
   - framework: iso_42001
-    target_id: A.2-A.4
-    target_label: AI Policy, Internal Organisation, Resources
-    relation: broadMatch
+    target_id: A.2
+    target_label: A.2 Policies + A.3 Internal organization
+    relation: exactMatch
+  - framework: nist_rmf
+    target_id: govern-function
+    target_label: GOVERN function (entire)
+    relation: closeMatch
+  - framework: eu_ai_act
+    target_id: article-17
+    target_label: Article 17 — Quality management system + Article 9 — Risk management
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E
+    target_label: Accountability domain
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: Governance
+    target_label: Governance / Organisational Measure
+    relation: closeMatch
+  - framework: ibm_atlas
+    target_id: governance-non-technical
+    target_label: Non-technical → Governance dimension
+    relation: exactMatch
 - id: governance-accountability
   type: subgroup
   broader: governance
@@ -1432,6 +1486,14 @@ concepts:
     target_id: principle-1.5
     target_label: Accountability
     relation: closeMatch
+  - framework: iso_42001
+    target_id: A.3
+    target_label: A.3 Internal organization (roles & responsibilities)
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.4
+    target_label: Assign accountability
+    relation: closeMatch
 - id: unclear-responsibilities
   type: subcategory
   broader: governance-accountability
@@ -1445,6 +1507,19 @@ concepts:
   lifecycle_stages:
   - pre-processing
   - post-processing
+  mappings:
+  - framework: iso_42001
+    target_id: A.3.2
+    target_label: Roles and responsibilities
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.4
+    target_label: Assign accountability
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: govern-1
+    target_label: GOVERN 1 — Policies, processes, procedures
+    relation: closeMatch
 - id: responsible-actor-attribution
   type: subcategory
   broader: governance-accountability
@@ -1459,6 +1534,19 @@ concepts:
   - pre-processing
   - post-processing
   source: HRA
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-25
+    target_label: Article 25 — value-chain responsibilities
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.10
+    target_label: Third-party and customer relationships
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.4
+    target_label: Assign accountability
+    relation: closeMatch
 - id: oversight-of-adverse-impacts
   type: subcategory
   broader: governance-accountability
@@ -1473,6 +1561,15 @@ concepts:
   - pre-processing
   - post-processing
   source: HRA
+  mappings:
+  - framework: nist_rmf
+    target_id: manage-4
+    target_label: MANAGE 4 — risk treatments and response
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.5.2
+    target_label: AI system impact assessment
+    relation: closeMatch
 - id: governance-documentation
   type: subgroup
   broader: governance
@@ -1480,12 +1577,20 @@ concepts:
   definition: Risks from incomplete, inaccessible, or absent documentation and audit trails.
   mappings:
   - framework: iso_42001
-    target_id: A.4
-    target_label: Documentation and records
+    target_id: A.6.2.8
+    target_label: AI system documentation (system documentation maintained throughout lifecycle)
     relation: closeMatch
   - framework: eu_ai_act
     target_id: article-11
     target_label: Article 11 — Technical documentation
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.10
+    target_label: Document regulatory compliance
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: govern-1
+    target_label: GOVERN 1 — documented policies and processes
     relation: closeMatch
 - id: poor-documentation
   type: subcategory
@@ -1506,6 +1611,19 @@ concepts:
     label: Model card completeness
     description: Incomplete or outdated documentation of model purpose, performance, limitations, or data sources, leading
       to inappropriate deployment or overestimation of capabilities.
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-11
+    target_label: Article 11 — Technical documentation (Annex IV)
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.6.2.8
+    target_label: AI system documentation
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.17
+    target_label: Document system transparency policy
+    relation: closeMatch
 - id: limited-auditability
   type: subcategory
   broader: governance-documentation
@@ -1518,6 +1636,19 @@ concepts:
   lifecycle_stages:
   - in-processing
   - post-processing
+  mappings:
+  - framework: nist_rmf
+    target_id: measure-2.8
+    target_label: MEASURE 2.8 — risks and trustworthiness characteristics measured
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.6.2.8
+    target_label: AI system documentation
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.15
+    target_label: Log AI system activity
+    relation: closeMatch
 - id: decision-traceability
   type: subcategory
   broader: governance-documentation
@@ -1532,6 +1663,15 @@ concepts:
   - in-processing
   - post-processing
   source: HRA
+  mappings:
+  - framework: oecd
+    target_id: principle-1.5
+    target_label: Accountability (traceability)
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.15
+    target_label: Log AI system activity
+    relation: closeMatch
 - id: input-output-logging
   type: subcategory
   broader: governance-documentation
@@ -1545,6 +1685,15 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  mappings:
+  - framework: aiuc1
+    target_id: E.15
+    target_label: Log AI system activity
+    relation: exactMatch
+  - framework: iso_42001
+    target_id: A.6.2.8
+    target_label: AI system documentation
+    relation: closeMatch
 - id: governance-compliance
   type: subgroup
   broader: governance
@@ -1554,13 +1703,29 @@ concepts:
     of failures, and incident response.
   mappings:
   - framework: iso_42001
-    target_id: A.9.3
-    target_label: Processes for responsible development and use
-    relation: broadMatch
+    target_id: A.9
+    target_label: A.9 Use of AI systems + clause 10 (improvement / nonconformity)
+    relation: closeMatch
   - framework: eu_ai_act
     target_id: article-17
-    target_label: Article 17 — Quality management system
-    relation: relatedMatch
+    target_label: Article 17 — Quality management system + Article 9 — Risk management
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: govern-1
+    target_label: GOVERN 1 — Policies, processes, procedures
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.10
+    target_label: Document regulatory compliance + E.12 Quality management system
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: RiskManagement
+    target_label: Risk Management
+    relation: closeMatch
+  - framework: nist_600
+    target_id: value-chain
+    target_label: Value Chain and Component Integration
+    relation: narrowMatch
 - id: regulatory-non-compliance
   type: subcategory
   broader: governance-compliance
@@ -1573,6 +1738,19 @@ concepts:
   lifecycle_stages:
   - pre-processing
   - post-processing
+  mappings:
+  - framework: eu_ai_act
+    target_id: chapter-iii
+    target_label: Chapter III — High-risk AI system requirements
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.2
+    target_label: A.2 Policies related to AI
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.10
+    target_label: Document regulatory compliance
+    relation: closeMatch
 - id: lack-of-change-management
   type: subcategory
   broader: governance-compliance
@@ -1584,6 +1762,15 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+  mappings:
+  - framework: iso_42001
+    target_id: A.6.2.6
+    target_label: AI system operation and monitoring
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: manage-4
+    target_label: MANAGE 4 — risk treatment and update
+    relation: closeMatch
 - id: fitness-for-purpose
   type: subcategory
   broader: governance-compliance
@@ -1600,6 +1787,19 @@ concepts:
   alt_labels:
   - Fitness for purpose
   - Task success
+  mappings:
+  - framework: iso_42001
+    target_id: A.6.2.2
+    target_label: Documented intended use
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.6.2.4
+    target_label: AI system verification and validation
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: map-3
+    target_label: MAP 3 — AI capabilities and use cases
+    relation: closeMatch
 - id: governance-data-oversight
   type: subgroup
   broader: governance
@@ -1630,6 +1830,19 @@ concepts:
   lifecycle_stages:
   - pre-processing
   source: HRA
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-10
+    target_label: Article 10 — Data and data governance
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.7
+    target_label: A.7 Data for AI systems
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: map-2.3
+    target_label: MAP 2.3 — data and input
+    relation: closeMatch
 - id: human-oversight-control
   type: subcategory
   broader: governance-accountability
@@ -1643,6 +1856,27 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-14
+    target_label: Article 14 — Human oversight
+    relation: exactMatch
+  - framework: iso_42001
+    target_id: A.6.2.7
+    target_label: Human oversight (lifecycle controls)
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: govern-3
+    target_label: GOVERN 3 — Human-AI configurations
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: C.7
+    target_label: Flag high-risk outputs for human review
+    relation: closeMatch
+  - framework: mit
+    target_id: subdomain-5.2
+    target_label: Loss of human agency and autonomy
+    relation: relatedMatch
 - id: security-misuse
   type: category
   label: Security & Misuse
@@ -2001,6 +2235,27 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-73
+    target_label: Article 73 — Reporting of serious incidents
+    relation: exactMatch
+  - framework: nist_rmf
+    target_id: manage-4
+    target_label: MANAGE 4 — incident response and recovery
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: clause-10
+    target_label: Clause 10 — Improvement and incident response
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.1
+    target_label: AI failure plan for security breaches + E.2 for harmful outputs
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: IncidentManagement
+    target_label: Incident Management
+    relation: closeMatch
 - id: misuse-beyond-intended-purpose
   type: subcategory
   broader: security-harmful-misuse
@@ -2092,15 +2347,27 @@ concepts:
   - framework: mit
     target_id: subdomain-6.6
     target_label: Environmental harm
-    relation: closeMatch
+    relation: exactMatch
   - framework: nist_600
     target_id: environmental
     target_label: Environmental Impacts
-    relation: closeMatch
+    relation: exactMatch
   - framework: oecd
     target_id: principle-1.1
-    target_label: Inclusive growth, sustainable development & well-being
-    relation: broadMatch
+    target_label: Inclusive growth, sustainable development & environmental sustainability
+    relation: exactMatch
+  - framework: ibm_atlas
+    target_id: environmental-impact
+    target_label: Non-technical → Societal impact → Environmental impact
+    relation: exactMatch
+  - framework: eu_ai_act
+    target_id: article-95
+    target_label: Article 95 — Codes of conduct for sustainability + Recital 139
+    relation: relatedMatch
+  - framework: iso_42001
+    target_id: A.5.2
+    target_label: AI system impact assessment + Annex C objectives
+    relation: closeMatch
 - id: inference-energy-consumption
   type: subcategory
   broader: environmental-impact
@@ -2113,6 +2380,15 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  mappings:
+  - framework: nist_600
+    target_id: environmental
+    target_label: Environmental Impacts (compute resource utilization in operation)
+    relation: narrowMatch
+  - framework: mit
+    target_id: subdomain-6.6
+    target_label: Environmental harm (carbon and water footprints of inference)
+    relation: narrowMatch
 - id: training-resource-consumption
   type: subcategory
   broader: environmental-impact
@@ -2126,6 +2402,15 @@ concepts:
   lifecycle_stages:
   - in-processing
   source: HRA
+  mappings:
+  - framework: nist_600
+    target_id: environmental
+    target_label: Environmental Impacts (compute resource utilization in training)
+    relation: narrowMatch
+  - framework: mit
+    target_id: subdomain-6.6
+    target_label: Environmental harm (training carbon and water footprints)
+    relation: narrowMatch
 - id: hardware-efficiency
   type: subcategory
   broader: environmental-impact
@@ -2140,6 +2425,11 @@ concepts:
   - in-processing
   - post-processing
   source: HRA
+  mappings:
+  - framework: nist_600
+    target_id: environmental
+    target_label: Environmental Impacts (resource efficiency)
+    relation: narrowMatch
 - id: transparency-explainability
   type: category
   label: Transparency & Explainability
@@ -2175,6 +2465,26 @@ concepts:
     target_id: Transparency
     target_label: Transparency
     relation: broadMatch
+  - framework: eu_ai_act
+    target_id: article-13
+    target_label: Article 13 — Transparency and provision of information
+    relation: closeMatch
+  - framework: nist_600
+    target_id: information-integrity
+    target_label: Information Integrity (provenance) + Value Chain
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.8
+    target_label: A.8 Information for interested parties + A.6.2.8 documentation
+    relation: exactMatch
+  - framework: aiuc1
+    target_id: E.16
+    target_label: Implement AI disclosure mechanisms + E.17 transparency policy
+    relation: closeMatch
+  - framework: ibm_atlas
+    target_id: explainability-transparency
+    target_label: Output → Explainability + Non-technical → Transparency
+    relation: exactMatch
 - id: transparency-explainability-group
   type: subgroup
   broader: transparency-explainability
@@ -2188,6 +2498,14 @@ concepts:
   - framework: mit
     target_id: subdomain-7.4
     target_label: Lack of transparency or interpretability
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: ExplainabilityRisk
+    target_label: Explainability Risk
+    relation: closeMatch
+  - framework: ibm_atlas
+    target_id: output-explainability
+    target_label: Output → Explainability
     relation: closeMatch
 - id: system-explainability
   type: subcategory
@@ -2208,6 +2526,19 @@ concepts:
     description: Whether the system's underlying prompts, instructions, or guiding context are visible or comprehensible to
       users. Particularly relevant for LLM-based systems where outputs depend heavily on hidden system prompts that shape
       behaviour.
+  mappings:
+  - framework: dpv_ai
+    target_id: ExplainabilityRisk
+    target_label: Explainability Risk
+    relation: closeMatch
+  - framework: ibm_atlas
+    target_id: unexplainable-output
+    target_label: Output → Explainability → Unexplainable output
+    relation: closeMatch
+  - framework: nist_rmf
+    target_id: explainable
+    target_label: Explainable & Interpretable
+    relation: closeMatch
 - id: right-to-explanation-contestation
   type: subcategory
   broader: transparency-explainability-group
@@ -2233,6 +2564,36 @@ concepts:
     label: Ineffective communication with affected parties
     description: Failure to inform individuals about how they have been affected by AI-driven decisions and what options are
       available to them.
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-86
+    target_label: Article 86 — Right to explanation of individual decision-making
+    relation: exactMatch
+  - framework: dpv_ai
+    target_id: RightToExplanation
+    target_label: Right to Explanation (DPV core / GDPR extension)
+    target_url: https://w3c.github.io/dpv/2.3/legal/eu/gdpr/
+    relation: exactMatch
+  - framework: nist_rmf
+    target_id: accountable-transparent
+    target_label: Accountable & Transparent (Govern 1.5; Manage 4.3)
+    relation: narrowMatch
+  - framework: oecd
+    target_id: principle-1.3
+    target_label: Transparency and explainability (challenge mechanisms)
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.8.3
+    target_label: External reporting + A.8.4 Communication of incidents
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.16
+    target_label: Implement AI disclosure mechanisms
+    relation: closeMatch
+  - framework: air_2024
+    target_id: L2-FundamentalRights
+    target_label: Fundamental Rights → Violating Specific Types of Rights
+    relation: closeMatch
 - id: prompt-transparency
   type: subcategory
   broader: transparency-explainability-group
@@ -2262,6 +2623,18 @@ concepts:
     target_id: principle-1.3
     target_label: Transparency and explainability
     relation: closeMatch
+  - framework: iso_42001
+    target_id: A.8.2
+    target_label: Information for users / affected parties
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.16
+    target_label: Implement AI disclosure mechanisms
+    relation: closeMatch
+  - framework: nist_600
+    target_id: information-integrity
+    target_label: Information Integrity (provenance disclosure)
+    relation: closeMatch
 - id: stakeholder-communication
   type: subcategory
   broader: transparency-communication
@@ -2276,6 +2649,19 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-13
+    target_label: Article 13 — Transparency and provision of information to deployers
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.8.2
+    target_label: Information for users / affected parties
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: E.17
+    target_label: Document system transparency policy
+    relation: closeMatch
 - id: ai-interaction-disclosure
   type: subcategory
   broader: transparency-communication
@@ -2289,6 +2675,15 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  mappings:
+  - framework: eu_ai_act
+    target_id: article-50
+    target_label: Article 50 — Transparency obligations for AI interacting with natural persons
+    relation: exactMatch
+  - framework: aiuc1
+    target_id: E.16
+    target_label: Implement AI disclosure mechanisms
+    relation: closeMatch
 - id: model-card-completeness
   type: subcategory
   broader: transparency-communication

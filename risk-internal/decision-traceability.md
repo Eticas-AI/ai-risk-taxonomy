@@ -22,4 +22,18 @@ Inability to trace decisions made or influenced by the AI system back to specifi
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
 
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Log AI system activity | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [OECD AI Principles](https://oecd.ai) | Accountability (traceability) | close match |
+
 *Source: HRA project taxonomy*

@@ -29,9 +29,9 @@ mit:subdomain-4.3 skos:prefLabel "Fraud, scams, and targeted manipulation"@en .
 
 mit:subdomain-5.1 skos:prefLabel "Overreliance and unsafe use"@en .
 
-mit:subdomain-6.3 skos:prefLabel "Economic and cultural devaluation of human effort"@en .
+mit:subdomain-5.2 skos:prefLabel "Loss of human agency and autonomy"@en .
 
-mit:subdomain-6.6 skos:prefLabel "Environmental harm"@en .
+mit:subdomain-6.3 skos:prefLabel "Economic and cultural devaluation of human effort"@en .
 
 mit:subdomain-7.6 skos:prefLabel "Multi-agent risks"@en .
 
@@ -48,6 +48,8 @@ air-2024:L2-Deception skos:prefLabel "Societal Risks → Deception (Misrepresent
 air-2024:L2-DiscriminationBias skos:prefLabel "Discrimination & Bias (Discriminatory Activities)"@en .
 
 air-2024:L2-DiscriminationBias-protected skos:prefLabel "Discrimination & Bias × Protected Characteristics (60 Level-4 risks)"@en .
+
+air-2024:L2-FundamentalRights skos:prefLabel "Fundamental Rights → Violating Specific Types of Rights"@en .
 
 air-2024:L2-OperationalMisuses skos:prefLabel "System & Operational Risks → Operational Misuses"@en .
 
@@ -73,11 +75,17 @@ aiuc1:B.6 skos:prefLabel "Prevent unauthorized AI agent actions"@en .
 
 aiuc1:C.1 skos:prefLabel "Prevent jailbreaks (safety controls)"@en .
 
-aiuc1:C.8 skos:prefLabel "Monitor AI risk categories"@en .
+aiuc1:C.7 skos:prefLabel "Flag high-risk outputs for human review"@en .
 
 aiuc1:D skos:prefLabel "Reliability domain"@en .
 
 aiuc1:D.2 skos:prefLabel "Third-party testing for hallucinations"@en .
+
+aiuc1:E skos:prefLabel "Accountability domain"@en .
+
+aiuc1:E.1 skos:prefLabel "AI failure plan for security breaches + E.2 for harmful outputs"@en .
+
+aiuc1:E.3 skos:prefLabel "AI failure plan for hallucinations"@en .
 
 aiuc1:F skos:prefLabel "Society domain (cyber misuse + catastrophic misuse)"@en .
 
@@ -85,7 +93,13 @@ aiuc1:F.2 skos:prefLabel "Prevent catastrophic misuse"@en .
 
 ibm-atlas:data-poisoning skos:prefLabel "Input → Data poisoning / Training-data tampering"@en .
 
+ibm-atlas:environmental-impact skos:prefLabel "Non-technical → Societal impact → Environmental impact"@en .
+
+ibm-atlas:explainability-transparency skos:prefLabel "Output → Explainability + Non-technical → Transparency"@en .
+
 ibm-atlas:extraction-attack skos:prefLabel "Inference → Extraction attack"@en .
+
+ibm-atlas:governance-non-technical skos:prefLabel "Non-technical → Governance dimension"@en .
 
 ibm-atlas:hallucination skos:prefLabel "Output → Robustness → Hallucination"@en .
 
@@ -99,6 +113,8 @@ ibm-atlas:output-diversity-mode-collapse skos:prefLabel "Output diversity / mode
 
 ibm-atlas:output-drift skos:prefLabel "Output → Drift"@en .
 
+ibm-atlas:output-explainability skos:prefLabel "Output → Explainability"@en .
+
 ibm-atlas:output-fairness-sentiment skos:prefLabel "Output → Fairness (sentiment quality across groups)"@en .
 
 ibm-atlas:personal-information-output skos:prefLabel "Output → Revealing personal information in output"@en .
@@ -109,19 +125,25 @@ ibm-atlas:security-non-technical skos:prefLabel "Non-technical → Misuse + Infe
 
 ibm-atlas:toxicity-stereotyping skos:prefLabel "Output → Toxicity / Harmful output (stereotyping)"@en .
 
-iso-42001:A.2-A.4 skos:prefLabel "AI Policy, Internal Organisation, Resources"@en .
+ibm-atlas:unexplainable-output skos:prefLabel "Output → Explainability → Unexplainable output"@en .
 
-iso-42001:A.4 skos:prefLabel "Documentation and records"@en .
+iso-42001:A.3 skos:prefLabel "A.3 Internal organization (roles & responsibilities)"@en .
 
-iso-42001:A.6.2.2 skos:prefLabel "Documented intended use"@en .
-
-iso-42001:A.6.2.4 skos:prefLabel "AI system verification and validation"@en .
+iso-42001:A.3.2 skos:prefLabel "Roles and responsibilities"@en .
 
 iso-42001:A.6.2.5 skos:prefLabel "AI system deployment (secure deployment)"@en .
 
+iso-42001:A.6.2.7 skos:prefLabel "Human oversight (lifecycle controls)"@en .
+
+iso-42001:A.7 skos:prefLabel "A.7 Data for AI systems"@en .
+
 iso-42001:A.7.4 skos:prefLabel "Quality of data for AI systems"@en .
 
-iso-42001:A.9.3 skos:prefLabel "Processes for responsible development and use"@en .
+iso-42001:A.8 skos:prefLabel "A.8 Information for interested parties + A.6.2.8 documentation"@en .
+
+iso-42001:A.8.3 skos:prefLabel "External reporting + A.8.4 Communication of incidents"@en .
+
+iso-42001:A.9 skos:prefLabel "A.9 Use of AI systems + clause 10 (improvement / nonconformity)"@en .
 
 nist-600:4 skos:prefLabel "Data Privacy"@en .
 
@@ -135,21 +157,13 @@ nist-600:cbrn skos:prefLabel "CBRN Information or Capabilities (extreme misuse)"
 
 nist-600:confabulation skos:prefLabel "Confabulation"@en .
 
-nist-600:environmental skos:prefLabel "Environmental Impacts"@en .
-
 nist-600:harmful-bias-homogenization skos:prefLabel "Harmful Bias or Homogenization (homogenization clause)"@en .
-
-nist-600:information-integrity skos:prefLabel "Information Integrity"@en .
-
-nist-rmf:accountable-transparent skos:prefLabel "Accountable & Transparent"@en .
-
-nist-rmf:explainable skos:prefLabel "Explainable & Interpretable"@en .
 
 nist-rmf:explainable-interpretable skos:prefLabel "Explainable & Interpretable"@en .
 
 nist-rmf:fair skos:prefLabel "Fair with Harmful Bias Managed"@en .
 
-nist-rmf:govern-function skos:prefLabel "GOVERN function"@en .
+nist-rmf:govern-3 skos:prefLabel "GOVERN 3 — Human-AI configurations"@en .
 
 nist-rmf:harmful-bias-disparate-performance skos:prefLabel "Harmful bias / disparate performance"@en .
 
@@ -157,11 +171,17 @@ nist-rmf:manage-2.3 skos:prefLabel "Manage 2.3 — allocation harms and disparat
 
 nist-rmf:map skos:prefLabel "MAP function — context and deployment environment"@en .
 
+nist-rmf:map-2.3 skos:prefLabel "MAP 2.3 — data and input"@en .
+
+nist-rmf:map-3 skos:prefLabel "MAP 3 — AI capabilities and use cases"@en .
+
+nist-rmf:measure-2.8 skos:prefLabel "MEASURE 2.8 — risks and trustworthiness characteristics measured"@en .
+
 nist-rmf:privacy-enhanced skos:prefLabel "Privacy-Enhanced"@en .
 
 nist-rmf:safe skos:prefLabel "Safe (trustworthy characteristic)"@en .
 
-oecd:principle-1.1 skos:prefLabel "Inclusive growth, sustainable development & well-being"@en .
+oecd:principle-1.1 skos:prefLabel "Inclusive growth, sustainable development & environmental sustainability"@en .
 
 oecd:robustness skos:prefLabel "Robustness, security & safety"@en .
 
@@ -182,7 +202,9 @@ eticas:adversarial-attacks a skos:Concept ;
 eticas:ai-interaction-disclosure a skos:Concept ;
     dcterms:source "HRA" ;
     skos:broader eticas:transparency-communication ;
+    skos:closeMatch aiuc1:E.16 ;
     skos:definition "Users interacting with an AI system under the assumption that they are communicating with a human, without clear disclosure."@en ;
+    skos:exactMatch eu-ai-act:article-50 ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Disclosure of AI interaction"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
@@ -236,6 +258,9 @@ eticas:contextual-resilience a skos:Concept ;
 eticas:data-governance a skos:Concept ;
     dcterms:source "HRA" ;
     skos:broader eticas:governance-compliance ;
+    skos:closeMatch iso-42001:A.7,
+        nist-rmf:map-2.3,
+        eu-ai-act:article-10 ;
     skos:definition "Inadequate labelling, tagging, approval, or appropriateness assessment of data, leading to downstream issues with fitness for purpose, bias, and compliance."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Data governance"@en ;
@@ -265,6 +290,8 @@ eticas:data-poisoning a skos:Concept ;
 eticas:decision-traceability a skos:Concept ;
     dcterms:source "HRA" ;
     skos:broader eticas:governance-documentation ;
+    skos:closeMatch aiuc1:E.15,
+        oecd:principle-1.5 ;
     skos:definition "Inability to trace decisions made or influenced by the AI system back to specific inputs, processes, or actors, making it impossible to investigate harms or assign responsibility."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Decision traceability"@en ;
@@ -351,6 +378,9 @@ eticas:failure-remediation-gaps a skos:Concept ;
     skos:altLabel "Failures and remediations"@en,
         "Unclear remediation procedures"@en ;
     skos:broader eticas:governance-compliance ;
+    skos:closeMatch aiuc1:E.3,
+        iso-42001:clause-10,
+        nist-rmf:manage-4 ;
     skos:definition "Absence of remediation plans for predictable or unknown failure modes, leaving critical services unable to recover or degrade gracefully."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Failure and remediation gaps"@en ;
@@ -375,6 +405,9 @@ eticas:fitness-for-purpose a skos:Concept ;
     skos:altLabel "Fitness for purpose"@en,
         "Task success"@en ;
     skos:broader eticas:governance-compliance ;
+    skos:closeMatch iso-42001:A.6.2.2,
+        iso-42001:A.6.2.4,
+        nist-rmf:map-3 ;
     skos:definition "The system has not been validated against the problem it is intended to solve, or does not achieve adequate or equitable task performance across subpopulations and input types. Covers both the ex ante question (was this designed for this problem?) and the ex post question (does it actually work?)."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Fitness for purpose and task effectiveness"@en ;
@@ -439,6 +472,7 @@ eticas:hardware-efficiency a skos:Concept ;
     skos:broader eticas:environmental-impact ;
     skos:definition "Poor hardware utilisation increasing costs, environmental footprint, and limiting the feasibility of equitable access to AI capabilities."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch nist-600:environmental ;
     skos:prefLabel "Hardware efficiency"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
@@ -477,16 +511,26 @@ eticas:homogenization-output-across-groups a skos:Concept ;
 eticas:human-oversight-control a skos:Concept ;
     dcterms:source "HRA" ;
     skos:broader eticas:governance-accountability ;
+    skos:closeMatch aiuc1:C.7,
+        iso-42001:A.6.2.7,
+        nist-rmf:govern-3 ;
     skos:definition "Lack of defined intervention points, override capabilities, or human review mechanisms, allowing issues and threats to persist unchecked."@en ;
+    skos:exactMatch eu-ai-act:article-14 ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Human oversight and control"@en ;
+    skos:relatedMatch mit:subdomain-5.2 ;
     eticas-ont:lifecycleStage "post-processing" ;
     eticas-ont:maturity "emerging" ;
     eticas-ont:scope "ALL" .
 
 eticas:incident-response-gaps a skos:Concept ;
     skos:broader eticas:governance-compliance ;
+    skos:closeMatch aiuc1:E.1,
+        iso-42001:clause-10,
+        nist-rmf:manage-4,
+        dpv-ai:IncidentManagement ;
     skos:definition "Insufficient detection, logging, escalation, or response capabilities for security incidents and misuse events."@en ;
+    skos:exactMatch eu-ai-act:article-73 ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Incident response gaps"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
@@ -498,6 +542,8 @@ eticas:inference-energy-consumption a skos:Concept ;
     skos:broader eticas:environmental-impact ;
     skos:definition "High energy use during deployment and inference, increasing environmental impact and infrastructure costs."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch mit:subdomain-6.6,
+        nist-600:environmental ;
     skos:prefLabel "Inference-time energy consumption"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
     eticas-ont:maturity "emerging" ;
@@ -516,7 +562,9 @@ eticas:infrastructure-dependency a skos:Concept ;
 eticas:input-output-logging a skos:Concept ;
     dcterms:source "HRA" ;
     skos:broader eticas:governance-documentation ;
+    skos:closeMatch iso-42001:A.6.2.8 ;
     skos:definition "Failure to log inputs and outputs systematically, hindering detection of failures, bias, or misuse. For LLMs, unlogged prompts may prevent tracking of harmful or sensitive interactions."@en ;
+    skos:exactMatch aiuc1:E.15 ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Critical input/output logging"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
@@ -547,6 +595,8 @@ eticas:jailbreaking a skos:Concept ;
 
 eticas:lack-of-change-management a skos:Concept ;
     skos:broader eticas:governance-compliance ;
+    skos:closeMatch iso-42001:A.6.2.6,
+        nist-rmf:manage-4 ;
     skos:definition "Absence of controlled processes for system modifications, including uncontrolled changes to production systems."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Lack of change management"@en ;
@@ -556,6 +606,9 @@ eticas:lack-of-change-management a skos:Concept ;
 
 eticas:limited-auditability a skos:Concept ;
     skos:broader eticas:governance-documentation ;
+    skos:closeMatch aiuc1:E.15,
+        iso-42001:A.6.2.8,
+        nist-rmf:measure-2.8 ;
     skos:definition "Insufficient logging, versioning, or traceability for meaningful external review or internal audit."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Limited auditability"@en ;
@@ -622,6 +675,11 @@ eticas:monitoring-evaluation-gaps a skos:Concept ;
     dcterms:source "HRA" ;
     skos:altLabel "Monitoring, feedback, evaluation"@en ;
     skos:broader eticas:governance-compliance ;
+    skos:closeMatch aiuc1:C.8,
+        iso-42001:A.6.2.6,
+        nist-rmf:manage-4,
+        dpv-ai:MonitoringControl,
+        eu-ai-act:article-72 ;
     skos:definition "Lack of ongoing monitoring that renders datasets obsolete and system outputs unreliable, including absence of feedback mechanisms and periodic evaluation."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Monitoring and evaluation gaps"@en ;
@@ -695,6 +753,8 @@ eticas:over-reliance a skos:Concept ;
 eticas:oversight-of-adverse-impacts a skos:Concept ;
     dcterms:source "HRA" ;
     skos:broader eticas:governance-accountability ;
+    skos:closeMatch iso-42001:A.5.2,
+        nist-rmf:manage-4 ;
     skos:definition "Missing processes for identifying, escalating, and responding to harmful outcomes, including psychological or physical harm and threats to human life."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Oversight of significant adverse impacts"@en ;
@@ -742,6 +802,9 @@ eticas:pii-leakage a skos:Concept ;
 
 eticas:poor-documentation a skos:Concept ;
     skos:broader eticas:governance-documentation ;
+    skos:closeMatch aiuc1:E.17,
+        iso-42001:A.6.2.8,
+        eu-ai-act:article-11 ;
     skos:definition "Incomplete, outdated, or absent documentation of system purpose, architecture, data sources, known limitations, and operational procedures."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Poor documentation"@en ;
@@ -789,6 +852,9 @@ eticas:recovery-capability a skos:Concept ;
 
 eticas:regulatory-non-compliance a skos:Concept ;
     skos:broader eticas:governance-compliance ;
+    skos:closeMatch aiuc1:E.10,
+        iso-42001:A.2,
+        eu-ai-act:chapter-iii ;
     skos:definition "Failure to align with applicable legal, ethical, or organisational standards, including sector-specific regulations."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Regulatory non-compliance"@en ;
@@ -800,6 +866,9 @@ eticas:regulatory-non-compliance a skos:Concept ;
 eticas:responsible-actor-attribution a skos:Concept ;
     dcterms:source "HRA" ;
     skos:broader eticas:governance-accountability ;
+    skos:closeMatch aiuc1:E.4,
+        iso-42001:A.10,
+        eu-ai-act:article-25 ;
     skos:definition "Unclear or undocumented roles of developers, deployers, or reviewers, creating accountability gaps that can delay incident response or allow harmful practices to persist."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Responsible actor attribution"@en ;
@@ -814,8 +883,15 @@ eticas:right-to-explanation-contestation a skos:Concept ;
         "Right to contest"@en,
         "Right to explanation"@en ;
     skos:broader eticas:transparency-explainability-group ;
+    skos:closeMatch air-2024:L2-FundamentalRights,
+        aiuc1:E.16,
+        iso-42001:A.8.3,
+        oecd:principle-1.3 ;
     skos:definition "The risk that affected individuals are not informed about decisions taken with AI assistance, do not receive a meaningful explanation of those decisions, or have no effective channel to challenge or appeal them. Includes obligations under GDPR Article 22 (rights regarding automated individual decision-making) and EU AI Act Article 13 (transparency and provision of information to deployers and affected persons)."@en ;
+    skos:exactMatch dpv-ai:RightToExplanation,
+        eu-ai-act:article-86 ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch nist-rmf:accountable-transparent ;
     skos:prefLabel "Right to explanation and contestation"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
     eticas-ont:maturity "established" ;
@@ -839,6 +915,9 @@ eticas:stakeholder-communication a skos:Concept ;
     skos:altLabel "Communication to relevant interested parties"@en,
         "Communication to stakeholders"@en ;
     skos:broader eticas:transparency-communication ;
+    skos:closeMatch aiuc1:E.17,
+        iso-42001:A.8.2,
+        eu-ai-act:article-13 ;
     skos:definition "The AI system's capabilities, limitations, intended use cases, and known failure modes are not communicated clearly to deployers, users, or affected parties, leading to misuse, over-reliance, or under-reliance on the system."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Inadequate disclosure of system capabilities and limitations"@en ;
@@ -891,6 +970,9 @@ eticas:synthetic-media-abuse a skos:Concept ;
 eticas:system-explainability a skos:Concept ;
     dcterms:source "HRA" ;
     skos:broader eticas:transparency-explainability-group ;
+    skos:closeMatch ibm-atlas:unexplainable-output,
+        nist-rmf:explainable,
+        dpv-ai:ExplainabilityRisk ;
     skos:definition "Stakeholders misinterpret or misunderstand the intended purpose or use of an AI system based on its outputs, due to insufficient explanation of how outputs are produced."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "AI system explainability"@en ;
@@ -922,6 +1004,8 @@ eticas:training-resource-consumption a skos:Concept ;
     skos:broader eticas:environmental-impact ;
     skos:definition "Significant carbon emissions, energy use, and water consumption associated with model training, particularly for large-scale foundation models."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch mit:subdomain-6.6,
+        nist-600:environmental ;
     skos:prefLabel "Training resource consumption"@en ;
     eticas-ont:lifecycleStage "in-processing" ;
     eticas-ont:maturity "emerging" ;
@@ -949,6 +1033,9 @@ eticas:unauthorized-access a skos:Concept ;
 
 eticas:unclear-responsibilities a skos:Concept ;
     skos:broader eticas:governance-accountability ;
+    skos:closeMatch aiuc1:E.4,
+        iso-42001:A.3.2,
+        nist-rmf:govern-1 ;
     skos:definition "Missing or ambiguous assignment of roles and responsibilities for AI system design, deployment, monitoring, and incident response."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Unclear responsibilities and accountability gaps"@en ;
@@ -1002,11 +1089,17 @@ dpv-ai:DataPoisoning skos:prefLabel "Data Poisoning"@en .
 
 dpv-ai:Discrimination skos:prefLabel "Discrimination"@en .
 
+dpv-ai:Governance skos:prefLabel "Governance / Organisational Measure"@en .
+
 dpv-ai:HumanOversight skos:prefLabel "Human Oversight"@en .
+
+dpv-ai:IncidentManagement skos:prefLabel "Incident Management"@en .
 
 dpv-ai:Misuse skos:prefLabel "Misuse"@en .
 
 dpv-ai:ModelInversion skos:prefLabel "Model Inversion"@en .
+
+dpv-ai:MonitoringControl skos:prefLabel "Monitoring Control"@en .
 
 dpv-ai:PersonalDataCollection skos:prefLabel "Personal Data Handling"@en .
 
@@ -1014,25 +1107,19 @@ dpv-ai:PromptInjection skos:prefLabel "Prompt Injection"@en .
 
 dpv-ai:Reidentification skos:prefLabel "Re-identification"@en .
 
+dpv-ai:RightToExplanation skos:prefLabel "Right to Explanation (DPV core / GDPR extension)"@en .
+
+dpv-ai:RiskManagement skos:prefLabel "Risk Management"@en .
+
 dpv-ai:Transparency skos:prefLabel "Transparency"@en .
 
 dpv-ai:UnauthorisedDataDisclosure skos:prefLabel "Unauthorised Data Disclosure"@en .
 
 eu-ai-act:annex-iii skos:prefLabel "Annex III high-risk uses (employment, education, essential services)"@en .
 
-eu-ai-act:article-11 skos:prefLabel "Article 11 — Technical documentation"@en .
-
-eu-ai-act:article-13 skos:prefLabel "Article 13 — Transparency and provision of information to deployers"@en .
-
-eu-ai-act:article-14 skos:prefLabel "Article 14 — Human oversight"@en .
-
 eu-ai-act:article-15 skos:prefLabel "Article 15 — accuracy, robustness and cybersecurity"@en .
 
 eu-ai-act:article-15-4 skos:prefLabel "Article 15(4) — Resilience regarding errors, faults or inconsistencies"@en .
-
-eu-ai-act:article-17 skos:prefLabel "Article 17 — Quality management system"@en .
-
-eu-ai-act:article-25 skos:prefLabel "Article 25 — value-chain responsibilities"@en .
 
 eu-ai-act:article-5 skos:prefLabel "Article 5 — Prohibited AI practices (emotion recognition, biometric categorization)"@en .
 
@@ -1044,11 +1131,15 @@ eu-ai-act:article-5-1e skos:prefLabel "Article 5(1)(e) — untargeted facial rec
 
 eu-ai-act:article-5-1f skos:prefLabel "Article 5(1)(f) — emotion recognition in workplace and education (prohibited)"@en .
 
-eu-ai-act:article-50 skos:prefLabel "Article 50 — transparency obligations for deepfakes"@en .
+eu-ai-act:article-73 skos:prefLabel "Article 73 — Reporting of serious incidents"@en .
 
-eu-ai-act:article-72 skos:prefLabel "Article 72 — post-market monitoring"@en .
+eu-ai-act:article-86 skos:prefLabel "Article 86 — Right to explanation of individual decision-making"@en .
 
 eu-ai-act:article-9 skos:prefLabel "Article 9 — risk management throughout lifecycle"@en .
+
+eu-ai-act:article-95 skos:prefLabel "Article 95 — Codes of conduct for sustainability + Recital 139"@en .
+
+eu-ai-act:chapter-iii skos:prefLabel "Chapter III — High-risk AI system requirements"@en .
 
 eu-ai-act:recital-76 skos:prefLabel "Recital 76 — data poisoning (cybersecurity)"@en .
 
@@ -1072,6 +1163,10 @@ aiuc1:B.2 skos:prefLabel "Detect adversarial input"@en .
 
 aiuc1:C.3 skos:prefLabel "Prevent harmful outputs"@en .
 
+aiuc1:C.8 skos:prefLabel "Monitor AI risk categories"@en .
+
+aiuc1:E.17 skos:prefLabel "Document system transparency policy"@en .
+
 ibm-atlas:output-bias skos:prefLabel "Output bias (Fairness dimension)"@en .
 
 ibm-atlas:output-fairness skos:prefLabel "Output → Fairness dimension"@en .
@@ -1085,17 +1180,30 @@ ibm-atlas:societal-impact-drift skos:prefLabel "Output → Drift + Non-technical
 
 ibm-atlas:toxicity-harmful-output skos:prefLabel "Output → Toxicity / Harmful output"@en .
 
-iso-42001:A.10 skos:prefLabel "Third-party and customer relationships"@en .
+iso-42001:A.2 skos:prefLabel "A.2 Policies + A.3 Internal organization"@en,
+        "A.2 Policies related to AI"@en .
 
-iso-42001:A.5.2 skos:prefLabel "AI system impact assessment"@en .
+iso-42001:A.6.2.2 skos:prefLabel "Documented intended use"@en .
+
+iso-42001:A.6.2.4 skos:prefLabel "AI system verification and validation"@en .
+
+iso-42001:A.8.2 skos:prefLabel "Information for users / affected parties"@en .
+
+iso-42001:clause-10 skos:prefLabel "Clause 10 — Improvement / nonconformity & corrective action"@en,
+        "Clause 10 — Improvement and incident response"@en .
 
 nist-600:2 skos:prefLabel "Confabulation"@en .
 
 nist-600:dangerous-content skos:prefLabel "Dangerous, Violent or Hateful Content + CBRN + Obscene/Abusive"@en,
         "Dangerous, Violent, or Hateful Content"@en .
 
-nist-600:value-chain skos:prefLabel "Value Chain & Component Integration"@en,
-        "Value Chain and Component Integration"@en .
+nist-rmf:accountable-transparent skos:prefLabel "Accountable & Transparent"@en,
+        "Accountable & Transparent (Govern 1.5; Manage 4.3)"@en .
+
+nist-rmf:explainable skos:prefLabel "Explainable & Interpretable"@en .
+
+nist-rmf:govern-function skos:prefLabel "GOVERN function"@en,
+        "GOVERN function (entire)"@en .
 
 nist-rmf:harmful-bias skos:prefLabel "Harmful bias (representational dimension)"@en,
         "Harmful bias / disparate performance"@en .
@@ -1103,9 +1211,6 @@ nist-rmf:harmful-bias skos:prefLabel "Harmful bias (representational dimension)"
 nist-rmf:systemic-bias skos:prefLabel "Systemic bias under harmful bias"@en .
 
 oecd:principle-1.2 skos:prefLabel "Human rights, rule of law, fairness & privacy"@en .
-
-oecd:principle-1.3 skos:prefLabel "Transparency & explainability"@en,
-        "Transparency and explainability"@en .
 
 eticas:bias-dynamic-systemic-bias a skos:Concept ;
     skos:broader eticas:bias-fairness ;
@@ -1124,9 +1229,20 @@ eticas:bias-dynamic-systemic-bias a skos:Concept ;
     skos:relatedMatch mit:subdomain-6.5,
         aiuc1:C.8 .
 
+dpv-ai:ExplainabilityRisk skos:prefLabel "Explainability Risk"@en .
+
 dpv-ai:MembershipInferenceAttack skos:prefLabel "Membership Inference Attack"@en .
 
 dpv-ai:NonRepresentativeSamplingBias skos:prefLabel "Non-Representative Sampling Bias"@en .
+
+eu-ai-act:article-11 skos:prefLabel "Article 11 — Technical documentation"@en,
+        "Article 11 — Technical documentation (Annex IV)"@en .
+
+eu-ai-act:article-14 skos:prefLabel "Article 14 — Human oversight"@en .
+
+eu-ai-act:article-17 skos:prefLabel "Article 17 — Quality management system + Article 9 — Risk management"@en .
+
+eu-ai-act:article-25 skos:prefLabel "Article 25 — value-chain responsibilities"@en .
 
 eu-ai-act:article-5-1a skos:prefLabel "Article 5(1)(a) — prohibited manipulative practices"@en,
         "Article 5(1)(a) — subliminal/manipulative techniques (prohibited)"@en .
@@ -1134,7 +1250,17 @@ eu-ai-act:article-5-1a skos:prefLabel "Article 5(1)(a) — prohibited manipulati
 eu-ai-act:article-5-1g skos:prefLabel "Article 5(1)(g) — biometric categorization for sensitive attributes"@en,
         "Article 5(1)(g) — real-time remote biometric identification in public spaces"@en .
 
+eu-ai-act:article-50 skos:prefLabel "Article 50 — Transparency obligations for AI interacting with natural persons"@en,
+        "Article 50 — transparency obligations for deepfakes"@en .
+
+eu-ai-act:article-72 skos:prefLabel "Article 72 — Post-market monitoring"@en,
+        "Article 72 — post-market monitoring"@en .
+
 mit:subdomain-1.3 skos:prefLabel "Unequal performance across groups"@en .
+
+mit:subdomain-6.6 skos:prefLabel "Environmental harm"@en,
+        "Environmental harm (carbon and water footprints of inference)"@en,
+        "Environmental harm (training carbon and water footprints)"@en .
 
 mit:subdomain-7.3 skos:prefLabel "Lack of capability or robustness"@en .
 
@@ -1142,17 +1268,37 @@ aiuc1:C.5 skos:prefLabel "Prevent customer-defined high-risk outputs"@en .
 
 aiuc1:D.1 skos:prefLabel "Prevent hallucinated outputs"@en .
 
+aiuc1:E.10 skos:prefLabel "Document regulatory compliance"@en,
+        "Document regulatory compliance + E.12 Quality management system"@en .
+
+aiuc1:E.15 skos:prefLabel "Log AI system activity"@en .
+
+aiuc1:E.4 skos:prefLabel "Assign accountability"@en .
+
+iso-42001:A.10 skos:prefLabel "Third-party and customer relationships"@en .
+
 iso-42001:A.7.5 skos:prefLabel "Privacy considerations for AI systems"@en .
 
 nist-600:data-privacy skos:prefLabel "Data Privacy"@en,
         "Data Privacy (de-anonymization clause)"@en,
         "Data Privacy (leakage clause)"@en .
 
+nist-600:information-integrity skos:prefLabel "Information Integrity"@en,
+        "Information Integrity (provenance disclosure)"@en,
+        "Information Integrity (provenance) + Value Chain"@en .
+
+nist-600:value-chain skos:prefLabel "Value Chain & Component Integration"@en,
+        "Value Chain and Component Integration"@en .
+
+nist-rmf:govern-1 skos:prefLabel "GOVERN 1 — Policies, processes, procedures"@en,
+        "GOVERN 1 — documented policies and processes"@en .
+
+oecd:principle-1.3 skos:prefLabel "Transparency & explainability"@en,
+        "Transparency and explainability"@en,
+        "Transparency and explainability (challenge mechanisms)"@en .
+
 oecd:principle-1.4 skos:prefLabel "Robustness, security & safety"@en,
         "Robustness, security & safety (uses outside intended purpose)"@en .
-
-oecd:principle-1.5 skos:prefLabel "Accountability"@en,
-        "Accountability — lifecycle bias monitoring"@en .
 
 eticas:autonomy-agency a skos:Concept ;
     skos:altLabel "Agentic Risks"@en,
@@ -1252,7 +1398,10 @@ eticas:security-system a skos:Concept ;
 
 eticas:transparency-communication a skos:Concept ;
     skos:broader eticas:transparency-explainability ;
-    skos:closeMatch oecd:principle-1.3,
+    skos:closeMatch aiuc1:E.16,
+        iso-42001:A.8.2,
+        nist-600:information-integrity,
+        oecd:principle-1.3,
         eu-ai-act:article-13 ;
     skos:definition "Risks from inadequate communication about system capabilities, limitations, and AI involvement."@en ;
     skos:inScheme eticas:scheme ;
@@ -1265,9 +1414,14 @@ eticas:transparency-explainability a skos:Concept ;
         "Transparency and Explainability"@en ;
     skos:broadMatch dpv-ai:Transparency ;
     skos:closeMatch mit:subdomain-7.4,
+        aiuc1:E.16,
+        nist-600:information-integrity,
         nist-rmf:explainable-interpretable,
-        oecd:principle-1.3 ;
+        oecd:principle-1.3,
+        eu-ai-act:article-13 ;
     skos:definition "The risk that stakeholders cannot understand how an AI system works, what it does, or why it produces specific outputs. Lack of transparency undermines informed consent, impedes oversight, and erodes trust."@en ;
+    skos:exactMatch ibm-atlas:explainability-transparency,
+        iso-42001:A.8 ;
     skos:inScheme eticas:scheme ;
     skos:narrower eticas:transparency-communication,
         eticas:transparency-explainability-group ;
@@ -1282,7 +1436,9 @@ eticas:transparency-explainability a skos:Concept ;
 eticas:transparency-explainability-group a skos:Concept ;
     skos:broader eticas:transparency-explainability ;
     skos:closeMatch mit:subdomain-7.4,
-        nist-rmf:explainable ;
+        ibm-atlas:output-explainability,
+        nist-rmf:explainable,
+        dpv-ai:ExplainabilityRisk ;
     skos:definition "Risks from stakeholders being unable to understand why the system produces specific outputs."@en ;
     skos:inScheme eticas:scheme ;
     skos:narrower eticas:right-to-explanation-contestation,
@@ -1295,7 +1451,22 @@ dpv-ai:PersonalDataHandling skos:prefLabel "Personal Data Handling"@en,
 dpv-ai:SecurityAttack skos:prefLabel "Security Attack"@en,
         "Security Attack (unauthorized access)"@en .
 
-iso-42001:A.6.2.6 skos:prefLabel "AI system operation and monitoring"@en .
+eu-ai-act:article-13 skos:prefLabel "Article 13 — Transparency and provision of information"@en,
+        "Article 13 — Transparency and provision of information to deployers"@en .
+
+aiuc1:E.16 skos:prefLabel "Implement AI disclosure mechanisms"@en,
+        "Implement AI disclosure mechanisms + E.17 transparency policy"@en .
+
+iso-42001:A.5.2 skos:prefLabel "AI system impact assessment"@en,
+        "AI system impact assessment + Annex C objectives"@en .
+
+iso-42001:A.6.2.8 skos:prefLabel "AI system documentation"@en,
+        "AI system documentation (system documentation maintained throughout lifecycle)"@en .
+
+nist-600:environmental skos:prefLabel "Environmental Impacts"@en,
+        "Environmental Impacts (compute resource utilization in operation)"@en,
+        "Environmental Impacts (compute resource utilization in training)"@en,
+        "Environmental Impacts (resource efficiency)"@en .
 
 nist-600:information-security skos:prefLabel "Information Security"@en,
         "Information Security (data poisoning)"@en,
@@ -1304,6 +1475,10 @@ nist-600:information-security skos:prefLabel "Information Security"@en,
 nist-rmf:valid-reliable skos:prefLabel "Valid & Reliable"@en,
         "Valid & Reliable (consistency)"@en,
         "Valid & Reliable (robustness to distribution shift)"@en .
+
+oecd:principle-1.5 skos:prefLabel "Accountability"@en,
+        "Accountability (traceability)"@en,
+        "Accountability — lifecycle bias monitoring"@en .
 
 eticas:bias-fairness a skos:Concept ;
     skos:altLabel "Algorithmic fairness"@en,
@@ -1336,15 +1511,18 @@ eticas:bias-fairness a skos:Concept ;
 eticas:environmental-impact a skos:Concept ;
     skos:altLabel "Environmental sustainability"@en,
         "Sustainability"@en ;
-    skos:broadMatch oecd:principle-1.1 ;
-    skos:closeMatch mit:subdomain-6.6,
-        nist-600:environmental ;
+    skos:closeMatch iso-42001:A.5.2 ;
     skos:definition "The risk that an AI system's development, deployment, or use causes negative environmental effects, such as excessive energy or water consumption, carbon emissions, or unsustainable use of hardware and resources. This includes hidden impacts across the system's lifecycle, from model training to long-term operation."@en ;
+    skos:exactMatch mit:subdomain-6.6,
+        ibm-atlas:environmental-impact,
+        nist-600:environmental,
+        oecd:principle-1.1 ;
     skos:inScheme eticas:scheme ;
     skos:narrower eticas:hardware-efficiency,
         eticas:inference-energy-consumption,
         eticas:training-resource-consumption ;
     skos:prefLabel "Environmental Impact"@en ;
+    skos:relatedMatch eu-ai-act:article-95 ;
     skos:topConceptOf eticas:scheme ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing",
@@ -1356,11 +1534,16 @@ eticas:environmental-impact a skos:Concept ;
 eticas:governance a skos:Concept ;
     skos:altLabel "Accountability"@en,
         "Governance & Accountability"@en ;
-    skos:broadMatch iso-42001:A.2-A.4 ;
     skos:closeMatch mit:subdomain-6.5,
+        aiuc1:E,
         nist-rmf:accountable-transparent,
-        oecd:principle-1.5 ;
+        nist-rmf:govern-function,
+        oecd:principle-1.5,
+        dpv-ai:Governance,
+        eu-ai-act:article-17 ;
     skos:definition "The risk that an AI system lacks adequate structures, policies, or accountability mechanisms to oversee its design, deployment, and use. Weak governance can lead to unclear responsibilities, poor documentation, limited auditability, and failure to align with legal, ethical, or organizational standards."@en ;
+    skos:exactMatch ibm-atlas:governance-non-technical,
+        iso-42001:A.2 ;
     skos:inScheme eticas:scheme ;
     skos:narrower eticas:governance-accountability,
         eticas:governance-compliance,
@@ -1446,9 +1629,6 @@ eticas:security-misuse a skos:Concept ;
     eticas-ont:perspective "technical soundness" ;
     eticas-ont:scope "ALL" .
 
-eu-ai-act:article-10 skos:prefLabel "Article 10 — data and data governance"@en,
-        "Data and data governance"@en .
-
 eu-ai-act:article-15-5 skos:prefLabel "Article 15(5) — cybersecurity (Recital 76 confidentiality attacks)"@en,
         "Article 15(5) — cybersecurity (Recital 76 enumerates poisoning, evasion, confidentiality attacks)"@en,
         "Article 15(5) — cybersecurity (confidentiality attacks)"@en,
@@ -1461,6 +1641,12 @@ mit:subdomain-2.1 skos:prefLabel "Compromise of privacy"@en,
         "Compromise of privacy by inferring sensitive information"@en,
         "Compromise of privacy by leaking or inferring sensitive information"@en,
         "Compromise of privacy by obtaining, leaking or inferring sensitive information"@en .
+
+nist-rmf:manage-4 skos:prefLabel "MANAGE 4 — incident response and recovery"@en,
+        "MANAGE 4 — post-deployment monitoring"@en,
+        "MANAGE 4 — risk treatment and update"@en,
+        "MANAGE 4 — risk treatments and remediation"@en,
+        "MANAGE 4 — risk treatments and response"@en .
 
 nist-rmf:secure-resilient skos:prefLabel "Secure & Resilient"@en,
         "Secure & Resilient (adversarial ML)"@en,
@@ -1492,7 +1678,9 @@ eticas:autonomy-system-autonomy a skos:Concept ;
 eticas:governance-accountability a skos:Concept ;
     skos:broadMatch nist-rmf:govern-function ;
     skos:broader eticas:governance ;
-    skos:closeMatch oecd:principle-1.5 ;
+    skos:closeMatch aiuc1:E.4,
+        iso-42001:A.3,
+        oecd:principle-1.5 ;
     skos:definition "Risks from unclear allocation of responsibility, weak human oversight, and inadequate attribution mechanisms for AI system decisions and their adverse impacts."@en ;
     skos:inScheme eticas:scheme ;
     skos:narrower eticas:human-oversight-control,
@@ -1503,7 +1691,9 @@ eticas:governance-accountability a skos:Concept ;
 
 eticas:governance-documentation a skos:Concept ;
     skos:broader eticas:governance ;
-    skos:closeMatch iso-42001:A.4,
+    skos:closeMatch aiuc1:E.10,
+        iso-42001:A.6.2.8,
+        nist-rmf:govern-1,
         eu-ai-act:article-11 ;
     skos:definition "Risks from incomplete, inaccessible, or absent documentation and audit trails."@en ;
     skos:inScheme eticas:scheme ;
@@ -1539,8 +1729,14 @@ eticas:reliability-output-quality a skos:Concept ;
         eticas:output-inconsistency ;
     skos:prefLabel "Output quality"@en .
 
+eu-ai-act:article-10 skos:prefLabel "Article 10 — Data and data governance"@en,
+        "Article 10 — data and data governance"@en,
+        "Data and data governance"@en .
+
 mit:subdomain-2.2 skos:prefLabel "AI system security vulnerabilities & attacks"@en,
         "AI system security vulnerabilities and attacks"@en .
+
+iso-42001:A.6.2.6 skos:prefLabel "AI system operation and monitoring"@en .
 
 nist-600:harmful-bias skos:prefLabel "Harmful Bias & Homogenization"@en,
         "Harmful Bias & Homogenization (representational dimension)"@en,
@@ -1618,10 +1814,15 @@ eticas:security-ai-attacks a skos:Concept ;
     skos:prefLabel "AI-specific attacks"@en .
 
 eticas:governance-compliance a skos:Concept ;
-    skos:broadMatch iso-42001:A.9.3 ;
     skos:broader eticas:governance ;
+    skos:closeMatch aiuc1:E.10,
+        iso-42001:A.9,
+        nist-rmf:govern-1,
+        dpv-ai:RiskManagement,
+        eu-ai-act:article-17 ;
     skos:definition "Risks from gaps in organisational processes for ongoing oversight, compliance, and lifecycle management of AI systems — including regulatory compliance, change management, data governance, monitoring and evaluation, remediation of failures, and incident response."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch nist-600:value-chain ;
     skos:narrower eticas:data-governance,
         eticas:failure-remediation-gaps,
         eticas:fitness-for-purpose,
@@ -1629,8 +1830,7 @@ eticas:governance-compliance a skos:Concept ;
         eticas:lack-of-change-management,
         eticas:monitoring-evaluation-gaps,
         eticas:regulatory-non-compliance ;
-    skos:prefLabel "Compliance & process"@en ;
-    skos:relatedMatch eu-ai-act:article-17 .
+    skos:prefLabel "Compliance & process"@en .
 
 eticas:scheme a skos:ConceptScheme ;
     dcterms:description "A unified AI risk taxonomy for use across Eticas audit methodologies, assessment frameworks, and reporting outputs."@en ;

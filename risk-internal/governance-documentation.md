@@ -27,5 +27,12 @@ Risks from incomplete, inaccessible, or absent documentation and audit trails.
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Documentation and records | close match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI system documentation (system documentation maintained throughout lifecycle) | close match |
 | [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 11 — Technical documentation | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Document regulatory compliance | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | GOVERN 1 — documented policies and processes | close match |

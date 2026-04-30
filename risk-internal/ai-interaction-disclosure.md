@@ -22,4 +22,13 @@ Users interacting with an AI system under the assumption that they are communica
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
 
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 50 — Transparency obligations for AI interacting with natural persons | exact match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Implement AI disclosure mechanisms | close match |
+
 *Source: HRA project taxonomy*

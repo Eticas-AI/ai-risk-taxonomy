@@ -23,15 +23,23 @@ The risk that an AI system's development, deployment, or use causes negative env
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept |
+|-----------|---------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 95 — Codes of conduct for sustainability + Recital 139 |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI system impact assessment + Annex C objectives |
+
 ### Reference frameworks
 
 | Framework | Concept |
 |-----------|---------|
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Environmental Impacts |
-| [OECD AI Principles](https://oecd.ai) | Inclusive growth, sustainable development & well-being |
+| [OECD AI Principles](https://oecd.ai) | Inclusive growth, sustainable development & environmental sustainability |
 
 ### Taxonomies & vocabularies
 
 | Framework | Concept |
 |-----------|---------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Environmental harm |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Non-technical → Societal impact → Environmental impact |

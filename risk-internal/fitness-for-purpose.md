@@ -24,4 +24,19 @@ The system has not been validated against the problem it is intended to solve, o
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing
 
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Documented intended use | close match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI system verification and validation | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | MAP 3 — AI capabilities and use cases | close match |
+
 *Source: HRA project taxonomy*

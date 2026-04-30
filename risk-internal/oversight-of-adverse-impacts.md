@@ -22,4 +22,18 @@ Missing processes for identifying, escalating, and responding to harmful outcome
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, Post Processing
 
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI system impact assessment | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | MANAGE 4 — risk treatments and response | close match |
+
 *Source: HRA project taxonomy*

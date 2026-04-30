@@ -22,4 +22,14 @@ Unclear or undocumented roles of developers, deployers, or reviewers, creating a
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, Post Processing
 
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 25 — value-chain responsibilities | close match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Third-party and customer relationships | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Assign accountability | close match |
+
 *Source: HRA project taxonomy*
