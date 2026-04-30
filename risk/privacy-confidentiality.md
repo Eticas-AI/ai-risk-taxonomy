@@ -29,6 +29,14 @@ The risk that an AI system collects, processes, or infers personal information i
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept |
+|-----------|---------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 10 — data and data governance |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Privacy considerations for AI systems |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Data & Privacy domain |
+
 ### Reference frameworks
 
 | Framework | Concept |
@@ -43,3 +51,5 @@ The risk that an AI system collects, processes, or infers personal information i
 |-----------|---------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Compromise of privacy |
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | Personal Data Handling |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | Legal & Rights → Privacy (Unauthorized Privacy Violations × Sensitive Data types) |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Input → Data privacy + Output → Privacy violations |

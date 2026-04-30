@@ -25,7 +25,8 @@ Risks related to safeguards for stored and processed personal data.
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Data management | related match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Privacy considerations for AI systems | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Implement customer data policies | close match |
 
 ### Reference frameworks
 

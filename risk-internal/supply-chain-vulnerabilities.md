@@ -19,3 +19,18 @@ Risks introduced through third-party components, pre-trained models, data source
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing
+
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Third-party and customer relationships | close match |
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 25 — value-chain responsibilities | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Value Chain and Component Integration | close match |

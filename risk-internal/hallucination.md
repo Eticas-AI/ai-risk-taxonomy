@@ -24,10 +24,24 @@ Generation of false, fabricated, or misleading information that appears credible
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Prevent hallucinated outputs | exact match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Third-party testing for hallucinations | exact match |
+
 ### Reference frameworks
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Confabulation | exact match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | False or misleading information | close match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Robustness → Hallucination | exact match |
 
 *Source: HRA project taxonomy*

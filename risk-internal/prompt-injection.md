@@ -24,6 +24,18 @@ Malicious inputs designed to subvert system intent by injecting instructions tha
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Detect adversarial input | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Information Security | narrow match |
+
 ### Taxonomies & vocabularies
 
 | Framework | Concept | Relationship |

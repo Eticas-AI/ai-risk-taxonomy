@@ -19,3 +19,27 @@ Risks from deliberate misuse of the AI system to generate harmful content, manip
 - [Behavioural manipulation](behavioural-manipulation.md)
 - [Synthetic media abuse](synthetic-media-abuse.md)
 - [Misuse beyond intended purpose](misuse-beyond-intended-purpose.md)
+
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 5(1)(a) — prohibited manipulative practices | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Society domain (cyber misuse + catastrophic misuse) | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Dangerous, Violent or Hateful Content + CBRN + Obscene/Abusive | close match |
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Safe (trustworthy characteristic) | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Malicious Actors & Misuse | close match |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | Societal Risks → Manipulation, Deception, Political Usage | close match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Harmful output + Non-technical → Misuse | close match |

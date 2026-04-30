@@ -22,4 +22,13 @@ The ability to determine whether specific individuals' data was included in the 
 **Applies to:** LLM  
 **Lifecycle stages:** In Processing, Post Processing
 
+## Mappings to external frameworks
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Membership Inference Attack](https://w3c.github.io/dpv/2.3/ai/#MembershipInferenceAttack) | exact match |
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Compromise of privacy by inferring sensitive information | narrow match |
+
 *Source: HRA project taxonomy*

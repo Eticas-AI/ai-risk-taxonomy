@@ -32,9 +32,17 @@ Risks related to the system's ability to absorb disruption, degrade gracefully, 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 15(4) — Resilience regarding errors, faults or inconsistencies | broad match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI system operation and monitoring | related match |
 
 ### Reference frameworks
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Secure & Resilient | broad match |
+| [OECD AI Principles](https://oecd.ai) | Robustness, security & safety | broad match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of capability or robustness | broad match |

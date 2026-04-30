@@ -27,6 +27,14 @@ The risk that an AI system produces false, fabricated, or misleading outputs (ha
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept |
+|-----------|---------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 15 — accuracy, robustness and cybersecurity |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI system verification and validation |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Reliability domain |
+
 ### Reference frameworks
 
 | Framework | Concept |
@@ -42,6 +50,8 @@ The risk that an AI system produces false, fabricated, or misleading outputs (ha
 |-----------|---------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of capability or robustness |
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Misinformation |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | System & Operational Risks → Operational Misuses |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Robustness + Inference → Accuracy |
 
 ## References
 

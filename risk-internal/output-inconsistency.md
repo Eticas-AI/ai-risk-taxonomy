@@ -19,3 +19,17 @@ Inconsistent results across similar inputs and contexts, undermining reproducibi
 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
+
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Prevent hallucinated outputs | narrow match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Valid & Reliable (consistency) | narrow match |

@@ -19,3 +19,12 @@ Insufficient policies or technical measures for data retention limits, secure de
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, Post Processing
+
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Privacy considerations for AI systems | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Implement customer data policies | close match |

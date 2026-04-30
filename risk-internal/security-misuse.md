@@ -29,6 +29,13 @@ The risk that an AI system is exposed to AI-specific vulnerabilities, attacks, o
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 15(5) — cybersecurity (resilience against attacks) | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Security domain (and Society domain F for misuse) | close match |
+
 ### Reference frameworks
 
 | Framework | Concept | Relationship |
@@ -44,3 +51,5 @@ The risk that an AI system is exposed to AI-specific vulnerabilities, attacks, o
 | [MIT AI Risk Repository](https://airisk.mit.edu) | AI system security vulnerabilities & attacks | close match |
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Malicious Actors & Misuse | close match |
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | Security Attack | broad match |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | System & Operational Risks (Security + Operational Misuses) | close match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Inference → Adversarial robustness + Non-technical → Misuse | close match |

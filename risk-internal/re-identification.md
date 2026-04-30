@@ -19,3 +19,18 @@ The possibility that anonymised or pseudonymised data can be linked back to spec
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, Post Processing
+
+## Mappings to external frameworks
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Data Privacy (de-anonymization clause) | narrow match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Re-identification](https://w3c.github.io/dpv/2.3/risk/#Reidentification) | exact match |
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Compromise of privacy by inferring sensitive information | close match |
