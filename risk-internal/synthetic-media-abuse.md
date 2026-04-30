@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/synthetic-media-abuse
 type: subcategory
 maturity: emerging
 scope: LLM
-broader: reliability-manipulation
+broader: security-harmful-misuse
 ---
 
 # Synthetic media abuse

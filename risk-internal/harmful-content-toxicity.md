@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/harmful-content-toxicity
 type: subcategory
 maturity: emerging
 scope: LLM
-broader: bias-output-quality
+broader: bias-representational-harm
 ---
 
 # Harmful content and toxicity

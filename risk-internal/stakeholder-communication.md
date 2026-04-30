@@ -1,6 +1,6 @@
 ---
 layout: concept
-title: "Communication to stakeholders"
+title: "Inadequate disclosure of system capabilities and limitations"
 id: stakeholder-communication
 uri: https://taxonomy.eticas.ai/risk/stakeholder-communication
 type: subcategory
@@ -9,17 +9,17 @@ scope: ALL
 broader: transparency-communication
 ---
 
-# Communication to stakeholders
+# Inadequate disclosure of system capabilities and limitations
 
 `https://taxonomy.eticas.ai/risk/stakeholder-communication`
 
 **Maturity:** <span class="badge badge-emerging">emerging</span>
 
-Stakeholders not being made aware of AI system limitations, parameters, and settings that affect responsible use.
+The AI system's capabilities, limitations, intended use cases, and known failure modes are not communicated clearly to deployers, users, or affected parties, leading to misuse, over-reliance, or under-reliance on the system.
 
 > **This subcategory is emerging.** It has not yet been validated through established assessment methods.
 
-**Also known as:** Communication to relevant interested parties
+**Also known as:** Communication to relevant interested parties · Communication to stakeholders
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing

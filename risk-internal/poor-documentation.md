@@ -19,3 +19,10 @@ Incomplete, outdated, or absent documentation of system purpose, architecture, d
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing, Post Processing
+
+## How this risk manifests
+
+The mechanisms below describe *how* this risk arises in practice. They are operationalisation aids, not risks in themselves — useful when designing assessment methods.
+
+**Model card completeness**  
+Incomplete or outdated documentation of model purpose, performance, limitations, or data sources, leading to inappropriate deployment or overestimation of capabilities.

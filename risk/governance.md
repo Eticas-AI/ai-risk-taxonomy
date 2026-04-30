@@ -23,10 +23,9 @@ The risk that an AI system lacks adequate structures, policies, or accountabilit
 
 ## Risk groups
 
-- [Accountability](governance-accountability.md) — Risks from unclear responsibility, attribution, and oversight of AI system impacts.
+- [Accountability](governance-accountability.md) — Risks from unclear allocation of responsibility, weak human oversight, and inadequate attribution mechanisms for AI system decisions and their adverse impacts.
 - [Documentation & auditability](governance-documentation.md) — Risks from incomplete, inaccessible, or absent documentation and audit trails.
-- [Compliance & process](governance-compliance.md) — Risks from non-compliance with regulations, absence of change management, and lack of fitness validation.
-- [Data & oversight](governance-data-oversight.md) — Risks from inadequate data governance, insufficient human oversight, and unvalidated task performance.
+- [Compliance & process](governance-compliance.md) — Risks from gaps in organisational processes for ongoing oversight, compliance, and lifecycle management of AI systems — including regulatory compliance, change management, data governance, monitoring and evaluation, remediation of failures, and incident response.
 
 ## Mappings to external frameworks
 

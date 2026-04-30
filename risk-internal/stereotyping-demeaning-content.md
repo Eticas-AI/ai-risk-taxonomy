@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/stereotyping-demeaning-content
 type: subcategory
 maturity: emerging
 scope: ALL
-broader: bias-output-quality
+broader: bias-representational-harm
 ---
 
 # Stereotyping and demeaning content

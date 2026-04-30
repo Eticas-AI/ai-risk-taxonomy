@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/feedback-loops
 type: subcategory
 maturity: established
 scope: ALL
-broader: bias-data-representation
+broader: bias-dynamic-systemic-bias
 ---
 
 # Feedback loops reinforcing inequality

@@ -16,9 +16,8 @@ Risks from inadequate communication about system capabilities, limitations, and 
 
 ## Subcategories
 
-- [Communication to stakeholders](stakeholder-communication.md)
+- [Inadequate disclosure of system capabilities and limitations](stakeholder-communication.md)
 - [Disclosure of AI interaction](ai-interaction-disclosure.md)
-- [Model card completeness](model-card-completeness.md)
 
 ## Mappings to external frameworks
 

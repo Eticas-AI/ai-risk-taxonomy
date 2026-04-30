@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/geographic-cultural-language-skew
 type: subcategory
 maturity: established
 scope: ALL
-broader: bias-data-representation
+broader: bias-representational-harm
 ---
 
 # Geographic, cultural, or language skew

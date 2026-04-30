@@ -23,9 +23,9 @@ The risk that an AI system produces outcomes that systematically advantage or di
 
 ## Risk groups
 
-- [Data & representation](bias-data-representation.md) — Risks arising from how data is collected, composed, and represented in training and evaluation datasets.
-- [Output quality across groups](bias-output-quality.md) — Risks related to harmful, demeaning, or unfair content in system outputs.
-- [Performance disparities](bias-performance-disparities.md) — Risks related to unequal system performance, access, or outcomes across population groups.
+- [Outcome disparities](bias-outcome-disparities.md) — Risks related to unequal treatment, allocation, or performance outcomes across demographic and protected groups. These are observable differences in what the system does to or for different groups.
+- [Representational harm](bias-representational-harm.md) — Risks related to how the system represents groups in its outputs — through stereotypes, toxic content, skewed representation, or homogenization. These are harms in the form of meaning and content rather than allocation of resources or opportunities.
+- [Dynamic & Systemic bias](bias-dynamic-systemic-bias.md) — Risks related to how bias is amplified or perpetuated over time through interaction between AI systems and the social systems they operate in.
 
 ## Mappings to external frameworks
 

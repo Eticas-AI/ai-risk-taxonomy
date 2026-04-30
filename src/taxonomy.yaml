@@ -59,6 +59,9 @@ concepts:
     target_label: Data Bias
     target_url: https://w3c.github.io/dpv/2.3/ai/#DataBias
     relation: closeMatch
+  status: retired
+  retirement_note: Replaced by new sub-group structure in v0.3 (Outcome disparities, Representational harm, Dynamic & Systemic
+    bias).
 - id: dataset-bias
   type: subcategory
   broader: bias-data-representation
@@ -76,6 +79,9 @@ concepts:
     target_id: subdomain-1.1
     target_label: Unfair discrimination & misrepresentation
     relation: closeMatch
+  status: retired
+  retirement_note: Reframed in v0.3 as a mechanism (operationalisation), not a risk in itself. Now appears as operationalisation
+    under Differential performance across populations.
 - id: proxy-discrimination
   type: subcategory
   broader: bias-data-representation
@@ -89,9 +95,12 @@ concepts:
   lifecycle_stages:
   - in-processing
   - post-processing
+  status: retired
+  retirement_note: Reframed in v0.3 as a mechanism (operationalisation), not a risk in itself. Now appears as operationalisation
+    under Differential performance across populations.
 - id: geographic-cultural-language-skew
   type: subcategory
-  broader: bias-data-representation
+  broader: bias-representational-harm
   maturity: established
   label: Geographic, cultural, or language skew
   definition: 'Systematic performance differences across geographies, cultures, or languages, often resulting from training
@@ -105,7 +114,7 @@ concepts:
   - post-processing
 - id: feedback-loops
   type: subcategory
-  broader: bias-data-representation
+  broader: bias-dynamic-systemic-bias
   maturity: established
   label: Feedback loops reinforcing inequality
   definition: 'System outputs that, when fed back into the system or its operational context, amplify existing biases over
@@ -129,9 +138,12 @@ concepts:
     target_id: '5'
     target_label: Dangerous, Violent, or Hateful Content
     relation: relatedMatch
+  status: retired
+  retirement_note: Replaced by new sub-group structure in v0.3 (Outcome disparities, Representational harm, Dynamic & Systemic
+    bias).
 - id: stereotyping-demeaning-content
   type: subcategory
-  broader: bias-output-quality
+  broader: bias-representational-harm
   maturity: emerging
   label: Stereotyping and demeaning content
   alt_labels:
@@ -152,7 +164,7 @@ concepts:
     relation: closeMatch
 - id: harmful-content-toxicity
   type: subcategory
-  broader: bias-output-quality
+  broader: bias-representational-harm
   maturity: emerging
   label: Harmful content and toxicity
   alt_labels:
@@ -176,17 +188,17 @@ concepts:
     relation: closeMatch
 - id: sentiment-fairness
   type: subcategory
-  broader: bias-output-quality
+  broader: bias-representational-harm
   maturity: emerging
-  label: Sentiment fairness across groups
-  definition: 'Unequal emotional tone in system outputs across demographic groups, leading to perceived or actual bias in
-    how people are treated or described.
-
-    '
+  label: Sentiment and quality disparity across groups
+  definition: The system produces outputs of systematically different tone, sentiment, or quality when describing or addressing
+    different demographic groups — for example, more negative, more dismissive, or less detailed responses for certain populations.
   scope: LLM
   lifecycle_stages:
   - post-processing
   source: HRA
+  alt_labels:
+  - Sentiment fairness across groups
 - id: bias-performance-disparities
   type: subgroup
   broader: bias-fairness
@@ -201,6 +213,9 @@ concepts:
     target_id: fair
     target_label: Fair with Harmful Bias Managed
     relation: closeMatch
+  status: retired
+  retirement_note: Replaced by new sub-group structure in v0.3 (Outcome disparities, Representational harm, Dynamic & Systemic
+    bias).
 - id: intersectional-unfairness
   type: subcategory
   broader: bias-performance-disparities
@@ -214,6 +229,8 @@ concepts:
   lifecycle_stages:
   - in-processing
   - post-processing
+  status: retired
+  retirement_note: Absorbed into "Disparate impact on protected groups" in v0.3.
 - id: accessibility-barriers
   type: subcategory
   broader: bias-performance-disparities
@@ -227,6 +244,8 @@ concepts:
   lifecycle_stages:
   - pre-processing
   - post-processing
+  status: retired
+  retirement_note: Absorbed into "Disparate impact on protected groups" in v0.3.
 - id: quality-of-service-disparity
   type: subcategory
   broader: bias-performance-disparities
@@ -242,6 +261,8 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  status: retired
+  retirement_note: Absorbed into "Disparate impact on protected groups" in v0.3.
 - id: allocation-of-opportunity
   type: subcategory
   broader: bias-performance-disparities
@@ -257,17 +278,18 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  status: retired
+  retirement_note: Absorbed into "Disparate impact on protected groups" in v0.3.
 - id: performance-equity
   type: subcategory
-  broader: bias-performance-disparities
+  broader: bias-outcome-disparities
   maturity: emerging
-  label: Performance equity across populations
+  label: Differential performance across populations
   alt_labels:
   - Group-wise error rate
-  definition: 'Higher error rates or lower accuracy for specific demographic groups, resulting in unfair or unequal service
-    delivery.
-
-    '
+  - Performance equity across populations
+  definition: The AI system performs systematically worse for some demographic groups than others — through higher error rates,
+    lower accuracy, or reduced reliability — leading to unequal quality of service even when access is the same.
   scope: ALL
   lifecycle_stages:
   - in-processing
@@ -278,6 +300,79 @@ concepts:
     target_id: subdomain-1.3
     target_label: Unequal performance across groups
     relation: closeMatch
+  operationalisation:
+  - id: dataset-bias
+    label: Dataset bias and under/over-representation
+    description: Training or evaluation data that does not adequately represent all relevant population groups, leading to
+      systematic performance differences or exclusion of certain groups.
+  - id: proxy-discrimination
+    label: Proxy discrimination through correlated features
+    description: Discrimination through features that correlate with protected attributes (e.g., postcode as proxy for ethnicity),
+      even when protected attributes are not directly used.
+- id: bias-outcome-disparities
+  type: subgroup
+  broader: bias-fairness
+  label: Outcome disparities
+  definition: Risks related to unequal treatment, allocation, or performance outcomes across demographic and protected groups.
+    These are observable differences in what the system does to or for different groups.
+- id: disparate-impact-protected-groups
+  type: subcategory
+  broader: bias-outcome-disparities
+  maturity: established
+  label: Disparate impact on protected groups
+  definition: The system produces systematically different — typically worse — outcomes for individuals belonging to protected
+    groups, including across multiple intersecting attributes (race, gender, age, disability, etc.). Encompasses unequal allocation
+    of opportunity, quality of service disparities, intersectional unfairness, and accessibility barriers.
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  alt_labels:
+  - Disparate impact
+  - Quality of service disparity
+  - Allocation of opportunity
+  - Intersectional unfairness
+  - Accessibility barriers
+  operationalisation:
+  - id: intersectional-unfairness
+    label: Intersectional unfairness
+    description: Compounded disadvantage affecting individuals at the intersection of multiple protected characteristics (e.g.,
+      gender and ethnicity together producing worse outcomes than either alone).
+  - id: accessibility-barriers
+    label: Accessibility barriers
+    description: System design that excludes or disadvantages people with disabilities, including inaccessible interfaces,
+      outputs, or interaction modes.
+  - id: quality-of-service-disparity
+    label: Quality of service disparity across groups
+    description: Inconsistent service quality across demographic groups, leading to systematically better performance for
+      some groups over others.
+  - id: allocation-of-opportunity
+    label: Unequal allocation of opportunity
+    description: AI system outputs that lead to the uneven allocation of opportunities (e.g., jobs, credit, services) across
+      demographic groups.
+- id: bias-representational-harm
+  type: subgroup
+  broader: bias-fairness
+  label: Representational harm
+  definition: Risks related to how the system represents groups in its outputs — through stereotypes, toxic content, skewed
+    representation, or homogenization. These are harms in the form of meaning and content rather than allocation of resources
+    or opportunities.
+- id: homogenization-output-across-groups
+  type: subcategory
+  broader: bias-representational-harm
+  maturity: emerging
+  label: Homogenization of output across groups
+  definition: The system produces outputs that flatten cultural, linguistic, or stylistic diversity, defaulting to dominant
+    patterns and erasing distinctive characteristics of underrepresented groups. Particularly relevant for generative AI,
+    where homogenization in text, image, or speech outputs can reinforce hegemonic norms.
+  scope: LLM
+  lifecycle_stages:
+  - post-processing
+- id: bias-dynamic-systemic-bias
+  type: subgroup
+  broader: bias-fairness
+  label: Dynamic & Systemic bias
+  definition: Risks related to how bias is amplified or perpetuated over time through interaction between AI systems and the
+    social systems they operate in.
 - id: privacy-confidentiality
   type: category
   label: Privacy & Confidentiality
@@ -609,13 +704,17 @@ concepts:
     target_id: A.6.2.4
     target_label: AI system verification and validation
     relation: relatedMatch
+  status: retired
+  retirement_note: Dissolved in v0.3. failure-remediation-gaps and monitoring-evaluation-gaps moved to Governance / Compliance
+    & process — these are governance processes, not technical reliability properties.
 - id: failure-remediation-gaps
   type: subcategory
-  broader: reliability-monitoring
+  broader: governance-compliance
   maturity: emerging
   label: Failure and remediation gaps
   alt_labels:
   - Failures and remediations
+  - Unclear remediation procedures
   definition: 'Absence of remediation plans for predictable or unknown failure modes, leaving critical services unable to
     recover or degrade gracefully.
 
@@ -624,9 +723,13 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  operationalisation:
+  - id: unclear-remediation
+    label: Unclear remediation procedures
+    description: Absence of defined processes for correcting harms caused by AI system errors or failures.
 - id: monitoring-evaluation-gaps
   type: subcategory
-  broader: reliability-monitoring
+  broader: governance-compliance
   maturity: emerging
   label: Monitoring and evaluation gaps
   alt_labels:
@@ -660,6 +763,9 @@ concepts:
     target_label: Misinformation
     target_url: https://w3c.github.io/dpv/2.3/ai/#Misinformation
     relation: closeMatch
+  status: retired
+  retirement_note: Dissolved in v0.3. behavioural-manipulation and synthetic-media-abuse moved to Security & Misuse / Harmful
+    Misuse; disinformation-generation retired as redundant with hallucination.
 - id: disinformation-generation
   type: subcategory
   broader: reliability-manipulation
@@ -670,9 +776,12 @@ concepts:
   scope: LLM
   lifecycle_stages:
   - post-processing
+  status: retired
+  retirement_note: Removed in v0.3 as redundant with hallucination (when non-intentional) or covered by misuse subcategories
+    (when intentional).
 - id: behavioural-manipulation
   type: subcategory
-  broader: reliability-manipulation
+  broader: security-harmful-misuse
   maturity: emerging
   label: Behavioural manipulation
   definition: Subliminal influence, dark patterns, or exploitation of cognitive biases to steer user behaviour without informed
@@ -682,7 +791,7 @@ concepts:
   - post-processing
 - id: synthetic-media-abuse
   type: subcategory
-  broader: reliability-manipulation
+  broader: security-harmful-misuse
   maturity: emerging
   label: Synthetic media abuse
   definition: Generation of deepfakes, fake voices, or undisclosed AI-generated content used to deceive or harm.
@@ -810,7 +919,8 @@ concepts:
   type: subgroup
   broader: governance
   label: Accountability
-  definition: Risks from unclear responsibility, attribution, and oversight of AI system impacts.
+  definition: Risks from unclear allocation of responsibility, weak human oversight, and inadequate attribution mechanisms
+    for AI system decisions and their adverse impacts.
   mappings:
   - framework: nist_rmf
     target_id: govern-function
@@ -889,6 +999,11 @@ concepts:
   - pre-processing
   - in-processing
   - post-processing
+  operationalisation:
+  - id: model-card-completeness
+    label: Model card completeness
+    description: Incomplete or outdated documentation of model purpose, performance, limitations, or data sources, leading
+      to inappropriate deployment or overestimation of capabilities.
 - id: limited-auditability
   type: subcategory
   broader: governance-documentation
@@ -932,7 +1047,9 @@ concepts:
   type: subgroup
   broader: governance
   label: Compliance & process
-  definition: Risks from non-compliance with regulations, absence of change management, and lack of fitness validation.
+  definition: Risks from gaps in organisational processes for ongoing oversight, compliance, and lifecycle management of AI
+    systems — including regulatory compliance, change management, data governance, monitoring and evaluation, remediation
+    of failures, and incident response.
   mappings:
   - framework: iso_42001
     target_id: A.9.3
@@ -995,9 +1112,12 @@ concepts:
     target_id: article-14
     target_label: Article 14 — Human oversight
     relation: relatedMatch
+  status: retired
+  retirement_note: Dissolved in v0.3. human-oversight-control moved to Accountability (oversight is fundamentally an accountability
+    concern); data-governance moved to Compliance & process (data-related compliance and process management).
 - id: data-governance
   type: subcategory
-  broader: governance-data-oversight
+  broader: governance-compliance
   maturity: emerging
   label: Data governance
   definition: 'Inadequate labelling, tagging, approval, or appropriateness assessment of data, leading to downstream issues
@@ -1010,7 +1130,7 @@ concepts:
   source: HRA
 - id: human-oversight-control
   type: subcategory
-  broader: governance-data-oversight
+  broader: governance-accountability
   maturity: emerging
   label: Human oversight and control
   definition: 'Lack of defined intervention points, override capabilities, or human review mechanisms, allowing issues and
@@ -1127,6 +1247,34 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+- id: model-extraction
+  type: subcategory
+  broader: security-ai-attacks
+  maturity: established
+  label: Model extraction
+  definition: Attacks that aim to recover or replicate the underlying AI model, its parameters, or its training data through
+    queried interactions, enabling intellectual property theft or further targeted attacks against the system.
+  scope: ALL
+  lifecycle_stages:
+  - post-processing
+  alt_labels:
+  - Model stealing
+  - Model inversion
+- id: data-poisoning
+  type: subcategory
+  broader: security-ai-attacks
+  maturity: established
+  label: Data poisoning
+  definition: Adversarial manipulation of training or fine-tuning data to introduce backdoors, bias, or systematic errors
+    into the model. Includes both broad-spectrum poisoning (degrading overall performance) and targeted poisoning (creating
+    exploitable triggers or specific failure modes).
+  scope: ALL
+  lifecycle_stages:
+  - pre-processing
+  - in-processing
+  alt_labels:
+  - Training data poisoning
+  - Backdoor attacks
 - id: security-system
   type: subgroup
   broader: security-misuse
@@ -1180,9 +1328,12 @@ concepts:
     target_id: article-15-5
     target_label: Article 15(5) — Cybersecurity
     relation: relatedMatch
+  status: retired
+  retirement_note: Dissolved in v0.3. misuse-beyond-intended-purpose moved to Security/Harmful Misuse; incident-response-gaps
+    moved to Governance/Compliance & process.
 - id: incident-response-gaps
   type: subcategory
-  broader: security-operational
+  broader: governance-compliance
   maturity: established
   label: Incident response gaps
   definition: 'Insufficient detection, logging, escalation, or response capabilities for security incidents and misuse events.
@@ -1193,7 +1344,7 @@ concepts:
   - post-processing
 - id: misuse-beyond-intended-purpose
   type: subcategory
-  broader: security-operational
+  broader: security-harmful-misuse
   maturity: emerging
   label: Misuse beyond intended purpose
   definition: 'Use of the system for purposes it was not designed for, including repurposing for surveillance, manipulation,
@@ -1203,6 +1354,13 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+- id: security-harmful-misuse
+  type: subgroup
+  broader: security-misuse
+  label: Harmful Misuse
+  definition: Risks from deliberate misuse of the AI system to generate harmful content, manipulate users, or operate beyond
+    its intended purpose. These risks involve human intent — distinguishing them from unintentional system failures (which
+    belong under Reliability).
 - id: environmental-impact
   type: category
   label: Environmental Impact
@@ -1335,6 +1493,37 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  operationalisation:
+  - id: prompt-transparency
+    label: Prompt transparency
+    description: Whether the system's underlying prompts, instructions, or guiding context are visible or comprehensible to
+      users. Particularly relevant for LLM-based systems where outputs depend heavily on hidden system prompts that shape
+      behaviour.
+- id: right-to-explanation-contestation
+  type: subcategory
+  broader: transparency-explainability-group
+  maturity: established
+  label: Right to explanation and contestation
+  definition: The risk that affected individuals are not informed about decisions taken with AI assistance, do not receive
+    a meaningful explanation of those decisions, or have no effective channel to challenge or appeal them. Includes obligations
+    under GDPR Article 22 (rights regarding automated individual decision-making) and EU AI Act Article 13 (transparency and
+    provision of information to deployers and affected persons).
+  scope: ADM
+  lifecycle_stages:
+  - post-processing
+  alt_labels:
+  - Right to explanation
+  - Right to contest
+  - Absence of appeal mechanisms
+  - Ineffective communication with affected parties
+  operationalisation:
+  - id: absence-of-appeal
+    label: Absence of appeal mechanisms
+    description: No accessible process for individuals to challenge or appeal AI-driven decisions that affect them.
+  - id: ineffective-communication
+    label: Ineffective communication with affected parties
+    description: Failure to inform individuals about how they have been affected by AI-driven decisions and what options are
+      available to them.
 - id: prompt-transparency
   type: subcategory
   broader: transparency-explainability-group
@@ -1348,6 +1537,8 @@ concepts:
   lifecycle_stages:
   - post-processing
   source: HRA
+  status: retired
+  retirement_note: Reframed in v0.3 as operationalisation, not a risk in itself. Now appears as operationalisation under system-explainability.
 - id: transparency-communication
   type: subgroup
   broader: transparency-explainability
@@ -1366,13 +1557,12 @@ concepts:
   type: subcategory
   broader: transparency-communication
   maturity: emerging
-  label: Communication to stakeholders
+  label: Inadequate disclosure of system capabilities and limitations
   alt_labels:
   - Communication to relevant interested parties
-  definition: 'Stakeholders not being made aware of AI system limitations, parameters, and settings that affect responsible
-    use.
-
-    '
+  - Communication to stakeholders
+  definition: The AI system's capabilities, limitations, intended use cases, and known failure modes are not communicated
+    clearly to deployers, users, or affected parties, leading to misuse, over-reliance, or under-reliance on the system.
   scope: ALL
   lifecycle_stages:
   - post-processing
@@ -1404,6 +1594,9 @@ concepts:
   - pre-processing
   - post-processing
   source: HRA
+  status: retired
+  retirement_note: Reframed in v0.3 as operationalisation, not a risk in itself. Now appears as operationalisation under poor-documentation
+    (Governance).
 - id: incident-reporting-redress
   type: category
   label: Incident Reporting & Redress
@@ -1438,6 +1631,11 @@ concepts:
     relation: broadMatch
   alt_labels:
   - Responsibility & Redress
+  status: retired
+  retirement_note: 'Dissolved in v0.3. Subcategories redistributed: absence-of-appeal and ineffective-communication absorbed
+    into right-to-explanation-contestation (Transparency); unclear-remediation absorbed into failure-remediation-gaps (Governance
+    / Compliance & process). EU AI Act Art. 73 obligations on serious incident reporting are covered by incident-response-gaps
+    in Governance.'
 - id: absence-of-appeal
   type: subcategory
   broader: incident-reporting-redress
@@ -1449,6 +1647,8 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+  status: retired
+  retirement_note: Absorbed into right-to-explanation-contestation in v0.3 (Transparency & Explainability category).
 - id: unclear-remediation
   type: subcategory
   broader: incident-reporting-redress
@@ -1460,6 +1660,9 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+  status: retired
+  retirement_note: Absorbed into failure-remediation-gaps in v0.3 (Governance / Compliance & process). Both concepts described
+    gaps in the remediation process.
 - id: ineffective-communication
   type: subcategory
   broader: incident-reporting-redress
@@ -1472,6 +1675,8 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+  status: retired
+  retirement_note: Absorbed into right-to-explanation-contestation in v0.3 (Transparency & Explainability category).
 - id: autonomy-agency
   type: category
   label: Autonomy & Agency

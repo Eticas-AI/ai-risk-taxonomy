@@ -12,6 +12,8 @@ Usman did a detailed review of the v0.2.0 taxonomy (April 29, 2026). Main feedba
 
 📋 **Concept-by-concept mapping from v0.2 to v0.3:** [docs/v0.2-to-v0.3-mapping.md](docs/v0.2-to-v0.3-mapping.md)
 
+📋 **External framework mapping verification (Phase 5 working document):** [docs/external-framework-mapping-verification.md](docs/external-framework-mapping-verification.md) — comprehensive review of mappings across 10 frameworks (NIST RMF, NIST 600-1, EU AI Act, MIT V4, W3C DPV, ISO 42001, OECD, plus newly added AIUC-1, AIR 2024, IBM Risk Atlas) with gap analysis. Draft for team review before applying to YAML.
+
 ### Decisions
 
 #### Adopt Usman's restructured taxonomy as the base

@@ -55,12 +55,6 @@ The risk that an AI system's development, deployment, or use causes negative env
 
 The risk that stakeholders cannot understand how an AI system works, what it does, or why it produces specific outputs.
 
-### [Incident Reporting & Redress](incident-reporting-redress.md)
-
-<span class="badge badge-emerging">emerging</span>
-
-The risk that when AI-driven decisions cause harm, there are no effective mechanisms to report incidents, escalate concerns, challenge decisions, or seek remedy.
-
 ### [Autonomy & Agency](autonomy-agency.md)
 
 <span class="badge badge-emerging">emerging</span>

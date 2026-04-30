@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/failure-remediation-gaps
 type: subcategory
 maturity: emerging
 scope: ALL
-broader: reliability-monitoring
+broader: governance-compliance
 ---
 
 # Failure and remediation gaps
@@ -19,9 +19,16 @@ Absence of remediation plans for predictable or unknown failure modes, leaving c
 
 > **This subcategory is emerging.** It has not yet been validated through established assessment methods.
 
-**Also known as:** Failures and remediations
+**Also known as:** Failures and remediations · Unclear remediation procedures
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
+
+## How this risk manifests
+
+The mechanisms below describe *how* this risk arises in practice. They are operationalisation aids, not risks in themselves — useful when designing assessment methods.
+
+**Unclear remediation procedures**  
+Absence of defined processes for correcting harms caused by AI system errors or failures.
 
 *Source: HRA project taxonomy*

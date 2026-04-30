@@ -19,6 +19,8 @@ Attack vectors specific to AI systems that exploit model behaviour or training p
 - [Adversarial attacks](adversarial-attacks.md)
 - [Prompt injection](prompt-injection.md)
 - [Jailbreaking](jailbreaking.md)
+- [Model extraction](model-extraction.md)
+- [Data poisoning](data-poisoning.md)
 
 ## Mappings to external frameworks
 

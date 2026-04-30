@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/human-oversight-control
 type: subcategory
 maturity: emerging
 scope: ALL
-broader: governance-data-oversight
+broader: governance-accountability
 ---
 
 # Human oversight and control

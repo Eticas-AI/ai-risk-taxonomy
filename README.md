@@ -19,6 +19,7 @@ Each concept has a stable URI (e.g., `https://taxonomy.eticas.ai/risk/bias-fairn
 - **[Implementation details](docs/implementation.md)** — architecture, build pipeline, and technical decisions
 - **[How to edit the taxonomy](docs/editing-guide.md)** — step-by-step guides for adding and modifying entries
 - **[Decision tracker](TRACKER.md)** — structural decisions, rationale, and open items
+- **[Framework mapping verification](docs/external-framework-mapping-verification.md)** — Phase 5 working document for v0.3: mapping review across 10 frameworks (NIST, EU AI Act, MIT, DPV, ISO 42001, OECD, AIUC-1, AIR 2024, IBM Risk Atlas) with gap analysis. Draft pending team review.
 - **[Changelog](CHANGELOG.md)** — version history of taxonomy changes
 
 ### External
