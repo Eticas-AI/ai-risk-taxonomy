@@ -19,3 +19,17 @@ Absence of controlled processes for system modifications, including uncontrolled
 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
+
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI system operation and monitoring | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | MANAGE 4 — risk treatment and update | close match |

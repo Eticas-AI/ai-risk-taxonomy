@@ -23,6 +23,13 @@ Risks from unclear allocation of responsibility, weak human oversight, and inade
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | A.3 Internal organization (roles & responsibilities) | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Assign accountability | close match |
+
 ### Reference frameworks
 
 | Framework | Concept | Relationship |

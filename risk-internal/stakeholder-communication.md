@@ -24,4 +24,14 @@ The AI system's capabilities, limitations, intended use cases, and known failure
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
 
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 13 — Transparency and provision of information to deployers | close match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Information for users / affected parties | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Document system transparency policy | close match |
+
 *Source: HRA project taxonomy*

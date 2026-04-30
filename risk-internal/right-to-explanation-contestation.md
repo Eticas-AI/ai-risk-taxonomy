@@ -22,6 +22,30 @@ The risk that affected individuals are not informed about decisions taken with A
 **Applies to:** ADM  
 **Lifecycle stages:** Post Processing
 
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 86 — Right to explanation of individual decision-making | exact match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | External reporting + A.8.4 Communication of incidents | close match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Implement AI disclosure mechanisms | close match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Accountable & Transparent (Govern 1.5; Manage 4.3) | narrow match |
+| [OECD AI Principles](https://oecd.ai) | Transparency and explainability (challenge mechanisms) | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Right to Explanation (DPV core / GDPR extension)](https://w3c.github.io/dpv/2.3/legal/eu/gdpr/) | exact match |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | Fundamental Rights → Violating Specific Types of Rights | close match |
+
 ## How this risk manifests
 
 The mechanisms below describe *how* this risk arises in practice. They are operationalisation aids, not risks in themselves — useful when designing assessment methods.

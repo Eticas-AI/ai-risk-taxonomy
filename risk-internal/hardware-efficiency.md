@@ -22,4 +22,12 @@ Poor hardware utilisation increasing costs, environmental footprint, and limitin
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing, Post Processing
 
+## Mappings to external frameworks
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Environmental Impacts (resource efficiency) | narrow match |
+
 *Source: HRA project taxonomy*

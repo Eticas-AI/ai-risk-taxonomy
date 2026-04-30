@@ -22,4 +22,18 @@ Significant carbon emissions, energy use, and water consumption associated with 
 **Applies to:** ALL  
 **Lifecycle stages:** In Processing
 
+## Mappings to external frameworks
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Environmental Impacts (compute resource utilization in training) | narrow match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Environmental harm (training carbon and water footprints) | narrow match |
+
 *Source: HRA project taxonomy*

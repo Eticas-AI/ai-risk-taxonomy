@@ -22,4 +22,13 @@ Failure to log inputs and outputs systematically, hindering detection of failure
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
 
+## Mappings to external frameworks
+
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Log AI system activity | exact match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | AI system documentation | close match |
+
 *Source: HRA project taxonomy*
