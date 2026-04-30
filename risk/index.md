@@ -5,7 +5,7 @@ title: "Eticas AI Risk Taxonomy"
 
 # Eticas AI Risk Taxonomy
 
-Version 0.1.0
+Version 0.3.0
 
 A unified AI risk taxonomy for use across Eticas audit methodologies, assessment frameworks, and reporting outputs.
 
