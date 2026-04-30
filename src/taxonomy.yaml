@@ -336,6 +336,23 @@ concepts:
   - Allocation of opportunity
   - Intersectional unfairness
   - Accessibility barriers
+  operationalisation:
+  - id: intersectional-unfairness
+    label: Intersectional unfairness
+    description: Compounded disadvantage affecting individuals at the intersection of multiple protected characteristics (e.g.,
+      gender and ethnicity together producing worse outcomes than either alone).
+  - id: accessibility-barriers
+    label: Accessibility barriers
+    description: System design that excludes or disadvantages people with disabilities, including inaccessible interfaces,
+      outputs, or interaction modes.
+  - id: quality-of-service-disparity
+    label: Quality of service disparity across groups
+    description: Inconsistent service quality across demographic groups, leading to systematically better performance for
+      some groups over others.
+  - id: allocation-of-opportunity
+    label: Unequal allocation of opportunity
+    description: AI system outputs that lead to the uneven allocation of opportunities (e.g., jobs, credit, services) across
+      demographic groups.
 - id: bias-representational-harm
   type: subgroup
   broader: bias-fairness
@@ -691,9 +708,12 @@ concepts:
     target_id: A.6.2.4
     target_label: AI system verification and validation
     relation: relatedMatch
+  status: retired
+  retirement_note: Dissolved in v0.3. failure-remediation-gaps and monitoring-evaluation-gaps moved to Governance / Compliance
+    & process — these are governance processes, not technical reliability properties.
 - id: failure-remediation-gaps
   type: subcategory
-  broader: reliability-monitoring
+  broader: governance-compliance
   maturity: emerging
   label: Failure and remediation gaps
   alt_labels:
@@ -708,7 +728,7 @@ concepts:
   source: HRA
 - id: monitoring-evaluation-gaps
   type: subcategory
-  broader: reliability-monitoring
+  broader: governance-compliance
   maturity: emerging
   label: Monitoring and evaluation gaps
   alt_labels:
@@ -742,6 +762,9 @@ concepts:
     target_label: Misinformation
     target_url: https://w3c.github.io/dpv/2.3/ai/#Misinformation
     relation: closeMatch
+  status: retired
+  retirement_note: Dissolved in v0.3. behavioural-manipulation and synthetic-media-abuse moved to Security & Misuse / Harmful
+    Misuse; disinformation-generation retired as redundant with hallucination.
 - id: disinformation-generation
   type: subcategory
   broader: reliability-manipulation
@@ -752,9 +775,12 @@ concepts:
   scope: LLM
   lifecycle_stages:
   - post-processing
+  status: retired
+  retirement_note: Removed in v0.3 as redundant with hallucination (when non-intentional) or covered by misuse subcategories
+    (when intentional).
 - id: behavioural-manipulation
   type: subcategory
-  broader: reliability-manipulation
+  broader: security-harmful-misuse
   maturity: emerging
   label: Behavioural manipulation
   definition: Subliminal influence, dark patterns, or exploitation of cognitive biases to steer user behaviour without informed
@@ -764,7 +790,7 @@ concepts:
   - post-processing
 - id: synthetic-media-abuse
   type: subcategory
-  broader: reliability-manipulation
+  broader: security-harmful-misuse
   maturity: emerging
   label: Synthetic media abuse
   definition: Generation of deepfakes, fake voices, or undisclosed AI-generated content used to deceive or harm.
@@ -1285,6 +1311,13 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+- id: security-harmful-misuse
+  type: subgroup
+  broader: security-misuse
+  label: Harmful Misuse
+  definition: Risks from deliberate misuse of the AI system to generate harmful content, manipulate users, or operate beyond
+    its intended purpose. These risks involve human intent — distinguishing them from unintentional system failures (which
+    belong under Reliability).
 - id: environmental-impact
   type: category
   label: Environmental Impact

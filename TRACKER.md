@@ -20,11 +20,14 @@ After review, the team agreed to adopt Usman's proposal as the base for v0.3, wi
 
 #### Distinguish risks from mechanisms
 
-Several v0.2 concepts (most notably under Bias & Fairness) described how a risk happens rather than the risk itself. With LLMs in particular, "dataset bias" cannot be measured directly — what is observed is its effect (disparate impact). The decision was to:
+Several v0.2 concepts described how a risk happens (or how it is assessed) rather than the risk itself. With LLMs in particular, "dataset bias" cannot be measured directly — what is observed is its effect (disparate impact). The decision was to:
 
 - Restructure Bias & Fairness around three sub-groups (Outcome disparities, Representational harm, Dynamic & Systemic bias) that describe risks, not causes.
-- Preserve mechanism-level concepts (dataset bias, proxy discrimination, etc.) by moving them to a new `operationalisation` field on the parent risk concept. This field will later be enriched with metrics, methods, etc. (Gemma's proposed methodology layer).
-- Distinguish this from concepts that are simply being eliminated (no longer recognised as risks), which will be marked `status: retired` so they remain in the YAML for institutional memory but do not generate pages or appear in outputs.
+- Preserve mechanism-level concepts (and concepts that are forms of assessment rather than risks) by moving them to a new `operationalisation` field on the parent risk concept. This field will later be enriched with metrics, methods, etc. (Gemma's proposed methodology layer). Concepts moved to operationalisation include:
+  - **Mechanisms** (causes of a risk): `dataset-bias`, `proxy-discrimination` — under "Differential performance across populations".
+  - **Manifestations** (specific forms a risk takes): `intersectional-unfairness`, `accessibility-barriers`, `quality-of-service-disparity`, `allocation-of-opportunity` — under "Disparate impact on protected groups".
+  - **Documentation/communication aids** (forms of evaluating a risk, not risks per se): `prompt-transparency` — under `system-explainability`; `model-card-completeness` — under `poor-documentation`.
+- Distinguish this from concepts that are simply being eliminated. Marking a concept `status: retired` is the structural change; whether its content is also preserved as operationalisation is a separate decision based on whether the concept adds value to assessment work. Most retired concepts in v0.3 do have their content preserved as operationalisation; only `disinformation-generation` is fully retired (without operationalisation), because it was redundant with hallucination.
 
 #### Manipulation & Misinformation: distinguish intent from output
 
@@ -47,7 +50,7 @@ This contradicts an earlier decision (the rename from "Responsibility & Redress"
 - **Monitoring & remediation** moves entirely from Reliability to Governance / Compliance & process. Reliability focuses on technical aspects of the system; monitoring and remediation are governance processes about how the organisation watches the system over time.
 - **Governance / Data & oversight** is dissolved: `human-oversight-control` moves to Accountability, `data-governance` moves to Compliance & process.
 - **Security & Misuse** gains a new "Harmful Misuse" sub-group (absorbing the moved Manipulation subcategories and `misuse-beyond-intended-purpose`), and adds `model-extraction` and `data-poisoning` to AI-specific attacks.
-- **Transparency / Explainability** gains a new "Right to explanation & contestation" subcategory (covering GDPR Art. 22 and EU AI Act Art. 13). `prompt-transparency` and `model-card-completeness` are dropped as risks — the team agreed they are documentation requirements rather than risks per se.
+- **Transparency / Explainability** gains a new "Right to explanation & contestation" subcategory (covering GDPR Art. 22 and EU AI Act Art. 13). `prompt-transparency` and `model-card-completeness` are retired as risks but their content is preserved as operationalisation (under `system-explainability` and `poor-documentation` respectively) — they are evaluation aids rather than risks per se.
 
 ### Other agreed changes (from Gemma's email thread)
 
