@@ -22,4 +22,11 @@ Stakeholders misinterpret or misunderstand the intended purpose or use of an AI 
 **Applies to:** ALL  
 **Lifecycle stages:** Post Processing
 
+## How this risk manifests
+
+The mechanisms below describe *how* this risk arises in practice. They are operationalisation aids, not risks in themselves — useful when designing assessment methods.
+
+**Prompt transparency**  
+Whether the system's underlying prompts, instructions, or guiding context are visible or comprehensible to users. Particularly relevant for LLM-based systems where outputs depend heavily on hidden system prompts that shape behaviour.
+
 *Source: HRA project taxonomy*

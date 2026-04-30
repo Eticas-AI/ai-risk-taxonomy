@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/monitoring-evaluation-gaps
 type: subcategory
 maturity: emerging
 scope: ALL
-broader: reliability-monitoring
+broader: governance-compliance
 ---
 
 # Monitoring and evaluation gaps

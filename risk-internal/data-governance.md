@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/data-governance
 type: subcategory
 maturity: emerging
 scope: ALL
-broader: governance-data-oversight
+broader: governance-compliance
 ---
 
 # Data governance

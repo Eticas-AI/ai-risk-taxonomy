@@ -12,7 +12,7 @@ broader: governance
 
 `https://taxonomy.eticas.ai/risk/governance-compliance`
 
-Risks from non-compliance with regulations, absence of change management, and lack of fitness validation.
+Risks from gaps in organisational processes for ongoing oversight, compliance, and lifecycle management of AI systems — including regulatory compliance, change management, data governance, monitoring and evaluation, remediation of failures, and incident response.
 
 ## Mappings to external frameworks
 

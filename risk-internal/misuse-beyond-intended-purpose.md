@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/misuse-beyond-intended-purpose
 type: subcategory
 maturity: emerging
 scope: ALL
-broader: security-operational
+broader: security-harmful-misuse
 ---
 
 # Misuse beyond intended purpose

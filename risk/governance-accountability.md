@@ -12,7 +12,7 @@ broader: governance
 
 `https://taxonomy.eticas.ai/risk/governance-accountability`
 
-Risks from unclear responsibility, attribution, and oversight of AI system impacts.
+Risks from unclear allocation of responsibility, weak human oversight, and inadequate attribution mechanisms for AI system decisions and their adverse impacts.
 
 ## Mappings to external frameworks
 

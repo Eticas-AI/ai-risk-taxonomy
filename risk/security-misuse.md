@@ -25,7 +25,7 @@ The risk that an AI system is exposed to AI-specific vulnerabilities, attacks, o
 
 - [AI-specific attacks](security-ai-attacks.md) — Attack vectors specific to AI systems that exploit model behaviour or training processes.
 - [System security](security-system.md) — Risks related to access control and integrity of the AI system and its supply chain.
-- [Operational security](security-operational.md) — Risks from inadequate incident response and use of the system beyond its intended purpose.
+- [Harmful Misuse](security-harmful-misuse.md) — Risks from deliberate misuse of the AI system to generate harmful content, manipulate users, or operate beyond its intended purpose. These risks involve human intent — distinguishing them from unintentional system failures (which belong under Reliability).
 
 ## Mappings to external frameworks
 

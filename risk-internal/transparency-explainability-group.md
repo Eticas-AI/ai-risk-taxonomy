@@ -17,7 +17,7 @@ Risks from stakeholders being unable to understand why the system produces speci
 ## Subcategories
 
 - [AI system explainability](system-explainability.md)
-- [Prompt transparency](prompt-transparency.md)
+- [Right to explanation and contestation](right-to-explanation-contestation.md)
 
 ## Mappings to external frameworks
 

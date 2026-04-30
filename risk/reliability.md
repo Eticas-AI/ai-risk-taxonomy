@@ -24,7 +24,6 @@ The risk that an AI system produces false, fabricated, or misleading outputs (ha
 ## Risk groups
 
 - [Output quality](reliability-output-quality.md) — Risks related to the correctness, consistency, and robustness of system outputs.
-- [Monitoring & remediation](reliability-monitoring.md) — Risks from inadequate monitoring, evaluation, and failure response.
 
 ## Mappings to external frameworks
 

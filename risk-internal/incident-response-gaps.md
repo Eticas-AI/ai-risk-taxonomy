@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/incident-response-gaps
 type: subcategory
 maturity: established
 scope: ALL
-broader: security-operational
+broader: governance-compliance
 ---
 
 # Incident response gaps

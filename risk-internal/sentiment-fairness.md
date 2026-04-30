@@ -1,23 +1,25 @@
 ---
 layout: concept
-title: "Sentiment fairness across groups"
+title: "Sentiment and quality disparity across groups"
 id: sentiment-fairness
 uri: https://taxonomy.eticas.ai/risk/sentiment-fairness
 type: subcategory
 maturity: emerging
 scope: LLM
-broader: bias-output-quality
+broader: bias-representational-harm
 ---
 
-# Sentiment fairness across groups
+# Sentiment and quality disparity across groups
 
 `https://taxonomy.eticas.ai/risk/sentiment-fairness`
 
 **Maturity:** <span class="badge badge-emerging">emerging</span>
 
-Unequal emotional tone in system outputs across demographic groups, leading to perceived or actual bias in how people are treated or described.
+The system produces outputs of systematically different tone, sentiment, or quality when describing or addressing different demographic groups — for example, more negative, more dismissive, or less detailed responses for certain populations.
 
 > **This subcategory is emerging.** It has not yet been validated through established assessment methods.
+
+**Also known as:** Sentiment fairness across groups
 
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing

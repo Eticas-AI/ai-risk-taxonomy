@@ -6,7 +6,7 @@ uri: https://taxonomy.eticas.ai/risk/behavioural-manipulation
 type: subcategory
 maturity: emerging
 scope: ALL
-broader: reliability-manipulation
+broader: security-harmful-misuse
 ---
 
 # Behavioural manipulation
