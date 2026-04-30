@@ -33,7 +33,9 @@ The risk that an AI system produces outcomes that systematically advantage or di
 
 | Framework | Concept |
 |-----------|---------|
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Assessing impacts of AI systems |
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Data and data governance |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Quality of data for AI systems |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Prevent customer-defined high-risk outputs |
 
 ### Reference frameworks
 
@@ -48,4 +50,6 @@ The risk that an AI system produces outcomes that systematically advantage or di
 | Framework | Concept |
 |-----------|---------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Discrimination & Toxicity |
-| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | AI Bias |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [AI Bias](https://w3c.github.io/dpv/2.3/ai/#AIBias) |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | Legal & Rights-Related Risks → Discrimination & Bias |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Fairness dimension |

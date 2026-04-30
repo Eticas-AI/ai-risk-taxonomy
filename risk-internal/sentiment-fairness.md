@@ -24,4 +24,13 @@ The system produces outputs of systematically different tone, sentiment, or qual
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
 
+## Mappings to external frameworks
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Unfair discrimination & misrepresentation | narrow match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Fairness (sentiment quality across groups) | narrow match |
+
 *Source: HRA project taxonomy*

@@ -27,10 +27,14 @@ concepts:
   - framework: nist_600
     target_id: harmful-bias
     target_label: Harmful Bias & Homogenization
-    relation: closeMatch
+    relation: broadMatch
   - framework: nist_rmf
     target_id: fair
     target_label: Fair with Harmful Bias Managed
+    relation: closeMatch
+  - framework: eu_ai_act
+    target_id: article-10
+    target_label: Data and data governance
     relation: closeMatch
   - framework: oecd
     target_id: principle-1.2
@@ -39,11 +43,24 @@ concepts:
   - framework: dpv_ai
     target_id: AIBias
     target_label: AI Bias
-    relation: broadMatch
+    target_url: https://w3c.github.io/dpv/2.3/ai/#AIBias
+    relation: closeMatch
   - framework: iso_42001
-    target_id: A.8
-    target_label: Assessing impacts of AI systems
+    target_id: A.7.4
+    target_label: Quality of data for AI systems
+    relation: narrowMatch
+  - framework: aiuc1
+    target_id: C.5
+    target_label: Prevent customer-defined high-risk outputs
     relation: relatedMatch
+  - framework: air_2024
+    target_id: L1-DiscriminationBias
+    target_label: Legal & Rights-Related Risks → Discrimination & Bias
+    relation: broadMatch
+  - framework: ibm_atlas
+    target_id: output-fairness
+    target_label: Output → Fairness dimension
+    relation: closeMatch
 - id: bias-data-representation
   type: subgroup
   broader: bias-fairness
@@ -112,6 +129,20 @@ concepts:
   - pre-processing
   - in-processing
   - post-processing
+  mappings:
+  - framework: mit
+    target_id: subdomain-1.1
+    target_label: Unfair discrimination & misrepresentation
+    relation: narrowMatch
+  - framework: nist_600
+    target_id: harmful-bias
+    target_label: Harmful Bias & Homogenization
+    relation: narrowMatch
+  - framework: dpv_ai
+    target_id: NonRepresentativeSamplingBias
+    target_label: Non-Representative Sampling Bias
+    target_url: https://w3c.github.io/dpv/2.3/ai/#NonRepresentativeSamplingBias
+    relation: closeMatch
 - id: feedback-loops
   type: subcategory
   broader: bias-dynamic-systemic-bias
@@ -124,6 +155,19 @@ concepts:
   scope: ALL
   lifecycle_stages:
   - post-processing
+  mappings:
+  - framework: nist_rmf
+    target_id: systemic-bias
+    target_label: Systemic bias under harmful bias
+    relation: narrowMatch
+  - framework: iso_42001
+    target_id: A.6.2.6
+    target_label: AI system operation and monitoring
+    relation: closeMatch
+  - framework: ibm_atlas
+    target_id: societal-impact-drift
+    target_label: Output → Drift + Non-technical → Societal impact
+    relation: closeMatch
 - id: bias-output-quality
   type: subgroup
   broader: bias-fairness
@@ -162,6 +206,14 @@ concepts:
     target_id: subdomain-1.1
     target_label: Unfair discrimination & misrepresentation
     relation: closeMatch
+  - framework: air_2024
+    target_id: L3-Stereotyping
+    target_label: Discrimination & Bias → Stereotyping
+    relation: closeMatch
+  - framework: ibm_atlas
+    target_id: toxicity-stereotyping
+    target_label: Output → Toxicity / Harmful output (stereotyping)
+    relation: closeMatch
 - id: harmful-content-toxicity
   type: subcategory
   broader: bias-representational-harm
@@ -186,6 +238,18 @@ concepts:
     target_id: subdomain-1.2
     target_label: Exposure to toxic content
     relation: closeMatch
+  - framework: air_2024
+    target_id: L1-ContentSafety
+    target_label: Content Safety Risks
+    relation: broadMatch
+  - framework: ibm_atlas
+    target_id: toxicity-harmful-output
+    target_label: Output → Toxicity / Harmful output
+    relation: exactMatch
+  - framework: aiuc1
+    target_id: C.3
+    target_label: Prevent harmful outputs
+    relation: closeMatch
 - id: sentiment-fairness
   type: subcategory
   broader: bias-representational-harm
@@ -199,6 +263,15 @@ concepts:
   source: HRA
   alt_labels:
   - Sentiment fairness across groups
+  mappings:
+  - framework: mit
+    target_id: subdomain-1.1
+    target_label: Unfair discrimination & misrepresentation
+    relation: narrowMatch
+  - framework: ibm_atlas
+    target_id: output-fairness-sentiment
+    target_label: Output → Fairness (sentiment quality across groups)
+    relation: narrowMatch
 - id: bias-performance-disparities
   type: subgroup
   broader: bias-fairness
@@ -300,6 +373,18 @@ concepts:
     target_id: subdomain-1.3
     target_label: Unequal performance across groups
     relation: closeMatch
+  - framework: nist_rmf
+    target_id: harmful-bias-disparate-performance
+    target_label: Harmful bias / disparate performance
+    relation: closeMatch
+  - framework: ibm_atlas
+    target_id: output-bias
+    target_label: Output bias (Fairness dimension)
+    relation: exactMatch
+  - framework: aiuc1
+    target_id: C.5
+    target_label: Prevent customer-defined high-risk outputs
+    relation: narrowMatch
   operationalisation:
   - id: dataset-bias
     label: Dataset bias and under/over-representation
@@ -315,6 +400,44 @@ concepts:
   label: Outcome disparities
   definition: Risks related to unequal treatment, allocation, or performance outcomes across demographic and protected groups.
     These are observable differences in what the system does to or for different groups.
+  mappings:
+  - framework: mit
+    target_id: subdomain-1.3
+    target_label: Unequal performance across groups
+    relation: exactMatch
+  - framework: nist_600
+    target_id: harmful-bias
+    target_label: Harmful Bias & Homogenization
+    relation: broadMatch
+  - framework: nist_rmf
+    target_id: manage-2.3
+    target_label: Manage 2.3 — allocation harms and disparate performance
+    relation: closeMatch
+  - framework: eu_ai_act
+    target_id: annex-iii
+    target_label: Annex III high-risk uses (employment, education, essential services)
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: DataBias
+    target_label: Data Bias
+    target_url: https://w3c.github.io/dpv/2.3/ai/#DataBias
+    relation: broadMatch
+  - framework: iso_42001
+    target_id: A.5.2
+    target_label: AI system impact assessment
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: C.5
+    target_label: Prevent customer-defined high-risk outputs
+    relation: narrowMatch
+  - framework: air_2024
+    target_id: L2-DiscriminationBias
+    target_label: Discrimination & Bias (Discriminatory Activities)
+    relation: closeMatch
+  - framework: ibm_atlas
+    target_id: output-bias
+    target_label: Output bias (Fairness dimension)
+    relation: exactMatch
 - id: disparate-impact-protected-groups
   type: subcategory
   broader: bias-outcome-disparities
@@ -349,6 +472,48 @@ concepts:
     label: Unequal allocation of opportunity
     description: AI system outputs that lead to the uneven allocation of opportunities (e.g., jobs, credit, services) across
       demographic groups.
+  mappings:
+  - framework: mit
+    target_id: subdomain-1.1
+    target_label: Unfair discrimination and misrepresentation
+    relation: closeMatch
+  - framework: mit
+    target_id: subdomain-1.3
+    target_label: Unequal performance across groups
+    relation: closeMatch
+  - framework: nist_600
+    target_id: harmful-bias
+    target_label: Harmful Bias & Homogenization
+    relation: broadMatch
+  - framework: nist_rmf
+    target_id: harmful-bias
+    target_label: Harmful bias / disparate performance
+    relation: closeMatch
+  - framework: eu_ai_act
+    target_id: article-5-1c
+    target_label: Article 5(1)(c) — prohibited social scoring
+    relation: closeMatch
+  - framework: eu_ai_act
+    target_id: article-10
+    target_label: Article 10 — data and data governance
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: Discrimination
+    target_label: Discrimination
+    target_url: https://w3c.github.io/dpv/2.3/risk/#Discrimination
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.5.2
+    target_label: AI system impact assessment
+    relation: closeMatch
+  - framework: air_2024
+    target_id: L2-DiscriminationBias-protected
+    target_label: Discrimination & Bias × Protected Characteristics (60 Level-4 risks)
+    relation: closeMatch
+  - framework: ibm_atlas
+    target_id: output-fairness
+    target_label: Output → Fairness dimension
+    relation: closeMatch
 - id: bias-representational-harm
   type: subgroup
   broader: bias-fairness
@@ -356,6 +521,28 @@ concepts:
   definition: Risks related to how the system represents groups in its outputs — through stereotypes, toxic content, skewed
     representation, or homogenization. These are harms in the form of meaning and content rather than allocation of resources
     or opportunities.
+  mappings:
+  - framework: mit
+    target_id: subdomain-1.1
+    target_label: Unfair discrimination & misrepresentation
+    relation: closeMatch
+  - framework: nist_600
+    target_id: harmful-bias
+    target_label: Harmful Bias & Homogenization (representational dimension)
+    relation: narrowMatch
+  - framework: nist_rmf
+    target_id: harmful-bias
+    target_label: Harmful bias (representational dimension)
+    relation: narrowMatch
+  - framework: dpv_ai
+    target_id: NonRepresentativeSamplingBias
+    target_label: Non-Representative Sampling Bias
+    target_url: https://w3c.github.io/dpv/2.3/ai/#NonRepresentativeSamplingBias
+    relation: narrowMatch
+  - framework: ibm_atlas
+    target_id: toxicity-harmful-output
+    target_label: Output → Toxicity / Harmful output
+    relation: narrowMatch
 - id: homogenization-output-across-groups
   type: subcategory
   broader: bias-representational-harm
@@ -367,12 +554,67 @@ concepts:
   scope: LLM
   lifecycle_stages:
   - post-processing
+  mappings:
+  - framework: nist_600
+    target_id: harmful-bias-homogenization
+    target_label: Harmful Bias or Homogenization (homogenization clause)
+    relation: exactMatch
+  - framework: mit
+    target_id: subdomain-6.3
+    target_label: Economic and cultural devaluation of human effort
+    relation: relatedMatch
+  - framework: ibm_atlas
+    target_id: output-diversity-mode-collapse
+    target_label: Output diversity / mode collapse
+    relation: closeMatch
 - id: bias-dynamic-systemic-bias
   type: subgroup
   broader: bias-fairness
   label: Dynamic & Systemic bias
   definition: Risks related to how bias is amplified or perpetuated over time through interaction between AI systems and the
     social systems they operate in.
+  mappings:
+  - framework: nist_rmf
+    target_id: systemic-bias
+    target_label: Systemic bias under harmful bias
+    relation: closeMatch
+  - framework: nist_600
+    target_id: harmful-bias
+    target_label: Harmful Bias & Homogenization (systemic dimension)
+    relation: narrowMatch
+  - framework: eu_ai_act
+    target_id: article-9
+    target_label: Article 9 — risk management throughout lifecycle
+    relation: closeMatch
+  - framework: eu_ai_act
+    target_id: article-72
+    target_label: Article 72 — post-market monitoring
+    relation: closeMatch
+  - framework: dpv_ai
+    target_id: AutomationBias
+    target_label: Automation Bias
+    target_url: https://w3c.github.io/dpv/2.3/ai/#AutomationBias
+    relation: closeMatch
+  - framework: oecd
+    target_id: principle-1.5
+    target_label: Accountability — lifecycle bias monitoring
+    relation: closeMatch
+  - framework: iso_42001
+    target_id: A.6.2.6
+    target_label: AI system operation and monitoring
+    relation: closeMatch
+  - framework: aiuc1
+    target_id: C.8
+    target_label: Monitor AI risk categories
+    relation: relatedMatch
+  - framework: mit
+    target_id: subdomain-6.5
+    target_label: Governance failure
+    relation: relatedMatch
+  - framework: ibm_atlas
+    target_id: societal-impact-drift
+    target_label: Output → Drift + Non-technical → Societal impact
+    relation: closeMatch
 - id: privacy-confidentiality
   type: category
   label: Privacy & Confidentiality

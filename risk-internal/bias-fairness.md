@@ -33,13 +33,15 @@ The risk that an AI system produces outcomes that systematically advantage or di
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Assessing impacts of AI systems | related match |
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Data and data governance | close match |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Quality of data for AI systems | narrow match |
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Prevent customer-defined high-risk outputs | related match |
 
 ### Reference frameworks
 
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Harmful Bias & Homogenization | close match |
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Harmful Bias & Homogenization | broad match |
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Fair with Harmful Bias Managed | close match |
 | [OECD AI Principles](https://oecd.ai) | Human rights, rule of law, fairness & privacy | broad match |
 
@@ -48,4 +50,6 @@ The risk that an AI system produces outcomes that systematically advantage or di
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Discrimination & Toxicity | close match |
-| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | AI Bias | broad match |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [AI Bias](https://w3c.github.io/dpv/2.3/ai/#AIBias) | close match |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | Legal & Rights-Related Risks → Discrimination & Bias | broad match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Fairness dimension | close match |

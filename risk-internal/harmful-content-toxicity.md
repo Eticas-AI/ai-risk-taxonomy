@@ -26,6 +26,12 @@ Offensive, hateful, or otherwise harmful outputs that damage user well-being and
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [AIUC-1 — AI Underwriting Company Standard](https://www.aiuc-1.com) | Prevent harmful outputs | close match |
+
 ### Reference frameworks
 
 | Framework | Concept | Relationship |
@@ -37,5 +43,7 @@ Offensive, hateful, or otherwise harmful outputs that damage user well-being and
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Exposure to toxic content | close match |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | Content Safety Risks | broad match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Toxicity / Harmful output | exact match |
 
 *Source: HRA project taxonomy*

@@ -31,5 +31,7 @@ AI system outputs that reinforce, perpetuate, erase, or demean demographic group
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Unfair discrimination & misrepresentation | close match |
+| [AIR 2024 / AIR-Bench 2024](https://arxiv.org/abs/2406.17864) | Discrimination & Bias → Stereotyping | close match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output → Toxicity / Harmful output (stereotyping) | close match |
 
 *Source: HRA project taxonomy*

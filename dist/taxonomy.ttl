@@ -1,8 +1,11 @@
+@prefix air-2024: <https://taxonomy.eticas.ai/external/air-2024/> .
+@prefix aiuc1: <https://taxonomy.eticas.ai/external/aiuc-1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dpv-ai: <https://w3id.org/dpv/ai#> .
 @prefix eticas: <https://taxonomy.eticas.ai/risk/> .
 @prefix eticas-ont: <https://taxonomy.eticas.ai/ontology/> .
 @prefix eu-ai-act: <https://w3id.org/dpv/legal/eu/aiact#> .
+@prefix ibm-atlas: <https://taxonomy.eticas.ai/external/ibm-risk-atlas/> .
 @prefix iso-42001: <https://taxonomy.eticas.ai/external/iso-42001/> .
 @prefix mit: <https://airisk.mit.edu/domain/> .
 @prefix nist-600: <https://taxonomy.eticas.ai/external/nist-ai-600-1/> .
@@ -18,21 +21,37 @@ mit:domain-4 skos:prefLabel "Malicious Actors & Misuse"@en .
 
 mit:domain-5 skos:prefLabel "Human-Computer Interaction"@en .
 
-mit:subdomain-1.1 skos:prefLabel "Unfair discrimination & misrepresentation"@en .
-
 mit:subdomain-1.2 skos:prefLabel "Exposure to toxic content"@en .
-
-mit:subdomain-1.3 skos:prefLabel "Unequal performance across groups"@en .
 
 mit:subdomain-5.1 skos:prefLabel "Overreliance and unsafe use"@en .
 
-mit:subdomain-6.5 skos:prefLabel "Governance failure"@en .
+mit:subdomain-6.3 skos:prefLabel "Economic and cultural devaluation of human effort"@en .
 
 mit:subdomain-6.6 skos:prefLabel "Environmental harm"@en .
 
 mit:subdomain-7.3 skos:prefLabel "Lack of capability or robustness"@en .
 
 mit:subdomain-7.6 skos:prefLabel "Multi-agent risks"@en .
+
+air-2024:L1-ContentSafety skos:prefLabel "Content Safety Risks"@en .
+
+air-2024:L1-DiscriminationBias skos:prefLabel "Legal & Rights-Related Risks → Discrimination & Bias"@en .
+
+air-2024:L2-DiscriminationBias skos:prefLabel "Discrimination & Bias (Discriminatory Activities)"@en .
+
+air-2024:L2-DiscriminationBias-protected skos:prefLabel "Discrimination & Bias × Protected Characteristics (60 Level-4 risks)"@en .
+
+air-2024:L3-Stereotyping skos:prefLabel "Discrimination & Bias → Stereotyping"@en .
+
+aiuc1:C.3 skos:prefLabel "Prevent harmful outputs"@en .
+
+aiuc1:C.8 skos:prefLabel "Monitor AI risk categories"@en .
+
+ibm-atlas:output-diversity-mode-collapse skos:prefLabel "Output diversity / mode collapse"@en .
+
+ibm-atlas:output-fairness-sentiment skos:prefLabel "Output → Fairness (sentiment quality across groups)"@en .
+
+ibm-atlas:toxicity-stereotyping skos:prefLabel "Output → Toxicity / Harmful output (stereotyping)"@en .
 
 iso-42001:A.10 skos:prefLabel "Third-party and customer relationships"@en .
 
@@ -44,7 +63,7 @@ iso-42001:A.6.2.3 skos:prefLabel "AI system technical documentation and informat
 
 iso-42001:A.7 skos:prefLabel "Data management"@en .
 
-iso-42001:A.8 skos:prefLabel "Assessing impacts of AI systems"@en .
+iso-42001:A.7.4 skos:prefLabel "Quality of data for AI systems"@en .
 
 iso-42001:A.9.3 skos:prefLabel "Processes for responsible development and use"@en .
 
@@ -64,7 +83,7 @@ nist-600:data-privacy skos:prefLabel "Data Privacy"@en .
 
 nist-600:environmental skos:prefLabel "Environmental Impacts"@en .
 
-nist-600:harmful-bias skos:prefLabel "Harmful Bias & Homogenization"@en .
+nist-600:harmful-bias-homogenization skos:prefLabel "Harmful Bias or Homogenization (homogenization clause)"@en .
 
 nist-600:information-security skos:prefLabel "Information Security"@en .
 
@@ -79,6 +98,10 @@ nist-rmf:explainable-interpretable skos:prefLabel "Explainable & Interpretable"@
 nist-rmf:fair skos:prefLabel "Fair with Harmful Bias Managed"@en .
 
 nist-rmf:govern-function skos:prefLabel "GOVERN function"@en .
+
+nist-rmf:harmful-bias-disparate-performance skos:prefLabel "Harmful bias / disparate performance"@en .
+
+nist-rmf:manage-2.3 skos:prefLabel "Manage 2.3 — allocation harms and disparate performance"@en .
 
 nist-rmf:map skos:prefLabel "MAP function — context and deployment environment"@en .
 
@@ -203,7 +226,17 @@ eticas:disparate-impact-protected-groups a skos:Concept ;
         "Disparate impact"@en,
         "Intersectional unfairness"@en,
         "Quality of service disparity"@en ;
+    skos:broadMatch nist-600:harmful-bias ;
     skos:broader eticas:bias-outcome-disparities ;
+    skos:closeMatch mit:subdomain-1.1,
+        mit:subdomain-1.3,
+        air-2024:L2-DiscriminationBias-protected,
+        ibm-atlas:output-fairness,
+        iso-42001:A.5.2,
+        nist-rmf:harmful-bias,
+        dpv-ai:Discrimination,
+        eu-ai-act:article-10,
+        eu-ai-act:article-5-1c ;
     skos:definition "The system produces systematically different — typically worse — outcomes for individuals belonging to protected groups, including across multiple intersecting attributes (race, gender, age, disability, etc.). Encompasses unequal allocation of opportunity, quality of service disparities, intersectional unfairness, and accessibility barriers."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Disparate impact on protected groups"@en ;
@@ -253,8 +286,11 @@ eticas:failure-remediation-gaps a skos:Concept ;
 
 eticas:feedback-loops a skos:Concept ;
     skos:broader eticas:bias-dynamic-systemic-bias ;
+    skos:closeMatch ibm-atlas:societal-impact-drift,
+        iso-42001:A.6.2.6 ;
     skos:definition "System outputs that, when fed back into the system or its operational context, amplify existing biases over time."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch nist-rmf:systemic-bias ;
     skos:prefLabel "Feedback loops reinforcing inequality"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
     eticas-ont:maturity "established" ;
@@ -284,8 +320,11 @@ eticas:function-creep a skos:Concept ;
 
 eticas:geographic-cultural-language-skew a skos:Concept ;
     skos:broader eticas:bias-representational-harm ;
+    skos:closeMatch dpv-ai:NonRepresentativeSamplingBias ;
     skos:definition "Systematic performance differences across geographies, cultures, or languages, often resulting from training data that overrepresents certain regions or linguistic traditions."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch mit:subdomain-1.1,
+        nist-600:harmful-bias ;
     skos:prefLabel "Geographic, cultural, or language skew"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing",
@@ -330,10 +369,13 @@ eticas:harmful-content-toxicity a skos:Concept ;
     dcterms:source "HRA" ;
     skos:altLabel "Harmful content prevention"@en,
         "Toxicity"@en ;
+    skos:broadMatch air-2024:L1-ContentSafety ;
     skos:broader eticas:bias-representational-harm ;
     skos:closeMatch mit:subdomain-1.2,
+        aiuc1:C.3,
         nist-600:dangerous-content ;
     skos:definition "Offensive, hateful, or otherwise harmful outputs that damage user well-being and erode trust."@en ;
+    skos:exactMatch ibm-atlas:toxicity-harmful-output ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Harmful content and toxicity"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
@@ -342,9 +384,12 @@ eticas:harmful-content-toxicity a skos:Concept ;
 
 eticas:homogenization-output-across-groups a skos:Concept ;
     skos:broader eticas:bias-representational-harm ;
+    skos:closeMatch ibm-atlas:output-diversity-mode-collapse ;
     skos:definition "The system produces outputs that flatten cultural, linguistic, or stylistic diversity, defaulting to dominant patterns and erasing distinctive characteristics of underrepresented groups. Particularly relevant for generative AI, where homogenization in text, image, or speech outputs can reinforce hegemonic norms."@en ;
+    skos:exactMatch nist-600:harmful-bias-homogenization ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Homogenization of output across groups"@en ;
+    skos:relatedMatch mit:subdomain-6.3 ;
     eticas-ont:lifecycleStage "post-processing" ;
     eticas-ont:maturity "emerging" ;
     eticas-ont:scope "LLM" .
@@ -561,9 +606,12 @@ eticas:performance-equity a skos:Concept ;
     skos:altLabel "Group-wise error rate"@en,
         "Performance equity across populations"@en ;
     skos:broader eticas:bias-outcome-disparities ;
-    skos:closeMatch mit:subdomain-1.3 ;
+    skos:closeMatch mit:subdomain-1.3,
+        nist-rmf:harmful-bias-disparate-performance ;
     skos:definition "The AI system performs systematically worse for some demographic groups than others — through higher error rates, lower accuracy, or reduced reliability — leading to unequal quality of service even when access is the same."@en ;
+    skos:exactMatch ibm-atlas:output-bias ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch aiuc1:C.5 ;
     skos:prefLabel "Differential performance across populations"@en ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing" ;
@@ -665,6 +713,8 @@ eticas:sentiment-fairness a skos:Concept ;
     skos:broader eticas:bias-representational-harm ;
     skos:definition "The system produces outputs of systematically different tone, sentiment, or quality when describing or addressing different demographic groups — for example, more negative, more dismissive, or less detailed responses for certain populations."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch mit:subdomain-1.1,
+        ibm-atlas:output-fairness-sentiment ;
     skos:prefLabel "Sentiment and quality disparity across groups"@en ;
     eticas-ont:lifecycleStage "post-processing" ;
     eticas-ont:maturity "emerging" ;
@@ -686,7 +736,9 @@ eticas:stereotyping-demeaning-content a skos:Concept ;
     dcterms:source "HRA" ;
     skos:altLabel "Minimization of stereotyping"@en ;
     skos:broader eticas:bias-representational-harm ;
-    skos:closeMatch mit:subdomain-1.1 ;
+    skos:closeMatch mit:subdomain-1.1,
+        air-2024:L3-Stereotyping,
+        ibm-atlas:toxicity-stereotyping ;
     skos:definition "AI system outputs that reinforce, perpetuate, erase, or demean demographic groups through stereotypical representations or language."@en ;
     skos:inScheme eticas:scheme ;
     skos:prefLabel "Stereotyping and demeaning content"@en ;
@@ -811,6 +863,12 @@ eticas:workflow-compatibility a skos:Concept ;
 
 dpv-ai:AIBias skos:prefLabel "AI Bias"@en .
 
+dpv-ai:AutomationBias skos:prefLabel "Automation Bias"@en .
+
+dpv-ai:DataBias skos:prefLabel "Data Bias"@en .
+
+dpv-ai:Discrimination skos:prefLabel "Discrimination"@en .
+
 dpv-ai:HumanOversight skos:prefLabel "Human Oversight"@en .
 
 dpv-ai:MembershipInferenceAttack skos:prefLabel "Membership Inference Attack"@en .
@@ -822,6 +880,8 @@ dpv-ai:PersonalDataHandling skos:prefLabel "Personal Data Handling"@en .
 dpv-ai:PromptInjection skos:prefLabel "Prompt Injection"@en .
 
 dpv-ai:Transparency skos:prefLabel "Transparency"@en .
+
+eu-ai-act:annex-iii skos:prefLabel "Annex III high-risk uses (employment, education, essential services)"@en .
 
 eu-ai-act:article-11 skos:prefLabel "Article 11 — Technical documentation"@en .
 
@@ -835,17 +895,42 @@ eu-ai-act:article-17 skos:prefLabel "Article 17 — Quality management system"@e
 
 eu-ai-act:article-5 skos:prefLabel "Article 5 — Prohibited AI practices (emotion recognition, biometric categorization)"@en .
 
+eu-ai-act:article-5-1c skos:prefLabel "Article 5(1)(c) — prohibited social scoring"@en .
+
+eu-ai-act:article-72 skos:prefLabel "Article 72 — post-market monitoring"@en .
+
+eu-ai-act:article-9 skos:prefLabel "Article 9 — risk management throughout lifecycle"@en .
+
 mit:subdomain-2.1 skos:prefLabel "Compromise of privacy"@en,
         "Compromise of privacy by obtaining, leaking or inferring sensitive information"@en .
 
 mit:subdomain-2.2 skos:prefLabel "AI system security vulnerabilities & attacks"@en,
         "AI system security vulnerabilities and attacks"@en .
 
+mit:subdomain-6.5 skos:prefLabel "Governance failure"@en .
+
 mit:subdomain-7.4 skos:prefLabel "Lack of transparency or interpretability"@en .
+
+ibm-atlas:output-bias skos:prefLabel "Output bias (Fairness dimension)"@en .
+
+ibm-atlas:output-fairness skos:prefLabel "Output → Fairness dimension"@en .
+
+ibm-atlas:societal-impact-drift skos:prefLabel "Output → Drift + Non-technical → Societal impact"@en .
+
+ibm-atlas:toxicity-harmful-output skos:prefLabel "Output → Toxicity / Harmful output"@en .
+
+iso-42001:A.5.2 skos:prefLabel "AI system impact assessment"@en .
+
+iso-42001:A.6.2.6 skos:prefLabel "AI system operation and monitoring"@en .
 
 nist-600:2 skos:prefLabel "Confabulation"@en .
 
+nist-rmf:harmful-bias skos:prefLabel "Harmful bias (representational dimension)"@en,
+        "Harmful bias / disparate performance"@en .
+
 nist-rmf:secure-resilient skos:prefLabel "Secure & Resilient"@en .
+
+nist-rmf:systemic-bias skos:prefLabel "Systemic bias under harmful bias"@en .
 
 nist-rmf:valid-reliable skos:prefLabel "Valid & Reliable"@en .
 
@@ -854,16 +939,36 @@ oecd:principle-1.2 skos:prefLabel "Human rights, rule of law, fairness & privacy
 oecd:principle-1.3 skos:prefLabel "Transparency & explainability"@en,
         "Transparency and explainability"@en .
 
-oecd:principle-1.5 skos:prefLabel "Accountability"@en .
-
 eticas:bias-dynamic-systemic-bias a skos:Concept ;
     skos:broader eticas:bias-fairness ;
+    skos:closeMatch ibm-atlas:societal-impact-drift,
+        iso-42001:A.6.2.6,
+        nist-rmf:systemic-bias,
+        oecd:principle-1.5,
+        dpv-ai:AutomationBias,
+        eu-ai-act:article-72,
+        eu-ai-act:article-9 ;
     skos:definition "Risks related to how bias is amplified or perpetuated over time through interaction between AI systems and the social systems they operate in."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch nist-600:harmful-bias ;
     skos:narrower eticas:feedback-loops ;
-    skos:prefLabel "Dynamic & Systemic bias"@en .
+    skos:prefLabel "Dynamic & Systemic bias"@en ;
+    skos:relatedMatch mit:subdomain-6.5,
+        aiuc1:C.8 .
+
+dpv-ai:NonRepresentativeSamplingBias skos:prefLabel "Non-Representative Sampling Bias"@en .
 
 dpv-ai:SecurityAttack skos:prefLabel "Security Attack"@en .
+
+eu-ai-act:article-10 skos:prefLabel "Article 10 — data and data governance"@en,
+        "Data and data governance"@en .
+
+mit:subdomain-1.3 skos:prefLabel "Unequal performance across groups"@en .
+
+aiuc1:C.5 skos:prefLabel "Prevent customer-defined high-risk outputs"@en .
+
+oecd:principle-1.5 skos:prefLabel "Accountability"@en,
+        "Accountability — lifecycle bias monitoring"@en .
 
 eticas:autonomy-agency a skos:Concept ;
     skos:altLabel "Agentic Risks"@en,
@@ -885,9 +990,18 @@ eticas:autonomy-agency a skos:Concept ;
     eticas-ont:scope "ALL" .
 
 eticas:bias-outcome-disparities a skos:Concept ;
+    skos:broadMatch nist-600:harmful-bias,
+        dpv-ai:DataBias ;
     skos:broader eticas:bias-fairness ;
+    skos:closeMatch air-2024:L2-DiscriminationBias,
+        iso-42001:A.5.2,
+        nist-rmf:manage-2.3,
+        eu-ai-act:annex-iii ;
     skos:definition "Risks related to unequal treatment, allocation, or performance outcomes across demographic and protected groups. These are observable differences in what the system does to or for different groups."@en ;
+    skos:exactMatch mit:subdomain-1.3,
+        ibm-atlas:output-bias ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch aiuc1:C.5 ;
     skos:narrower eticas:disparate-impact-protected-groups,
         eticas:performance-equity ;
     skos:prefLabel "Outcome disparities"@en .
@@ -987,18 +1101,22 @@ eticas:bias-fairness a skos:Concept ;
     skos:altLabel "Algorithmic fairness"@en,
         "Bias & Discrimination"@en,
         "Fairness"@en ;
-    skos:broadMatch oecd:principle-1.2,
-        dpv-ai:AIBias ;
-    skos:closeMatch mit:domain-1,
+    skos:broadMatch air-2024:L1-DiscriminationBias,
         nist-600:harmful-bias,
-        nist-rmf:fair ;
+        oecd:principle-1.2 ;
+    skos:closeMatch mit:domain-1,
+        ibm-atlas:output-fairness,
+        nist-rmf:fair,
+        dpv-ai:AIBias,
+        eu-ai-act:article-10 ;
     skos:definition "The risk that an AI system produces outcomes that systematically advantage or disadvantage individuals or groups based on protected or sensitive attributes, leading to unequal treatment, reduced accuracy, or unjust impacts. This includes biases introduced through data, model design, or deployment context, and covers both measurable disparities and perceived unfairness in decision-making."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch iso-42001:A.7.4 ;
     skos:narrower eticas:bias-dynamic-systemic-bias,
         eticas:bias-outcome-disparities,
         eticas:bias-representational-harm ;
     skos:prefLabel "Bias & Fairness"@en ;
-    skos:relatedMatch iso-42001:A.8 ;
+    skos:relatedMatch aiuc1:C.5 ;
     skos:topConceptOf eticas:scheme ;
     eticas-ont:lifecycleStage "in-processing",
         "post-processing",
@@ -1104,6 +1222,9 @@ eticas:security-misuse a skos:Concept ;
     eticas-ont:perspective "technical soundness" ;
     eticas-ont:scope "ALL" .
 
+mit:subdomain-1.1 skos:prefLabel "Unfair discrimination & misrepresentation"@en,
+        "Unfair discrimination and misrepresentation"@en .
+
 eticas:autonomy-human-agency a skos:Concept ;
     skos:broader eticas:autonomy-agency ;
     skos:closeMatch mit:subdomain-5.1 ;
@@ -1174,10 +1295,19 @@ eticas:reliability-output-quality a skos:Concept ;
         eticas:output-inconsistency ;
     skos:prefLabel "Output quality"@en .
 
+nist-600:harmful-bias skos:prefLabel "Harmful Bias & Homogenization"@en,
+        "Harmful Bias & Homogenization (representational dimension)"@en,
+        "Harmful Bias & Homogenization (systemic dimension)"@en .
+
 eticas:bias-representational-harm a skos:Concept ;
     skos:broader eticas:bias-fairness ;
+    skos:closeMatch mit:subdomain-1.1 ;
     skos:definition "Risks related to how the system represents groups in its outputs — through stereotypes, toxic content, skewed representation, or homogenization. These are harms in the form of meaning and content rather than allocation of resources or opportunities."@en ;
     skos:inScheme eticas:scheme ;
+    skos:narrowMatch ibm-atlas:toxicity-harmful-output,
+        nist-600:harmful-bias,
+        nist-rmf:harmful-bias,
+        dpv-ai:NonRepresentativeSamplingBias ;
     skos:narrower eticas:geographic-cultural-language-skew,
         eticas:harmful-content-toxicity,
         eticas:homogenization-output-across-groups,

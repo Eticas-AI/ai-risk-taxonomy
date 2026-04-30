@@ -19,3 +19,18 @@ Systematic performance differences across geographies, cultures, or languages, o
 
 **Applies to:** ALL  
 **Lifecycle stages:** Pre Processing, In Processing, Post Processing
+
+## Mappings to external frameworks
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Harmful Bias & Homogenization | narrow match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Unfair discrimination & misrepresentation | narrow match |
+| [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Non-Representative Sampling Bias](https://w3c.github.io/dpv/2.3/ai/#NonRepresentativeSamplingBias) | close match |

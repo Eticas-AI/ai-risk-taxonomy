@@ -21,3 +21,18 @@ The system produces outputs that flatten cultural, linguistic, or stylistic dive
 
 **Applies to:** LLM  
 **Lifecycle stages:** Post Processing
+
+## Mappings to external frameworks
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Harmful Bias or Homogenization (homogenization clause) | exact match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Economic and cultural devaluation of human effort | related match |
+| [IBM AI Risk Atlas](https://www.ibm.com/docs/en/watsonx/saas?topic=ai-risk-atlas) | Output diversity / mode collapse | close match |
