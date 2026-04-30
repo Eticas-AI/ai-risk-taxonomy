@@ -23,8 +23,15 @@ The risk that an AI system's development, deployment, or use causes negative env
 
 ## Mappings to external frameworks
 
+### Reference frameworks
+
+| Framework | Concept |
+|-----------|---------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Environmental Impacts |
+| [OECD AI Principles](https://oecd.ai) | Inclusive growth, sustainable development & well-being |
+
+### Taxonomies & vocabularies
+
 | Framework | Concept |
 |-----------|---------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Environmental harm |
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Environmental Impacts |
-| [OECD AI Principles](https://oecd.ai) | Inclusive growth, sustainable development & well-being |

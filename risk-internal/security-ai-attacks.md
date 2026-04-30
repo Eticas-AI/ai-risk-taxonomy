@@ -24,6 +24,8 @@ Attack vectors specific to AI systems that exploit model behaviour or training p
 
 ## Mappings to external frameworks
 
+### Taxonomies & vocabularies
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Security Attack](https://w3c.github.io/dpv/2.3/ai/#SecurityAttack) | close match |

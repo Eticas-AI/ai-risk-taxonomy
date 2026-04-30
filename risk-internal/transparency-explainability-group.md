@@ -21,7 +21,14 @@ Risks from stakeholders being unable to understand why the system produces speci
 
 ## Mappings to external frameworks
 
+### Reference frameworks
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Explainable & Interpretable | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of transparency or interpretability | close match |

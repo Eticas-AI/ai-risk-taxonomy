@@ -30,9 +30,21 @@ The risk that an AI system undermines human agency or operates with insufficient
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 14 — Human oversight | broad match |
+
+### Reference frameworks
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Human-AI Configuration | close match |
+
+### Taxonomies & vocabularies
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Human-Computer Interaction | close match |
-| [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Human-AI Configuration | close match |
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Human Oversight](https://w3c.github.io/dpv/2.3/ai/#HumanOversight) | broad match |
-| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 14 — Human oversight | broad match |

@@ -15,11 +15,59 @@ VALID_STATUS = {"active", "retired"}
 VALID_STAGES = {"pre-processing", "in-processing", "post-processing"}
 VALID_RELATIONS = {"exactMatch", "closeMatch", "broadMatch", "narrowMatch", "relatedMatch"}
 VALID_PERSPECTIVES = {"rights & ethics", "technical soundness", "governance & compliance", "operational viability"}
+VALID_FRAMEWORK_TYPES = {"compliance", "reference", "taxonomy"}
 
 REQUIRED_FIELDS = {"id", "type", "label", "definition"}
 
 
-def validate_taxonomy(path):
+def validate_mappings(path):
+    """Validate mappings.yaml: framework definitions, type field, required fields."""
+    errors = []
+    warnings = []
+    known_frameworks = set()
+
+    if not path.exists():
+        warnings.append(f"{path.name} not found; skipping framework validation.")
+        return errors, warnings, known_frameworks
+
+    try:
+        with open(path) as f:
+            data = yaml.safe_load(f)
+    except yaml.YAMLError as e:
+        errors.append(f"YAML syntax error in {path.name}: {e}")
+        return errors, warnings, known_frameworks
+
+    if not data or "frameworks" not in data:
+        errors.append(f"{path.name} must contain a 'frameworks' key at the top level.")
+        return errors, warnings, known_frameworks
+
+    frameworks = data["frameworks"]
+    if not isinstance(frameworks, dict):
+        errors.append(f"{path.name}: 'frameworks' must be a mapping of framework_id to definition.")
+        return errors, warnings, known_frameworks
+
+    for fw_id, fw in frameworks.items():
+        prefix = f'Framework "{fw_id}"'
+        known_frameworks.add(fw_id)
+        if not isinstance(fw, dict):
+            errors.append(f"{prefix}: definition must be a mapping.")
+            continue
+        if "type" not in fw:
+            errors.append(f'{prefix}: missing required "type" field. Must be one of {sorted(VALID_FRAMEWORK_TYPES)}.')
+        elif fw["type"] not in VALID_FRAMEWORK_TYPES:
+            errors.append(
+                f'{prefix}: invalid type "{fw["type"]}". Must be one of {sorted(VALID_FRAMEWORK_TYPES)}.'
+            )
+        if "name" not in fw:
+            errors.append(f'{prefix}: missing required "name" field.')
+        if "url" not in fw:
+            warnings.append(f'{prefix}: missing "url" field (recommended).')
+
+    return errors, warnings, known_frameworks
+
+
+def validate_taxonomy(path, known_frameworks=None):
+    known_frameworks = known_frameworks or set()
     errors = []
     warnings = []
 
@@ -124,8 +172,14 @@ def validate_taxonomy(path):
             for j, m in enumerate(mappings):
                 if not isinstance(m, dict):
                     continue
-                if "framework" not in m:
+                fw = m.get("framework")
+                if not fw:
                     errors.append(f'{prefix}: mapping #{j+1} missing "framework".')
+                elif known_frameworks and fw not in known_frameworks:
+                    errors.append(
+                        f'{prefix}: mapping #{j+1} references unknown framework "{fw}". '
+                        f'Add it to mappings.yaml or fix the typo.'
+                    )
                 if "target_id" not in m:
                     errors.append(f'{prefix}: mapping #{j+1} missing "target_id".')
                 rel = m.get("relation", "")
@@ -140,21 +194,33 @@ def validate_taxonomy(path):
 
 
 def main():
-    path = SRC / "taxonomy.yaml"
-    if not path.exists():
-        print(f"ERROR: {path} not found.")
+    taxonomy_path = SRC / "taxonomy.yaml"
+    mappings_path = SRC / "mappings.yaml"
+
+    if not taxonomy_path.exists():
+        print(f"ERROR: {taxonomy_path} not found.")
         sys.exit(1)
 
-    print(f"Validating {path}...")
-    errors, warnings = validate_taxonomy(path)
+    all_errors = []
+    all_warnings = []
 
-    for w in warnings:
+    print(f"Validating {mappings_path}...")
+    errs, warns, known_frameworks = validate_mappings(mappings_path)
+    all_errors.extend(errs)
+    all_warnings.extend(warns)
+
+    print(f"Validating {taxonomy_path}...")
+    errs, warns = validate_taxonomy(taxonomy_path, known_frameworks=known_frameworks)
+    all_errors.extend(errs)
+    all_warnings.extend(warns)
+
+    for w in all_warnings:
         print(f"  WARNING: {w}")
-    for e in errors:
+    for e in all_errors:
         print(f"  ERROR: {e}")
 
-    if errors:
-        print(f"\n✗ Validation FAILED with {len(errors)} error(s).")
+    if all_errors:
+        print(f"\n✗ Validation FAILED with {len(all_errors)} error(s).")
         sys.exit(1)
     else:
         print(f"✓ Validation PASSED. No errors found.")

@@ -16,6 +16,8 @@ Risks from AI models leaking or exposing private information through their outpu
 
 ## Mappings to external frameworks
 
+### Taxonomies & vocabularies
+
 | Framework | Concept |
 |-----------|---------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Compromise of privacy by obtaining, leaking or inferring sensitive information |

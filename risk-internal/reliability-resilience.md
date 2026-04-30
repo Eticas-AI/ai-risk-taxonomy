@@ -27,7 +27,14 @@ Risks related to the system's ability to absorb disruption, degrade gracefully, 
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 15(4) — Resilience regarding errors, faults or inconsistencies | broad match |
+
+### Reference frameworks
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Secure & Resilient | broad match |
-| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 15(4) — Resilience regarding errors, faults or inconsistencies | broad match |

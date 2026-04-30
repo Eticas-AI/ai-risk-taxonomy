@@ -29,11 +29,23 @@ The risk that an AI system produces outcomes that systematically advantage or di
 
 ## Mappings to external frameworks
 
+### Compliance
+
 | Framework | Concept |
 |-----------|---------|
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Discrimination & Toxicity |
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Assessing impacts of AI systems |
+
+### Reference frameworks
+
+| Framework | Concept |
+|-----------|---------|
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Harmful Bias & Homogenization |
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Fair with Harmful Bias Managed |
 | [OECD AI Principles](https://oecd.ai) | Human rights, rule of law, fairness & privacy |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept |
+|-----------|---------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Discrimination & Toxicity |
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | AI Bias |
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Assessing impacts of AI systems |

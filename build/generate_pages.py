@@ -138,37 +138,68 @@ def generate_concept_page(c, by_id, children, config, audience):
                 lines.append(f'- [{sub["label"]}]({sub["id"]}.md)')
             lines.append("")
 
-    # Mappings
+    # Mappings — grouped by framework type
     mappings_cfg = load_yaml(SRC / "mappings.yaml") if (SRC / "mappings.yaml").exists() else {}
     fw_meta = mappings_cfg.get("frameworks", {})
     mappings = c.get("mappings", [])
     if mappings:
-        lines.append("## Mappings to external frameworks")
-        lines.append("")
-        # Public version: no relationship column (no match types)
-        if audience == "public":
-            lines.append("| Framework | Concept |")
-            lines.append("|-----------|---------|")
-        else:
-            lines.append("| Framework | Concept | Relationship |")
-            lines.append("|-----------|---------|-------------|")
+        # Group mappings by the framework's type field
+        type_order = ["compliance", "reference", "taxonomy"]
+        type_labels = {
+            "compliance": "Compliance",
+            "reference": "Reference frameworks",
+            "taxonomy": "Taxonomies & vocabularies",
+        }
+        grouped = {t: [] for t in type_order}
+        unknown = []
         for m in mappings:
             fw_id = m.get("framework", "")
-            fw_info = fw_meta.get(fw_id, {})
-            fw_name = fw_info.get("name", fw_id)
-            fw_url = fw_info.get("url", "")
-            target = m.get("target_label", m.get("target_id", ""))
-            target_url = m.get("target_url", "")
-            rel = m.get("relation", "").replace("Match", " match")
-
-            fw_cell = f'[{fw_name}]({fw_url})' if fw_url else fw_name
-            concept_cell = f'[{target}]({target_url})' if target_url else target
-
-            if audience == "public":
-                lines.append(f"| {fw_cell} | {concept_cell} |")
+            fw_type = fw_meta.get(fw_id, {}).get("type")
+            if fw_type in grouped:
+                grouped[fw_type].append(m)
             else:
-                lines.append(f"| {fw_cell} | {concept_cell} | {rel} |")
-        lines.append("")
+                unknown.append(m)
+
+        if any(grouped[t] for t in type_order) or unknown:
+            lines.append("## Mappings to external frameworks")
+            lines.append("")
+
+            def render_table(group_mappings):
+                if audience == "public":
+                    lines.append("| Framework | Concept |")
+                    lines.append("|-----------|---------|")
+                else:
+                    lines.append("| Framework | Concept | Relationship |")
+                    lines.append("|-----------|---------|-------------|")
+                for m in group_mappings:
+                    fw_id = m.get("framework", "")
+                    fw_info = fw_meta.get(fw_id, {})
+                    fw_name = fw_info.get("name", fw_id)
+                    fw_url = fw_info.get("url", "")
+                    target = m.get("target_label", m.get("target_id", ""))
+                    target_url = m.get("target_url", "")
+                    rel = m.get("relation", "").replace("Match", " match")
+
+                    fw_cell = f'[{fw_name}]({fw_url})' if fw_url else fw_name
+                    concept_cell = f'[{target}]({target_url})' if target_url else target
+
+                    if audience == "public":
+                        lines.append(f"| {fw_cell} | {concept_cell} |")
+                    else:
+                        lines.append(f"| {fw_cell} | {concept_cell} | {rel} |")
+                lines.append("")
+
+            for fw_type in type_order:
+                if not grouped[fw_type]:
+                    continue
+                lines.append(f"### {type_labels[fw_type]}")
+                lines.append("")
+                render_table(grouped[fw_type])
+
+            if unknown:
+                lines.append(f"### Other")
+                lines.append("")
+                render_table(unknown)
 
     # References (papers, benchmarks, tools, regulatory sources)
     references = c.get("references", [])

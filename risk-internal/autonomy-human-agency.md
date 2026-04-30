@@ -23,6 +23,8 @@ Risks to human decision-making capacity arising from interaction with AI systems
 
 ## Mappings to external frameworks
 
+### Taxonomies & vocabularies
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Overreliance and unsafe use | close match |

@@ -24,6 +24,8 @@ Malicious inputs designed to subvert system intent by injecting instructions tha
 
 ## Mappings to external frameworks
 
+### Taxonomies & vocabularies
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | Prompt Injection | exact match |

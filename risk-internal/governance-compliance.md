@@ -26,6 +26,8 @@ Risks from gaps in organisational processes for ongoing oversight, compliance, a
 
 ## Mappings to external frameworks
 
+### Compliance
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Processes for responsible development and use | broad match |

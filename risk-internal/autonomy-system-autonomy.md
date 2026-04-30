@@ -23,6 +23,8 @@ Risks from AI systems operating with a degree of autonomy beyond single-inferenc
 
 ## Mappings to external frameworks
 
+### Taxonomies & vocabularies
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Multi-agent risks | close match |

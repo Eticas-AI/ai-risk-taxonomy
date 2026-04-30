@@ -12,8 +12,6 @@ Usman did a detailed review of the v0.2.0 taxonomy (April 29, 2026). Main feedba
 
 📋 **Concept-by-concept mapping from v0.2 to v0.3:** [docs/v0.2-to-v0.3-mapping.md](docs/v0.2-to-v0.3-mapping.md)
 
-📋 **External framework mapping verification (Phase 5 working document):** [docs/external-framework-mapping-verification.md](docs/external-framework-mapping-verification.md) — comprehensive review of mappings across 10 frameworks (NIST RMF, NIST 600-1, EU AI Act, MIT V4, W3C DPV, ISO 42001, OECD, plus newly added AIUC-1, AIR 2024, IBM Risk Atlas) with gap analysis. Draft for team review before applying to YAML.
-
 ### Decisions
 
 #### Adopt Usman's restructured taxonomy as the base
@@ -55,7 +53,21 @@ This contradicts an earlier decision (the rename from "Responsibility & Redress"
 
 #### Separate compliance mappings from taxonomy mappings
 
-Gemma asked for framework mappings to be split: regulatory/compliance frameworks (EU AI Act, ISO 42001, NIST, OECD) separate from taxonomy/vocabulary frameworks (W3C DPV, MIT AI Risk Repository). This makes it clearer for the client-facing use case ("this audit covers Section X of ISO 42001"). Implement as either two separate tables on pages, or a categorisation field on each mapping entry in the YAML.
+Gemma asked for framework mappings to be split: regulatory/compliance frameworks separate from taxonomy/vocabulary frameworks. This makes it clearer for the client-facing use case ("this audit covers Section X of ISO 42001").
+
+**Implementation (April 2026):** added a `type` field to each framework entry in `src/mappings.yaml` with three possible values:
+
+- `compliance` — legally binding regulations or directly certifiable standards (EU AI Act, ISO/IEC 42001, AIUC-1)
+- `reference` — policy frameworks and principles, soft-law but commonly cited by regulators (NIST AI RMF, NIST AI 600-1, OECD AI Principles)
+- `taxonomy` — academic taxonomies, vendor research, and SKOS/OWL vocabularies (MIT AI Risk Repository, AIR 2024, IBM AI Risk Atlas, W3C DPV)
+
+The pipeline (`build/generate_pages.py`) groups mappings by type when rendering concept pages, producing three separate tables ("Compliance", "Reference frameworks", "Taxonomies & vocabularies"). The chosen 3-way split (rather than Gemma's binary compliance/taxonomy split) was a balance: keeping the soft-law middle category — NIST and OECD — visible as its own group avoids visually conflating ten heterogeneous frameworks in one table while still honouring the compliance separation. The mapping is reversible: a future render can fold `reference` into either bucket without YAML changes.
+
+#### AIRO and VAIR removed from mappings.yaml (April 2026)
+
+AIRO (AI Risk Ontology) and VAIR (Vocabulary of AI Risks) were defined as separate frameworks in `mappings.yaml` since v0.1, but had **zero concept-level mappings** from any Eticas concept. With the publication of W3C DPV v2.3 (February 2026), both vocabularies were formally incorporated into DPV's AI extension, so their concepts now live in the `dpv_ai` namespace (`https://w3id.org/dpv/ai#`).
+
+**Decision:** remove the `airo` and `vair` framework entries from `mappings.yaml`. No data migration was needed (no mappings existed to update). Future mappings to risk concepts originally formulated in AIRO/VAIR should target the equivalent `dpv_ai` concept. The standalone AIRO/VAIR URIs remain resolvable for citation; the explanatory note is retained in `mappings.yaml` and in the `dpv_ai` framework's description.
 
 #### Remove match types from public pages
 

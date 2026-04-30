@@ -28,9 +28,16 @@ The risk that stakeholders cannot understand how an AI system works, what it doe
 
 ## Mappings to external frameworks
 
+### Reference frameworks
+
+| Framework | Concept |
+|-----------|---------|
+| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Explainable & Interpretable |
+| [OECD AI Principles](https://oecd.ai) | Transparency & explainability |
+
+### Taxonomies & vocabularies
+
 | Framework | Concept |
 |-----------|---------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of transparency or interpretability |
-| [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Explainable & Interpretable |
-| [OECD AI Principles](https://oecd.ai) | Transparency & explainability |
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | Transparency |
