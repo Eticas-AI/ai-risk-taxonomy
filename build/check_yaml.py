@@ -11,6 +11,7 @@ SRC = ROOT / "src"
 VALID_TYPES = {"category", "subgroup", "subcategory"}
 VALID_SCOPES = {"ALL", "ADM", "LLM"}
 VALID_MATURITIES = {"established", "emerging"}
+VALID_STATUS = {"active", "retired"}
 VALID_STAGES = {"pre-processing", "in-processing", "post-processing"}
 VALID_RELATIONS = {"exactMatch", "closeMatch", "broadMatch", "narrowMatch", "relatedMatch"}
 VALID_PERSPECTIVES = {"rights & ethics", "technical soundness", "governance & compliance", "operational viability"}
@@ -76,6 +77,26 @@ def validate_taxonomy(path):
         maturity = concept.get("maturity", "")
         if maturity and maturity not in VALID_MATURITIES:
             errors.append(f'{prefix}: Invalid maturity "{maturity}". Must be "established" or "emerging".')
+
+        # Status validation (defaults to "active" if not specified)
+        status = concept.get("status", "active")
+        if status not in VALID_STATUS:
+            errors.append(f'{prefix}: Invalid status "{status}". Must be "active" or "retired".')
+
+        # Operationalisation field validation
+        operationalisation = concept.get("operationalisation", [])
+        if operationalisation:
+            if not isinstance(operationalisation, list):
+                errors.append(f'{prefix}: operationalisation must be a list.')
+            else:
+                for j, op in enumerate(operationalisation):
+                    if not isinstance(op, dict):
+                        errors.append(f'{prefix}: operationalisation #{j+1} must be a key: value block.')
+                        continue
+                    if "label" not in op:
+                        errors.append(f'{prefix}: operationalisation #{j+1} missing "label".')
+                    if "description" not in op:
+                        errors.append(f'{prefix}: operationalisation #{j+1} missing "description".')
 
         if ctype == "category":
             if "maturity" not in concept:

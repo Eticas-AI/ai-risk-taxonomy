@@ -81,9 +81,11 @@ def generate_concept_page(c, by_id, children, config):
     # Children: sub-groups with their subcategories, or direct subcategories
     child_ids = children.get(c["id"], [])
     if child_ids:
+        # Filter out retired children
+        active_child_ids = [cid for cid in child_ids if by_id[cid].get("status", "active") != "retired"]
         # Separate sub-groups from direct subcategories
-        subgroups = [by_id[cid] for cid in child_ids if by_id[cid]["type"] == "subgroup"]
-        direct_subs = [by_id[cid] for cid in child_ids if by_id[cid]["type"] == "subcategory"]
+        subgroups = [by_id[cid] for cid in active_child_ids if by_id[cid]["type"] == "subgroup"]
+        direct_subs = [by_id[cid] for cid in active_child_ids if by_id[cid]["type"] == "subcategory"]
 
         if subgroups:
             lines.append("## Risk groups")
@@ -158,6 +160,21 @@ def generate_concept_page(c, by_id, children, config):
                 lines.append(f'  {note}')
         lines.append("")
 
+    # Operationalisation (mechanisms by which the risk manifests)
+    operationalisation = c.get("operationalisation", [])
+    if operationalisation:
+        lines.append("## How this risk manifests")
+        lines.append("")
+        lines.append("The mechanisms below describe *how* this risk arises in practice. They are operationalisation aids, not risks in themselves — useful when designing assessment methods.")
+        lines.append("")
+        for op in operationalisation:
+            label = op.get("label", "")
+            description = op.get("description", "").strip()
+            lines.append(f'**{label}**  ')
+            if description:
+                lines.append(description)
+            lines.append("")
+
     # Source
     if "source" in c:
         lines.append(f'*Source: {c["source"]} project taxonomy*')
@@ -216,21 +233,36 @@ def main():
 
     OUT.mkdir(exist_ok=True)
 
-    # Generate concept pages for all types
-    for c in concepts:
+    # Track which concepts are active (not retired) — only these get pages
+    active_concepts = [c for c in concepts if c.get("status", "active") != "retired"]
+    active_ids = {c["id"] for c in active_concepts}
+
+    # Clean up stale pages: remove .md files in OUT/ for concepts no longer active
+    for md_file in OUT.glob("*.md"):
+        if md_file.stem == "index":
+            continue
+        if md_file.stem not in active_ids:
+            md_file.unlink()
+
+    # Generate concept pages for active concepts only
+    for c in active_concepts:
         page = generate_concept_page(c, by_id, children, config)
         (OUT / f'{c["id"]}.md').write_text(page)
 
-    # Generate index
-    index = generate_index(concepts, by_id, children, config)
+    # Generate index (only with active categories)
+    index = generate_index(active_concepts, by_id, children, config)
     (OUT / "index.md").write_text(index)
 
-    total = len(concepts)
-    cats = sum(1 for c in concepts if c["type"] == "category")
-    sgs = sum(1 for c in concepts if c["type"] == "subgroup")
-    subs = sum(1 for c in concepts if c["type"] == "subcategory")
-    print(f"Generated {total} concept pages + index in {OUT}/")
+    total_active = len(active_concepts)
+    cats = sum(1 for c in active_concepts if c["type"] == "category")
+    sgs = sum(1 for c in active_concepts if c["type"] == "subgroup")
+    subs = sum(1 for c in active_concepts if c["type"] == "subcategory")
+    retired = sum(1 for c in concepts if c.get("status") == "retired")
+
+    print(f"Generated {total_active} concept pages + index in {OUT}/")
     print(f"  {cats} categories, {sgs} sub-groups, {subs} subcategories")
+    if retired:
+        print(f"  ({retired} concepts retired, not rendered)")
 
 
 if __name__ == "__main__":

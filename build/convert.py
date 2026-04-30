@@ -46,6 +46,11 @@ def build_graph(config, taxonomy, mappings_def):
     categories = set()
 
     for concept in taxonomy["concepts"]:
+        # Skip retired concepts — they remain in the YAML for institutional memory
+        # but are not part of the taxonomy output
+        if concept.get("status", "active") == "retired":
+            continue
+
         cid = concept["id"]
         uri = ns[cid]
 
