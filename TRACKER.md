@@ -4,6 +4,67 @@ This document records structural decisions made about the Eticas AI Risk Taxonom
 
 ---
 
+## v0.3.0 — Refinement based on Usman's review (April–May 2026)
+
+### Context
+
+Usman did a detailed review of the v0.2.0 taxonomy (April 29, 2026). Main feedback: (1) some subcategories describe *mechanisms* or *causes* rather than *risks* — e.g., "dataset bias" explains how disparate impact occurs but is not a risk in itself; (2) cross-cutting overlaps remain between categories; (3) several structural moves proposed. Gemma responded with general agreement and one specific pushback on Manipulation & Misinformation placement.
+
+📋 **Concept-by-concept mapping from v0.2 to v0.3:** [docs/v0.2-to-v0.3-mapping.md](docs/v0.2-to-v0.3-mapping.md)
+
+### Decisions
+
+#### Adopt Usman's restructured taxonomy as the base
+
+After review, the team agreed to adopt Usman's proposal as the base for v0.3, with a few specific adjustments documented below. The mapping document captures all the concept-by-concept changes; this section records the rationale for the structural choices.
+
+#### Distinguish risks from mechanisms
+
+Several v0.2 concepts (most notably under Bias & Fairness) described how a risk happens rather than the risk itself. With LLMs in particular, "dataset bias" cannot be measured directly — what is observed is its effect (disparate impact). The decision was to:
+
+- Restructure Bias & Fairness around three sub-groups (Outcome disparities, Representational harm, Dynamic & Systemic bias) that describe risks, not causes.
+- Preserve mechanism-level concepts (dataset bias, proxy discrimination, etc.) by moving them to a new `operationalisation` field on the parent risk concept. This field will later be enriched with metrics, methods, etc. (Gemma's proposed methodology layer).
+- Distinguish this from concepts that are simply being eliminated (no longer recognised as risks), which will be marked `status: retired` so they remain in the YAML for institutional memory but do not generate pages or appear in outputs.
+
+#### Manipulation & Misinformation: distinguish intent from output
+
+Usman proposed moving the entire Manipulation & Misinformation sub-group to Security & Misuse (renamed "Harmful and Malicious Misuse"). Gemma pushed back: she sees misinformation as often resulting from hallucination, not adversarial engagement.
+
+The key distinction is *who causes the harmful output*:
+- **Misuse** — a human actor deliberately uses the model for a harmful purpose. The model works correctly; the problem is who uses it and for what.
+- **Hallucination** — the model produces false information on its own, without anyone seeking it. The problem is what the system produces.
+
+The non-adversarial case Gemma describes is already covered by `hallucination` under Reliability / Output quality. The remaining subcategories (behavioural manipulation, synthetic media abuse) all imply intent and therefore belong in Security & Misuse. `disinformation-generation` is dropped as a subcategory — it is redundant with hallucination when non-intentional, and falls under misuse when intentional.
+
+#### Dissolve Incident Reporting & Redress
+
+The category is dissolved. Each of its three subcategories has a natural home elsewhere: `absence-of-appeal` and `ineffective-communication` are absorbed into the new "Right to explanation & contestation" subcategory in Transparency; `unclear-remediation` is absorbed into `failure-remediation-gaps` under Governance / Compliance & process. EU AI Act Art. 73 obligations on serious incident reporting are covered by `incident-response-gaps` under Governance.
+
+This contradicts an earlier decision (the rename from "Responsibility & Redress" to "Incident Reporting & Redress" was Gemma's suggestion in v0.2), but Gemma agreed with Usman's revised proposal. The reason for keeping it earlier was that no clear destinations existed for its subcategories — once Usman provided coherent destinations across Governance and Transparency, the case for keeping it as a standalone category became weaker.
+
+#### Other structural changes
+
+- **Monitoring & remediation** moves entirely from Reliability to Governance / Compliance & process. Reliability focuses on technical aspects of the system; monitoring and remediation are governance processes about how the organisation watches the system over time.
+- **Governance / Data & oversight** is dissolved: `human-oversight-control` moves to Accountability, `data-governance` moves to Compliance & process.
+- **Security & Misuse** gains a new "Harmful Misuse" sub-group (absorbing the moved Manipulation subcategories and `misuse-beyond-intended-purpose`), and adds `model-extraction` and `data-poisoning` to AI-specific attacks.
+- **Transparency / Explainability** gains a new "Right to explanation & contestation" subcategory (covering GDPR Art. 22 and EU AI Act Art. 13). `prompt-transparency` and `model-card-completeness` are dropped as risks — the team agreed they are documentation requirements rather than risks per se.
+
+### Other agreed changes (from Gemma's email thread)
+
+#### Separate compliance mappings from taxonomy mappings
+
+Gemma asked for framework mappings to be split: regulatory/compliance frameworks (EU AI Act, ISO 42001, NIST, OECD) separate from taxonomy/vocabulary frameworks (W3C DPV, MIT AI Risk Repository). This makes it clearer for the client-facing use case ("this audit covers Section X of ISO 42001"). Implement as either two separate tables on pages, or a categorisation field on each mapping entry in the YAML.
+
+#### Remove match types from public pages
+
+Usman proposed removing "broad match" / "close match" etc. from the public GitHub Pages. Keep them in the YAML/SKOS for internal use. Aligns with the public/private split already planned.
+
+### Open items for implementation
+
+See [docs/v0.2-to-v0.3-mapping.md](docs/v0.2-to-v0.3-mapping.md) for the full list of items requiring work during implementation (definitions to update, new subcategory definitions, operationalisation field design, retired status implementation, external framework mappings review).
+
+---
+
 ## v0.2.0 — Restructuring (April 2026)
 
 ### Context
