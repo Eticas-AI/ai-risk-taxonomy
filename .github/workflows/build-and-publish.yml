@@ -37,6 +37,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add risk/ dist/
+          git add risk/ risk-internal/ dist/
           git diff --staged --quiet || git commit -m "Regenerate taxonomy outputs"
           git push

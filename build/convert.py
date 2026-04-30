@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Convert taxonomy.yaml to SKOS Turtle and JSON-LD."""
+"""Convert taxonomy.yaml to SKOS Turtle and JSON-LD.
+
+Generates two versions:
+- Internal (taxonomy.ttl, taxonomy.jsonld): full taxonomy
+- Public (taxonomy-public.ttl, taxonomy-public.jsonld): categories + sub-groups, established only
+"""
 
 import yaml
 from pathlib import Path
-from rdflib import Graph, Namespace, Literal, URIRef, BNode
+from rdflib import Graph, Namespace, Literal, URIRef
 from rdflib.namespace import RDF, RDFS, SKOS, DCTERMS, XSD
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -16,7 +21,24 @@ def load_yaml(path):
         return yaml.safe_load(f)
 
 
-def build_graph(config, taxonomy, mappings_def):
+def is_visible(concept, audience, by_id=None):
+    """Should this concept appear in the given audience's view?"""
+    if concept.get("status", "active") == "retired":
+        return False
+    if audience == "internal":
+        return True
+    if concept.get("type") == "subcategory":
+        return False
+    if concept.get("maturity") == "emerging":
+        return False
+    if by_id and "broader" in concept:
+        parent = by_id.get(concept["broader"])
+        if parent and not is_visible(parent, audience, by_id):
+            return False
+    return True
+
+
+def build_graph(config, taxonomy, mappings_def, audience):
     g = Graph()
     ns = Namespace(config["namespace"])
     eticas = Namespace("https://taxonomy.eticas.ai/ontology/")
@@ -33,6 +55,9 @@ def build_graph(config, taxonomy, mappings_def):
         g.bind(fw_id.replace("_", "-"), fw_ns)
         fw_namespaces[fw_id] = fw_ns
 
+    # Build by_id lookup for parent visibility checks
+    by_id = {c["id"]: c for c in taxonomy["concepts"]}
+
     # Create the ConceptScheme
     scheme = ns["scheme"]
     g.add((scheme, RDF.type, SKOS.ConceptScheme))
@@ -42,13 +67,9 @@ def build_graph(config, taxonomy, mappings_def):
     g.add((scheme, DCTERMS.license, URIRef(config["license"])))
     g.add((scheme, DCTERMS.language, Literal(config["language"])))
 
-    # Track categories for hasTopConcept
-    categories = set()
-
     for concept in taxonomy["concepts"]:
-        # Skip retired concepts — they remain in the YAML for institutional memory
-        # but are not part of the taxonomy output
-        if concept.get("status", "active") == "retired":
+        # Filter by audience visibility
+        if not is_visible(concept, audience, by_id):
             continue
 
         cid = concept["id"]
@@ -71,7 +92,6 @@ def build_graph(config, taxonomy, mappings_def):
         if concept["type"] == "category":
             g.add((uri, SKOS.topConceptOf, scheme))
             g.add((scheme, SKOS.hasTopConcept, uri))
-            categories.add(cid)
         elif "broader" in concept:
             g.add((uri, SKOS.broader, ns[concept["broader"]]))
             g.add((ns[concept["broader"]], SKOS.narrower, uri))
@@ -110,11 +130,20 @@ def build_graph(config, taxonomy, mappings_def):
 
             g.add((uri, relation_prop, target_uri))
 
-            # Add a label for the target if provided
             if "target_label" in m:
                 g.add((target_uri, SKOS.prefLabel, Literal(m["target_label"], lang="en")))
 
     return g
+
+
+def write_outputs(g, suffix=""):
+    ttl_path = DIST / f"taxonomy{suffix}.ttl"
+    g.serialize(destination=str(ttl_path), format="turtle")
+    print(f"  Written {ttl_path.name} ({len(g)} triples)")
+
+    jsonld_path = DIST / f"taxonomy{suffix}.jsonld"
+    g.serialize(destination=str(jsonld_path), format="json-ld", indent=2)
+    print(f"  Written {jsonld_path.name}")
 
 
 def main():
@@ -124,17 +153,15 @@ def main():
     taxonomy = load_yaml(SRC / "taxonomy.yaml")
     mappings_def = load_yaml(SRC / "mappings.yaml")
 
-    g = build_graph(config, taxonomy, mappings_def)
+    print("Generating SKOS:")
 
-    # Write Turtle
-    ttl_path = DIST / "taxonomy.ttl"
-    g.serialize(destination=str(ttl_path), format="turtle")
-    print(f"Written {ttl_path} ({len(g)} triples)")
+    # Internal (full)
+    g_internal = build_graph(config, taxonomy, mappings_def, "internal")
+    write_outputs(g_internal, suffix="")
 
-    # Write JSON-LD
-    jsonld_path = DIST / "taxonomy.jsonld"
-    g.serialize(destination=str(jsonld_path), format="json-ld", indent=2)
-    print(f"Written {jsonld_path}")
+    # Public (filtered)
+    g_public = build_graph(config, taxonomy, mappings_def, "public")
+    write_outputs(g_public, suffix="-public")
 
 
 if __name__ == "__main__":

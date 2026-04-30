@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
-"""Generate Markdown concept pages from taxonomy.yaml."""
+"""Generate Markdown concept pages from taxonomy.yaml.
+
+Generates two versions:
+- Public (/risk/): categories + sub-groups, established only, no match types in tables
+- Internal (/risk-internal/): full taxonomy with subcategories, all maturities, full mappings
+"""
 
 import yaml
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
-OUT = ROOT / "risk"
+OUT_PUBLIC = ROOT / "risk"
+OUT_INTERNAL = ROOT / "risk-internal"
 
 
 def load_yaml(path):
@@ -14,7 +20,35 @@ def load_yaml(path):
         return yaml.safe_load(f)
 
 
-def generate_concept_page(c, by_id, children, config):
+def is_visible(concept, audience, by_id=None):
+    """Should this concept appear in the given audience's view?"""
+    # Retired never visible
+    if concept.get("status", "active") == "retired":
+        return False
+
+    if audience == "internal":
+        return True
+
+    # Public filters
+    # 1. Only categories and sub-groups (no subcategories)
+    if concept.get("type") == "subcategory":
+        return False
+
+    # 2. Only established maturity (concepts without maturity inherit from parent)
+    if concept.get("maturity") == "emerging":
+        return False
+
+    # 3. If parent is not visible, child isn't either (handles sub-groups
+    #    whose parent category is emerging or retired)
+    if by_id and "broader" in concept:
+        parent = by_id.get(concept["broader"])
+        if parent and not is_visible(parent, audience, by_id):
+            return False
+
+    return True
+
+
+def generate_concept_page(c, by_id, children, config, audience):
     """Generate a Markdown page for a single concept."""
     ns = config["namespace"]
     maturity = c.get("maturity", "")
@@ -78,14 +112,13 @@ def generate_concept_page(c, by_id, children, config):
     if scope or stages:
         lines.append("")
 
-    # Children: sub-groups with their subcategories, or direct subcategories
+    # Children: filter by audience visibility
     child_ids = children.get(c["id"], [])
     if child_ids:
-        # Filter out retired children
-        active_child_ids = [cid for cid in child_ids if by_id[cid].get("status", "active") != "retired"]
-        # Separate sub-groups from direct subcategories
-        subgroups = [by_id[cid] for cid in active_child_ids if by_id[cid]["type"] == "subgroup"]
-        direct_subs = [by_id[cid] for cid in active_child_ids if by_id[cid]["type"] == "subcategory"]
+        # Filter children by what's visible to this audience
+        visible_children = [by_id[cid] for cid in child_ids if is_visible(by_id[cid], audience, by_id)]
+        subgroups = [s for s in visible_children if s["type"] == "subgroup"]
+        direct_subs = [s for s in visible_children if s["type"] == "subcategory"]
 
         if subgroups:
             lines.append("## Risk groups")
@@ -112,8 +145,13 @@ def generate_concept_page(c, by_id, children, config):
     if mappings:
         lines.append("## Mappings to external frameworks")
         lines.append("")
-        lines.append("| Framework | Concept | Relationship |")
-        lines.append("|-----------|---------|-------------|")
+        # Public version: no relationship column (no match types)
+        if audience == "public":
+            lines.append("| Framework | Concept |")
+            lines.append("|-----------|---------|")
+        else:
+            lines.append("| Framework | Concept | Relationship |")
+            lines.append("|-----------|---------|-------------|")
         for m in mappings:
             fw_id = m.get("framework", "")
             fw_info = fw_meta.get(fw_id, {})
@@ -126,7 +164,10 @@ def generate_concept_page(c, by_id, children, config):
             fw_cell = f'[{fw_name}]({fw_url})' if fw_url else fw_name
             concept_cell = f'[{target}]({target_url})' if target_url else target
 
-            lines.append(f"| {fw_cell} | {concept_cell} | {rel} |")
+            if audience == "public":
+                lines.append(f"| {fw_cell} | {concept_cell} |")
+            else:
+                lines.append(f"| {fw_cell} | {concept_cell} | {rel} |")
         lines.append("")
 
     # References (papers, benchmarks, tools, regulatory sources)
@@ -141,7 +182,6 @@ def generate_concept_page(c, by_id, children, config):
             domain = ref.get("domain", "")
             note = ref.get("note", "")
 
-            # Build the main line: link + optional type/domain tags
             if url:
                 line = f'- **[{label}]({url})**'
             else:
@@ -160,20 +200,21 @@ def generate_concept_page(c, by_id, children, config):
                 lines.append(f'  {note}')
         lines.append("")
 
-    # Operationalisation (mechanisms by which the risk manifests)
-    operationalisation = c.get("operationalisation", [])
-    if operationalisation:
-        lines.append("## How this risk manifests")
-        lines.append("")
-        lines.append("The mechanisms below describe *how* this risk arises in practice. They are operationalisation aids, not risks in themselves — useful when designing assessment methods.")
-        lines.append("")
-        for op in operationalisation:
-            label = op.get("label", "")
-            description = op.get("description", "").strip()
-            lines.append(f'**{label}**  ')
-            if description:
-                lines.append(description)
+    # Operationalisation (mechanisms by which the risk manifests) — internal only
+    if audience == "internal":
+        operationalisation = c.get("operationalisation", [])
+        if operationalisation:
+            lines.append("## How this risk manifests")
             lines.append("")
+            lines.append("The mechanisms below describe *how* this risk arises in practice. They are operationalisation aids, not risks in themselves — useful when designing assessment methods.")
+            lines.append("")
+            for op in operationalisation:
+                label = op.get("label", "")
+                description = op.get("description", "").strip()
+                lines.append(f'**{label}**  ')
+                if description:
+                    lines.append(description)
+                lines.append("")
 
     # Source
     if "source" in c:
@@ -183,7 +224,7 @@ def generate_concept_page(c, by_id, children, config):
     return "\n".join(lines)
 
 
-def generate_index(concepts, by_id, children, config):
+def generate_index(visible_concepts, by_id, children, config, audience):
     """Generate the index page for the risk/ directory."""
     lines = []
     lines.append("---")
@@ -197,10 +238,15 @@ def generate_index(concepts, by_id, children, config):
     lines.append("")
     lines.append(config["description"].strip())
     lines.append("")
+
+    if audience == "internal":
+        lines.append("> **Internal view** — full taxonomy including subcategories and emerging concepts. The [public version](../risk/) shows only categories and sub-groups, established only.")
+        lines.append("")
+
     lines.append("## Categories")
     lines.append("")
 
-    cats = [c for c in concepts if c["type"] == "category"]
+    cats = [c for c in visible_concepts if c["type"] == "category"]
     for cat in cats:
         maturity = cat.get("maturity", "")
 
@@ -219,6 +265,35 @@ def generate_index(concepts, by_id, children, config):
     return "\n".join(lines)
 
 
+def render(audience, out_dir, concepts, by_id, children, config):
+    """Render the full site for one audience."""
+    out_dir.mkdir(exist_ok=True)
+
+    visible = [c for c in concepts if is_visible(c, audience, by_id)]
+    visible_ids = {c["id"] for c in visible}
+
+    # Clean stale pages
+    for md_file in out_dir.glob("*.md"):
+        if md_file.stem == "index":
+            continue
+        if md_file.stem not in visible_ids:
+            md_file.unlink()
+
+    # Generate concept pages
+    for c in visible:
+        page = generate_concept_page(c, by_id, children, config, audience)
+        (out_dir / f'{c["id"]}.md').write_text(page)
+
+    # Generate index
+    index = generate_index(visible, by_id, children, config, audience)
+    (out_dir / "index.md").write_text(index)
+
+    cats = sum(1 for c in visible if c["type"] == "category")
+    sgs = sum(1 for c in visible if c["type"] == "subgroup")
+    subs = sum(1 for c in visible if c["type"] == "subcategory")
+    print(f"  [{audience}] {out_dir.name}/: {len(visible)} pages — {cats} categories, {sgs} sub-groups, {subs} subcategories")
+
+
 def main():
     config = load_yaml(SRC / "config.yaml")
     taxonomy = load_yaml(SRC / "taxonomy.yaml")
@@ -231,38 +306,13 @@ def main():
         if broader:
             children.setdefault(broader, []).append(c["id"])
 
-    OUT.mkdir(exist_ok=True)
+    print("Generating pages:")
+    render("public", OUT_PUBLIC, concepts, by_id, children, config)
+    render("internal", OUT_INTERNAL, concepts, by_id, children, config)
 
-    # Track which concepts are active (not retired) — only these get pages
-    active_concepts = [c for c in concepts if c.get("status", "active") != "retired"]
-    active_ids = {c["id"] for c in active_concepts}
-
-    # Clean up stale pages: remove .md files in OUT/ for concepts no longer active
-    for md_file in OUT.glob("*.md"):
-        if md_file.stem == "index":
-            continue
-        if md_file.stem not in active_ids:
-            md_file.unlink()
-
-    # Generate concept pages for active concepts only
-    for c in active_concepts:
-        page = generate_concept_page(c, by_id, children, config)
-        (OUT / f'{c["id"]}.md').write_text(page)
-
-    # Generate index (only with active categories)
-    index = generate_index(active_concepts, by_id, children, config)
-    (OUT / "index.md").write_text(index)
-
-    total_active = len(active_concepts)
-    cats = sum(1 for c in active_concepts if c["type"] == "category")
-    sgs = sum(1 for c in active_concepts if c["type"] == "subgroup")
-    subs = sum(1 for c in active_concepts if c["type"] == "subcategory")
     retired = sum(1 for c in concepts if c.get("status") == "retired")
-
-    print(f"Generated {total_active} concept pages + index in {OUT}/")
-    print(f"  {cats} categories, {sgs} sub-groups, {subs} subcategories")
     if retired:
-        print(f"  ({retired} concepts retired, not rendered)")
+        print(f"  ({retired} concepts retired, not rendered in either version)")
 
 
 if __name__ == "__main__":
