@@ -152,7 +152,7 @@ scheme:
 concepts:
 
   - id: bias-fairness
-    type: category          # category | subcategory | indicator
+    type: category          # category | subgroup | subcategory
     label: "Bias & Fairness"
     alt_labels:
       - "Fairness"
@@ -168,40 +168,49 @@ concepts:
       - pre-processing
       - in-processing
       - post-processing
-    status: core            # core | extended | emerging
+    maturity: established   # established | emerging
+    perspective: rights & ethics
+    status: active          # active | retired (default: active)
     mappings:
-      - target: "mit:domain-1"
+      - framework: mit
+        target_id: domain-1
+        target_label: "Discrimination & Toxicity"
         relation: closeMatch
-        label: "Discrimination & Toxicity"
-      - target: "nist600:harmful-bias"
+      - framework: dpv_ai
+        target_id: AIBias
+        target_label: "AI Bias"
+        target_url: https://w3c.github.io/dpv/2.3/ai/#AIBias
         relation: closeMatch
-        label: "Harmful Bias & Homogenization"
-      - target: "nist-trustworthy:fair"
-        relation: closeMatch
-        label: "Fair with Harmful Bias Managed"
-      - target: "dpv-ai:AIBias"
-        relation: broadMatch
-        label: "AI Bias"
 
-  - id: dataset-bias
+  - id: disparate-impact-protected-groups
     type: subcategory
-    broader: bias-fairness
-    label: "Dataset bias and under/over-representation"
+    broader: bias-outcome-disparities   # points to a sub-group, not the category
+    label: "Disparate impact on protected groups"
     definition: >
-      Training or evaluation data that does not adequately represent
-      all relevant population groups, leading to systematic performance
-      differences.
+      AI system outputs that produce systematically different outcomes
+      for individuals based on protected characteristics such as race,
+      gender, age, disability, or religion.
     scope: ALL
     lifecycle_stages:
-      - pre-processing
-    # ... mappings, etc.
+      - in-processing
+      - post-processing
+    operationalisation:
+      - id: dataset-bias
+        label: "Dataset bias and under/over-representation"
+        description: >
+          Training or evaluation data that does not adequately represent
+          all relevant population groups. Used as a mechanism to detect
+          and assess the parent risk, not as a risk in itself.
+    # ... mappings ...
 ```
 
 Key design decisions:
 
-- **One file for the taxonomy** — at this scale (~50–80 concepts), a single file is simpler than one-file-per-concept. If the taxonomy grows significantly, splitting by category is straightforward.
-- **Mappings in a separate file** — `mappings.yaml` defines the external framework prefixes and base URIs (e.g., `mit: https://airisk.mit.edu/domain/`, `nist600: https://taxonomy.eticas.ai/external/nist-ai-600-1/`). This keeps the main file clean and makes it easy to add new framework targets.
+- **One file for the taxonomy** — at this scale (~100 concepts), a single file is simpler than one-file-per-concept. If the taxonomy grows significantly, splitting by category is straightforward.
+- **Mappings in a separate file** — `mappings.yaml` defines the external framework definitions including a `type` field (`compliance` / `reference` / `taxonomy`) used to group rendered mappings on each concept page.
 - **Alt labels capture naming variations** — every name variant used across Eticas documents (e.g., "Reliability & Manipulation" for what the taxonomy calls "Reliability") is recorded as an `alt_label`, ensuring backward discoverability.
+- **Risks vs mechanisms** — concepts that describe how a risk is detected or measured (rather than the risk itself) live as `operationalisation` entries on the parent risk concept. This keeps the risk hierarchy clean and provides a hook for the methodology layer.
+- **Status field** — concepts no longer recognised as risks but kept for institutional memory carry `status: retired` plus a `retirement_note`. The pipeline filters them from all generated outputs.
 
 ## The build pipeline
 
@@ -252,7 +261,7 @@ layout: concept
 title: "Bias & Fairness"
 id: bias-fairness
 uri: https://taxonomy.eticas.ai/risk/bias-fairness
-status: core
+maturity: established
 scope: ALL
 ---
 
@@ -408,12 +417,12 @@ This is a significant decision — it changes what every audit must cover. The P
 
 As a category's definitions stabilise and assessment methods are tested in practice:
 
-1. Change `maturity: provisional` to `maturity: developing`, or `maturity: developing` to `maturity: established`
+1. Change `maturity: emerging` to `maturity: established`
 2. For promotion to established: ensure the definition is stable, subcategories are complete, and external mappings are in place
 3. Document the change in CHANGELOG.md
 4. Bump the minor version in `src/config.yaml`
 
-Maturity changes are independent of inclusion changes. A category can be audit-dependent and established (Environmental Impact), or required and developing (if the team decided a new risk area must always be assessed even before methods are fully proven).
+Maturity is now a single dimension with two values (`established`, `emerging`). The earlier `inclusion` dimension (whether a category is required or audit-dependent) was removed in v0.2 because in practice, what is assessed always depends on the engagement contract.
 
 ## Benefits of this approach
 

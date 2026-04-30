@@ -77,6 +77,36 @@ Usman proposed removing "broad match" / "close match" etc. from the public GitHu
 
 See [docs/v0.2-to-v0.3-mapping.md](docs/v0.2-to-v0.3-mapping.md) for the full list of items requiring work during implementation (definitions to update, new subcategory definitions, operationalisation field design, retired status implementation, external framework mappings review).
 
+### Phase 5 completion (May 2026)
+
+The full external framework mapping refresh was applied across four PRs, one per category cluster. The verification document at [docs/external-framework-mapping-verification.md](docs/external-framework-mapping-verification.md) — generated up front by reading each framework against the v0.3 structure — served as the working reference for the mappings applied.
+
+**Cumulative result:** 316 new mapping entries added across 70 active subcategories, 18 sub-groups, and 9 categories. Combined with the ~62 mappings retained from v0.2, the taxonomy now carries **378 total mapping entries** to 10 external frameworks.
+
+**Coverage by framework:**
+
+| Framework | Type | Mapping entries |
+|-----------|------|-----------------|
+| MIT AI Risk Repository V4 | taxonomy | 59 |
+| AIUC-1 | compliance | 52 |
+| EU AI Act (Reg. 2024/1689) | compliance | 48 |
+| ISO/IEC 42001:2023 | compliance | 46 |
+| NIST AI RMF (AI 100-1) | reference | 45 |
+| NIST AI 600-1 (GAI Profile) | reference | 41 |
+| W3C DPV v2.3 | taxonomy | 36 |
+| IBM AI Risk Atlas | taxonomy | 34 |
+| OECD AI Principles (2024) | reference | 19 |
+| AIR 2024 / AIR-Bench 2024 | taxonomy | 18 |
+
+**SKOS triples:** 1085 (post-restructuring) → 1615 (after Phase 5).
+
+**Decisions of note made during application:**
+- For each framework with a formal SKOS-resolvable namespace (only DPV at this time), `target_url` was added so the rendered pages produce clickable IRIs.
+- Where the verification document identified an `exactMatch`, the relation was applied as such only when the framework's own wording matched the Eticas concept verbatim or near-verbatim. Examples: `data-poisoning` ↔ DPV `ai:DataPoisoning`; `right-to-explanation-contestation` ↔ EU AI Act Art. 86; `homogenization-output-across-groups` ↔ NIST 600-1 #6 homogenization clause; `automation-bias` ↔ DPV `ai:AutomationBias`.
+- For `model-extraction`, DPV's nearest concept (`ai:ModelInversion`) was used as `closeMatch` rather than `exactMatch`, as DPV does not yet have a dedicated extraction class. IBM AI Risk Atlas does name "Extraction attack" explicitly, so that was used as `exactMatch`.
+- AIUC-1 weaknesses identified in the verification document were honoured rather than papered over: where AIUC-1 has no equivalent (notably for `bias-and-fairness` subcategories beyond customer-defined high-risk outputs, and for `environmental-impact`), the mappings were left absent, preserving the gap as visible information for clients evaluating AIUC-1 certification.
+- Five subcategories under `reliability-resilience` (graceful degradation, edge/offline operability, recovery capability, infrastructure dependency, contextual resilience) were left without subcategory-level mappings. They are emerging concepts originating in humanitarian and conflict-zone contexts, with no clean equivalents in the surveyed frameworks. The parent sub-group has its own mappings.
+
 ---
 
 ## v0.2.0 — Restructuring (April 2026)

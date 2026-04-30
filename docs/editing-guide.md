@@ -19,12 +19,19 @@ The key safety feature: **you never edit the live version directly.** You make c
 | `type` | `category`, `subgroup`, `subcategory` |
 | `scope` | `ALL`, `ADM`, `LLM` |
 | `maturity` | `established`, `emerging` |
+| `status` | `active` (default), `retired` |
 | `perspective` | `rights & ethics`, `technical soundness`, `governance & compliance`, `operational viability` |
 | `lifecycle_stages` | `pre-processing`, `in-processing`, `post-processing` |
+| `mappings[].relation` | `exactMatch`, `closeMatch`, `broadMatch`, `narrowMatch`, `relatedMatch` |
+| `mappings[].framework` | Must match a key under `frameworks:` in `src/mappings.yaml` |
+
+The `operationalisation` field is a list of mechanism descriptions attached to a parent risk concept (each entry has `id`, `label`, `description`). Use it when a v0.2 concept needs to be preserved as a method or indicator of a risk rather than as a risk in itself.
+
+The `status: retired` value is used for concepts kept in the YAML for institutional memory but no longer rendered as pages or included in public outputs. A `retirement_note` field is required alongside, explaining where the concept's content went.
 
 ### Parent concept ids
 
-**Categories:** `bias-fairness`, `privacy-confidentiality`, `reliability`, `governance`, `security-misuse`, `environmental-impact`, `transparency-explainability`, `incident-reporting-redress`, `autonomy-agency`, `organisational-readiness`
+**Categories:** `bias-fairness`, `privacy-confidentiality`, `reliability`, `governance`, `security-misuse`, `environmental-impact`, `transparency-explainability`, `autonomy-agency`, `organisational-readiness`
 
 **Sub-groups** (point your subcategory's `broader` to one of these if adding under a sub-group):
 See the relevant category page for the full list of sub-group ids.

@@ -16,23 +16,109 @@ Change types use the following categories, inspired by the [AIUC-1 changelog mod
 
 ---
 
-## [Unreleased]
+## [0.3.0] — 2026-05-01
+
+Refinement based on Usman's review (April 29, 2026) and Gemma's email-thread proposals. The structural simplification reduces categories from 10 to 9, introduces a separation between *risks* and the *mechanisms* through which they manifest, splits framework mappings into compliance / reference / taxonomy buckets, and dramatically expands the external framework mappings (316 new entries, 10 frameworks total). The full rationale for each structural decision is recorded in [TRACKER.md](TRACKER.md).
+
+### Summary
+
+- Categories: **10 → 9** (Incident Reporting & Redress dissolved into Governance and Transparency)
+- Sub-groups: **21 → 18**
+- Active subcategories: **77 → 70** (some retired or absorbed as operationalisation; new ones added)
+- Retired concepts: **0 → 20** (preserved with `status: retired` for institutional memory)
+- New `operationalisation` field on parent risks (mechanisms preserved, not retired)
+- New `status` field on every concept (`active` / `retired`)
+- Public/private split: filtered SKOS files for the public site (`taxonomy-public.ttl`, ~22 pages) alongside the full internal version (`taxonomy.ttl`, ~97 pages)
+- External framework mappings: **316 new entries** added; **10 total frameworks** (added AIUC-1, AIR 2024, IBM AI Risk Atlas; removed AIRO and VAIR after their incorporation into DPV v2.3)
+- Mappings now grouped on rendered pages by framework type (compliance / reference / taxonomy) per Gemma's request
 
 ### Structure
 
 | Change | Type | Affected concepts | Notes |
 |--------|------|-------------------|-------|
-| Introduced `references` field | Addition | All concepts | New YAML field for attaching papers, benchmarks, tools, and regulatory sources to any concept. Supports `label`, `url`, `type` (tool, benchmark, paper, regulation, etc.), `domain` (e.g., healthcare, finance), and free-text `note`. |
-| Added sub-group external framework mappings | Addition | 21 sub-groups | Mappings at the sub-group level (not just category-level) to NIST, EU AI Act, MIT, DPV, ISO, OECD where applicable. |
-| Simplified category pages | Revision | All categories with sub-groups | Category pages now list sub-groups only (not subcategories). Subcategories appear on their respective sub-group pages, reducing visual clutter and clarifying the three-level hierarchy. |
-| Made sub-group headings clickable | Revision | All categories with sub-groups | Sub-group names on the category page link to their own dedicated page (with definition, subcategories, and mappings). |
+| Restructured Bias & Fairness | Revision | bias-fairness | Three new sub-groups: Outcome disparities, Representational harm, Dynamic & Systemic bias. The previous sub-groups (Data & representation, Output quality, Performance disparities) were dissolved. Concepts that described mechanisms (dataset bias, proxy discrimination, allocation of opportunity, accessibility barriers, intersectional unfairness, quality of service disparity) are preserved as `operationalisation` entries on `disparate-impact-protected-groups` and `performance-equity` rather than as standalone subcategories |
+| Added `homogenization-output-across-groups` subcategory | Addition | bias-representational-harm | New subcategory under Representational harm. ExactMatch with NIST 600-1 #6 homogenization clause |
+| Dissolved Incident Reporting & Redress | Retired | incident-reporting-redress | The category and its three subcategories (`absence-of-appeal`, `ineffective-communication`, `unclear-remediation`) are dissolved. The first two are absorbed into the new `right-to-explanation-contestation` subcategory under Transparency; `unclear-remediation` becomes an operationalisation of `failure-remediation-gaps` under Governance / Compliance & process. EU AI Act Art. 73 obligations on serious incident reporting are now covered by `incident-response-gaps` under Governance |
+| Restructured Reliability | Revision | reliability | Two active sub-groups (Output quality, Resilience). Monitoring & remediation moved entirely to Governance / Compliance & process. Manipulation & misinformation moved to Security & Misuse / Harmful Misuse |
+| Dissolved Governance / Data & oversight | Retired | governance-data-oversight | `human-oversight-control` moved to Governance / Accountability; `data-governance` moved to Governance / Compliance & process. Oversight is fundamentally an accountability concern; data governance fits cleanly under compliance |
+| Restructured Security & Misuse | Revision | security-misuse | New "Harmful Misuse" sub-group introduced, absorbing `behavioural-manipulation`, `synthetic-media-abuse`, and `misuse-beyond-intended-purpose`. Security operational sub-group dissolved. AI-specific attacks expanded with `model-extraction` and `data-poisoning` |
+| Added `right-to-explanation-contestation` | Addition | transparency-explainability-group | New subcategory absorbing the dissolved Incident Reporting concepts. ExactMatch with EU AI Act Art. 86 |
+| Renamed `transparency-explainability-group` content | Revision | system-explainability, prompt-transparency | `prompt-transparency` retired as standalone subcategory and preserved as `operationalisation` of `system-explainability` |
+| Renamed `transparency-communication` content | Revision | stakeholder-communication, model-card-completeness | `model-card-completeness` retired as standalone subcategory and preserved as `operationalisation` of `poor-documentation` (Governance / Documentation) |
 
-### References added
+### New fields
 
-| Concept | Reference | Type |
-|---------|-----------|------|
-| `privacy-model-level` | [OpenAI Privacy Filter](https://github.com/openai/privacy-filter) | Tool |
-| `reliability` | [HealthBench Professional (OpenAI, 2025)](https://cdn.openai.com/dd128428-0184-4e25-b155-3a7686c7d744/HealthBench-Professional.pdf) | Benchmark (healthcare domain) |
+| Field | Purpose | Notes |
+|-------|---------|-------|
+| `status` | Lifecycle of a concept (`active` / `retired`) | Retired concepts remain in the YAML for institutional memory but do not generate pages or appear in public outputs |
+| `operationalisation` | List of mechanisms, indicators, or aids used to assess a parent risk | Each entry has `id`, `label`, and `description`. Used to preserve concepts that describe *causes* rather than risks themselves (dataset bias, proxy discrimination, etc.) without losing them from the YAML. Will eventually carry metrics, methods, and evidence pointers (Gemma's proposed methodology layer) |
+| `retirement_note` | Free-text explanation of why a concept was retired and where its content went | Required when `status: retired` |
+| `type` (in `mappings.yaml`) | Framework classification (`compliance` / `reference` / `taxonomy`) | Used for grouped rendering on pages and for separating compliance obligations from methodological references |
+
+### Pipeline
+
+| Change | Type | Notes |
+|--------|------|-------|
+| Public/private filter | Addition | `convert.py` and `generate_pages.py` now produce two outputs: a full internal version (`taxonomy.ttl`, all categories + sub-groups + subcategories, all maturities) and a filtered public version (`taxonomy-public.ttl`, only categories and sub-groups, only `established` maturity). Two parallel directories (`risk/` and `risk-internal/`) are generated |
+| Match types removed from public pages | Revision | The `Relationship` column showing exactMatch / closeMatch / etc. is now hidden from public pages. Preserved on internal pages and in SKOS output for internal use |
+| Mapping tables grouped by framework type | Addition | On every concept page, mappings are now rendered in three sections: Compliance, Reference frameworks, Taxonomies & vocabularies. The grouping is driven by the `type` field on each framework definition in `mappings.yaml` |
+| Framework reference validation | Addition | `check_yaml.py` now validates that every `framework:` value in mapping entries refers to a framework actually defined in `mappings.yaml` |
+
+### External framework mappings
+
+| Change | Type | Notes |
+|--------|------|-------|
+| Added AIUC-1 | Addition | Q2-2026 release of the AI Underwriting Company Standard. Six domains (A. Data & Privacy, B. Security, C. Safety, D. Reliability, E. Accountability, F. Society) and ~55 controls. Classified as `compliance` |
+| Added AIR 2024 / AIR-Bench 2024 | Addition | Zeng et al. academic taxonomy. Four Level-1 categories, 16 Level-2, 45 Level-3, and 314 Level-4 risks derived from 8 government regulations and 16 corporate policies. Classified as `taxonomy` |
+| Added IBM AI Risk Atlas | Addition | Lifecycle-based vendor taxonomy (Input / Inference / Output / Non-technical). Classified as `taxonomy` |
+| Removed AIRO | Retired | No Eticas concept ever mapped to AIRO directly. The vocabulary was formally incorporated into W3C DPV v2.3 (February 2026); future mappings should target `dpv_ai` |
+| Removed VAIR | Retired | Same rationale as AIRO. The standalone URIs remain resolvable for citation |
+| 316 new mapping entries applied | Addition | Across 70 active subcategories, 18 sub-groups, and 9 categories. Driven by the verification document at [docs/external-framework-mapping-verification.md](docs/external-framework-mapping-verification.md) |
+
+**Notable exact matches added:**
+
+| Eticas concept | Framework | Concept |
+|----------------|-----------|---------|
+| `right-to-explanation-contestation` | EU AI Act | Article 86 — Right to explanation of individual decision-making |
+| `right-to-explanation-contestation` | DPV | `dpv:RightToExplanation` |
+| `data-poisoning` | DPV | `ai:DataPoisoning` |
+| `data-poisoning` | EU AI Act | Recital 76 — data poisoning (cybersecurity) |
+| `data-poisoning` | IBM AI Risk Atlas | Input → Data poisoning |
+| `model-extraction` | IBM AI Risk Atlas | Inference → Extraction attack |
+| `homogenization-output-across-groups` | NIST AI 600-1 | #6 Harmful Bias or Homogenization (homogenization clause) |
+| `human-oversight-control` | EU AI Act | Article 14 — Human oversight |
+| `ai-interaction-disclosure` | EU AI Act | Article 50 — Transparency obligations for AI interacting with natural persons |
+| `incident-response-gaps` | EU AI Act | Article 73 — Reporting of serious incidents |
+| `pii-leakage` | DPV | `ai:UnauthorisedDataDisclosure` (closeMatch); IBM Output→Personal information (exactMatch); AIUC-1 A.6 (exactMatch); MIT 2.1 (exactMatch); AIR Privacy×PII (exactMatch) |
+| `hallucination` | NIST AI 600-1 | #2 Confabulation; IBM hallucination; AIUC-1 D.1+D.2 |
+| `automation-bias` | DPV | `ai:AutomationBias` |
+| `over-reliance` | MIT | Subdomain 5.1 — Overreliance and unsafe use |
+| `loss-of-human-control` | MIT | Subdomain 5.2 — Loss of human agency and autonomy |
+| `prompt-injection` | DPV | `ai:PromptInjection` |
+| `adversarial-attacks` | DPV | `ai:AdversarialAttack` |
+| `behavioural-manipulation` | EU AI Act | Article 5(1)(a) — subliminal/manipulative techniques (prohibited) |
+| `re-identification` | DPV | `risk:Reidentification` |
+| `membership-inference` | DPV | `ai:MembershipInferenceAttack` |
+| `environmental-impact` (category) | MIT, NIST 600-1, OECD, IBM | All four exactMatch — best-aligned category in the taxonomy |
+| `organisational-readiness` (category) | ISO 42001 | A.4.2 Resources + A.4.3 Tooling + A.3 Internal organization |
+| `transparency-explainability` (category) | ISO 42001 | A.8 Information for interested parties + A.6.2.8 documentation |
+| `transparency-explainability` (category) | IBM AI Risk Atlas | Output → Explainability + Non-technical → Transparency |
+| `governance` (category) | ISO 42001 | A.2 Policies + A.3 Internal organization |
+| `governance` (category) | IBM AI Risk Atlas | Non-technical → Governance dimension |
+| `privacy-confidentiality` (category) | AIUC-1 | A — Data & Privacy domain |
+| `reliability` (category) | AIUC-1 | D — Reliability domain |
+
+**SKOS triples:** 1085 (post-restructuring) → 1615 (after full mapping refresh).
+
+### Documentation
+
+| Change | Type | Notes |
+|--------|------|-------|
+| Added `docs/external-framework-mapping-verification.md` | Addition | Complete framework-by-framework verification and mapping research generated up front. Records the reasoning behind every mapping decision applied during Phase 5 |
+| Added `docs/v0.2-to-v0.3-mapping.md` | Addition | Concept-by-concept mapping showing where every v0.2 entity moved to in v0.3 (kept, renamed, retired, absorbed, preserved as operationalisation) |
+| Updated `docs/external-framework-alignment.md` | Revision | Updated category alignment table to reflect 9-category structure; added AIUC-1, AIR 2024, IBM AI Risk Atlas; corrected and expanded the gaps section based on Phase 5 verification findings |
+| Updated `README.md`, `TAXONOMY.md` | Revision | Version bumped to 0.3.0; counts and category lists refreshed; AIUC-1, AIR 2024, IBM Risk Atlas listed as alignment targets |
+| Updated `TRACKER.md` | Addition | Phase 5 completion section added with cumulative mapping statistics by framework and notes on application decisions |
 
 ---
 

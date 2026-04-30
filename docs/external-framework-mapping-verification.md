@@ -1,8 +1,8 @@
 # Framework Mapping Verification — Eticas AI Risk Taxonomy v0.3
 
-This document records the verification and expansion of the external framework mappings for the v0.3 restructuring. It serves as the working reference for refining mappings in the YAML and as the input for review with the methodology team. Mapping decisions captured here will be applied to `src/taxonomy.yaml` and `src/mappings.yaml` during Phase 5.
+This document records the verification and expansion of the external framework mappings carried out for the v0.3 restructuring. It served as the working reference for the mappings applied to `src/taxonomy.yaml` during Phase 5 of the v0.3 implementation.
 
-> **Status:** First draft (April 2026), based on automated research with sources cited inline. Pending validation by the methodology team. Mappings should be considered tentative until validated.
+> **Status:** Applied (May 2026). The mappings catalogued here were applied to the YAML across four pull requests (one per category cluster) and merged into v0.3.0. The document is preserved as the research record behind each mapping decision; minor adjustments were made during application where framework wording warranted a different relation type. For the cumulative result of the work and the per-framework mapping counts, see [TRACKER.md](../TRACKER.md). For the changelog summary, see [CHANGELOG.md](../CHANGELOG.md).
 
 ## Methodology
 
