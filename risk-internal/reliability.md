@@ -28,14 +28,21 @@ The risk that an AI system produces false, fabricated, or misleading outputs (ha
 
 ## Mappings to external frameworks
 
+### Reference frameworks
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of capability or robustness | close match |
-| [MIT AI Risk Repository](https://airisk.mit.edu) | Misinformation | broad match |
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Confabulation | close match |
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Information Integrity | broad match |
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | Valid & Reliable | close match |
 | [OECD AI Principles](https://oecd.ai) | Robustness, security & safety | broad match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Lack of capability or robustness | close match |
+| [MIT AI Risk Repository](https://airisk.mit.edu) | Misinformation | broad match |
 
 ## References
 

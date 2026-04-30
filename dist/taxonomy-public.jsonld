@@ -1,84 +1,37 @@
 [
   {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/2",
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/information-security",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Confabulation"
+        "@value": "Information Security"
       }
     ]
   },
   {
-    "@id": "https://taxonomy.eticas.ai/risk/bias-representational-harm",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/bias-fairness"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks related to how the system represents groups in its outputs — through stereotypes, toxic content, skewed representation, or homogenization. These are harms in the form of meaning and content rather than allocation of resources or opportunities."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/govern-function",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Representational harm"
+        "@value": "GOVERN function"
       }
     ]
   },
   {
-    "@id": "https://taxonomy.eticas.ai/risk/bias-dynamic-systemic-bias",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/bias-fairness"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks related to how bias is amplified or perpetuated over time through interaction between AI systems and the social systems they operate in."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/fair",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Dynamic & Systemic bias"
+        "@value": "Fair with Harmful Bias Managed"
       }
     ]
   },
   {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/explainable",
+    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.4",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Explainable & Interpretable"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.7",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data management"
+        "@value": "Robustness, security & safety"
       }
     ]
   },
@@ -177,29 +130,457 @@
     ]
   },
   {
-    "@id": "https://airisk.mit.edu/domain/subdomain-7.3",
+    "@id": "https://taxonomy.eticas.ai/risk/privacy-collection-use",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/privacy-confidentiality"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://w3id.org/dpv/ai#PersonalDataCollection"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks from how personal data is collected, processed, and repurposed."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Lack of capability or robustness"
+        "@value": "Data collection & use"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/aiact#article-5"
       }
     ]
   },
   {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/valid-reliable",
+    "@id": "https://w3id.org/dpv/ai#AIBias",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Valid & Reliable"
+        "@value": "AI Bias"
       }
     ]
   },
   {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/harmful-bias",
+    "@id": "https://airisk.mit.edu/domain/domain-3",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Harmful Bias & Homogenization"
+        "@value": "Misinformation"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.8",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Assessing impacts of AI systems"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/data-privacy",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Privacy"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/privacy-data-protection",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/privacy-confidentiality"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/4"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks related to safeguards for stored and processed personal data."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data protection"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
+      {
+        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.7"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/ai#SecurityAttack",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Security Attack"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/value-chain",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Value Chain & Component Integration"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/privacy-enhanced",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Privacy-Enhanced"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.7",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data management"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/aiact#article-11",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Article 11 — Technical documentation"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/governance",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@language": "en",
+        "@value": "Accountability"
+      },
+      {
+        "@language": "en",
+        "@value": "Governance & Accountability"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broadMatch": [
+      {
+        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.2-A.4"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://airisk.mit.edu/domain/subdomain-6.5"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/accountable-transparent"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.5"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The risk that an AI system lacks adequate structures, policies, or accountability mechanisms to oversee its design, deployment, and use. Weak governance can lead to unclear responsibilities, poor documentation, limited auditability, and failure to align with legal, ethical, or organizational standards."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/governance-accountability"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/governance-documentation"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/governance-compliance"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Governance"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/value-chain"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "https://taxonomy.eticas.ai/ontology/lifecycleStage": [
+      {
+        "@value": "pre-processing"
+      },
+      {
+        "@value": "in-processing"
+      },
+      {
+        "@value": "post-processing"
+      }
+    ],
+    "https://taxonomy.eticas.ai/ontology/maturity": [
+      {
+        "@value": "established"
+      }
+    ],
+    "https://taxonomy.eticas.ai/ontology/perspective": [
+      {
+        "@value": "governance & compliance"
+      }
+    ],
+    "https://taxonomy.eticas.ai/ontology/scope": [
+      {
+        "@value": "ALL"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/ai#Transparency",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Transparency"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/governance-documentation",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/governance"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.4"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/aiact#article-11"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks from incomplete, inaccessible, or absent documentation and audit trails."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Documentation & auditability"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/bias-outcome-disparities",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/bias-fairness"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks related to unequal treatment, allocation, or performance outcomes across demographic and protected groups. These are observable differences in what the system does to or for different groups."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Outcome disparities"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/governance-accountability",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broadMatch": [
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/govern-function"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/governance"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.5"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks from unclear allocation of responsibility, weak human oversight, and inadequate attribution mechanisms for AI system decisions and their adverse impacts."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Accountability"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/reliability",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@language": "en",
+        "@value": "Reliability & Manipulation"
+      },
+      {
+        "@language": "en",
+        "@value": "Validity and Reliability"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broadMatch": [
+      {
+        "@id": "https://airisk.mit.edu/domain/domain-3"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/8"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/external/oecd-ai/robustness"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://airisk.mit.edu/domain/subdomain-7.3"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/2"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/valid-reliable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The risk that an AI system produces false, fabricated, or misleading outputs (hallucinations), spreads inaccurate or deceptive information (misinformation), or delivers inconsistent results across similar inputs and contexts. Such failures undermine trust, reduce system dependability, and can lead to harmful or misguided decisions."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/reliability-output-quality"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Reliability"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "https://taxonomy.eticas.ai/ontology/lifecycleStage": [
+      {
+        "@value": "pre-processing"
+      },
+      {
+        "@value": "in-processing"
+      },
+      {
+        "@value": "post-processing"
+      }
+    ],
+    "https://taxonomy.eticas.ai/ontology/maturity": [
+      {
+        "@value": "established"
+      }
+    ],
+    "https://taxonomy.eticas.ai/ontology/perspective": [
+      {
+        "@value": "technical soundness"
+      }
+    ],
+    "https://taxonomy.eticas.ai/ontology/scope": [
+      {
+        "@value": "ALL"
       }
     ]
   },
@@ -260,182 +641,11 @@
     ]
   },
   {
-    "@id": "https://taxonomy.eticas.ai/risk/security-system",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/security-misuse"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/9"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks related to access control and integrity of the AI system and its supply chain."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
+    "@id": "https://airisk.mit.edu/domain/domain-1",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "System security"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.6.2.3"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/governance-accountability",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broadMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/govern-function"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/governance"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.5"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks from unclear allocation of responsibility, weak human oversight, and inadequate attribution mechanisms for AI system decisions and their adverse impacts."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Accountability"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/transparency-communication",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/transparency-explainability"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/aiact#article-13"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.3"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks from inadequate communication about system capabilities, limitations, and AI involvement."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Communication & disclosure"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.2-A.4",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "AI Policy, Internal Organisation, Resources"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/security-harmful-misuse",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/security-misuse"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks from deliberate misuse of the AI system to generate harmful content, manipulate users, or operate beyond its intended purpose. These risks involve human intent — distinguishing them from unintentional system failures (which belong under Reliability)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Harmful Misuse"
-      }
-    ]
-  },
-  {
-    "@id": "https://airisk.mit.edu/domain/subdomain-2.2",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "AI system security vulnerabilities & attacks"
-      },
-      {
-        "@language": "en",
-        "@value": "AI system security vulnerabilities and attacks"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.2",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Human rights, rule of law, fairness & privacy"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/ai#PersonalDataCollection",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Personal Data Handling"
+        "@value": "Discrimination & Toxicity"
       }
     ]
   },
@@ -449,80 +659,6 @@
       {
         "@language": "en",
         "@value": "Transparency and explainability"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/privacy-data-protection",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/privacy-confidentiality"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/4"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks related to safeguards for stored and processed personal data."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data protection"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.7"
-      }
-    ]
-  },
-  {
-    "@id": "https://airisk.mit.edu/domain/domain-4",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Malicious Actors & Misuse"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.1",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Inclusive growth, sustainable development & well-being"
-      }
-    ]
-  },
-  {
-    "@id": "https://airisk.mit.edu/domain/subdomain-6.5",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Governance failure"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/aiact#article-13",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Article 13 — Transparency and provision of information to deployers"
       }
     ]
   },
@@ -628,6 +764,74 @@
     ]
   },
   {
+    "@id": "https://taxonomy.eticas.ai/risk/bias-dynamic-systemic-bias",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/bias-fairness"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks related to how bias is amplified or perpetuated over time through interaction between AI systems and the social systems they operate in."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Dynamic & Systemic bias"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.4",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Documentation and records"
+      }
+    ]
+  },
+  {
+    "@id": "https://airisk.mit.edu/domain/subdomain-6.6",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Environmental harm"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/9",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Information Security"
+      }
+    ]
+  },
+  {
+    "@id": "https://airisk.mit.edu/domain/subdomain-2.1",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Compromise of privacy"
+      },
+      {
+        "@language": "en",
+        "@value": "Compromise of privacy by obtaining, leaking or inferring sensitive information"
+      }
+    ]
+  },
+  {
     "@id": "https://taxonomy.eticas.ai/risk/environmental-impact",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
@@ -705,324 +909,11 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/ai#PersonalDataHandling",
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/valid-reliable",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Personal Data Handling"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/governance",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#altLabel": [
-      {
-        "@language": "en",
-        "@value": "Accountability"
-      },
-      {
-        "@language": "en",
-        "@value": "Governance & Accountability"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broadMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.2-A.4"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "https://airisk.mit.edu/domain/subdomain-6.5"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/accountable-transparent"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.5"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The risk that an AI system lacks adequate structures, policies, or accountability mechanisms to oversee its design, deployment, and use. Weak governance can lead to unclear responsibilities, poor documentation, limited auditability, and failure to align with legal, ethical, or organizational standards."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/governance-accountability"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/governance-documentation"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/governance-compliance"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Governance"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/value-chain"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "https://taxonomy.eticas.ai/ontology/lifecycleStage": [
-      {
-        "@value": "pre-processing"
-      },
-      {
-        "@value": "in-processing"
-      },
-      {
-        "@value": "post-processing"
-      }
-    ],
-    "https://taxonomy.eticas.ai/ontology/maturity": [
-      {
-        "@value": "established"
-      }
-    ],
-    "https://taxonomy.eticas.ai/ontology/perspective": [
-      {
-        "@value": "governance & compliance"
-      }
-    ],
-    "https://taxonomy.eticas.ai/ontology/scope": [
-      {
-        "@value": "ALL"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/privacy-enhanced",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Privacy-Enhanced"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/reliability-output-quality",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/reliability"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/2"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/valid-reliable"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks related to the correctness, consistency, and robustness of system outputs."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Output quality"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/ai#SecurityAttack",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Security Attack"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/aiact#article-17",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Article 17 — Quality management system"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.4",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Robustness, security & safety"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/fair",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Fair with Harmful Bias Managed"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/environmental",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Environmental Impacts"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/reliability",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#altLabel": [
-      {
-        "@language": "en",
-        "@value": "Reliability & Manipulation"
-      },
-      {
-        "@language": "en",
-        "@value": "Validity and Reliability"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broadMatch": [
-      {
-        "@id": "https://airisk.mit.edu/domain/domain-3"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/8"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/external/oecd-ai/robustness"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "https://airisk.mit.edu/domain/subdomain-7.3"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/2"
-      },
-      {
-        "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/valid-reliable"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The risk that an AI system produces false, fabricated, or misleading outputs (hallucinations), spreads inaccurate or deceptive information (misinformation), or delivers inconsistent results across similar inputs and contexts. Such failures undermine trust, reduce system dependability, and can lead to harmful or misguided decisions."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/reliability-output-quality"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Reliability"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#topConceptOf": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "https://taxonomy.eticas.ai/ontology/lifecycleStage": [
-      {
-        "@value": "pre-processing"
-      },
-      {
-        "@value": "in-processing"
-      },
-      {
-        "@value": "post-processing"
-      }
-    ],
-    "https://taxonomy.eticas.ai/ontology/maturity": [
-      {
-        "@value": "established"
-      }
-    ],
-    "https://taxonomy.eticas.ai/ontology/perspective": [
-      {
-        "@value": "technical soundness"
-      }
-    ],
-    "https://taxonomy.eticas.ai/ontology/scope": [
-      {
-        "@value": "ALL"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/privacy-model-level",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/privacy-confidentiality"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "https://airisk.mit.edu/domain/subdomain-2.1"
-      },
-      {
-        "@id": "https://w3id.org/dpv/ai#MembershipInferenceAttack"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks from AI models leaking or exposing private information through their outputs or structure."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Model-level privacy"
+        "@value": "Valid & Reliable"
       }
     ]
   },
@@ -1115,74 +1006,38 @@
     ]
   },
   {
-    "@id": "https://airisk.mit.edu/domain/domain-1",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Discrimination & Toxicity"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.5",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Accountability"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/governance-documentation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/governance"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.4"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/aiact#article-11"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks from incomplete, inaccessible, or absent documentation and audit trails."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Documentation & auditability"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.4",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Documentation and records"
-      }
-    ]
-  },
-  {
     "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/4",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
         "@value": "Data Privacy"
+      }
+    ]
+  },
+  {
+    "@id": "https://airisk.mit.edu/domain/subdomain-7.4",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Lack of transparency or interpretability"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/harmful-bias",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Harmful Bias & Homogenization"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/explainable-interpretable",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Explainable & Interpretable"
       }
     ]
   },
@@ -1196,27 +1051,24 @@
     ]
   },
   {
-    "@id": "https://taxonomy.eticas.ai/risk/security-ai-attacks",
+    "@id": "https://taxonomy.eticas.ai/risk/governance-compliance",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
+    "http://www.w3.org/2004/02/skos/core#broadMatch": [
       {
-        "@id": "https://taxonomy.eticas.ai/risk/security-misuse"
+        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.9.3"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/ai#SecurityAttack"
-      },
-      {
-        "@id": "https://airisk.mit.edu/domain/subdomain-2.2"
+        "@id": "https://taxonomy.eticas.ai/risk/governance"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Attack vectors specific to AI systems that exploit model behaviour or training processes."
+        "@value": "Risks from gaps in organisational processes for ongoing oversight, compliance, and lifecycle management of AI systems — including regulatory compliance, change management, data governance, monitoring and evaluation, remediation of failures, and incident response."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1227,25 +1079,12 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "AI-specific attacks"
+        "@value": "Compliance & process"
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/aiact#article-11",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+    ],
+    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
       {
-        "@language": "en",
-        "@value": "Article 11 — Technical documentation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/ai#AIBias",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "AI Bias"
+        "@id": "https://w3id.org/dpv/legal/eu/aiact#article-17"
       }
     ]
   },
@@ -1286,20 +1125,11 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/ai#Transparency",
+    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.2-A.4",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Transparency"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/robustness",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Robustness, security & safety"
+        "@value": "AI Policy, Internal Organisation, Resources"
       }
     ]
   },
@@ -1313,20 +1143,47 @@
     ]
   },
   {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/explainable-interpretable",
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/2",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Explainable & Interpretable"
+        "@value": "Confabulation"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/ai#MembershipInferenceAttack",
+    "@id": "https://airisk.mit.edu/domain/subdomain-6.5",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Membership Inference Attack"
+        "@value": "Governance failure"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.5",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Accountability"
+      }
+    ]
+  },
+  {
+    "@id": "https://airisk.mit.edu/domain/domain-4",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Malicious Actors & Misuse"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.1",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Inclusive growth, sustainable development & well-being"
       }
     ]
   },
@@ -1434,184 +1291,27 @@
     ]
   },
   {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/9",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Information Security"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.6.2.3",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "AI system technical documentation and information security"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/information-security",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Information Security"
-      }
-    ]
-  },
-  {
-    "@id": "https://airisk.mit.edu/domain/domain-3",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Misinformation"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.8",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Assessing impacts of AI systems"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/govern-function",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "GOVERN function"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/data-privacy",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Privacy"
-      }
-    ]
-  },
-  {
-    "@id": "https://airisk.mit.edu/domain/subdomain-2.1",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Compromise of privacy"
-      },
-      {
-        "@language": "en",
-        "@value": "Compromise of privacy by obtaining, leaking or inferring sensitive information"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.9.3",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Processes for responsible development and use"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/governance-compliance",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broadMatch": [
-      {
-        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.9.3"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/governance"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks from gaps in organisational processes for ongoing oversight, compliance, and lifecycle management of AI systems — including regulatory compliance, change management, data governance, monitoring and evaluation, remediation of failures, and incident response."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Compliance & process"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#relatedMatch": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/aiact#article-17"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/value-chain",
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Value Chain & Component Integration"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/bias-outcome-disparities",
+    "@id": "https://taxonomy.eticas.ai/risk/security-ai-attacks",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://taxonomy.eticas.ai/risk/bias-fairness"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Risks related to unequal treatment, allocation, or performance outcomes across demographic and protected groups. These are observable differences in what the system does to or for different groups."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/scheme"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Outcome disparities"
-      }
-    ]
-  },
-  {
-    "@id": "https://taxonomy.eticas.ai/risk/privacy-collection-use",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://taxonomy.eticas.ai/risk/privacy-confidentiality"
+        "@id": "https://taxonomy.eticas.ai/risk/security-misuse"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#closeMatch": [
       {
-        "@id": "https://w3id.org/dpv/ai#PersonalDataCollection"
+        "@id": "https://w3id.org/dpv/ai#SecurityAttack"
+      },
+      {
+        "@id": "https://airisk.mit.edu/domain/subdomain-2.2"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Risks from how personal data is collected, processed, and repurposed."
+        "@value": "Attack vectors specific to AI systems that exploit model behaviour or training processes."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1622,12 +1322,108 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data collection & use"
+        "@value": "AI-specific attacks"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/reliability-output-quality",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/reliability"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/2"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/valid-reliable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks related to the correctness, consistency, and robustness of system outputs."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Output quality"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/security-system",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/security-misuse"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/9"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks related to access control and integrity of the AI system and its supply chain."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "System security"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#relatedMatch": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/aiact#article-5"
+        "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.6.2.3"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/aiact#article-13",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Article 13 — Transparency and provision of information to deployers"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-600-1/environmental",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Environmental Impacts"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/ai#PersonalDataCollection",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Personal Data Handling"
       }
     ]
   },
@@ -1641,20 +1437,166 @@
     ]
   },
   {
-    "@id": "https://airisk.mit.edu/domain/subdomain-7.4",
+    "@id": "https://taxonomy.eticas.ai/risk/privacy-model-level",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/privacy-confidentiality"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://airisk.mit.edu/domain/subdomain-2.1"
+      },
+      {
+        "@id": "https://w3id.org/dpv/ai#MembershipInferenceAttack"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks from AI models leaking or exposing private information through their outputs or structure."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Lack of transparency or interpretability"
+        "@value": "Model-level privacy"
       }
     ]
   },
   {
-    "@id": "https://airisk.mit.edu/domain/subdomain-6.6",
+    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/robustness",
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Environmental harm"
+        "@value": "Robustness, security & safety"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/aiact#article-17",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Article 17 — Quality management system"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.2",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Human rights, rule of law, fairness & privacy"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/ai#PersonalDataHandling",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Personal Data Handling"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/security-harmful-misuse",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/security-misuse"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks from deliberate misuse of the AI system to generate harmful content, manipulate users, or operate beyond its intended purpose. These risks involve human intent — distinguishing them from unintentional system failures (which belong under Reliability)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Harmful Misuse"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/ai#MembershipInferenceAttack",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Membership Inference Attack"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.9.3",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Processes for responsible development and use"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/bias-representational-harm",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/bias-fairness"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks related to how the system represents groups in its outputs — through stereotypes, toxic content, skewed representation, or homogenization. These are harms in the form of meaning and content rather than allocation of resources or opportunities."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Representational harm"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/iso-42001/A.6.2.3",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "AI system technical documentation and information security"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/external/nist-ai-rmf/explainable",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Explainable & Interpretable"
       }
     ]
   },
@@ -1664,6 +1606,64 @@
       {
         "@language": "en",
         "@value": "Information Integrity"
+      }
+    ]
+  },
+  {
+    "@id": "https://airisk.mit.edu/domain/subdomain-7.3",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Lack of capability or robustness"
+      }
+    ]
+  },
+  {
+    "@id": "https://taxonomy.eticas.ai/risk/transparency-communication",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/transparency-explainability"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/aiact#article-13"
+      },
+      {
+        "@id": "https://taxonomy.eticas.ai/external/oecd-ai/principle-1.3"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Risks from inadequate communication about system capabilities, limitations, and AI involvement."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://taxonomy.eticas.ai/risk/scheme"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Communication & disclosure"
+      }
+    ]
+  },
+  {
+    "@id": "https://airisk.mit.edu/domain/subdomain-2.2",
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "AI system security vulnerabilities & attacks"
+      },
+      {
+        "@language": "en",
+        "@value": "AI system security vulnerabilities and attacks"
       }
     ]
   }

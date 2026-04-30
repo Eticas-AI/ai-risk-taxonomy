@@ -21,7 +21,14 @@ Risks related to safeguards for stored and processed personal data.
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Data management | related match |
+
+### Reference frameworks
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Data Privacy | close match |
-| [ISO/IEC 42001:2023 — AI Management System](https://www.iso.org/standard/42001) | Data management | related match |

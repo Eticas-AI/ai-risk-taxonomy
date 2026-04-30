@@ -26,6 +26,8 @@ The AI system performs systematically worse for some demographic groups than oth
 
 ## Mappings to external frameworks
 
+### Taxonomies & vocabularies
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Unequal performance across groups | close match |

@@ -23,6 +23,8 @@ Risks related to the correctness, consistency, and robustness of system outputs.
 
 ## Mappings to external frameworks
 
+### Reference frameworks
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Confabulation | close match |

@@ -23,7 +23,14 @@ Risks from how personal data is collected, processed, and repurposed.
 
 ## Mappings to external frameworks
 
+### Compliance
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
+| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 5 — Prohibited AI practices (emotion recognition, biometric categorization) | related match |
+
+### Taxonomies & vocabularies
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [W3C Data Privacy Vocabulary — AI Extension](https://w3c.github.io/dpv/2.3/ai/) | [Personal Data Handling](https://w3c.github.io/dpv/2.3/ai/#PersonalDataHandling) | close match |
-| [EU AI Act (Regulation 2024/1689)](https://artificialintelligenceact.eu) | Article 5 — Prohibited AI practices (emotion recognition, biometric categorization) | related match |

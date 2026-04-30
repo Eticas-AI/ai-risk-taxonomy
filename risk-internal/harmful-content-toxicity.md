@@ -26,9 +26,16 @@ Offensive, hateful, or otherwise harmful outputs that damage user well-being and
 
 ## Mappings to external frameworks
 
+### Reference frameworks
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI 600-1 — Generative AI Risk Profile](https://doi.org/10.6028/NIST.AI.600-1) | Dangerous, Violent, or Hateful Content | close match |
+
+### Taxonomies & vocabularies
+
+| Framework | Concept | Relationship |
+|-----------|---------|-------------|
 | [MIT AI Risk Repository](https://airisk.mit.edu) | Exposure to toxic content | close match |
 
 *Source: HRA project taxonomy*

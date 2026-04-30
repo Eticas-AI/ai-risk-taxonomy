@@ -23,6 +23,8 @@ Risks from unclear allocation of responsibility, weak human oversight, and inade
 
 ## Mappings to external frameworks
 
+### Reference frameworks
+
 | Framework | Concept | Relationship |
 |-----------|---------|-------------|
 | [NIST AI Risk Management Framework (AI 100-1)](https://www.nist.gov/itl/ai-risk-management-framework) | GOVERN function | broad match |
