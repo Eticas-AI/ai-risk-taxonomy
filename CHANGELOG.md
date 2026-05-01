@@ -18,7 +18,7 @@ Change types use the following categories, inspired by the [AIUC-1 changelog mod
 
 ## [0.3.0] — 2026-05-01
 
-Refinement based on Usman's review (April 29, 2026) and Gemma's email-thread proposals. The structural simplification reduces categories from 10 to 9, introduces a separation between *risks* and the *mechanisms* through which they manifest, splits framework mappings into compliance / reference / taxonomy buckets, and dramatically expands the external framework mappings (316 new entries, 10 frameworks total). The full rationale for each structural decision is recorded in [TRACKER.md](TRACKER.md).
+Refinement based on Usman's review (April 29, 2026) and Gemma's proposals. The structural simplification reduces categories from 10 to 9, introduces a separation between *risks* and the *mechanisms* through which they manifest, splits framework mappings into compliance / reference / taxonomy buckets, and dramatically expands the external framework mappings (316 new entries, 10 frameworks total). The full rationale for each structural decision is recorded in [TRACKER.md](TRACKER.md).
 
 ### Summary
 
