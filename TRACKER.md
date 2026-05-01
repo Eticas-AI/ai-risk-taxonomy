@@ -49,7 +49,7 @@ This contradicts an earlier decision (the rename from "Responsibility & Redress"
 - **Security & Misuse** gains a new "Harmful Misuse" sub-group (absorbing the moved Manipulation subcategories and `misuse-beyond-intended-purpose`), and adds `model-extraction` and `data-poisoning` to AI-specific attacks.
 - **Transparency / Explainability** gains a new "Right to explanation & contestation" subcategory (covering GDPR Art. 22 and EU AI Act Art. 13). `prompt-transparency` and `model-card-completeness` are dropped as risks — the team agreed they are documentation requirements rather than risks per se.
 
-### Other agreed changes (from Gemma's email thread)
+### Other agreed changes
 
 #### Separate compliance mappings from taxonomy mappings
 
